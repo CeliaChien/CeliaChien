@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Leetcode</title>
-    <url>/2020/09/27/Leetcode/</url>
-    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/">https://leetcode.com</a><br>主要语言： c++</p>
-<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
-<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
-<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
-<a id="more"></a>]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/09/26/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -35,6 +20,21 @@
       <categories>
         <category>Hexo</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Leetcode</title>
+    <url>/2022/09/27/Leetcode/</url>
+    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
+<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
+<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
+<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
+<a id="more"></a>]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
   </entry>
   <entry>
     <title>统计学习</title>
@@ -86,6 +86,29 @@
       </categories>
       <tags>
         <tag>Machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>weekly contest 208</title>
+    <url>/2020/09/27/weekly%20contest%20208/</url>
+    <content><![CDATA[<h1 id="Crawler-log-folder"><a href="#Crawler-log-folder" class="headerlink" title="Crawler log folder"></a>Crawler log folder</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/crawler-log-folder/">原题链接</a></p>
+<p>Easy</p>
+<p>解答：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperations</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; logs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">string</span> s: logs)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s==<span class="string">&quot;../&quot;</span>)&#123;<span class="keyword">if</span>(res&gt;<span class="number">0</span>)res--;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s==<span class="string">&quot;./&quot;</span>)&#123;</span><br><span class="line">                res=res;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;res++;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res&gt;=<span class="number">0</span>? res:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Maximum-Profit-of-Operating-a-Centennial-Wheel"><a href="#Maximum-Profit-of-Operating-a-Centennial-Wheel" class="headerlink" title="Maximum Profit of Operating a Centennial Wheel"></a>Maximum Profit of Operating a Centennial Wheel</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/maximum-profit-of-operating-a-centennial-wheel/">原题链接</a></p>
+<p>Medium</p>
+<p>解答：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperationsMaxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; customers, <span class="keyword">int</span> boardingCost, <span class="keyword">int</span> runningCost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = INT_MIN;</span><br><span class="line">        <span class="keyword">int</span> min=<span class="number">0</span>, i=<span class="number">0</span>, remaining= customers[i];</span><br><span class="line">        <span class="keyword">int</span> totalboarded=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> board = remaining&gt;<span class="number">3</span>? <span class="number">4</span>:remaining;</span><br><span class="line">            remaining-= board;</span><br><span class="line">            totalboarded+=board;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i+<span class="number">1</span>&lt;customers.size())&#123;</span><br><span class="line">                remaining +=customers[i+<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">int</span> currentProfit=(totalboarded*boardingCost)-(i*runningCost);</span><br><span class="line">            <span class="keyword">if</span>(currentProfit&gt;maxProfit)&#123;</span><br><span class="line">                min=i;</span><br><span class="line">            &#125;</span><br><span class="line">            maxProfit=max(maxProfit,(totalboarded*boardingCost)-(i*runningCost));</span><br><span class="line">            <span class="keyword">if</span>(remaining==<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit&lt;=<span class="number">0</span>? <span class="number">-1</span>:min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Throne-Inheritance"><a href="#Throne-Inheritance" class="headerlink" title="Throne Inheritance"></a>Throne Inheritance</h1><p><a href="">原题链接</a></p>
+<h1 id="Maximum-Number-of-Achievable-Transfer-Requests"><a href="#Maximum-Number-of-Achievable-Transfer-Requests" class="headerlink" title="Maximum Number of Achievable Transfer Requests"></a>Maximum Number of Achievable Transfer Requests</h1><p><a href="">原题链接</a></p>
+<a id="more"></a>]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
       </tags>
   </entry>
   <entry>
