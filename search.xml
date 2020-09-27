@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode</title>
+    <url>/2022/09/27/Leetcode/</url>
+    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
+<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
+<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
+<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/09/26/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -20,21 +35,6 @@
       <categories>
         <category>Hexo</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Leetcode</title>
-    <url>/2022/09/27/Leetcode/</url>
-    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
-<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
-<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
-<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
-<a id="more"></a>]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Leetcode</tag>
-      </tags>
   </entry>
   <entry>
     <title>统计学习</title>
@@ -91,7 +91,16 @@
   <entry>
     <title>weekly contest 208</title>
     <url>/2020/09/27/weekly%20contest%20208/</url>
-    <content><![CDATA[<h1 id="Crawler-log-folder"><a href="#Crawler-log-folder" class="headerlink" title="Crawler log folder"></a>Crawler log folder</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/crawler-log-folder/">原题链接</a></p>
+    <content><![CDATA[<h1 id="写作前面"><a href="#写作前面" class="headerlink" title="写作前面"></a>写作前面</h1><p>主要四道题目，1道easy，1道medium，2道hard。<br>其中前两道题干略长，需要理解，但写出来并不复杂，难在理解题意；<br>后两道略偏数据结构和算法。<br>主要题目如下：</p>
+<ul>
+<li>Crawler log folder</li>
+<li>Maximum Profit of Operating a Centennial Wheel</li>
+<li>Throne Inheritance</li>
+<li>Maximum Number of Achievable Transfer Requests<a id="more"></a>
+
+</li>
+</ul>
+<h1 id="Crawler-log-folder"><a href="#Crawler-log-folder" class="headerlink" title="Crawler log folder"></a>Crawler log folder</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/crawler-log-folder/">原题链接</a></p>
 <p>Easy</p>
 <p>解答：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperations</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; logs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">string</span> s: logs)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s==<span class="string">&quot;../&quot;</span>)&#123;<span class="keyword">if</span>(res&gt;<span class="number">0</span>)res--;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s==<span class="string">&quot;./&quot;</span>)&#123;</span><br><span class="line">                res=res;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;res++;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res&gt;=<span class="number">0</span>? res:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -103,7 +112,7 @@
 
 <h1 id="Throne-Inheritance"><a href="#Throne-Inheritance" class="headerlink" title="Throne Inheritance"></a>Throne Inheritance</h1><p><a href="">原题链接</a></p>
 <h1 id="Maximum-Number-of-Achievable-Transfer-Requests"><a href="#Maximum-Number-of-Achievable-Transfer-Requests" class="headerlink" title="Maximum Number of Achievable Transfer Requests"></a>Maximum Number of Achievable Transfer Requests</h1><p><a href="">原题链接</a></p>
-<a id="more"></a>]]></content>
+]]></content>
       <categories>
         <category>Leetcode</category>
       </categories>
@@ -130,6 +139,113 @@
 <h4 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h4><h4 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h4><h4 id="半监督学习与主动学习"><a href="#半监督学习与主动学习" class="headerlink" title="半监督学习与主动学习"></a>半监督学习与主动学习</h4><h2 id="按模型分类"><a href="#按模型分类" class="headerlink" title="按模型分类"></a>按模型分类</h2><h4 id="概率模型与非概率模型"><a href="#概率模型与非概率模型" class="headerlink" title="概率模型与非概率模型"></a>概率模型与非概率模型</h4><h4 id="线性模型与非线性模型"><a href="#线性模型与非线性模型" class="headerlink" title="线性模型与非线性模型"></a>线性模型与非线性模型</h4><h4 id="参数化模型与非参数化模型"><a href="#参数化模型与非参数化模型" class="headerlink" title="参数化模型与非参数化模型"></a>参数化模型与非参数化模型</h4><h2 id="按算法分类"><a href="#按算法分类" class="headerlink" title="按算法分类"></a>按算法分类</h2><h4 id="在线学习"><a href="#在线学习" class="headerlink" title="在线学习"></a>在线学习</h4><h4 id="批量学习"><a href="#批量学习" class="headerlink" title="批量学习"></a>批量学习</h4><h2 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h2><h4 id="贝叶斯学习"><a href="#贝叶斯学习" class="headerlink" title="贝叶斯学习"></a>贝叶斯学习</h4><h4 id="核方法"><a href="#核方法" class="headerlink" title="核方法"></a>核方法</h4>]]></content>
       <categories>
         <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>西瓜书——基本术语</title>
+    <url>/2020/09/28/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h1><blockquote>
+<p>在计算机系统中，“经验”通常以“数据”形式存在，因此，机器学习所研究的主要内容，是关于在计算机上从数据中产生“模型”的算法，即“学习算法”（learning algorithm）。</p>
+</blockquote>
+<p><strong>以西瓜的例子开始，学习过程为像人一样判断和分别西瓜；</strong></p>
+<a id="more"></a>
+
+<h2 id="输入空间"><a href="#输入空间" class="headerlink" title="输入空间"></a>输入空间</h2><ul>
+<li><strong>Data set</strong><ul>
+<li>假设我们有了一组西瓜的数据，例如「色泽=浅白；根蒂=硬挺；敲声=清脆」，被记录的数据组成了“数据集”。</li>
+</ul>
+</li>
+<li><strong>Instance</strong><ul>
+<li>其中每个事件或者对象（这里是每个西瓜）的描述，称为“示例”，也可以叫sample。</li>
+</ul>
+</li>
+<li><strong>Attribute</strong><ul>
+<li>里面的“色泽”，“根蒂”，“敲声”称为“属性”，也可以叫feature。</li>
+</ul>
+</li>
+<li><strong>Attribute value</strong><ul>
+<li>属性上的取值，如“浅白”，“清脆”，称为”属性值“。</li>
+</ul>
+</li>
+<li><strong>Attribute space</strong><ul>
+<li>属性张成的空间称为“属性空间”，也可以叫sample space或者input space。</li>
+</ul>
+</li>
+<li><strong>Feature vector</strong><ul>
+<li>例如我们把“色泽”，“根蒂”，“敲声”作为三个坐标轴，用它们张成的空间来描述西瓜；</li>
+<li>那么每个西瓜都可以在这个空间中找到自己的坐标位置；</li>
+<li>由于空间中每个点对应一个坐标向量，<strong>因此我们也把一个示例叫做一个特征向量feature vector</strong>。</li>
+</ul>
+</li>
+</ul>
+<h2 id="学习过程"><a href="#学习过程" class="headerlink" title="学习过程"></a>学习过程</h2><ul>
+<li><p><strong>training data&amp;training set</strong></p>
+<ul>
+<li>从数据中学得模型的过程称为learning或者training，这个过程通过执行某个学习算法来完成；</li>
+<li>训练过程中使用的数据称为“训练数据”，其中每个样本被称为“训练样本”，由训练样本组成的集合为“训练集”。</li>
+</ul>
+</li>
+<li><p><strong>hypothesis&amp;ground-truth</strong></p>
+<ul>
+<li>学得的模型对应了关于数据的某种潜在规律，因此亦称为“假设”；</li>
+<li>这种潜在规律的本身称为“真相”；</li>
+<li>学习过程就是为了找出或者逼近真相。</li>
+</ul>
+</li>
+<li><p><strong>prediction&amp;label&amp;exampe</strong></p>
+<blockquote>
+<p>如果希望学得一个能帮助我们判断没剖开的是不是“好瓜”的模型，仅仅有前面的示例数据显然是不够的。<br>要建立这样的“预测”模型，我们需获得训练样本的“结果信息”，例如（「色泽=青绿；根蒂=蜷缩；敲声=浑浊」，好瓜）。<br>这里的“好瓜”称为“标记”，拥有了标记信息的示例，称为样例example。</p>
+</blockquote>
+</li>
+<li><p><strong>label space</strong></p>
+<ul>
+<li>标记可以取值的空间称为“标记空间”，也称为“输出空间”。</li>
+</ul>
+</li>
+<li><p><strong>分类&amp;回归</strong></p>
+<blockquote>
+<p>若我们欲预测的是<strong>离散值</strong>，例如“好瓜”“坏瓜”，此类学习任务称为“分类”；<br>若欲预测的是<strong>连续值</strong>，例如西瓜成熟度0.95、0.37，此类学习任务称为“回归”。</p>
+</blockquote>
+</li>
+<li><p><strong>二分类&amp;多分类</strong></p>
+<blockquote>
+<p>“二分类”任务中，通常其中一个称为“正类”positive class，另一个称为“负类”negative class；<br>“多分类”任务，一般预测任务是希望通过对训练集进行学习，建立一个从输入空间到输出空间的映射。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><ul>
+<li><p><strong>testing&amp;test sample</strong></p>
+<blockquote>
+<p>学得模型后，使用其进行预测的过程称为“测试”testing，<br>被预测的样本称为“测试样本”（test sample）。</p>
+</blockquote>
+</li>
+<li><p><strong>clustering</strong></p>
+<blockquote>
+<p>即将训练集中的西瓜分成若干组，每组称为一个“簇”（cluster）；<br>这些自动形成的簇可能对应一些潜在的概念划分，例如“浅色瓜”，“深色瓜”，甚至“本地瓜”、“外地瓜”；<br><strong>注意，在聚类学习中，“浅色瓜”“本地瓜”这样的概念我们事先是不知道的；而且在学习过程中使用的训练样本通常不拥有标记信息</strong>。</p>
+</blockquote>
+</li>
+<li><p><strong>监督学习与无监督学习</strong></p>
+<blockquote>
+<p>根据训练数据是否拥有标记信息，学习任务可以大致划分为两大类“监督学习”和”无监督学习“；<br>分类和回归是前者的代表，聚类则是后者的代表。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li><strong>generalization</strong><blockquote>
+<p>需要注意的是，机器学习的目标是使得学得的模型能很好的适用于“新样本”，而不是仅仅在训练样本上工作得很好；这种能力称为“泛化”。</p>
+</blockquote>
+</li>
+<li><strong>distribution</strong><blockquote>
+<p>通常假设样本空间中全体样本服从一个未知“分布”D，我们获得的每个样本都是独立地从这个分布善能采样获得的，即“独立同分布”。<br>一般而言，训练样本越多，我们得到的关于D的信息越多，这样就越有可能通过学习获得具有强泛化能力的模型。</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>西瓜书</category>
       </categories>
       <tags>
         <tag>Machine learning</tag>
