@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/09/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>统计学习</title>
+    <url>/2020/09/26/statistical%20learning/</url>
+    <content><![CDATA[<h1 id="统计学习"><a href="#统计学习" class="headerlink" title="统计学习"></a>统计学习</h1><blockquote>
+<p>如果一个系统能够通过执行某个过程改进它的性能，这就是学习。——赫尔伯特·西蒙</p>
+</blockquote>
+<h2 id="统计学习的特点"><a href="#统计学习的特点" class="headerlink" title="统计学习的特点"></a>统计学习的特点</h2><h4 id="统计学习定义"><a href="#统计学习定义" class="headerlink" title="统计学习定义"></a>统计学习定义</h4><p>统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测和分析的一门学科。<br>统计学习也可以称为统计机器学习。</p>
+<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><ul>
+<li>统计学习以计算机及网络为平台，是建立在计算机及网络上的；</li>
+<li>统计学习以数据为研究对象，是数据驱动的学科；</li>
+<li>统计学习的目的是对数据进行预测与分析；</li>
+<li>统计学习以方法为中心，统计学习方法构建模型并应用模型进行预测与分析；</li>
+<li>统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等许多领域的交叉学科，并且在发展中逐步形成独自的理论体系与方法论。</li>
+</ul>
+<h2 id="统计学习的对象"><a href="#统计学习的对象" class="headerlink" title="统计学习的对象"></a>统计学习的对象</h2><p>统计学习研究的对象是data。它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。注意这里的数据是多样的，可是是计算机及网络上的各种数字、文字、图像、视频、音频数据以及它们的组合。</p>
+<a id="more"></a>
+<p>统计学习关于数据的基本假设是<strong>同类数据具有一定的统计规律性</strong>，这是统计学习的前提。</p>
+<h2 id="统计学习的目的"><a href="#统计学习的目的" class="headerlink" title="统计学习的目的"></a>统计学习的目的</h2><p>统计学习用于对数据的预测与分析，特别是对未知新数据的预测与分析。对数据的预测可以使计算机更加智能化，或者说使计算机的某些性能得到提高；对数据的分析可以让人们获取新的知识，给人们带来新的发现。</p>
+<p>对数据的预测与分析是通过构建概率统计模型实现的。统计学习总的目标就是考虑学习什么样的模型和如何学习模型，以使模型能对数据进行准确的预测与分析，同时也要考虑尽可能地提高学习效率。</p>
+<h2 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h2><p>统计学习的方法是基于数据构建概率统计模型从而对数据进行预测与分析。统计学习由监督学习、无监督学习和强化学习等组成。</p>
+<p>统计学习的方法可以概括如下：</p>
+<ul>
+<li>从给定的、有限的、用于学习的训练数据集合出发，假设数据是独立同分布产生的；</li>
+<li>并且假设要学习的模型属于某个函数的集合，称为假设空间；</li>
+<li>应用某个评价准则，从假设空间中选取一个最优模型，使它对已知的训练数据以及位置的测试数据在给定的评价准则下有最优的预测；</li>
+<li>最优模型的选择由算法实现。</li>
+</ul>
+<p>这样，统计学习方法包括模型的假设空间、模型选择的准则以及模型学习的算法。称为统计学习方法的三要素，简称为<strong>“模型”</strong>、<strong>“策略”</strong>和<strong>“算法”</strong>。</p>
+<p>实现统计学习方法的步骤如下：</p>
+<ol>
+<li>得到一个有限的训练数据集合；</li>
+<li>确定包含所有可能的模型的假设空间，即学习模型的集合；</li>
+<li>确定模型选择的准则，即学习的策略；</li>
+<li>实现求解最优模型的算法，即学习的算法；</li>
+<li>通过学习方法选择最优模型；</li>
+<li>利用学习的最优模型对新数据进行预测或分析。</li>
+</ol>
+<h2 id="统计学习的研究"><a href="#统计学习的研究" class="headerlink" title="统计学习的研究"></a>统计学习的研究</h2><p>统计学习的研究一般包括统计学习方法、统计学习理论以及统计学习应用三个方面。<br>统计学习<strong>方法</strong>的研究旨在开发<strong>新的学习方法</strong>；<br>统计学习<strong>理论</strong>的研究在于<strong>探求统计学习方法的有效性与效率，以及统计学习的基本理论问题</strong>；<br>统计学习<strong>应用</strong>的研究主要考虑<strong>将统计学习方法应用到实际问题中去，解决实际问题</strong>。</p>
+<h2 id="统计学习的重要性"><a href="#统计学习的重要性" class="headerlink" title="统计学习的重要性"></a>统计学习的重要性</h2><p>统计学习学科在科学技术中的重要性主要体现在以下几个方面：</p>
+<ul>
+<li>统计学习是处理海量数据的有效方法。</li>
+<li>统计学习是计算机智能化的有效手段。</li>
+<li>统计学习是计算机科学发展的一个重要组成部分。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
+      </tags>
+  </entry>
+</search>
