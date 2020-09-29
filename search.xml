@@ -16,6 +16,186 @@
       </tags>
   </entry>
   <entry>
+    <title>Computer Vision Week 1 Introduction</title>
+    <url>/2020/09/29/CV1/</url>
+    <content><![CDATA[<h1 id="What-is-computer-vision"><a href="#What-is-computer-vision" class="headerlink" title="What is computer vision"></a>What is computer vision</h1><blockquote>
+<p>Extracting description of images</p>
+</blockquote>
+<h2 id="Ralated-Disciplines"><a href="#Ralated-Disciplines" class="headerlink" title="Ralated Disciplines"></a>Ralated Disciplines</h2><ul>
+<li>Image processing</li>
+<li>Computer graphic</li>
+</ul>
+<blockquote>
+<p>image processing: image -&gt; image<br>computer vision: image -&gt; description<br>computer graphics: description -&gt; image</p>
+</blockquote>
+<a id="more"></a>
+
+<ul>
+<li>Pattern recognition<ul>
+<li>recognnising and classifying stimuli in images and other datasets.</li>
+</ul>
+</li>
+<li>Photogrammetry<ul>
+<li>obtain measurements from images</li>
+</ul>
+</li>
+<li>Biological vision<ul>
+<li>understanding visual perception in humans and animals(studied in Neuroscience, Psychology, Psychophysics)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h2><ul>
+<li>Hard writing detection</li>
+<li>ORC: optical character recognition</li>
+<li>Face detection/Smile detection</li>
+<li>Face recognition</li>
+<li>Biometrics: Iris Recognition, Fingerprint Recognition</li>
+<li>People tracking/Object tracking</li>
+<li>Content-base Image Retrieval</li>
+<li>Reverse image search</li>
+<li>Landmark recognition</li>
+<li>Driver assistance</li>
+<li>Space exploration</li>
+<li>Medical imaging</li>
+<li>3D models from images</li>
+</ul>
+<h1 id="Why-is-vision-difficult"><a href="#Why-is-vision-difficult" class="headerlink" title="Why is vision difficult"></a>Why is vision difficult</h1><blockquote>
+<p>~ 50% cerebral cortex is devoted to vision<br>vision consumes ~10% of entire human energy consumption.</p>
+</blockquote>
+<h2 id="Major-challenges"><a href="#Major-challenges" class="headerlink" title="Major challenges"></a>Major challenges</h2><ul>
+<li>One image -&gt; many interpretations<ul>
+<li>problem is ill-posed</li>
+</ul>
+</li>
+<li>One object -&gt; many images<ul>
+<li>problem is exponentially large</li>
+</ul>
+</li>
+</ul>
+<h2 id="Vision-is-an-ill-posed-problem"><a href="#Vision-is-an-ill-posed-problem" class="headerlink" title="Vision is an ill-posed problem"></a>Vision is an ill-posed problem</h2><blockquote>
+<p>mapping from world to image is unique(well-posed)<br>This is a “forward problem”<br>mapping form image to world is <strong>NOT</strong> unique(ill-posed)<br>This is an “inverse problem”</p>
+</blockquote>
+<p>There are mulitple interpretations of an image</p>
+<ul>
+<li>Vision scales exponentially: one object can generate many images</li>
+<li>Viewpoint affect appearance</li>
+<li>Illumination affects appearance</li>
+<li>Non-rigid deformations affect appearance</li>
+<li>Within-category variation in appearance</li>
+<li>Discrimination despite variation</li>
+<li>Other objects affect appearance</li>
+</ul>
+<h1 id="Tackling-the-problem-of-vision"><a href="#Tackling-the-problem-of-vision" class="headerlink" title="Tackling the problem of vision"></a>Tackling the problem of vision</h1><blockquote>
+<p>Biological approach<br>Computational approach</p>
+</blockquote>
+<h2 id="Need-for-constraints"><a href="#Need-for-constraints" class="headerlink" title="Need for constraints"></a>Need for constraints</h2><p>To solve these challenges we need to employ constraints</p>
+<ul>
+<li>Prior knowledge</li>
+<li>Prior exposure</li>
+<li>Context</li>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Computer Vision</category>
+      </categories>
+      <tags>
+        <tag>Computer Vision</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Introduction to Operations Management</title>
+    <url>/2020/09/28/OPM1/</url>
+    <content><![CDATA[<h1 id="Introduction-to-Operations-Management"><a href="#Introduction-to-Operations-Management" class="headerlink" title="Introduction to Operations Management"></a>Introduction to Operations Management</h1><h2 id="Components-of-an-effective-operations-manufacturing-system"><a href="#Components-of-an-effective-operations-manufacturing-system" class="headerlink" title="Components of an effective operations/manufacturing system"></a>Components of an effective operations/manufacturing system</h2><ol>
+<li>educated/knowledgable(int the task at hand, of cource) and flexible workforce</li>
+<li>consistent, continuous focus on quality</li>
+<li>effective assets/resource management</li>
+</ol>
+<a id="more"></a>
+<h2 id="Reasons-For-Global-Operations"><a href="#Reasons-For-Global-Operations" class="headerlink" title="Reasons For Global Operations"></a>Reasons For Global Operations</h2><ul>
+<li>low labour costs, and labour law</li>
+<li>access to expertise</li>
+<li>access to capacity</li>
+<li>specialist/subcntractors-achieve exonoies of scale</li>
+<li>Access to raw material</li>
+<li>tax regime</li>
+<li>accessing local markets</li>
+<li>quality</li>
+<li>technology and assets, assets is financial(money) techinial, expert people etc.</li>
+</ul>
+<h2 id="Reason-Against-Global-Operations"><a href="#Reason-Against-Global-Operations" class="headerlink" title="Reason Against Global Operations"></a>Reason Against Global Operations</h2><ul>
+<li>labour law</li>
+<li>risks(of supply, delays, environment, tax regimes changing…)</li>
+<li>loss of control of product quality</li>
+<li>changes in cost structures</li>
+<li>supply chain complexity</li>
+<li>trade tariffs</li>
+<li>loss of local expertise</li>
+</ul>
+<h2 id="Operations-Management-Decisions"><a href="#Operations-Management-Decisions" class="headerlink" title="Operations Management Decisions"></a>Operations Management Decisions</h2><ul>
+<li>Design of products and service: what do we offer? how can we design these?</li>
+<li>Quality how do we define it(i.e. policies and standards); responsibolty allocation</li>
+<li>Process desingn, determining capacity requirements: our products- what do they require? what equipment and tech we will need and how much of it?</li>
+<li>Location strategy/supply chain design: where we should locate new facilities(manufacturing and also distribution - e.g supermarket/warehouses etc); what are the criteria for our choices?</li>
+<li>Layouts of facilities: how we could arrange the facility/its layout i.e. to maximise throughput or/and use of space: size of the facility(capacity)</li>
+<li>Human reasource and job design/allocation: how to design the work environment. how much outputs whorls we expect from a given work allocation scheme?</li>
+<li>Supply chain management : make or buy decision? supplier selection and order/demand allocation to suppliers(model risks)?</li>
+<li>Inventory Management: how much inventory of each SKU(Stock keeping unit) we should have? when we reorder?</li>
+<li>Scheduling: which jobs to perform next? Do we need overtime or how much of flexible workforce we require?</li>
+<li>Maintenance: how do we embed realiablity into our processess? who is responsible?</li>
+</ul>
+<h2 id="Parabola-Line"><a href="#Parabola-Line" class="headerlink" title="Parabola Line"></a>Parabola Line</h2><p><strong>Example</strong><br>we have a function to descript a process of throwing a ball like this:</p>
+<p>$$ h=-4.9t^2+10t+2 $$</p>
+<p><strong>Questions</strong></p>
+<ol>
+<li>When it kicks the ground?</li>
+<li>How high it goes?</li>
+</ol>
+<p><strong>Solutions</strong><br>Q1: </p>
+<ul>
+<li>h=0<blockquote>
+<p>$$ -4.9t^2+10t+2=0 $$<br>$$t = \frac{-10 \pm \sqrt{10^2-4(-4.9)2}}{2(-4.9)}.$$</p>
+</blockquote>
+</li>
+</ul>
+<p>Q2:</p>
+<ul>
+<li>Derivation<blockquote>
+<p>$$ \frac{dh}{dt} $$<br>$$ h’=-9.8t+10 $$<br>$$ h’=0, then\ t = \frac{10}{9.8} $$</p>
+</blockquote>
+</li>
+</ul>
+<p>Q1:</p>
+<ul>
+<li>Newton Raphson Method<blockquote>
+<p>$$ x_0=init\ guess $$<br>then we try:<br>Point:$$(x,h(x_0))$$<br>A straight line: $$ y-h(x_0)=h’(x_0)(x-x_0) $$<br>then we got: $$y=0,x=x_1$$<br>$$ -h(x_0)=h’(x_0)(x_1-x_0) $$<br>$$ x_1=x_0-\frac{h(x_0)}{h’(x_0)} $$<br>$$ x_2=x_1-\frac{h(x_1)}{h’(x_1)} $$<br>$$ ……. $$</p>
+</blockquote>
+</li>
+</ul>
+<p>Q2:</p>
+<ul>
+<li>Gradient Descent<blockquote>
+<p>$$ h’(t)=-9.8t+10 $$<br>$$ h^{‘’}(t)=-9.8 $$<br>$$ t_0=2 $$<br>$$ t_1=2- \frac{-9.8(2)+10}{-9.8}=1.02$$<br>$$ h=-4.9(1.02)^2+10(1.02)+2=7.1 $$<br>$$ …… $$</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Newton-Raphson-Method-amp-amp-Gradient-Descent"><a href="#Newton-Raphson-Method-amp-amp-Gradient-Descent" class="headerlink" title="Newton Raphson Method &amp;&amp; Gradient Descent"></a>Newton Raphson Method &amp;&amp; Gradient Descent</h2><ul>
+<li>may not </li>
+<li>if this guess is not good, then may never convince</li>
+</ul>
+<h2 id="Local-vs-Global-Optimal"><a href="#Local-vs-Global-Optimal" class="headerlink" title="Local vs Global Optimal"></a>Local vs Global Optimal</h2><ul>
+<li>global maxium &amp; global minum</li>
+<li>local maxium &amp; local minum</li>
+</ul>
+]]></content>
+      <categories>
+        <category>OPM</category>
+      </categories>
+      <tags>
+        <tag>OPM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/09/26/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
