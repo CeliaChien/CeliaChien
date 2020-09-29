@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Leetcode</title>
-    <url>/2022/09/27/Leetcode/</url>
-    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
-<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
-<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
-<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Computer Vision Week 1 Introduction</title>
     <url>/2020/09/29/CV1/</url>
     <content><![CDATA[<h1 id="What-is-computer-vision"><a href="#What-is-computer-vision" class="headerlink" title="What is computer vision"></a>What is computer vision</h1><blockquote>
@@ -269,6 +254,106 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode</title>
+    <url>/2022/09/27/Leetcode/</url>
+    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
+<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
+<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
+<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Round A 2020 kick start Q1</title>
+    <url>/2020/09/29/Round%20A%202020%20Q1/</url>
+    <content><![CDATA[<h1 id="Round-A-2020-kick-start"><a href="#Round-A-2020-kick-start" class="headerlink" title="Round A 2020 kick start"></a>Round A 2020 kick start</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><blockquote>
+<p>There are N houses for sale. The i-th house costs Ai dollars to buy. You have a budget of B dollars to spend.</p>
+</blockquote>
+<blockquote>
+<p>What is the maximum number of houses you can buy?</p>
+</blockquote>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input gives the number of test cases, T. T test cases follow. Each test case begins with a single line containing the two integers N and B. The second line contains N integers. The i-th integer is Ai, the cost of the i-th house.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the maximum number of houses you can buy.</p>
+<h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
+<li><p>Time limit: 15 seconds per test set.</p>
+</li>
+<li><p>Memory limit: 1GB.<br>1 ≤ T ≤ 100.<br>1 ≤ B ≤ 105.<br>1 ≤ Ai ≤ 1000, for all i.</p>
+</li>
+<li><p><strong>Test set 1</strong><br>1 ≤ N ≤ 100.</p>
+</li>
+<li><p><strong>Test set 2</strong><br>1 ≤ N ≤ 105.</p>
+</li>
+</ul>
+<p>#Sample</p>
+<ul>
+<li><p><strong>Input</strong></p>
+<blockquote>
+<p>3<br>4 100<br>20 90 40 90<br>4 50<br>30 30 10 10<br>3 300<br>999 999 999</p>
+</blockquote>
+</li>
+<li><p><strong>Output</strong></p>
+<blockquote>
+<p>Case #1: 2<br>Case #2: 3<br>Case #3: 0</p>
+</blockquote>
+</li>
+</ul>
+<p>In Sample Case #1, you have a budget of 100 dollars. You can buy the 1st and 3rd houses for 20 + 40 = 60 dollars.<br>In Sample Case #2, you have a budget of 50 dollars. You can buy the 1st, 3rd and 4th houses for 30 + 10 + 10 = 50 dollars.<br>In Sample Case #3, you have a budget of 300 dollars. You cannot buy any houses (so the answer is 0).<br>Note: Unlike previous editions, in Kick Start 2020, all test sets are visible verdict test sets, meaning you receive instant feedback upon submission.</p>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1>]]></content>
+      <categories>
+        <category>Kick start</category>
+      </categories>
+      <tags>
+        <tag>Kick start</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>西瓜书——NFL&amp;History&amp;Appln</title>
+    <url>/2020/09/30/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h1><ul>
+<li>“没有免费的午餐”定理</li>
+<li>ML发展历程</li>
+<li>ML应用现状<a id="more"></a>
+<h1 id="NFL-Theorem"><a href="#NFL-Theorem" class="headerlink" title="NFL Theorem"></a>NFL Theorem</h1></li>
+</ul>
+<h1 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h1><blockquote>
+<p>机器学习是人工智能研究发展到一定阶段的必然产物</p>
+</blockquote>
+<ul>
+<li>20世纪50年代到70年代初<ul>
+<li>人工智能研究处于“推理期”</li>
+<li>人们基于符号知识表示，通过演绎推理技术取得了很大成就；</li>
+</ul>
+</li>
+<li>20世纪70年代中期开始<ul>
+<li>人工智能研究进入了“知识期”</li>
+<li>人们基于符号知识表示，通过获取和利用领域知识来建立专家系统取得了大量成果；</li>
+</ul>
+</li>
+<li>20世纪90年代中期<ul>
+<li>“统计学习”闪亮登场并迅速占领主流舞台</li>
+<li>SVM“支持向量机”，“核方法”</li>
+</ul>
+</li>
+<li>21世纪初<ul>
+<li>连接主义卷土重来</li>
+<li>“深度学习”，“神经网络”</li>
+</ul>
+</li>
+</ul>
+<h1 id="应用现状"><a href="#应用现状" class="headerlink" title="应用现状"></a>应用现状</h1><!-- more -->]]></content>
+      <categories>
+        <category>西瓜书</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>weekly contest 208</title>
     <url>/2020/09/27/weekly%20contest%20208/</url>
     <content><![CDATA[<h1 id="写作前面"><a href="#写作前面" class="headerlink" title="写作前面"></a>写作前面</h1><p>主要四道题目，1道easy，1道medium，2道hard。<br>其中前两道题干略长，需要理解，但写出来并不复杂，难在理解题意；<br>后两道略偏数据结构和算法。<br>主要题目如下：</p>
@@ -301,24 +386,108 @@
       </tags>
   </entry>
   <entry>
-    <title>统计学习的分类</title>
-    <url>/2020/09/27/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%88%86%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="统计学习的分类"><a href="#统计学习的分类" class="headerlink" title="统计学习的分类"></a>统计学习的分类</h1><h2 id="基本分类"><a href="#基本分类" class="headerlink" title="基本分类"></a>基本分类</h2><h4 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h4><p>是指从标注数据中学习预测模型的机器学习问题。标注数据表示输入输出的对应关系，预测模型对给定的输入产生相应的输出。监督学习的本质是<strong>学习输入到输出的映射的统计规律</strong>。</p>
-<p><font size=4, color=#008000><strong>输入空间、特征空间和输出空间</strong></font></p>
-<p>在监督学习中，将输入与输出所有可能取值的集合分别称为输入空间与输出空间。输入与输出空间可以是有限元素的集合，也可以是整个欧式空间。输入空间与输出空间可以是同一个空间，也可以是不同的空间；<strong>但是通常输出空间远远小于输入空间</strong>。</p>
+    <title>西瓜书——假设空间与归纳偏好</title>
+    <url>/2020/09/29/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="归纳于演绎"><a href="#归纳于演绎" class="headerlink" title="归纳于演绎"></a>归纳于演绎</h1><p><strong>Induction&amp;&amp;Deduction</strong></p>
+<blockquote>
+<p><strong>归纳</strong>和<strong>演绎</strong>是科学推理的两大基本手段<br>前者是从特殊到一般的泛化过程：即从具体的事实归结出一般性的规律；<br>后者是从一般到特殊的特化过程：即从基础原理推理出具体情况。</p>
+</blockquote>
 <a id="more"></a>
 
-<p>每个具体的输入是一个实例，通常由特征向量表示。这时，所有特征向量存在的空间称为特征空间。</p>
-<p>特征空间的每一维对应于一个特征。有时假设输入空间与特征空间为相同的空间，对于它们不予区分；有时假设输入空间与特征空间为不同的空间，将实例从输入空间映射到特征空间。<strong>模型实际上都是定义在特征空间上的</strong>。</p>
-<p>在监督学习中，将输入与输出看作是定义在输入（特征）空间与输出空间上的随机变量的取值。输入输出变量用大写字母表示，习惯上输入变量写作X，输出变量写作Y。输入输出变量的取值用小写字母表示，输入变量的取值写作x，输出变量的取值写作y。</p>
-<p>变量可以是标量或者向量，都用相同类型字母表示。除特别声明外，默认为列向量。</p>
-<p><font size=4, color=#008000><strong>联合概率分布</strong></font></p>
-<p>监督学习假设输入与输出的随机变量X和Y遵循联合概率分布$ P(X,Y) $</p>
-<p><font size=4, color=#008000><strong>假设空间</strong></font><br>就</p>
-<p><font size=4, color=#008000><strong>问题的形式化</strong></font></p>
-<h4 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h4><h4 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h4><h4 id="半监督学习与主动学习"><a href="#半监督学习与主动学习" class="headerlink" title="半监督学习与主动学习"></a>半监督学习与主动学习</h4><h2 id="按模型分类"><a href="#按模型分类" class="headerlink" title="按模型分类"></a>按模型分类</h2><h4 id="概率模型与非概率模型"><a href="#概率模型与非概率模型" class="headerlink" title="概率模型与非概率模型"></a>概率模型与非概率模型</h4><h4 id="线性模型与非线性模型"><a href="#线性模型与非线性模型" class="headerlink" title="线性模型与非线性模型"></a>线性模型与非线性模型</h4><h4 id="参数化模型与非参数化模型"><a href="#参数化模型与非参数化模型" class="headerlink" title="参数化模型与非参数化模型"></a>参数化模型与非参数化模型</h4><h2 id="按算法分类"><a href="#按算法分类" class="headerlink" title="按算法分类"></a>按算法分类</h2><h4 id="在线学习"><a href="#在线学习" class="headerlink" title="在线学习"></a>在线学习</h4><h4 id="批量学习"><a href="#批量学习" class="headerlink" title="批量学习"></a>批量学习</h4><h2 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h2><h4 id="贝叶斯学习"><a href="#贝叶斯学习" class="headerlink" title="贝叶斯学习"></a>贝叶斯学习</h4><h4 id="核方法"><a href="#核方法" class="headerlink" title="核方法"></a>核方法</h4>]]></content>
+<ul>
+<li>归纳学习<ul>
+<li>“从样例中学习”显然是一个归纳过程，因此叫归纳学习；</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>归纳学习有狭义和广义之分:<br>广义的归纳学习大体相当于从样例中学习；<br>狭义的归纳学习则要求从训练数据中学得概念，因此也被称为“概念学习”或者“概念形成”。</p>
+</blockquote>
+<ul>
+<li>概念学习<ul>
+<li>布尔概念学习：即对“是”“不是”这样的可表示为0/1布尔值的目标概念的学习。</li>
+</ul>
+</li>
+</ul>
+<h1 id="假设空间"><a href="#假设空间" class="headerlink" title="假设空间"></a>假设空间</h1><p><strong>Hypothesis Space</strong><br>还是以分别西瓜的好坏为例子（这就是一个布尔概念学习）：<br>有一下的训练数据集：</p>
+<div class="note default"><table>
+<thead>
+<tr>
+<th>编号</th>
+<th>色泽</th>
+<th>根蒂</th>
+<th>敲声</th>
+<th>好瓜</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>青绿</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>是</td>
+</tr>
+<tr>
+<td>2</td>
+<td>乌黑</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>是</td>
+</tr>
+<tr>
+<td>3</td>
+<td>青绿</td>
+<td>硬挺</td>
+<td>清脆</td>
+<td>否</td>
+</tr>
+<tr>
+<td>4</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>沉闷</td>
+<td>否</td>
+</tr>
+</tbody></table>
+</div>
+
+<blockquote>
+<p>好瓜 &lt;-&gt; (色泽=?)^(根蒂=?)^(敲声=?)<br>这里的？表示尚未确定的取值，而我们的任务就是通过对上表的训练进行学习，把？确定下来</p>
+</blockquote>
+<p>我们可以把学习过程看作一个在所设假设组成的空间中进行搜索的过程，搜索目标是找到与训练集“匹配”的假设，即能够将训练集中的瓜判断正确的假设。</p>
+<blockquote>
+<p>比如这里的色泽有“青绿”“乌黑”“浅白”这三种可能取值；还需考虑到，也许“色泽”无论取什么值都合适，我们这里用通配符“*”来表示。<br>此外，还要考虑极端情况：有可能“好瓜”这个概念并不存在，世界上没有“好瓜”这种东西。<br>于是我们的假设空间规模大小：<br> $$ 4\times4\times4+1=65 $$</p>
+</blockquote>
+<p>可以有许多策略对这个假设空间进行搜索，例如自顶向下、从一般到特殊，或者自底向上、从特殊到一般，搜索过程中可以不断删除与正例不一致的假设，和（或）与反例一致的假设。最终将会得到与训练集一致（即<strong>对所有训练样本能够进行正确判断</strong>）的假设，这就是我们学到的结果。</p>
+<h2 id="版本空间"><a href="#版本空间" class="headerlink" title="版本空间"></a>版本空间</h2><p><strong>Version Space</strong></p>
+<blockquote>
+<p>现实问题中我们常面临很大的假设空间，但是学习过程是基于有限样本训练集进行的。因此，可能有多个假设与训练集一致，即存在着一个与训练集一致的“假设集合”，我们称之为“<strong>版本空间</strong>”</p>
+</blockquote>
+<p><strong>例子</strong></p>
+<ul>
+<li>表中对应的版本空间<blockquote>
+<p>(1) 色泽=* 根蒂=蜷缩 敲声=浊响<br>(2) 色泽=* 根蒂=蜷缩 敲声=*<br>(3) 色泽=* 根蒂=* 敲声=浊响</p>
+</blockquote>
+</li>
+<li>表中若只包含编号1和编号4的两个样例，试给出相应的版本空间<blockquote>
+<p>（1）色泽=青绿 根蒂=蜷缩 敲声=浊响<br>（2）色泽=青绿 根蒂=蜷缩 敲声=*<br>（3）色泽=青绿 根蒂=* 敲声=浊响<br>（4）色泽=* 根蒂=蜷缩 敲声=浊响<br>（5）色泽=青绿 根蒂=* 敲声=*<br>（6）色泽=* 根蒂=蜷缩 敲声=*<br>（7）色泽=* 根蒂=* 敲声=浊响</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="归纳偏好"><a href="#归纳偏好" class="headerlink" title="归纳偏好"></a>归纳偏好</h1><p><strong>Inductive Bias</strong></p>
+<p>在之前给出的训练数据集中，我们得到的版本空间会给我们带来一个麻烦：<br>现在有三个与训练集一致的假设，但是与他们对应的模型在面临新样本的时候，却会产生不同的输出。</p>
+<blockquote>
+<p>例如：对（色泽=青绿；根蒂=蜷缩；敲声=沉闷）这个新收来的瓜，<br>如果我们采用：好瓜 &lt;-&gt;(色泽=*)^(根蒂=蜷缩)^(敲声=*)<br>那么将会把这个瓜判断为好瓜。<br>但是如果采用其余两个假设，则判断结果将不是好瓜。</p>
+</blockquote>
+<p><strong>那么，应该采用哪个模型（假设）呢？</strong><br>这时，学习算法本身的“偏好”就会起到关键的作用。</p>
+<blockquote>
+<p>例如：<br>若我们的算法喜欢“尽可能特殊”的模型，则它会选择“好瓜 &lt;-&gt;(色泽=*)^(根蒂=蜷缩)^(敲声=浊响)”；<br>但若我们的算法喜欢“尽可能一般”的模型，并且由于某种原因它更“相信”根蒂，则它会选择“好瓜 &lt;-&gt;(色泽=*)^(根蒂=蜷缩)^(敲声=*)”。</p>
+</blockquote>
+<p>机器学习在学习过程中对某种类型假设的偏好，称为“<strong>归纳偏好</strong>”。</p>
+<p>任何一个有效的机器学习算法必有其归纳偏好，否则它将被假设空间中看似在训练集上“等效”的假设所迷惑，而无法产生确定的学习结果，可以想象，如果没有偏好，我们的西瓜学习算法产生的模型每次在进行预测时随机抽选训练集上的等效假设，那么对这个新瓜（色泽=青绿；根蒂=蜷缩；敲声=沉闷），学得的模型时而告诉我们它是好的、时而告诉我们它是不好的，这样的学习结果显然是没有意义的。</p>
+]]></content>
       <categories>
-        <category>统计学习方法</category>
+        <category>西瓜书</category>
       </categories>
       <tags>
         <tag>Machine learning</tag>
@@ -432,108 +601,24 @@
       </tags>
   </entry>
   <entry>
-    <title>西瓜书——假设空间与归纳偏好</title>
-    <url>/2020/09/29/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="归纳于演绎"><a href="#归纳于演绎" class="headerlink" title="归纳于演绎"></a>归纳于演绎</h1><p><strong>Induction&amp;&amp;Deduction</strong></p>
-<blockquote>
-<p><strong>归纳</strong>和<strong>演绎</strong>是科学推理的两大基本手段<br>前者是从特殊到一般的泛化过程：即从具体的事实归结出一般性的规律；<br>后者是从一般到特殊的特化过程：即从基础原理推理出具体情况。</p>
-</blockquote>
+    <title>统计学习的分类</title>
+    <url>/2020/09/27/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%88%86%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="统计学习的分类"><a href="#统计学习的分类" class="headerlink" title="统计学习的分类"></a>统计学习的分类</h1><h2 id="基本分类"><a href="#基本分类" class="headerlink" title="基本分类"></a>基本分类</h2><h4 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h4><p>是指从标注数据中学习预测模型的机器学习问题。标注数据表示输入输出的对应关系，预测模型对给定的输入产生相应的输出。监督学习的本质是<strong>学习输入到输出的映射的统计规律</strong>。</p>
+<p><font size=4, color=#008000><strong>输入空间、特征空间和输出空间</strong></font></p>
+<p>在监督学习中，将输入与输出所有可能取值的集合分别称为输入空间与输出空间。输入与输出空间可以是有限元素的集合，也可以是整个欧式空间。输入空间与输出空间可以是同一个空间，也可以是不同的空间；<strong>但是通常输出空间远远小于输入空间</strong>。</p>
 <a id="more"></a>
 
-<ul>
-<li>归纳学习<ul>
-<li>“从样例中学习”显然是一个归纳过程，因此叫归纳学习；</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>归纳学习有狭义和广义之分:<br>广义的归纳学习大体相当于从样例中学习；<br>狭义的归纳学习则要求从训练数据中学得概念，因此也被称为“概念学习”或者“概念形成”。</p>
-</blockquote>
-<ul>
-<li>概念学习<ul>
-<li>布尔概念学习：即对“是”“不是”这样的可表示为0/1布尔值的目标概念的学习。</li>
-</ul>
-</li>
-</ul>
-<h1 id="假设空间"><a href="#假设空间" class="headerlink" title="假设空间"></a>假设空间</h1><p><strong>Hypothesis Space</strong><br>还是以分别西瓜的好坏为例子（这就是一个布尔概念学习）：<br>有一下的训练数据集：</p>
-<div class="note default"><table>
-<thead>
-<tr>
-<th>编号</th>
-<th>色泽</th>
-<th>根蒂</th>
-<th>敲声</th>
-<th>好瓜</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>青绿</td>
-<td>蜷缩</td>
-<td>浊响</td>
-<td>是</td>
-</tr>
-<tr>
-<td>2</td>
-<td>乌黑</td>
-<td>蜷缩</td>
-<td>浊响</td>
-<td>是</td>
-</tr>
-<tr>
-<td>3</td>
-<td>青绿</td>
-<td>硬挺</td>
-<td>清脆</td>
-<td>否</td>
-</tr>
-<tr>
-<td>4</td>
-<td>乌黑</td>
-<td>稍蜷</td>
-<td>沉闷</td>
-<td>否</td>
-</tr>
-</tbody></table>
-</div>
-
-<blockquote>
-<p>好瓜 &lt;-&gt; (色泽=?)^(根蒂=?)^(敲声=?)<br>这里的？表示尚未确定的取值，而我们的任务就是通过对上表的训练进行学习，把？确定下来</p>
-</blockquote>
-<p>我们可以把学习过程看作一个在所设假设组成的空间中进行搜索的过程，搜索目标是找到与训练集“匹配”的假设，即能够将训练集中的瓜判断正确的假设。</p>
-<blockquote>
-<p>比如这里的色泽有“青绿”“乌黑”“浅白”这三种可能取值；还需考虑到，也许“色泽”无论取什么值都合适，我们这里用通配符“*”来表示。<br>此外，还要考虑极端情况：有可能“好瓜”这个概念并不存在，世界上没有“好瓜”这种东西。<br>于是我们的假设空间规模大小：<br> $$ 4\times4\times4+1=65 $$</p>
-</blockquote>
-<p>可以有许多策略对这个假设空间进行搜索，例如自顶向下、从一般到特殊，或者自底向上、从特殊到一般，搜索过程中可以不断删除与正例不一致的假设，和（或）与反例一致的假设。最终将会得到与训练集一致（即<strong>对所有训练样本能够进行正确判断</strong>）的假设，这就是我们学到的结果。</p>
-<h2 id="版本空间"><a href="#版本空间" class="headerlink" title="版本空间"></a>版本空间</h2><p><strong>Version Space</strong></p>
-<blockquote>
-<p>现实问题中我们常面临很大的假设空间，但是学习过程是基于有限样本训练集进行的。因此，可能有多个假设与训练集一致，即存在着一个与训练集一致的“假设集合”，我们称之为“<strong>版本空间</strong>”</p>
-</blockquote>
-<p><strong>例子</strong></p>
-<ul>
-<li>表中对应的版本空间<blockquote>
-<p>(1) 色泽=* 根蒂=蜷缩 敲声=浊响<br>(2) 色泽=* 根蒂=蜷缩 敲声=*<br>(3) 色泽=* 根蒂=* 敲声=浊响</p>
-</blockquote>
-</li>
-<li>表中若只包含编号1和编号4的两个样例，试给出相应的版本空间<blockquote>
-<p>（1）色泽=青绿 根蒂=蜷缩 敲声=浊响<br>（2）色泽=青绿 根蒂=蜷缩 敲声=*<br>（3）色泽=青绿 根蒂=* 敲声=浊响<br>（4）色泽=* 根蒂=蜷缩 敲声=浊响<br>（5）色泽=青绿 根蒂=* 敲声=*<br>（6）色泽=* 根蒂=蜷缩 敲声=*<br>（7）色泽=* 根蒂=* 敲声=浊响</p>
-</blockquote>
-</li>
-</ul>
-<h1 id="归纳偏好"><a href="#归纳偏好" class="headerlink" title="归纳偏好"></a>归纳偏好</h1><p><strong>Inductive Bias</strong></p>
-<p>在之前给出的训练数据集中，我们得到的版本空间会给我们带来一个麻烦：<br>现在有三个与训练集一致的假设，但是与他们对应的模型在面临新样本的时候，却会产生不同的输出。</p>
-<blockquote>
-<p>例如：对（色泽=青绿；根蒂=蜷缩；敲声=沉闷）这个新收来的瓜，<br>如果我们采用：好瓜 &lt;-&gt;(色泽=*)^(根蒂=蜷缩)^(敲声=*)<br>那么将会把这个瓜判断为好瓜。<br>但是如果采用其余两个假设，则判断结果将不是好瓜。</p>
-</blockquote>
-<p><strong>那么，应该采用哪个模型（假设）呢？</strong><br>这时，学习算法本身的“偏好”就会起到关键的作用。</p>
-<blockquote>
-<p>例如：<br>若我们的算法喜欢“尽可能特殊”的模型，则它会选择“好瓜 &lt;-&gt;(色泽=*)^(根蒂=蜷缩)^(敲声=浊响)”；<br>但若我们的算法喜欢“尽可能一般”的模型，并且由于某种原因它更“相信”根蒂，则它会选择“好瓜 &lt;-&gt;(色泽=*)^(根蒂=蜷缩)^(敲声=*)”。</p>
-</blockquote>
-<p>机器学习在学习过程中对某种类型假设的偏好，称为“<strong>归纳偏好</strong>”。</p>
-<p>任何一个有效的机器学习算法必有其归纳偏好，否则它将被假设空间中看似在训练集上“等效”的假设所迷惑，而无法产生确定的学习结果，可以想象，如果没有偏好，我们的西瓜学习算法产生的模型每次在进行预测时随机抽选训练集上的等效假设，那么对这个新瓜（色泽=青绿；根蒂=蜷缩；敲声=沉闷），学得的模型时而告诉我们它是好的、时而告诉我们它是不好的，这样的学习结果显然是没有意义的。</p>
-]]></content>
+<p>每个具体的输入是一个实例，通常由特征向量表示。这时，所有特征向量存在的空间称为特征空间。</p>
+<p>特征空间的每一维对应于一个特征。有时假设输入空间与特征空间为相同的空间，对于它们不予区分；有时假设输入空间与特征空间为不同的空间，将实例从输入空间映射到特征空间。<strong>模型实际上都是定义在特征空间上的</strong>。</p>
+<p>在监督学习中，将输入与输出看作是定义在输入（特征）空间与输出空间上的随机变量的取值。输入输出变量用大写字母表示，习惯上输入变量写作X，输出变量写作Y。输入输出变量的取值用小写字母表示，输入变量的取值写作x，输出变量的取值写作y。</p>
+<p>变量可以是标量或者向量，都用相同类型字母表示。除特别声明外，默认为列向量。</p>
+<p><font size=4, color=#008000><strong>联合概率分布</strong></font></p>
+<p>监督学习假设输入与输出的随机变量X和Y遵循联合概率分布$ P(X,Y) $</p>
+<p><font size=4, color=#008000><strong>假设空间</strong></font><br>就</p>
+<p><font size=4, color=#008000><strong>问题的形式化</strong></font></p>
+<h4 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h4><h4 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h4><h4 id="半监督学习与主动学习"><a href="#半监督学习与主动学习" class="headerlink" title="半监督学习与主动学习"></a>半监督学习与主动学习</h4><h2 id="按模型分类"><a href="#按模型分类" class="headerlink" title="按模型分类"></a>按模型分类</h2><h4 id="概率模型与非概率模型"><a href="#概率模型与非概率模型" class="headerlink" title="概率模型与非概率模型"></a>概率模型与非概率模型</h4><h4 id="线性模型与非线性模型"><a href="#线性模型与非线性模型" class="headerlink" title="线性模型与非线性模型"></a>线性模型与非线性模型</h4><h4 id="参数化模型与非参数化模型"><a href="#参数化模型与非参数化模型" class="headerlink" title="参数化模型与非参数化模型"></a>参数化模型与非参数化模型</h4><h2 id="按算法分类"><a href="#按算法分类" class="headerlink" title="按算法分类"></a>按算法分类</h2><h4 id="在线学习"><a href="#在线学习" class="headerlink" title="在线学习"></a>在线学习</h4><h4 id="批量学习"><a href="#批量学习" class="headerlink" title="批量学习"></a>批量学习</h4><h2 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h2><h4 id="贝叶斯学习"><a href="#贝叶斯学习" class="headerlink" title="贝叶斯学习"></a>贝叶斯学习</h4><h4 id="核方法"><a href="#核方法" class="headerlink" title="核方法"></a>核方法</h4>]]></content>
       <categories>
-        <category>西瓜书</category>
+        <category>统计学习方法</category>
       </categories>
       <tags>
         <tag>Machine learning</tag>
