@@ -23,16 +23,24 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CC">
-<meta property="og:url" content="http://example.com/categories/%E8%A5%BF%E7%93%9C%E4%B9%A6/index.html">
+  <meta name="description" content="卡诺图 karnaugh map卡诺图是由美国工程师karnaugh首先提出的一种用来描述逻辑函数的特殊方格图。在这个方格图中，每个方格代表逻辑函数的一个最小项，而且几何相邻（在几何位置上，上下或左右相邻）的小方格具有逻辑相邻性，即两相邻小方格代表的最小项只有一个变量取值不同。 对于有n个变量的逻辑函数，其最小项有$2^n$个。因此该逻辑函数的卡诺图又$2^n$个小方格构成，每个小方格都满足逻辑相">
+<meta property="og:type" content="article">
+<meta property="og:title" content="karnaugh map">
+<meta property="og:url" content="http://example.com/2020/10/02/%E5%8D%A1%E8%AF%BA%E5%9B%BE/index.html">
 <meta property="og:site_name" content="CC">
+<meta property="og:description" content="卡诺图 karnaugh map卡诺图是由美国工程师karnaugh首先提出的一种用来描述逻辑函数的特殊方格图。在这个方格图中，每个方格代表逻辑函数的一个最小项，而且几何相邻（在几何位置上，上下或左右相邻）的小方格具有逻辑相邻性，即两相邻小方格代表的最小项只有一个变量取值不同。 对于有n个变量的逻辑函数，其最小项有$2^n$个。因此该逻辑函数的卡诺图又$2^n$个小方格构成，每个小方格都满足逻辑相">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/Users/qianqian/CeliaChien/blog/source/karnaughmap.jpg">
+<meta property="article:published_time" content="2020-10-02T04:46:25.000Z">
+<meta property="article:modified_time" content="2020-10-03T04:18:40.079Z">
 <meta property="article:author" content="CeliaChien">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/Users/qianqian/CeliaChien/blog/source/karnaughmap.jpg">
 
 
-<link rel="canonical" href="http://example.com/categories/%E8%A5%BF%E7%93%9C%E4%B9%A6/">
+<link rel="canonical" href="http://example.com/2020/10/02/%E5%8D%A1%E8%AF%BA%E5%9B%BE/">
 
 
 <script data-pjax class="page-configurations">
@@ -40,12 +48,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Category: 西瓜书 | CC</title>
+  <title>karnaugh map | CC</title>
   
 
 
@@ -198,7 +206,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -210,6 +218,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%A1%E8%AF%BA%E5%9B%BE-karnaugh-map"><span class="nav-number">1.</span> <span class="nav-text">卡诺图 karnaugh map</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -288,94 +297,149 @@
 </noscript>
 
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
       
 
       
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">西瓜书
-          <small>Category</small>
-        </h2>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/02/%E5%8D%A1%E8%AF%BA%E5%9B%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="CeliaChien">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CC">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          karnaugh map<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/_posts/%E5%8D%A1%E8%AF%BA%E5%9B%BE.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-10-02 12:46:25" itemprop="dateCreated datePublished" datetime="2020-10-02T12:46:25+08:00">2020-10-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-10-03 12:18:40" itemprop="dateModified" datetime="2020-10-03T12:18:40+08:00">2020-10-03</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ACM-C/" itemprop="url" rel="index"><span itemprop="name">ACM&C++</span></a>
+        </span>
+    </span>
+
+  
       </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>260</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="卡诺图-karnaugh-map"><a href="#卡诺图-karnaugh-map" class="headerlink" title="卡诺图 karnaugh map"></a>卡诺图 karnaugh map</h1><p>卡诺图是由美国工程师karnaugh首先提出的一种用来描述逻辑函数的特殊方格图。<br>在这个方格图中，每个方格代表逻辑函数的一个最小项，而且几何相邻（在几何位置上，上下或左右相邻）的小方格具有逻辑相邻性，即两相邻小方格代表的最小项只有一个变量取值不同。</p>
+<p>对于有n个变量的逻辑函数，其最小项有$2^n$个。<br>因此该逻辑函数的卡诺图又$2^n$个小方格构成，每个小方格都满足逻辑相邻项的要求。</p>
+<a id="more"></a>
+
+
+<ul>
+<li>例子</li>
+<li>画出逻辑函数的卡诺图</li>
+<li>$F(A,B,C,D)= \sum {m(0,1,2,5,7,8,10,11,14,15)}$</li>
+</ul>
+<p><img src="/Users/qianqian/CeliaChien/blog/source/karnaughmap.jpg" alt="karnaughmap.jpg"></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-09-30T13:46:25+08:00"
-              content="2020-09-30">
-          09-30
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/09/30/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%89%EF%BC%89/" itemprop="url">
-            <span itemprop="name">西瓜书——NFL&History&Appln</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          
 
-      
-    </header>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>CeliaChien
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://example.com/2020/10/02/%E5%8D%A1%E8%AF%BA%E5%9B%BE/" title="karnaugh map">http://example.com/2020/10/02/卡诺图/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/leetcode/" rel="tag"><i class="fa fa-tag"></i> leetcode</a>
+              <a href="/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/27/Leetcode/" rel="prev" title="Leetcode">
+                  <i class="fa fa-chevron-left"></i> Leetcode
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/09/30/math1/" rel="next" title="Math Quiz 1">
+                  Math Quiz 1 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-09-29T13:46:25+08:00"
-              content="2020-09-29">
-          09-29
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/09/29/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%BA%8C%EF%BC%89/" itemprop="url">
-            <span itemprop="name">西瓜书——假设空间与归纳偏好</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-09-28T01:46:25+08:00"
-              content="2020-09-28">
-          09-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/09/28/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="url">
-            <span itemprop="name">西瓜书——基本术语</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
-
-  
 
 
 
@@ -517,6 +581,50 @@ document.addEventListener('pjax:success', () => {
   
 
   
+      <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = '//cdn.jsdelivr.net/npm/mathjax@3.1.0/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

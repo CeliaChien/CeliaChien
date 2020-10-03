@@ -1,6 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode</title>
+    <url>/2022/09/27/Leetcode/</url>
+    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
+<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
+<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
+<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Computer Vision Week 1 Introduction</title>
+    <url>/2020/09/29/CV1/</url>
+    <content><![CDATA[<h1 id="What-is-computer-vision"><a href="#What-is-computer-vision" class="headerlink" title="What is computer vision"></a>What is computer vision</h1><blockquote>
+<p>Extracting description of images</p>
+</blockquote>
+<h2 id="Related-Disciplines"><a href="#Related-Disciplines" class="headerlink" title="Related Disciplines"></a>Related Disciplines</h2><ul>
+<li>Image processing</li>
+<li>Computer graphic</li>
+</ul>
+<blockquote>
+<p>image processing: image -&gt; image<br>computer vision: image -&gt; description<br>computer graphics: description -&gt; image</p>
+</blockquote>
+<a id="more"></a>
+
+<ul>
+<li>Pattern recognition<ul>
+<li>recognnising and classifying stimuli in images and other datasets.</li>
+</ul>
+</li>
+<li>Photogrammetry<ul>
+<li>obtain measurements from images</li>
+</ul>
+</li>
+<li>Biological vision<ul>
+<li>understanding visual perception in humans and animals(studied in Neuroscience, Psychology, Psychophysics)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h2><ul>
+<li>Hard writing detection</li>
+<li>ORC: optical character recognition</li>
+<li>Face detection/Smile detection</li>
+<li>Face recognition</li>
+<li>Biometrics: Iris Recognition, Fingerprint Recognition</li>
+<li>People tracking/Object tracking</li>
+<li>Content-base Image Retrieval</li>
+<li>Reverse image search</li>
+<li>Landmark recognition</li>
+<li>Driver assistance</li>
+<li>Space exploration</li>
+<li>Medical imaging</li>
+<li>3D models from images</li>
+</ul>
+<h1 id="Why-is-vision-difficult"><a href="#Why-is-vision-difficult" class="headerlink" title="Why is vision difficult"></a>Why is vision difficult</h1><blockquote>
+<p>~ 50% cerebral cortex is devoted to vision<br>vision consumes ~10% of entire human energy consumption.</p>
+</blockquote>
+<h2 id="Major-challenges"><a href="#Major-challenges" class="headerlink" title="Major challenges"></a>Major challenges</h2><ul>
+<li>One image -&gt; many interpretations<ul>
+<li>problem is ill-posed</li>
+</ul>
+</li>
+<li>One object -&gt; many images<ul>
+<li>problem is exponentially large</li>
+</ul>
+</li>
+</ul>
+<h2 id="Vision-is-an-ill-posed-problem"><a href="#Vision-is-an-ill-posed-problem" class="headerlink" title="Vision is an ill-posed problem"></a>Vision is an ill-posed problem</h2><blockquote>
+<p>mapping from world to image is unique(well-posed)<br>This is a “forward problem”<br>mapping form image to world is <strong>NOT</strong> unique(ill-posed)<br>This is an “inverse problem”</p>
+</blockquote>
+<p>There are mulitple interpretations of an image</p>
+<ul>
+<li>Vision scales exponentially: one object can generate many images</li>
+<li>Viewpoint affect appearance</li>
+<li>Illumination affects appearance</li>
+<li>Non-rigid deformations affect appearance</li>
+<li>Within-category variation in appearance</li>
+<li>Discrimination despite variation</li>
+<li>Other objects affect appearance</li>
+</ul>
+<h1 id="Tackling-the-problem-of-vision"><a href="#Tackling-the-problem-of-vision" class="headerlink" title="Tackling the problem of vision"></a>Tackling the problem of vision</h1><blockquote>
+<p>Biological approach<br>Computational approach</p>
+</blockquote>
+<h2 id="Need-for-constraints"><a href="#Need-for-constraints" class="headerlink" title="Need for constraints"></a>Need for constraints</h2><p>To solve these challenges we need to employ constraints/prior/expectations</p>
+<ul>
+<li>Effects of inference:<ul>
+<li>illumination</li>
+<li>perspective</li>
+<li>prior knowledge: learned familarity with certain objects/ knowledge of image formation process in general</li>
+<li>prior exposure/motion/priming: recent/preceding sensory input</li>
+<li>current context: surrounding visual scene(and concurrent input in other sensory modalities)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Two-Main-Approaches"><a href="#Two-Main-Approaches" class="headerlink" title="Two Main Approaches"></a>Two Main Approaches</h2><ul>
+<li>Engineering Approach<ul>
+<li>determine what the system needs to do(requirements)</li>
+<li>design a system to perform this task</li>
+<li>implement the system, test and refine it.</li>
+<li>“top down”: start with computational theory annd fill out details</li>
+</ul>
+</li>
+<li>Reverse Engineering Approach<ul>
+<li>find a system that performs the task(e.g. the brain)</li>
+<li>analyse the system to determine how it does it.</li>
+<li>implement a new system using the same mechanisms.</li>
+<li>“bottom -up”: start with mechanisms and build a model.</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Computer Vision</category>
+      </categories>
+      <tags>
+        <tag>Computer Vision</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Introduction to Operations Management</title>
     <url>/2020/09/28/OPM1/</url>
     <content><![CDATA[<h1 id="Introduction-to-Operations-Management"><a href="#Introduction-to-Operations-Management" class="headerlink" title="Introduction to Operations Management"></a>Introduction to Operations Management</h1><h2 id="Components-of-an-effective-operations-manufacturing-system"><a href="#Components-of-an-effective-operations-manufacturing-system" class="headerlink" title="Components of an effective operations/manufacturing system"></a>Components of an effective operations/manufacturing system</h2><ol>
@@ -155,67 +280,37 @@
       </tags>
   </entry>
   <entry>
-    <title>Round A 2020 kick start Q1</title>
-    <url>/2020/09/29/Round%20A%202020%20Q1/</url>
-    <content><![CDATA[<h1 id="Round-A-2020-kick-start"><a href="#Round-A-2020-kick-start" class="headerlink" title="Round A 2020 kick start"></a>Round A 2020 kick start</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><blockquote>
-<p>There are N houses for sale. The i-th house costs Ai dollars to buy. You have a budget of B dollars to spend.</p>
-</blockquote>
-<blockquote>
-<p>What is the maximum number of houses you can buy?</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input gives the number of test cases, T. T test cases follow. Each test case begins with a single line containing the two integers N and B. The second line contains N integers. The i-th integer is Ai, the cost of the i-th house.</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the maximum number of houses you can buy.</p>
-<h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
-<li><p>Time limit: 15 seconds per test set.</p>
-</li>
-<li><p>Memory limit: 1GB.<br>1 ≤ T ≤ 100.<br>1 ≤ B ≤ 105.<br>1 ≤ Ai ≤ 1000, for all i.</p>
-</li>
-<li><p><strong>Test set 1</strong><br>1 ≤ N ≤ 100.</p>
-</li>
-<li><p><strong>Test set 2</strong><br>1 ≤ N ≤ 105.</p>
-</li>
-</ul>
-<p>#Sample</p>
+    <title>weekly contest 208</title>
+    <url>/2020/09/27/weekly%20contest%20208/</url>
+    <content><![CDATA[<h1 id="写作前面"><a href="#写作前面" class="headerlink" title="写作前面"></a>写作前面</h1><p>主要四道题目，1道easy，1道medium，2道hard。<br>其中前两道题干略长，需要理解，但写出来并不复杂，难在理解题意；<br>后两道略偏数据结构和算法。<br>主要题目如下：</p>
 <ul>
-<li><p><strong>Input</strong></p>
-<blockquote>
-<p>3<br>4 100<br>20 90 40 90<br>4 50<br>30 30 10 10<br>3 300<br>999 999 999</p>
-</blockquote>
-</li>
-<li><p><strong>Output</strong></p>
-<blockquote>
-<p>Case #1: 2<br>Case #2: 3<br>Case #3: 0</p>
-</blockquote>
+<li>Crawler log folder</li>
+<li>Maximum Profit of Operating a Centennial Wheel</li>
+<li>Throne Inheritance</li>
+<li>Maximum Number of Achievable Transfer Requests<a id="more"></a>
+
 </li>
 </ul>
-<p>In Sample Case #1, you have a budget of 100 dollars. You can buy the 1st and 3rd houses for 20 + 40 = 60 dollars.<br>In Sample Case #2, you have a budget of 50 dollars. You can buy the 1st, 3rd and 4th houses for 30 + 10 + 10 = 50 dollars.<br>In Sample Case #3, you have a budget of 300 dollars. You cannot buy any houses (so the answer is 0).<br>Note: Unlike previous editions, in Kick Start 2020, all test sets are visible verdict test sets, meaning you receive instant feedback upon submission.</p>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ar array</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, b, a[<span class="number">100000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; b;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    sort(a, a+n);</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&gt;=a[i]) &#123;</span><br><span class="line">            b-=a[i];</span><br><span class="line">            ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t, i=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot;: &quot;</span>;</span><br><span class="line">        solve();</span><br><span class="line">        ++i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Kick start</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-        <tag>Kick start</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode</title>
-    <url>/2022/09/27/Leetcode/</url>
-    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
-<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
-<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
-<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
+<h1 id="Crawler-log-folder"><a href="#Crawler-log-folder" class="headerlink" title="Crawler log folder"></a>Crawler log folder</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/crawler-log-folder/">原题链接</a></p>
+<p>Easy</p>
+<p>解答：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperations</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; logs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">string</span> s: logs)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s==<span class="string">&quot;../&quot;</span>)&#123;<span class="keyword">if</span>(res&gt;<span class="number">0</span>)res--;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s==<span class="string">&quot;./&quot;</span>)&#123;</span><br><span class="line">                res=res;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;res++;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res&gt;=<span class="number">0</span>? res:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Maximum-Profit-of-Operating-a-Centennial-Wheel"><a href="#Maximum-Profit-of-Operating-a-Centennial-Wheel" class="headerlink" title="Maximum Profit of Operating a Centennial Wheel"></a>Maximum Profit of Operating a Centennial Wheel</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/maximum-profit-of-operating-a-centennial-wheel/">原题链接</a></p>
+<p>Medium</p>
+<p>解答：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperationsMaxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; customers, <span class="keyword">int</span> boardingCost, <span class="keyword">int</span> runningCost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = INT_MIN;</span><br><span class="line">        <span class="keyword">int</span> min=<span class="number">0</span>, i=<span class="number">0</span>, remaining= customers[i];</span><br><span class="line">        <span class="keyword">int</span> totalboarded=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> board = remaining&gt;<span class="number">3</span>? <span class="number">4</span>:remaining;</span><br><span class="line">            remaining-= board;</span><br><span class="line">            totalboarded+=board;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i+<span class="number">1</span>&lt;customers.size())&#123;</span><br><span class="line">                remaining +=customers[i+<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">int</span> currentProfit=(totalboarded*boardingCost)-(i*runningCost);</span><br><span class="line">            <span class="keyword">if</span>(currentProfit&gt;maxProfit)&#123;</span><br><span class="line">                min=i;</span><br><span class="line">            &#125;</span><br><span class="line">            maxProfit=max(maxProfit,(totalboarded*boardingCost)-(i*runningCost));</span><br><span class="line">            <span class="keyword">if</span>(remaining==<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit&lt;=<span class="number">0</span>? <span class="number">-1</span>:min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Throne-Inheritance"><a href="#Throne-Inheritance" class="headerlink" title="Throne Inheritance"></a>Throne Inheritance</h1><p><a href="">原题链接</a></p>
+<h1 id="Maximum-Number-of-Achievable-Transfer-Requests"><a href="#Maximum-Number-of-Achievable-Transfer-Requests" class="headerlink" title="Maximum Number of Achievable Transfer Requests"></a>Maximum Number of Achievable Transfer Requests</h1><p><a href="">原题链接</a></p>
 ]]></content>
       <categories>
         <category>Leetcode</category>
       </categories>
       <tags>
+        <tag>Leetcode</tag>
         <tag>Algorithm</tag>
         <tag>C++</tag>
-        <tag>Leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -246,163 +341,26 @@
       </tags>
   </entry>
   <entry>
-    <title>Computer Vision Week 1 Introduction</title>
-    <url>/2020/09/29/CV1/</url>
-    <content><![CDATA[<h1 id="What-is-computer-vision"><a href="#What-is-computer-vision" class="headerlink" title="What is computer vision"></a>What is computer vision</h1><blockquote>
-<p>Extracting description of images</p>
-</blockquote>
-<h2 id="Ralated-Disciplines"><a href="#Ralated-Disciplines" class="headerlink" title="Ralated Disciplines"></a>Ralated Disciplines</h2><ul>
-<li>Image processing</li>
-<li>Computer graphic</li>
-</ul>
-<blockquote>
-<p>image processing: image -&gt; image<br>computer vision: image -&gt; description<br>computer graphics: description -&gt; image</p>
-</blockquote>
+    <title>karnaugh map</title>
+    <url>/2020/10/02/%E5%8D%A1%E8%AF%BA%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="卡诺图-karnaugh-map"><a href="#卡诺图-karnaugh-map" class="headerlink" title="卡诺图 karnaugh map"></a>卡诺图 karnaugh map</h1><p>卡诺图是由美国工程师karnaugh首先提出的一种用来描述逻辑函数的特殊方格图。<br>在这个方格图中，每个方格代表逻辑函数的一个最小项，而且几何相邻（在几何位置上，上下或左右相邻）的小方格具有逻辑相邻性，即两相邻小方格代表的最小项只有一个变量取值不同。</p>
+<p>对于有n个变量的逻辑函数，其最小项有$2^n$个。<br>因此该逻辑函数的卡诺图又$2^n$个小方格构成，每个小方格都满足逻辑相邻项的要求。</p>
 <a id="more"></a>
 
+
 <ul>
-<li>Pattern recognition<ul>
-<li>recognnising and classifying stimuli in images and other datasets.</li>
+<li>例子</li>
+<li>画出逻辑函数的卡诺图</li>
+<li>$F(A,B,C,D)= \sum {m(0,1,2,5,7,8,10,11,14,15)}$</li>
 </ul>
-</li>
-<li>Photogrammetry<ul>
-<li>obtain measurements from images</li>
-</ul>
-</li>
-<li>Biological vision<ul>
-<li>understanding visual perception in humans and animals(studied in Neuroscience, Psychology, Psychophysics)</li>
-</ul>
-</li>
-</ul>
-<h2 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h2><ul>
-<li>Hard writing detection</li>
-<li>ORC: optical character recognition</li>
-<li>Face detection/Smile detection</li>
-<li>Face recognition</li>
-<li>Biometrics: Iris Recognition, Fingerprint Recognition</li>
-<li>People tracking/Object tracking</li>
-<li>Content-base Image Retrieval</li>
-<li>Reverse image search</li>
-<li>Landmark recognition</li>
-<li>Driver assistance</li>
-<li>Space exploration</li>
-<li>Medical imaging</li>
-<li>3D models from images</li>
-</ul>
-<h1 id="Why-is-vision-difficult"><a href="#Why-is-vision-difficult" class="headerlink" title="Why is vision difficult"></a>Why is vision difficult</h1><blockquote>
-<p>~ 50% cerebral cortex is devoted to vision<br>vision consumes ~10% of entire human energy consumption.</p>
-</blockquote>
-<h2 id="Major-challenges"><a href="#Major-challenges" class="headerlink" title="Major challenges"></a>Major challenges</h2><ul>
-<li>One image -&gt; many interpretations<ul>
-<li>problem is ill-posed</li>
-</ul>
-</li>
-<li>One object -&gt; many images<ul>
-<li>problem is exponentially large</li>
-</ul>
-</li>
-</ul>
-<h2 id="Vision-is-an-ill-posed-problem"><a href="#Vision-is-an-ill-posed-problem" class="headerlink" title="Vision is an ill-posed problem"></a>Vision is an ill-posed problem</h2><blockquote>
-<p>mapping from world to image is unique(well-posed)<br>This is a “forward problem”<br>mapping form image to world is <strong>NOT</strong> unique(ill-posed)<br>This is an “inverse problem”</p>
-</blockquote>
-<p>There are mulitple interpretations of an image</p>
-<ul>
-<li>Vision scales exponentially: one object can generate many images</li>
-<li>Viewpoint affect appearance</li>
-<li>Illumination affects appearance</li>
-<li>Non-rigid deformations affect appearance</li>
-<li>Within-category variation in appearance</li>
-<li>Discrimination despite variation</li>
-<li>Other objects affect appearance</li>
-</ul>
-<h1 id="Tackling-the-problem-of-vision"><a href="#Tackling-the-problem-of-vision" class="headerlink" title="Tackling the problem of vision"></a>Tackling the problem of vision</h1><blockquote>
-<p>Biological approach<br>Computational approach</p>
-</blockquote>
-<h2 id="Need-for-constraints"><a href="#Need-for-constraints" class="headerlink" title="Need for constraints"></a>Need for constraints</h2><p>To solve these challenges we need to employ constraints/prior/expectations</p>
-<ul>
-<li>Effects of inference:<ul>
-<li>illumination</li>
-<li>perspective</li>
-<li>prior knowledge: learned familarity with certain objects/ knowledge of image formation process in general</li>
-<li>prior exposure/motion/priming: recent/preceding sensory input</li>
-<li>current context: surrounding visual scene(and concurrent input in other sensory modalities)</li>
-</ul>
-</li>
-</ul>
-<h2 id="Two-Main-Approaches"><a href="#Two-Main-Approaches" class="headerlink" title="Two Main Approaches"></a>Two Main Approaches</h2><ul>
-<li>Engineering Approach<ul>
-<li>determine what the system needs to do(requirements)</li>
-<li>design a system to perform this task</li>
-<li>implement the system, test and refine it.</li>
-<li>“top down”: start with computational theory annd fill out details</li>
-</ul>
-</li>
-<li>Reverse Engineering Approach<ul>
-<li>find a system that performs the task(e.g. the brain)</li>
-<li>analyse the system to determine how it does it.</li>
-<li>implement a new system using the same mechanisms.</li>
-<li>“bottom -up”: start with mechanisms and build a model.</li>
-</ul>
-</li>
-</ul>
+<p><img src="/Users/qianqian/CeliaChien/blog/source/karnaughmap.jpg" alt="karnaughmap.jpg"></p>
 ]]></content>
       <categories>
-        <category>Computer Vision</category>
+        <category>ACM&amp;C++</category>
       </categories>
       <tags>
-        <tag>Computer Vision</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计学习</title>
-    <url>/2020/09/26/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="统计学习"><a href="#统计学习" class="headerlink" title="统计学习"></a>统计学习</h1><blockquote>
-<p>如果一个系统能够通过执行某个过程改进它的性能，这就是学习。——赫尔伯特·西蒙</p>
-</blockquote>
-<h2 id="统计学习的特点"><a href="#统计学习的特点" class="headerlink" title="统计学习的特点"></a>统计学习的特点</h2><h4 id="统计学习定义"><a href="#统计学习定义" class="headerlink" title="统计学习定义"></a>统计学习定义</h4><p>统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测和分析的一门学科。<br>统计学习也可以称为统计机器学习。</p>
-<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><ul>
-<li>统计学习以计算机及网络为平台，是建立在计算机及网络上的；</li>
-<li>统计学习以数据为研究对象，是数据驱动的学科；</li>
-<li>统计学习的目的是对数据进行预测与分析；</li>
-<li>统计学习以方法为中心，统计学习方法构建模型并应用模型进行预测与分析；</li>
-<li>统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等许多领域的交叉学科，并且在发展中逐步形成独自的理论体系与方法论。<a id="more"></a>
-<h2 id="统计学习的对象"><a href="#统计学习的对象" class="headerlink" title="统计学习的对象"></a>统计学习的对象</h2></li>
-</ul>
-<p>统计学习研究的对象是data。它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。注意这里的数据是多样的，可是是计算机及网络上的各种数字、文字、图像、视频、音频数据以及它们的组合。</p>
-<p>统计学习关于数据的基本假设是<strong>同类数据具有一定的统计规律性</strong>，这是统计学习的前提。</p>
-<h2 id="统计学习的目的"><a href="#统计学习的目的" class="headerlink" title="统计学习的目的"></a>统计学习的目的</h2><p>统计学习用于对数据的预测与分析，特别是对未知新数据的预测与分析。对数据的预测可以使计算机更加智能化，或者说使计算机的某些性能得到提高；对数据的分析可以让人们获取新的知识，给人们带来新的发现。</p>
-<p>对数据的预测与分析是通过构建概率统计模型实现的。统计学习总的目标就是考虑学习什么样的模型和如何学习模型，以使模型能对数据进行准确的预测与分析，同时也要考虑尽可能地提高学习效率。</p>
-<h2 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h2><p>统计学习的方法是基于数据构建概率统计模型从而对数据进行预测与分析。统计学习由监督学习、无监督学习和强化学习等组成。</p>
-<p>统计学习的方法可以概括如下：</p>
-<ul>
-<li>从给定的、有限的、用于学习的训练数据集合出发，假设数据是独立同分布产生的；</li>
-<li>并且假设要学习的模型属于某个函数的集合，称为假设空间；</li>
-<li>应用某个评价准则，从假设空间中选取一个最优模型，使它对已知的训练数据以及位置的测试数据在给定的评价准则下有最优的预测；</li>
-<li>最优模型的选择由算法实现。</li>
-</ul>
-<p>这样，统计学习方法包括模型的假设空间、模型选择的准则以及模型学习的算法。称为统计学习方法的三要素，简称为<strong>“模型”</strong>、<strong>“策略”</strong>和<strong>“算法”</strong>。</p>
-<p>实现统计学习方法的步骤如下：</p>
-<ol>
-<li>得到一个有限的训练数据集合；</li>
-<li>确定包含所有可能的模型的假设空间，即学习模型的集合；</li>
-<li>确定模型选择的准则，即学习的策略；</li>
-<li>实现求解最优模型的算法，即学习的算法；</li>
-<li>通过学习方法选择最优模型；</li>
-<li>利用学习的最优模型对新数据进行预测或分析。</li>
-</ol>
-<h2 id="统计学习的研究"><a href="#统计学习的研究" class="headerlink" title="统计学习的研究"></a>统计学习的研究</h2><p>统计学习的研究一般包括统计学习方法、统计学习理论以及统计学习应用三个方面。<br>统计学习<strong>方法</strong>的研究旨在开发<strong>新的学习方法</strong>；<br>统计学习<strong>理论</strong>的研究在于<strong>探求统计学习方法的有效性与效率，以及统计学习的基本理论问题</strong>；<br>统计学习<strong>应用</strong>的研究主要考虑<strong>将统计学习方法应用到实际问题中去，解决实际问题</strong>。</p>
-<h2 id="统计学习的重要性"><a href="#统计学习的重要性" class="headerlink" title="统计学习的重要性"></a>统计学习的重要性</h2><p>统计学习学科在科学技术中的重要性主要体现在以下几个方面：</p>
-<ul>
-<li>统计学习是处理海量数据的有效方法。</li>
-<li>统计学习是计算机智能化的有效手段。</li>
-<li>统计学习是计算机科学发展的一个重要组成部分。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>统计学习方法</category>
-      </categories>
-      <tags>
-        <tag>Machine learning</tag>
+        <tag>leetcode</tag>
+        <tag>math</tag>
       </tags>
   </entry>
   <entry>
@@ -475,82 +433,6 @@
 ]]></content>
       <categories>
         <category>统计学习方法</category>
-      </categories>
-      <tags>
-        <tag>Machine learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>weekly contest 208</title>
-    <url>/2020/09/27/weekly%20contest%20208/</url>
-    <content><![CDATA[<h1 id="写作前面"><a href="#写作前面" class="headerlink" title="写作前面"></a>写作前面</h1><p>主要四道题目，1道easy，1道medium，2道hard。<br>其中前两道题干略长，需要理解，但写出来并不复杂，难在理解题意；<br>后两道略偏数据结构和算法。<br>主要题目如下：</p>
-<ul>
-<li>Crawler log folder</li>
-<li>Maximum Profit of Operating a Centennial Wheel</li>
-<li>Throne Inheritance</li>
-<li>Maximum Number of Achievable Transfer Requests<a id="more"></a>
-
-</li>
-</ul>
-<h1 id="Crawler-log-folder"><a href="#Crawler-log-folder" class="headerlink" title="Crawler log folder"></a>Crawler log folder</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/crawler-log-folder/">原题链接</a></p>
-<p>Easy</p>
-<p>解答：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperations</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; logs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">string</span> s: logs)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s==<span class="string">&quot;../&quot;</span>)&#123;<span class="keyword">if</span>(res&gt;<span class="number">0</span>)res--;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s==<span class="string">&quot;./&quot;</span>)&#123;</span><br><span class="line">                res=res;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;res++;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res&gt;=<span class="number">0</span>? res:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="Maximum-Profit-of-Operating-a-Centennial-Wheel"><a href="#Maximum-Profit-of-Operating-a-Centennial-Wheel" class="headerlink" title="Maximum Profit of Operating a Centennial Wheel"></a>Maximum Profit of Operating a Centennial Wheel</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/maximum-profit-of-operating-a-centennial-wheel/">原题链接</a></p>
-<p>Medium</p>
-<p>解答：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperationsMaxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; customers, <span class="keyword">int</span> boardingCost, <span class="keyword">int</span> runningCost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = INT_MIN;</span><br><span class="line">        <span class="keyword">int</span> min=<span class="number">0</span>, i=<span class="number">0</span>, remaining= customers[i];</span><br><span class="line">        <span class="keyword">int</span> totalboarded=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> board = remaining&gt;<span class="number">3</span>? <span class="number">4</span>:remaining;</span><br><span class="line">            remaining-= board;</span><br><span class="line">            totalboarded+=board;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i+<span class="number">1</span>&lt;customers.size())&#123;</span><br><span class="line">                remaining +=customers[i+<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">int</span> currentProfit=(totalboarded*boardingCost)-(i*runningCost);</span><br><span class="line">            <span class="keyword">if</span>(currentProfit&gt;maxProfit)&#123;</span><br><span class="line">                min=i;</span><br><span class="line">            &#125;</span><br><span class="line">            maxProfit=max(maxProfit,(totalboarded*boardingCost)-(i*runningCost));</span><br><span class="line">            <span class="keyword">if</span>(remaining==<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit&lt;=<span class="number">0</span>? <span class="number">-1</span>:min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="Throne-Inheritance"><a href="#Throne-Inheritance" class="headerlink" title="Throne Inheritance"></a>Throne Inheritance</h1><p><a href="">原题链接</a></p>
-<h1 id="Maximum-Number-of-Achievable-Transfer-Requests"><a href="#Maximum-Number-of-Achievable-Transfer-Requests" class="headerlink" title="Maximum Number of Achievable Transfer Requests"></a>Maximum Number of Achievable Transfer Requests</h1><p><a href="">原题链接</a></p>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-        <tag>C++</tag>
-        <tag>Leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>西瓜书——NFL&amp;History&amp;Appln</title>
-    <url>/2020/09/30/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h1><ul>
-<li>“没有免费的午餐”定理</li>
-<li>ML发展历程</li>
-<li>ML应用现状<a id="more"></a>
-<h1 id="NFL-Theorem"><a href="#NFL-Theorem" class="headerlink" title="NFL Theorem"></a>NFL Theorem</h1></li>
-</ul>
-<h1 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h1><blockquote>
-<p>机器学习是人工智能研究发展到一定阶段的必然产物</p>
-</blockquote>
-<ul>
-<li>20世纪50年代到70年代初<ul>
-<li>人工智能研究处于“推理期”</li>
-<li>人们基于符号知识表示，通过演绎推理技术取得了很大成就；</li>
-</ul>
-</li>
-<li>20世纪70年代中期开始<ul>
-<li>人工智能研究进入了“知识期”</li>
-<li>人们基于符号知识表示，通过获取和利用领域知识来建立专家系统取得了大量成果；</li>
-</ul>
-</li>
-<li>20世纪90年代中期<ul>
-<li>“统计学习”闪亮登场并迅速占领主流舞台</li>
-<li>SVM“支持向量机”，“核方法”</li>
-</ul>
-</li>
-<li>21世纪初<ul>
-<li>连接主义卷土重来</li>
-<li>“深度学习”，“神经网络”</li>
-</ul>
-</li>
-</ul>
-<h1 id="应用现状"><a href="#应用现状" class="headerlink" title="应用现状"></a>应用现状</h1><!-- more -->]]></content>
-      <categories>
-        <category>西瓜书</category>
       </categories>
       <tags>
         <tag>Machine learning</tag>
@@ -664,6 +546,95 @@
       </tags>
   </entry>
   <entry>
+    <title>西瓜书——NFL&amp;History&amp;Appln</title>
+    <url>/2020/09/30/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h1><ul>
+<li>“没有免费的午餐”定理</li>
+<li>ML发展历程</li>
+<li>ML应用现状<a id="more"></a>
+<h1 id="NFL-Theorem"><a href="#NFL-Theorem" class="headerlink" title="NFL Theorem"></a>NFL Theorem</h1></li>
+</ul>
+<h1 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h1><blockquote>
+<p>机器学习是人工智能研究发展到一定阶段的必然产物</p>
+</blockquote>
+<ul>
+<li>20世纪50年代到70年代初<ul>
+<li>人工智能研究处于“推理期”</li>
+<li>人们基于符号知识表示，通过演绎推理技术取得了很大成就；</li>
+</ul>
+</li>
+<li>20世纪70年代中期开始<ul>
+<li>人工智能研究进入了“知识期”</li>
+<li>人们基于符号知识表示，通过获取和利用领域知识来建立专家系统取得了大量成果；</li>
+</ul>
+</li>
+<li>20世纪90年代中期<ul>
+<li>“统计学习”闪亮登场并迅速占领主流舞台</li>
+<li>SVM“支持向量机”，“核方法”</li>
+</ul>
+</li>
+<li>21世纪初<ul>
+<li>连接主义卷土重来</li>
+<li>“深度学习”，“神经网络”</li>
+</ul>
+</li>
+</ul>
+<h1 id="应用现状"><a href="#应用现状" class="headerlink" title="应用现状"></a>应用现状</h1><!-- more -->]]></content>
+      <categories>
+        <category>西瓜书</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Round A 2020 kick start Q1</title>
+    <url>/2020/09/29/Round%20A%202020%20Q1/</url>
+    <content><![CDATA[<h1 id="Round-A-2020-kick-start"><a href="#Round-A-2020-kick-start" class="headerlink" title="Round A 2020 kick start"></a>Round A 2020 kick start</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><blockquote>
+<p>There are N houses for sale. The i-th house costs Ai dollars to buy. You have a budget of B dollars to spend.</p>
+</blockquote>
+<blockquote>
+<p>What is the maximum number of houses you can buy?</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input gives the number of test cases, T. T test cases follow. Each test case begins with a single line containing the two integers N and B. The second line contains N integers. The i-th integer is Ai, the cost of the i-th house.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the maximum number of houses you can buy.</p>
+<h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
+<li><p>Time limit: 15 seconds per test set.</p>
+</li>
+<li><p>Memory limit: 1GB.<br>1 ≤ T ≤ 100.<br>1 ≤ B ≤ 105.<br>1 ≤ Ai ≤ 1000, for all i.</p>
+</li>
+<li><p><strong>Test set 1</strong><br>1 ≤ N ≤ 100.</p>
+</li>
+<li><p><strong>Test set 2</strong><br>1 ≤ N ≤ 105.</p>
+</li>
+</ul>
+<p>#Sample</p>
+<ul>
+<li><p><strong>Input</strong></p>
+<blockquote>
+<p>3<br>4 100<br>20 90 40 90<br>4 50<br>30 30 10 10<br>3 300<br>999 999 999</p>
+</blockquote>
+</li>
+<li><p><strong>Output</strong></p>
+<blockquote>
+<p>Case #1: 2<br>Case #2: 3<br>Case #3: 0</p>
+</blockquote>
+</li>
+</ul>
+<p>In Sample Case #1, you have a budget of 100 dollars. You can buy the 1st and 3rd houses for 20 + 40 = 60 dollars.<br>In Sample Case #2, you have a budget of 50 dollars. You can buy the 1st, 3rd and 4th houses for 30 + 10 + 10 = 50 dollars.<br>In Sample Case #3, you have a budget of 300 dollars. You cannot buy any houses (so the answer is 0).<br>Note: Unlike previous editions, in Kick Start 2020, all test sets are visible verdict test sets, meaning you receive instant feedback upon submission.</p>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ar array</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, b, a[<span class="number">100000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; b;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    sort(a, a+n);</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&gt;=a[i]) &#123;</span><br><span class="line">            b-=a[i];</span><br><span class="line">            ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t, i=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot;: &quot;</span>;</span><br><span class="line">        solve();</span><br><span class="line">        ++i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Kick start</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Kick start</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>西瓜书——假设空间与归纳偏好</title>
     <url>/2020/09/29/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[<h1 id="归纳于演绎"><a href="#归纳于演绎" class="headerlink" title="归纳于演绎"></a>归纳于演绎</h1><p><strong>Induction&amp;&amp;Deduction</strong></p>
@@ -766,6 +737,58 @@
 ]]></content>
       <categories>
         <category>西瓜书</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计学习</title>
+    <url>/2020/09/26/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="统计学习"><a href="#统计学习" class="headerlink" title="统计学习"></a>统计学习</h1><blockquote>
+<p>如果一个系统能够通过执行某个过程改进它的性能，这就是学习。——赫尔伯特·西蒙</p>
+</blockquote>
+<h2 id="统计学习的特点"><a href="#统计学习的特点" class="headerlink" title="统计学习的特点"></a>统计学习的特点</h2><h4 id="统计学习定义"><a href="#统计学习定义" class="headerlink" title="统计学习定义"></a>统计学习定义</h4><p>统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测和分析的一门学科。<br>统计学习也可以称为统计机器学习。</p>
+<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><ul>
+<li>统计学习以计算机及网络为平台，是建立在计算机及网络上的；</li>
+<li>统计学习以数据为研究对象，是数据驱动的学科；</li>
+<li>统计学习的目的是对数据进行预测与分析；</li>
+<li>统计学习以方法为中心，统计学习方法构建模型并应用模型进行预测与分析；</li>
+<li>统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等许多领域的交叉学科，并且在发展中逐步形成独自的理论体系与方法论。<a id="more"></a>
+<h2 id="统计学习的对象"><a href="#统计学习的对象" class="headerlink" title="统计学习的对象"></a>统计学习的对象</h2></li>
+</ul>
+<p>统计学习研究的对象是data。它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。注意这里的数据是多样的，可是是计算机及网络上的各种数字、文字、图像、视频、音频数据以及它们的组合。</p>
+<p>统计学习关于数据的基本假设是<strong>同类数据具有一定的统计规律性</strong>，这是统计学习的前提。</p>
+<h2 id="统计学习的目的"><a href="#统计学习的目的" class="headerlink" title="统计学习的目的"></a>统计学习的目的</h2><p>统计学习用于对数据的预测与分析，特别是对未知新数据的预测与分析。对数据的预测可以使计算机更加智能化，或者说使计算机的某些性能得到提高；对数据的分析可以让人们获取新的知识，给人们带来新的发现。</p>
+<p>对数据的预测与分析是通过构建概率统计模型实现的。统计学习总的目标就是考虑学习什么样的模型和如何学习模型，以使模型能对数据进行准确的预测与分析，同时也要考虑尽可能地提高学习效率。</p>
+<h2 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h2><p>统计学习的方法是基于数据构建概率统计模型从而对数据进行预测与分析。统计学习由监督学习、无监督学习和强化学习等组成。</p>
+<p>统计学习的方法可以概括如下：</p>
+<ul>
+<li>从给定的、有限的、用于学习的训练数据集合出发，假设数据是独立同分布产生的；</li>
+<li>并且假设要学习的模型属于某个函数的集合，称为假设空间；</li>
+<li>应用某个评价准则，从假设空间中选取一个最优模型，使它对已知的训练数据以及位置的测试数据在给定的评价准则下有最优的预测；</li>
+<li>最优模型的选择由算法实现。</li>
+</ul>
+<p>这样，统计学习方法包括模型的假设空间、模型选择的准则以及模型学习的算法。称为统计学习方法的三要素，简称为<strong>“模型”</strong>、<strong>“策略”</strong>和<strong>“算法”</strong>。</p>
+<p>实现统计学习方法的步骤如下：</p>
+<ol>
+<li>得到一个有限的训练数据集合；</li>
+<li>确定包含所有可能的模型的假设空间，即学习模型的集合；</li>
+<li>确定模型选择的准则，即学习的策略；</li>
+<li>实现求解最优模型的算法，即学习的算法；</li>
+<li>通过学习方法选择最优模型；</li>
+<li>利用学习的最优模型对新数据进行预测或分析。</li>
+</ol>
+<h2 id="统计学习的研究"><a href="#统计学习的研究" class="headerlink" title="统计学习的研究"></a>统计学习的研究</h2><p>统计学习的研究一般包括统计学习方法、统计学习理论以及统计学习应用三个方面。<br>统计学习<strong>方法</strong>的研究旨在开发<strong>新的学习方法</strong>；<br>统计学习<strong>理论</strong>的研究在于<strong>探求统计学习方法的有效性与效率，以及统计学习的基本理论问题</strong>；<br>统计学习<strong>应用</strong>的研究主要考虑<strong>将统计学习方法应用到实际问题中去，解决实际问题</strong>。</p>
+<h2 id="统计学习的重要性"><a href="#统计学习的重要性" class="headerlink" title="统计学习的重要性"></a>统计学习的重要性</h2><p>统计学习学科在科学技术中的重要性主要体现在以下几个方面：</p>
+<ul>
+<li>统计学习是处理海量数据的有效方法。</li>
+<li>统计学习是计算机智能化的有效手段。</li>
+<li>统计学习是计算机科学发展的一个重要组成部分。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
       </categories>
       <tags>
         <tag>Machine learning</tag>
