@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Leetcode</title>
-    <url>/2022/09/27/Leetcode/</url>
-    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
-<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
-<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
-<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Leetcode</tag>
-        <tag>Algorithm</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Computer Vision Week 1 Introduction</title>
     <url>/2020/09/29/CV1/</url>
     <content><![CDATA[<h1 id="What-is-computer-vision"><a href="#What-is-computer-vision" class="headerlink" title="What is computer vision"></a>What is computer vision</h1><blockquote>
@@ -126,6 +109,23 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode</title>
+    <url>/2022/09/27/Leetcode/</url>
+    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
+<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
+<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
+<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Introduction to Operations Management</title>
     <url>/2020/09/28/OPM1/</url>
     <content><![CDATA[<h1 id="Introduction-to-Operations-Management"><a href="#Introduction-to-Operations-Management" class="headerlink" title="Introduction to Operations Management"></a>Introduction to Operations Management</h1><h2 id="Components-of-an-effective-operations-manufacturing-system"><a href="#Components-of-an-effective-operations-manufacturing-system" class="headerlink" title="Components of an effective operations/manufacturing system"></a>Components of an effective operations/manufacturing system</h2><ol>
@@ -218,25 +218,51 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/09/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>Round A 2020 kick start Q1</title>
+    <url>/2020/09/29/Round%20A%202020%20Q1/</url>
+    <content><![CDATA[<h1 id="Round-A-2020-kick-start"><a href="#Round-A-2020-kick-start" class="headerlink" title="Round A 2020 kick start"></a>Round A 2020 kick start</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><blockquote>
+<p>There are N houses for sale. The i-th house costs Ai dollars to buy. You have a budget of B dollars to spend.</p>
+</blockquote>
+<blockquote>
+<p>What is the maximum number of houses you can buy?</p>
+</blockquote>
+<a id="more"></a>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input gives the number of test cases, T. T test cases follow. Each test case begins with a single line containing the two integers N and B. The second line contains N integers. The i-th integer is Ai, the cost of the i-th house.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the maximum number of houses you can buy.</p>
+<h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
+<li><p>Time limit: 15 seconds per test set.</p>
+</li>
+<li><p>Memory limit: 1GB.<br>1 ≤ T ≤ 100.<br>1 ≤ B ≤ 105.<br>1 ≤ Ai ≤ 1000, for all i.</p>
+</li>
+<li><p><strong>Test set 1</strong><br>1 ≤ N ≤ 100.</p>
+</li>
+<li><p><strong>Test set 2</strong><br>1 ≤ N ≤ 105.</p>
+</li>
+</ul>
+<p>#Sample</p>
+<ul>
+<li><p><strong>Input</strong></p>
+<blockquote>
+<p>3<br>4 100<br>20 90 40 90<br>4 50<br>30 30 10 10<br>3 300<br>999 999 999</p>
+</blockquote>
+</li>
+<li><p><strong>Output</strong></p>
+<blockquote>
+<p>Case #1: 2<br>Case #2: 3<br>Case #3: 0</p>
+</blockquote>
+</li>
+</ul>
+<p>In Sample Case #1, you have a budget of 100 dollars. You can buy the 1st and 3rd houses for 20 + 40 = 60 dollars.<br>In Sample Case #2, you have a budget of 50 dollars. You can buy the 1st, 3rd and 4th houses for 30 + 10 + 10 = 50 dollars.<br>In Sample Case #3, you have a budget of 300 dollars. You cannot buy any houses (so the answer is 0).<br>Note: Unlike previous editions, in Kick Start 2020, all test sets are visible verdict test sets, meaning you receive instant feedback upon submission.</p>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ar array</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, b, a[<span class="number">100000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; b;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    sort(a, a+n);</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&gt;=a[i]) &#123;</span><br><span class="line">            b-=a[i];</span><br><span class="line">            ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t, i=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot;: &quot;</span>;</span><br><span class="line">        solve();</span><br><span class="line">        ++i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>Kick start</category>
       </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Kick start</tag>
+      </tags>
   </entry>
   <entry>
     <title>Union Find</title>
@@ -280,38 +306,95 @@
       </tags>
   </entry>
   <entry>
-    <title>weekly contest 208</title>
-    <url>/2020/09/27/weekly%20contest%20208/</url>
-    <content><![CDATA[<h1 id="写作前面"><a href="#写作前面" class="headerlink" title="写作前面"></a>写作前面</h1><p>主要四道题目，1道easy，1道medium，2道hard。<br>其中前两道题干略长，需要理解，但写出来并不复杂，难在理解题意；<br>后两道略偏数据结构和算法。<br>主要题目如下：</p>
+    <title>biweekly contest 36</title>
+    <url>/2020/10/03/biweekly%20contest%2036/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>一共四题，1题easy，2题medium，1题hard<br>第一道，简单的系统设计题，要清楚object function；<br>第二道，同样应用题，但是通过率不高；<br>第三道，给出制定行和&amp;列和的矩阵；<br>第四道，</p>
 <ul>
-<li>Crawler log folder</li>
-<li>Maximum Profit of Operating a Centennial Wheel</li>
-<li>Throne Inheritance</li>
-<li>Maximum Number of Achievable Transfer Requests<a id="more"></a>
-
-</li>
+<li>Design Parking System</li>
+<li>Alert Using Same Key-Card Three or More Times in a One Hour Period</li>
+<li>Find Valid Matrix Given Row and Column Sums</li>
+<li>Find Servers That Handled Most Number of Requests<a id="more"></a>
+<h1 id="Design-Parking-System"><a href="#Design-Parking-System" class="headerlink" title="Design Parking System"></a>Design Parking System</h1><a href="https://leetcode.com/contest/biweekly-contest-36/problems/design-parking-system/">原题链接</a></li>
 </ul>
-<h1 id="Crawler-log-folder"><a href="#Crawler-log-folder" class="headerlink" title="Crawler log folder"></a>Crawler log folder</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/crawler-log-folder/">原题链接</a></p>
-<p>Easy</p>
-<p>解答：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperations</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; logs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">string</span> s: logs)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s==<span class="string">&quot;../&quot;</span>)&#123;<span class="keyword">if</span>(res&gt;<span class="number">0</span>)res--;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s==<span class="string">&quot;./&quot;</span>)&#123;</span><br><span class="line">                res=res;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;res++;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res&gt;=<span class="number">0</span>? res:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>解法：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParkingSystem</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ps;</span><br><span class="line">    ParkingSystem(<span class="keyword">int</span> big, <span class="keyword">int</span> medium, <span class="keyword">int</span> small) &#123;</span><br><span class="line">        ps.push_back(big);</span><br><span class="line">        ps.push_back(medium);</span><br><span class="line">        ps.push_back(small);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">addCar</span><span class="params">(<span class="keyword">int</span> carType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ps[carType<span class="number">-1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            ps[carType<span class="number">-1</span>]--;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h1 id="Maximum-Profit-of-Operating-a-Centennial-Wheel"><a href="#Maximum-Profit-of-Operating-a-Centennial-Wheel" class="headerlink" title="Maximum Profit of Operating a Centennial Wheel"></a>Maximum Profit of Operating a Centennial Wheel</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/maximum-profit-of-operating-a-centennial-wheel/">原题链接</a></p>
-<p>Medium</p>
-<p>解答：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperationsMaxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; customers, <span class="keyword">int</span> boardingCost, <span class="keyword">int</span> runningCost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = INT_MIN;</span><br><span class="line">        <span class="keyword">int</span> min=<span class="number">0</span>, i=<span class="number">0</span>, remaining= customers[i];</span><br><span class="line">        <span class="keyword">int</span> totalboarded=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> board = remaining&gt;<span class="number">3</span>? <span class="number">4</span>:remaining;</span><br><span class="line">            remaining-= board;</span><br><span class="line">            totalboarded+=board;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i+<span class="number">1</span>&lt;customers.size())&#123;</span><br><span class="line">                remaining +=customers[i+<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">int</span> currentProfit=(totalboarded*boardingCost)-(i*runningCost);</span><br><span class="line">            <span class="keyword">if</span>(currentProfit&gt;maxProfit)&#123;</span><br><span class="line">                min=i;</span><br><span class="line">            &#125;</span><br><span class="line">            maxProfit=max(maxProfit,(totalboarded*boardingCost)-(i*runningCost));</span><br><span class="line">            <span class="keyword">if</span>(remaining==<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit&lt;=<span class="number">0</span>? <span class="number">-1</span>:min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="Throne-Inheritance"><a href="#Throne-Inheritance" class="headerlink" title="Throne Inheritance"></a>Throne Inheritance</h1><p><a href="">原题链接</a></p>
-<h1 id="Maximum-Number-of-Achievable-Transfer-Requests"><a href="#Maximum-Number-of-Achievable-Transfer-Requests" class="headerlink" title="Maximum Number of Achievable Transfer Requests"></a>Maximum Number of Achievable Transfer Requests</h1><p><a href="">原题链接</a></p>
+<h1 id="Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period"><a href="#Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period" class="headerlink" title="Alert Using Same Key-Card Three or More Times in a One Hour Period"></a>Alert Using Same Key-Card Three or More Times in a One Hour Period</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/">原题链接</a><br>解法：</p>
+<h1 id="Find-Valid-Matrix-Given-Row-and-Column-Sums"><a href="#Find-Valid-Matrix-Given-Row-and-Column-Sums" class="headerlink" title="Find Valid Matrix Given Row and Column Sums"></a>Find Valid Matrix Given Row and Column Sums</h1><p><a href="https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/">原题链接</a><br>解法：Greedy</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">restoreMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; col)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = row.size(), n = col.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">A</span><span class="params">(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; n; ++j) &#123;</span><br><span class="line">                A[i][j] = min(row[i], col[j]);</span><br><span class="line">                row[i] -= A[i][j];</span><br><span class="line">                col[j] -= A[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Time: O(mn)<br>Space: O(mn)</p>
+<h1 id="Find-Servers-That-Handled-Most-Number-of-Requests"><a href="#Find-Servers-That-Handled-Most-Number-of-Requests" class="headerlink" title="Find Servers That Handled Most Number of Requests"></a>Find Servers That Handled Most Number of Requests</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/find-servers-that-handled-most-number-of-requests/">原题链接</a></p>
 ]]></content>
       <categories>
         <category>Leetcode</category>
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>Algorithm</tag>
-        <tag>C++</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Greedy</title>
+    <url>/2020/10/04/greedy/</url>
+    <content><![CDATA[<h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><p>在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，做出的是某种意义上的局部最优解。</p>
+<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><ul>
+<li>建立数学模型来描述问题；</li>
+<li>把求解的问题分成若干个子问题；</li>
+<li>对每个子问题求解，得到子问题的局部最优解；</li>
+<li>把子问题的解局部最优解合成原来解问题的一个解。<a id="more"></a>
+
+</li>
+</ul>
+<h1 id="要素"><a href="#要素" class="headerlink" title="要素"></a>要素</h1><ul>
+<li>贪心的选择<ul>
+<li>仅仅依据当前已有的信息做出选择，并且以后都不会改变这次选择。（区别与动态规划）</li>
+</ul>
+</li>
+<li>最优子结构<ul>
+<li>当一个问题的最优解包括其子问题的最优解时，称此问题具有最优子结构性质。</li>
+<li>这个性质和动态规划的一样，最优子结构性质是可用动态规划算法或贪心算法求解的关键特征。</li>
+</ul>
+</li>
+</ul>
+<h1 id="典型应用"><a href="#典型应用" class="headerlink" title="典型应用"></a>典型应用</h1><ul>
+<li>背包问题</li>
+<li>Huffman编码</li>
+<li>单源最短路径</li>
+<li>prim算法</li>
+<li>kruskal算法</li>
+</ul>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2>]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/09/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="other-problem"><a href="#other-problem" class="headerlink" title="other problem"></a>other problem</h3><p>when server is not running</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsof -i :4000</span><br><span class="line">$ <span class="built_in">kill</span> -9 PID</span><br></pre></td></tr></table></figure>
+
+<h2 id="How-to-insert-a-mathjax-code"><a href="#How-to-insert-a-mathjax-code" class="headerlink" title="How to insert a mathjax code"></a>How to insert a mathjax code</h2><p>More info: <a href="https://www.jianshu.com/p/a0aa94ef8ab2">mathjax code</a></p>
+<h2 id="How-to-insert-a-img-pdf-video"><a href="#How-to-insert-a-img-pdf-video" class="headerlink" title="How to insert a img/pdf/video"></a>How to insert a img/pdf/video</h2><p>More info: <a href="https://hexo.io/docs/tag-plugins#Include-Assets">insert media</a></p>
+<h2 id="About-more-button"><a href="#About-more-button" class="headerlink" title="About more button"></a>About more button</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
   </entry>
   <entry>
     <title>Math Quiz 1</title>
@@ -344,7 +427,7 @@
     <title>karnaugh map</title>
     <url>/2020/10/02/%E5%8D%A1%E8%AF%BA%E5%9B%BE/</url>
     <content><![CDATA[<h1 id="卡诺图-karnaugh-map"><a href="#卡诺图-karnaugh-map" class="headerlink" title="卡诺图 karnaugh map"></a>卡诺图 karnaugh map</h1><p>卡诺图是由美国工程师karnaugh首先提出的一种用来描述逻辑函数的特殊方格图。<br>在这个方格图中，每个方格代表逻辑函数的一个最小项，而且几何相邻（在几何位置上，上下或左右相邻）的小方格具有逻辑相邻性，即两相邻小方格代表的最小项只有一个变量取值不同。</p>
-<p>对于有n个变量的逻辑函数，其最小项有$2^n$个。<br>因此该逻辑函数的卡诺图又$2^n$个小方格构成，每个小方格都满足逻辑相邻项的要求。</p>
+<p>对于有n个变量的逻辑函数，其最小项有$2^n$个。<br>因此该逻辑函数的卡诺图又$2^n$个小方格构成，每个小方格都满足逻辑相邻项的要求。<br>可以运用于逻辑函数的化简。</p>
 <a id="more"></a>
 
 
@@ -353,7 +436,39 @@
 <li>画出逻辑函数的卡诺图</li>
 <li>$F(A,B,C,D)= \sum {m(0,1,2,5,7,8,10,11,14,15)}$</li>
 </ul>
-<p><img src="/Users/qianqian/CeliaChien/blog/source/karnaughmap.jpg" alt="karnaughmap.jpg"></p>
+<img src="/2020/10/02/卡诺图/karnaughmap.jpg" title="karnaugh map" width="250" height="200">
+
+<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="二灯游戏"><a href="#二灯游戏" class="headerlink" title="二灯游戏"></a>二灯游戏</h2><p>一个游戏机有两个灯，一黄一绿，它们忽闪忽灭，你必须在出现以下情况的时候迅速按下游戏机：</p>
+<ul>
+<li>绿灯灭，黄灯亮</li>
+<li>绿灯、黄灯都灭</li>
+<li>绿灯、黄灯都亮</li>
+</ul>
+<p>解题思路：</p>
+<ol>
+<li>首先定义两个基本的命题</li>
+</ol>
+<ul>
+<li>命题A：绿灯亮</li>
+<li>命题B：黄灯亮</li>
+</ul>
+<ol start="2">
+<li>画出卡诺图</li>
+</ol>
+<img src="/2020/10/02/卡诺图/1.jpg" width="250" height="200">
+
+<ul>
+<li>A为绿灯，0和1分别表示该灯的状态；</li>
+<li>B为黄灯，同理。<br>根据游戏规则的3种情况，分别对应卡诺图种的：00、01、11</li>
+</ul>
+<p>根据卡诺图每格具备相邻性的特点，使用1<em>1、1</em>2、2<em>2、4</em>4的网格圈出（仅能使用2^n个格子去圈）</p>
+<img src="/2020/10/02/卡诺图/2.jpg" width="250" height="200">
+
+<ol start="3">
+<li>卡诺图化简</li>
+</ol>
+<p>根据上图得出式子：(~A~B+ ~AB) + （~AB+AB）= ~A + B  （~A表示A反）</p>
+<p>由此得出只要满足 ~AV(V表示或)B ，即绿灯灭 或者 黄灯亮即可按下按钮</p>
 ]]></content>
       <categories>
         <category>ACM&amp;C++</category>
@@ -361,6 +476,92 @@
       <tags>
         <tag>leetcode</tag>
         <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计学习</title>
+    <url>/2020/09/26/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="统计学习"><a href="#统计学习" class="headerlink" title="统计学习"></a>统计学习</h1><blockquote>
+<p>如果一个系统能够通过执行某个过程改进它的性能，这就是学习。——赫尔伯特·西蒙</p>
+</blockquote>
+<h2 id="统计学习的特点"><a href="#统计学习的特点" class="headerlink" title="统计学习的特点"></a>统计学习的特点</h2><h4 id="统计学习定义"><a href="#统计学习定义" class="headerlink" title="统计学习定义"></a>统计学习定义</h4><p>统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测和分析的一门学科。<br>统计学习也可以称为统计机器学习。</p>
+<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><ul>
+<li>统计学习以计算机及网络为平台，是建立在计算机及网络上的；</li>
+<li>统计学习以数据为研究对象，是数据驱动的学科；</li>
+<li>统计学习的目的是对数据进行预测与分析；</li>
+<li>统计学习以方法为中心，统计学习方法构建模型并应用模型进行预测与分析；</li>
+<li>统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等许多领域的交叉学科，并且在发展中逐步形成独自的理论体系与方法论。<a id="more"></a>
+<h2 id="统计学习的对象"><a href="#统计学习的对象" class="headerlink" title="统计学习的对象"></a>统计学习的对象</h2></li>
+</ul>
+<p>统计学习研究的对象是data。它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。注意这里的数据是多样的，可是是计算机及网络上的各种数字、文字、图像、视频、音频数据以及它们的组合。</p>
+<p>统计学习关于数据的基本假设是<strong>同类数据具有一定的统计规律性</strong>，这是统计学习的前提。</p>
+<h2 id="统计学习的目的"><a href="#统计学习的目的" class="headerlink" title="统计学习的目的"></a>统计学习的目的</h2><p>统计学习用于对数据的预测与分析，特别是对未知新数据的预测与分析。对数据的预测可以使计算机更加智能化，或者说使计算机的某些性能得到提高；对数据的分析可以让人们获取新的知识，给人们带来新的发现。</p>
+<p>对数据的预测与分析是通过构建概率统计模型实现的。统计学习总的目标就是考虑学习什么样的模型和如何学习模型，以使模型能对数据进行准确的预测与分析，同时也要考虑尽可能地提高学习效率。</p>
+<h2 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h2><p>统计学习的方法是基于数据构建概率统计模型从而对数据进行预测与分析。统计学习由监督学习、无监督学习和强化学习等组成。</p>
+<p>统计学习的方法可以概括如下：</p>
+<ul>
+<li>从给定的、有限的、用于学习的训练数据集合出发，假设数据是独立同分布产生的；</li>
+<li>并且假设要学习的模型属于某个函数的集合，称为假设空间；</li>
+<li>应用某个评价准则，从假设空间中选取一个最优模型，使它对已知的训练数据以及位置的测试数据在给定的评价准则下有最优的预测；</li>
+<li>最优模型的选择由算法实现。</li>
+</ul>
+<p>这样，统计学习方法包括模型的假设空间、模型选择的准则以及模型学习的算法。称为统计学习方法的三要素，简称为<strong>“模型”</strong>、<strong>“策略”</strong>和<strong>“算法”</strong>。</p>
+<p>实现统计学习方法的步骤如下：</p>
+<ol>
+<li>得到一个有限的训练数据集合；</li>
+<li>确定包含所有可能的模型的假设空间，即学习模型的集合；</li>
+<li>确定模型选择的准则，即学习的策略；</li>
+<li>实现求解最优模型的算法，即学习的算法；</li>
+<li>通过学习方法选择最优模型；</li>
+<li>利用学习的最优模型对新数据进行预测或分析。</li>
+</ol>
+<h2 id="统计学习的研究"><a href="#统计学习的研究" class="headerlink" title="统计学习的研究"></a>统计学习的研究</h2><p>统计学习的研究一般包括统计学习方法、统计学习理论以及统计学习应用三个方面。<br>统计学习<strong>方法</strong>的研究旨在开发<strong>新的学习方法</strong>；<br>统计学习<strong>理论</strong>的研究在于<strong>探求统计学习方法的有效性与效率，以及统计学习的基本理论问题</strong>；<br>统计学习<strong>应用</strong>的研究主要考虑<strong>将统计学习方法应用到实际问题中去，解决实际问题</strong>。</p>
+<h2 id="统计学习的重要性"><a href="#统计学习的重要性" class="headerlink" title="统计学习的重要性"></a>统计学习的重要性</h2><p>统计学习学科在科学技术中的重要性主要体现在以下几个方面：</p>
+<ul>
+<li>统计学习是处理海量数据的有效方法。</li>
+<li>统计学习是计算机智能化的有效手段。</li>
+<li>统计学习是计算机科学发展的一个重要组成部分。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>weekly contest 208</title>
+    <url>/2020/09/27/weekly%20contest%20208/</url>
+    <content><![CDATA[<h1 id="写作前面"><a href="#写作前面" class="headerlink" title="写作前面"></a>写作前面</h1><p>主要四道题目，1道easy，1道medium，2道hard。<br>其中前两道题干略长，需要理解，但写出来并不复杂，难在理解题意；<br>后两道略偏数据结构和算法。<br>主要题目如下：</p>
+<ul>
+<li>Crawler log folder</li>
+<li>Maximum Profit of Operating a Centennial Wheel</li>
+<li>Throne Inheritance</li>
+<li>Maximum Number of Achievable Transfer Requests<a id="more"></a>
+
+</li>
+</ul>
+<h1 id="Crawler-log-folder"><a href="#Crawler-log-folder" class="headerlink" title="Crawler log folder"></a>Crawler log folder</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/crawler-log-folder/">原题链接</a></p>
+<p>Easy</p>
+<p>解答：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperations</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; logs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">string</span> s: logs)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s==<span class="string">&quot;../&quot;</span>)&#123;<span class="keyword">if</span>(res&gt;<span class="number">0</span>)res--;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s==<span class="string">&quot;./&quot;</span>)&#123;</span><br><span class="line">                res=res;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;res++;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res&gt;=<span class="number">0</span>? res:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Maximum-Profit-of-Operating-a-Centennial-Wheel"><a href="#Maximum-Profit-of-Operating-a-Centennial-Wheel" class="headerlink" title="Maximum Profit of Operating a Centennial Wheel"></a>Maximum Profit of Operating a Centennial Wheel</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/maximum-profit-of-operating-a-centennial-wheel/">原题链接</a></p>
+<p>Medium</p>
+<p>解答：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperationsMaxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; customers, <span class="keyword">int</span> boardingCost, <span class="keyword">int</span> runningCost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = INT_MIN;</span><br><span class="line">        <span class="keyword">int</span> min=<span class="number">0</span>, i=<span class="number">0</span>, remaining= customers[i];</span><br><span class="line">        <span class="keyword">int</span> totalboarded=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> board = remaining&gt;<span class="number">3</span>? <span class="number">4</span>:remaining;</span><br><span class="line">            remaining-= board;</span><br><span class="line">            totalboarded+=board;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i+<span class="number">1</span>&lt;customers.size())&#123;</span><br><span class="line">                remaining +=customers[i+<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">int</span> currentProfit=(totalboarded*boardingCost)-(i*runningCost);</span><br><span class="line">            <span class="keyword">if</span>(currentProfit&gt;maxProfit)&#123;</span><br><span class="line">                min=i;</span><br><span class="line">            &#125;</span><br><span class="line">            maxProfit=max(maxProfit,(totalboarded*boardingCost)-(i*runningCost));</span><br><span class="line">            <span class="keyword">if</span>(remaining==<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit&lt;=<span class="number">0</span>? <span class="number">-1</span>:min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Throne-Inheritance"><a href="#Throne-Inheritance" class="headerlink" title="Throne Inheritance"></a>Throne Inheritance</h1><p><a href="">原题链接</a></p>
+<h1 id="Maximum-Number-of-Achievable-Transfer-Requests"><a href="#Maximum-Number-of-Achievable-Transfer-Requests" class="headerlink" title="Maximum Number of Achievable Transfer Requests"></a>Maximum Number of Achievable Transfer Requests</h1><p><a href="">原题链接</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -588,53 +789,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Round A 2020 kick start Q1</title>
-    <url>/2020/09/29/Round%20A%202020%20Q1/</url>
-    <content><![CDATA[<h1 id="Round-A-2020-kick-start"><a href="#Round-A-2020-kick-start" class="headerlink" title="Round A 2020 kick start"></a>Round A 2020 kick start</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><blockquote>
-<p>There are N houses for sale. The i-th house costs Ai dollars to buy. You have a budget of B dollars to spend.</p>
-</blockquote>
-<blockquote>
-<p>What is the maximum number of houses you can buy?</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input gives the number of test cases, T. T test cases follow. Each test case begins with a single line containing the two integers N and B. The second line contains N integers. The i-th integer is Ai, the cost of the i-th house.</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the maximum number of houses you can buy.</p>
-<h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
-<li><p>Time limit: 15 seconds per test set.</p>
-</li>
-<li><p>Memory limit: 1GB.<br>1 ≤ T ≤ 100.<br>1 ≤ B ≤ 105.<br>1 ≤ Ai ≤ 1000, for all i.</p>
-</li>
-<li><p><strong>Test set 1</strong><br>1 ≤ N ≤ 100.</p>
-</li>
-<li><p><strong>Test set 2</strong><br>1 ≤ N ≤ 105.</p>
-</li>
-</ul>
-<p>#Sample</p>
-<ul>
-<li><p><strong>Input</strong></p>
-<blockquote>
-<p>3<br>4 100<br>20 90 40 90<br>4 50<br>30 30 10 10<br>3 300<br>999 999 999</p>
-</blockquote>
-</li>
-<li><p><strong>Output</strong></p>
-<blockquote>
-<p>Case #1: 2<br>Case #2: 3<br>Case #3: 0</p>
-</blockquote>
-</li>
-</ul>
-<p>In Sample Case #1, you have a budget of 100 dollars. You can buy the 1st and 3rd houses for 20 + 40 = 60 dollars.<br>In Sample Case #2, you have a budget of 50 dollars. You can buy the 1st, 3rd and 4th houses for 30 + 10 + 10 = 50 dollars.<br>In Sample Case #3, you have a budget of 300 dollars. You cannot buy any houses (so the answer is 0).<br>Note: Unlike previous editions, in Kick Start 2020, all test sets are visible verdict test sets, meaning you receive instant feedback upon submission.</p>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ar array</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, b, a[<span class="number">100000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; b;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    sort(a, a+n);</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&gt;=a[i]) &#123;</span><br><span class="line">            b-=a[i];</span><br><span class="line">            ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t, i=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot;: &quot;</span>;</span><br><span class="line">        solve();</span><br><span class="line">        ++i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Kick start</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-        <tag>C++</tag>
-        <tag>Kick start</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>西瓜书——假设空间与归纳偏好</title>
     <url>/2020/09/29/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[<h1 id="归纳于演绎"><a href="#归纳于演绎" class="headerlink" title="归纳于演绎"></a>归纳于演绎</h1><p><strong>Induction&amp;&amp;Deduction</strong></p>
@@ -737,58 +891,6 @@
 ]]></content>
       <categories>
         <category>西瓜书</category>
-      </categories>
-      <tags>
-        <tag>Machine learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计学习</title>
-    <url>/2020/09/26/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="统计学习"><a href="#统计学习" class="headerlink" title="统计学习"></a>统计学习</h1><blockquote>
-<p>如果一个系统能够通过执行某个过程改进它的性能，这就是学习。——赫尔伯特·西蒙</p>
-</blockquote>
-<h2 id="统计学习的特点"><a href="#统计学习的特点" class="headerlink" title="统计学习的特点"></a>统计学习的特点</h2><h4 id="统计学习定义"><a href="#统计学习定义" class="headerlink" title="统计学习定义"></a>统计学习定义</h4><p>统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测和分析的一门学科。<br>统计学习也可以称为统计机器学习。</p>
-<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><ul>
-<li>统计学习以计算机及网络为平台，是建立在计算机及网络上的；</li>
-<li>统计学习以数据为研究对象，是数据驱动的学科；</li>
-<li>统计学习的目的是对数据进行预测与分析；</li>
-<li>统计学习以方法为中心，统计学习方法构建模型并应用模型进行预测与分析；</li>
-<li>统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等许多领域的交叉学科，并且在发展中逐步形成独自的理论体系与方法论。<a id="more"></a>
-<h2 id="统计学习的对象"><a href="#统计学习的对象" class="headerlink" title="统计学习的对象"></a>统计学习的对象</h2></li>
-</ul>
-<p>统计学习研究的对象是data。它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。注意这里的数据是多样的，可是是计算机及网络上的各种数字、文字、图像、视频、音频数据以及它们的组合。</p>
-<p>统计学习关于数据的基本假设是<strong>同类数据具有一定的统计规律性</strong>，这是统计学习的前提。</p>
-<h2 id="统计学习的目的"><a href="#统计学习的目的" class="headerlink" title="统计学习的目的"></a>统计学习的目的</h2><p>统计学习用于对数据的预测与分析，特别是对未知新数据的预测与分析。对数据的预测可以使计算机更加智能化，或者说使计算机的某些性能得到提高；对数据的分析可以让人们获取新的知识，给人们带来新的发现。</p>
-<p>对数据的预测与分析是通过构建概率统计模型实现的。统计学习总的目标就是考虑学习什么样的模型和如何学习模型，以使模型能对数据进行准确的预测与分析，同时也要考虑尽可能地提高学习效率。</p>
-<h2 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h2><p>统计学习的方法是基于数据构建概率统计模型从而对数据进行预测与分析。统计学习由监督学习、无监督学习和强化学习等组成。</p>
-<p>统计学习的方法可以概括如下：</p>
-<ul>
-<li>从给定的、有限的、用于学习的训练数据集合出发，假设数据是独立同分布产生的；</li>
-<li>并且假设要学习的模型属于某个函数的集合，称为假设空间；</li>
-<li>应用某个评价准则，从假设空间中选取一个最优模型，使它对已知的训练数据以及位置的测试数据在给定的评价准则下有最优的预测；</li>
-<li>最优模型的选择由算法实现。</li>
-</ul>
-<p>这样，统计学习方法包括模型的假设空间、模型选择的准则以及模型学习的算法。称为统计学习方法的三要素，简称为<strong>“模型”</strong>、<strong>“策略”</strong>和<strong>“算法”</strong>。</p>
-<p>实现统计学习方法的步骤如下：</p>
-<ol>
-<li>得到一个有限的训练数据集合；</li>
-<li>确定包含所有可能的模型的假设空间，即学习模型的集合；</li>
-<li>确定模型选择的准则，即学习的策略；</li>
-<li>实现求解最优模型的算法，即学习的算法；</li>
-<li>通过学习方法选择最优模型；</li>
-<li>利用学习的最优模型对新数据进行预测或分析。</li>
-</ol>
-<h2 id="统计学习的研究"><a href="#统计学习的研究" class="headerlink" title="统计学习的研究"></a>统计学习的研究</h2><p>统计学习的研究一般包括统计学习方法、统计学习理论以及统计学习应用三个方面。<br>统计学习<strong>方法</strong>的研究旨在开发<strong>新的学习方法</strong>；<br>统计学习<strong>理论</strong>的研究在于<strong>探求统计学习方法的有效性与效率，以及统计学习的基本理论问题</strong>；<br>统计学习<strong>应用</strong>的研究主要考虑<strong>将统计学习方法应用到实际问题中去，解决实际问题</strong>。</p>
-<h2 id="统计学习的重要性"><a href="#统计学习的重要性" class="headerlink" title="统计学习的重要性"></a>统计学习的重要性</h2><p>统计学习学科在科学技术中的重要性主要体现在以下几个方面：</p>
-<ul>
-<li>统计学习是处理海量数据的有效方法。</li>
-<li>统计学习是计算机智能化的有效手段。</li>
-<li>统计学习是计算机科学发展的一个重要组成部分。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>统计学习方法</category>
       </categories>
       <tags>
         <tag>Machine learning</tag>
