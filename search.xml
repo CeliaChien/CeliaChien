@@ -1,199 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Computer Vision Week 2 Image Formation</title>
-    <url>/2020/10/06/CV2/</url>
-    <content><![CDATA[<h1 id="Overview-of-image-formation"><a href="#Overview-of-image-formation" class="headerlink" title="Overview of image formation"></a>Overview of image formation</h1><ul>
-<li><strong>Light</strong> from a <strong>radiation source</strong> is <strong>reflected</strong> by <strong>surfaces</strong> in the world..</li>
-<li>Refleted light passes through some <strong>optics</strong> and is recorded by a <strong>sensor</strong></li>
-<li>Images are formed when a sensor registers <strong>radiation</strong> that has interacted with physical objects<a id="more"></a>
-
-</li>
-</ul>
-<h1 id="Physics-of-image-formation"><a href="#Physics-of-image-formation" class="headerlink" title="Physics of image formation"></a>Physics of image formation</h1><ul>
-<li>ligth</li>
-<li>reflectance</li>
-<li>optics</li>
-</ul>
-<h1 id="Ingredients-of-image-formation"><a href="#Ingredients-of-image-formation" class="headerlink" title="Ingredients of image formation"></a>Ingredients of image formation</h1><p>The image that is formed is affected by two sets of parameters</p>
-<p><strong>Radiometric parameters</strong><br>Determine the intensity/colour of a given location in the image</p>
-<ul>
-<li>illumination(type, number, location, intensity, colour-spectrum)</li>
-<li>surface reflectance properties(material, orientation)</li>
-<li>sensor properties(sensitivity to different electromagnetic frequencies)</li>
-</ul>
-<p><strong>Geometric parameters</strong><br>Determine where on the image a scene point appears</p>
-<ul>
-<li>camera position and orientation in space</li>
-<li>camera optics(e.g. focal length)</li>
-<li>projection geometry(mapping from 3D to 2D)</li>
-</ul>
-<h1 id="Light-and-Colour"><a href="#Light-and-Colour" class="headerlink" title="Light and Colour"></a>Light and Colour</h1><h2 id="visible-spectrum"><a href="#visible-spectrum" class="headerlink" title="visible spectrum"></a>visible spectrum</h2><p>At the earth’s surface the intensity of the electromagnetic radiation emanating from the sun has a peak within the 400-700nm range.</p>
-<ul>
-<li>The human eye has evolved a specific sensitivity to this part of the electromagnetic spectrum.</li>
-<li>Hence, visible light is that part of the electromagnetic spectrum with a wavelength (λ) between 400 and 700nm.</li>
-<li>Cameras and Computer Vision systems also concentrate on this part of the spectrum (but not exclusively, e.g. infra-red cameras for detecting body heat, X-rays for imaging inside the body).</li>
-</ul>
-<h2 id="Colour-Perception"><a href="#Colour-Perception" class="headerlink" title="Colour Perception"></a>Colour Perception</h2><ul>
-<li>The radiation that drives the human construct of colour, is fundamentally colour less.</li>
-<li>The sensation of colour is determined by the human visual system, based on the product of light and reflectance.</li>
-<li>However, it is a convenient short-hand to refer to electormagnetic radiation as having colour, e.g. to say “red-light” or “blue-light”.</li>
-</ul>
-<h2 id="Luminance"><a href="#Luminance" class="headerlink" title="Luminance"></a>Luminance</h2><p>Light is differentially reflected at each wavelength, which gives objects their natural colours.</p>
-<p><strong>albedo</strong> = fraction of light reflected at a particular wavelength<br>An object looks green because is absorbes red and blue light leaving<br>more green in the reflected light.</p>
-<h2 id="Illuminance"><a href="#Illuminance" class="headerlink" title="Illuminance"></a>Illuminance</h2><p>Light is produced in different amounts at different wavelengths by each light source.</p>
-<h2 id="Colour-mixing"><a href="#Colour-mixing" class="headerlink" title="Colour mixing"></a>Colour mixing</h2><p>Mixing light: additive<br>e.g. a green light plus a blue light plus a red light gives light containing a broad spectrum of light, i.e. white.<br>The illumination from different light sources adds.<br>Mixing pigments: subtractive<br>e.g. a green pigment plus a blue pigment plus a red pigment gives a pigment that absorbs light over a broad spectrum, leaving black.<br>The reflection from different surfaces subtracts.</p>
-<h1 id="Measuring-surface-properties"><a href="#Measuring-surface-properties" class="headerlink" title="Measuring surface properties"></a>Measuring surface properties</h1><p>The biological vision system percetives the colour of surfaces in the world, not the coulour of the light entering the eyes.<br>This is an ill-posed problem: we record L but need to recover R and don’t know E<br>$$ L(x,y,\lambda)=fn(E(x,y,\lambda),R(x,y,\lambda)) $$</p>
-<ul>
-<li><strong>L</strong>uminance(L) amount of light striking the sensor, depends on</li>
-<li>Illuminance(E) amount of light striking the surface as well as</li>
-<li><strong>R</strong>eflectance(R) which depends on material properties</li>
-</ul>
-<h1 id="Color-Constancy"><a href="#Color-Constancy" class="headerlink" title="Color Constancy"></a>Color Constancy</h1><h2 id="Artificial"><a href="#Artificial" class="headerlink" title="Artificial"></a>Artificial</h2><p>To recover the surface colour of a particular location,$R(x,y,\lambda))$,we need to know the colour of the illuminationn at that point, $E(x,y,\lambda))$</p>
-<p>many ways of approximating E have been suggested:</p>
-<ul>
-<li>Average reflectance across scene is known(often fails)</li>
-<li>Fixing brightest image patch to be white</li>
-<li>Gamut(collection of all colours) falls within known arrange</li>
-<li>Known reference colour (colour chart, skin colour)</li>
-<li>Specular reflections have the colour of the illumination</li>
-</ul>
-<p>None of these are work particularly well</p>
-<h2 id="Biological"><a href="#Biological" class="headerlink" title="Biological"></a>Biological</h2><p>However, the human visual system does seem able to recover surface colour, since despite large changes in illumination (and consequently the intensity spectrum that enters our eyes), we usually experience the colour of an object as being constant.</p>
-<p>We are not normally aware of this variation because colour constancy mechanisms discount the effects of illumination, and infer the colour of the objects.</p>
-<h2 id="Focusing-Light"><a href="#Focusing-Light" class="headerlink" title="Focusing Light"></a>Focusing Light</h2><p>Light spreads out from a point.<br>Without some kind of optics each location on the sensor will register light coming from many different points in the world.<br>No image will be formed.</p>
-<h1 id="Optics"><a href="#Optics" class="headerlink" title="Optics"></a>Optics</h1><h2 id="Pinhole-Camera"><a href="#Pinhole-Camera" class="headerlink" title="Pinhole Camera"></a>Pinhole Camera</h2><p>Restricts the flow of light (using a small hole) so that only one ray from each point in the world reaches the sensor.</p>
-<p>“Focus” means that all rays coming from a scene point converge into a single image point.<br>“Exposure” is the time needed to allow enough light through to form an image (the smaller the <strong>aperture</strong>, the longer the <strong>exposure time</strong>). The longer the <strong>exposure</strong> the more <strong>blurred</strong> an image is likely to be.</p>
-<ul>
-<li>mall pinhole: sharp focus but dim image (long exposure time) </li>
-<li>Large pinhole: brighter image (shorter exposure) but blurred</li>
-</ul>
-<p>To produce an image that is both bright and in focus requires a <strong>lens</strong></p>
-<h2 id="Lensed-Camera"><a href="#Lensed-Camera" class="headerlink" title="Lensed Camera"></a>Lensed Camera</h2><ul>
-<li><p>With a large pinhole, light rays from the same point project to different locations on the image. The image is blurred.</p>
-</li>
-<li><p>By focusing rays from the same point onto a single image location, a lens can keep the image sharp while gathering more light.</p>
-</li>
-</ul>
-<p><strong>Cost</strong>: image focused for only a <strong>restricted range</strong> of object <strong>positions</strong></p>
-<h2 id="Thin-Lenses"><a href="#Thin-Lenses" class="headerlink" title="Thin Lenses"></a>Thin Lenses</h2><h2 id="Depth-of-focus"><a href="#Depth-of-focus" class="headerlink" title="Depth of focus"></a>Depth of focus</h2><h2 id="Focal-Range"><a href="#Focal-Range" class="headerlink" title="Focal Range"></a>Focal Range</h2>]]></content>
-      <categories>
-        <category>Computer Vision</category>
-      </categories>
-      <tags>
-        <tag>Computer Vision</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Introduction to Operations Management</title>
-    <url>/2020/09/28/OPM1/</url>
-    <content><![CDATA[<h1 id="Introduction-to-Operations-Management"><a href="#Introduction-to-Operations-Management" class="headerlink" title="Introduction to Operations Management"></a>Introduction to Operations Management</h1><h2 id="Components-of-an-effective-operations-manufacturing-system"><a href="#Components-of-an-effective-operations-manufacturing-system" class="headerlink" title="Components of an effective operations/manufacturing system"></a>Components of an effective operations/manufacturing system</h2><ol>
-<li>educated/knowledgable(int the task at hand, of cource) and flexible workforce</li>
-<li>consistent, continuous focus on quality</li>
-<li>effective assets/resource management</li>
-</ol>
-<a id="more"></a>
-<h2 id="Reasons-For-Global-Operations"><a href="#Reasons-For-Global-Operations" class="headerlink" title="Reasons For Global Operations"></a>Reasons For Global Operations</h2><ul>
-<li>low labour costs, and labour law</li>
-<li>access to expertise</li>
-<li>access to capacity</li>
-<li>specialist/subcntractors-achieve exonoies of scale</li>
-<li>Access to raw material</li>
-<li>tax regime</li>
-<li>accessing local markets</li>
-<li>quality</li>
-<li>technology and assets, assets is financial(money) techinial, expert people etc.</li>
-</ul>
-<h2 id="Reason-Against-Global-Operations"><a href="#Reason-Against-Global-Operations" class="headerlink" title="Reason Against Global Operations"></a>Reason Against Global Operations</h2><ul>
-<li>labour law</li>
-<li>risks(of supply, delays, environment, tax regimes changing…)</li>
-<li>loss of control of product quality</li>
-<li>changes in cost structures</li>
-<li>supply chain complexity</li>
-<li>trade tariffs</li>
-<li>loss of local expertise</li>
-</ul>
-<h2 id="Operations-Management-Decisions"><a href="#Operations-Management-Decisions" class="headerlink" title="Operations Management Decisions"></a>Operations Management Decisions</h2><ul>
-<li>Design of products and service: what do we offer? how can we design these?</li>
-<li>Quality how do we define it(i.e. policies and standards); responsibolty allocation</li>
-<li>Process desingn, determining capacity requirements: our products- what do they require? what equipment and tech we will need and how much of it?</li>
-<li>Location strategy/supply chain design: where we should locate new facilities(manufacturing and also distribution - e.g supermarket/warehouses etc); what are the criteria for our choices?</li>
-<li>Layouts of facilities: how we could arrange the facility/its layout i.e. to maximise throughput or/and use of space: size of the facility(capacity)</li>
-<li>Human reasource and job design/allocation: how to design the work environment. how much outputs whorls we expect from a given work allocation scheme?</li>
-<li>Supply chain management : make or buy decision? supplier selection and order/demand allocation to suppliers(model risks)?</li>
-<li>Inventory Management: how much inventory of each SKU(Stock keeping unit) we should have? when we reorder?</li>
-<li>Scheduling: which jobs to perform next? Do we need overtime or how much of flexible workforce we require?</li>
-<li>Maintenance: how do we embed realiablity into our processess? who is responsible?</li>
-</ul>
-<h2 id="Parabola-Line"><a href="#Parabola-Line" class="headerlink" title="Parabola Line"></a>Parabola Line</h2><p><strong>Example</strong><br>we have a function to descript a process of throwing a ball like this:</p>
-<p>$$ h=-4.9t^2+10t+2 $$</p>
-<p><strong>Questions</strong></p>
-<ol>
-<li>When it kicks the ground?</li>
-<li>How high it goes?</li>
-</ol>
-<p><strong>Solutions</strong><br>Q1: </p>
-<ul>
-<li>h=0<blockquote>
-<p>$$ -4.9t^2+10t+2=0 $$<br>$$t = \frac{-10 \pm \sqrt{10^2-4(-4.9)2}}{2(-4.9)}.$$</p>
-</blockquote>
-</li>
-</ul>
-<p>Q2:</p>
-<ul>
-<li>Derivation<blockquote>
-<p>$$ \frac{dh}{dt} $$<br>$$ h’=-9.8t+10 $$<br>$$ h’=0, then\ t = \frac{10}{9.8} $$</p>
-</blockquote>
-</li>
-</ul>
-<p>Q1:</p>
-<ul>
-<li>Newton Raphson Method<blockquote>
-<p>$$ x_0=init\ guess $$<br>then we try:<br>Point:$$(x,h(x_0))$$<br>A straight line: $$ y-h(x_0)=h’(x_0)(x-x_0) $$<br>then we got: $$y=0,x=x_1$$<br>$$ -h(x_0)=h’(x_0)(x_1-x_0) $$<br>$$ x_1=x_0-\frac{h(x_0)}{h’(x_0)} $$<br>$$ x_2=x_1-\frac{h(x_1)}{h’(x_1)} $$<br>$$ ……. $$</p>
-</blockquote>
-</li>
-</ul>
-<p>Q2:</p>
-<ul>
-<li>Gradient Descent<blockquote>
-<p>$$ h’(t)=-9.8t+10 $$<br>$$ h^{‘’}(t)=-9.8 $$<br>$$ t_0=2 $$<br>$$ t_1=2- \frac{-9.8(2)+10}{-9.8}=1.02$$<br>$$ h=-4.9(1.02)^2+10(1.02)+2=7.1 $$<br>$$ …… $$</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="Newton-Raphson-Method-amp-amp-Gradient-Descent"><a href="#Newton-Raphson-Method-amp-amp-Gradient-Descent" class="headerlink" title="Newton Raphson Method &amp;&amp; Gradient Descent"></a>Newton Raphson Method &amp;&amp; Gradient Descent</h2><ul>
-<li>may not </li>
-<li>if this guess is not good, then may never convince</li>
-</ul>
-<h2 id="Local-vs-Global-Optimal"><a href="#Local-vs-Global-Optimal" class="headerlink" title="Local vs Global Optimal"></a>Local vs Global Optimal</h2><ul>
-<li>global maxium &amp; global minum</li>
-<li>local maxium &amp; local minum</li>
-</ul>
-]]></content>
-      <categories>
-        <category>OPM</category>
-      </categories>
-      <tags>
-        <tag>OPM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode</title>
-    <url>/2022/09/27/Leetcode/</url>
-    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
-<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
-<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
-<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Leetcode</tag>
-        <tag>Algorithm</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Computer Vision Week 1 Introduction</title>
     <url>/2020/09/29/CV1/</url>
     <content><![CDATA[<h1 id="What-is-computer-vision"><a href="#What-is-computer-vision" class="headerlink" title="What is computer vision"></a>What is computer vision</h1><blockquote>
@@ -299,6 +106,226 @@
       </categories>
       <tags>
         <tag>Computer Vision</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Computer Vision Week 2 Image Formation</title>
+    <url>/2020/10/06/CV2/</url>
+    <content><![CDATA[<h1 id="Overview-of-image-formation"><a href="#Overview-of-image-formation" class="headerlink" title="Overview of image formation"></a>Overview of image formation</h1><ul>
+<li><strong>Light</strong> from a <strong>radiation source</strong> is <strong>reflected</strong> by <strong>surfaces</strong> in the world..</li>
+<li>Refleted light passes through some <strong>optics</strong> and is recorded by a <strong>sensor</strong></li>
+<li>Images are formed when a sensor registers <strong>radiation</strong> that has interacted with physical objects<a id="more"></a>
+
+</li>
+</ul>
+<h1 id="Physics-of-image-formation"><a href="#Physics-of-image-formation" class="headerlink" title="Physics of image formation"></a>Physics of image formation</h1><ul>
+<li>ligth</li>
+<li>reflectance</li>
+<li>optics</li>
+</ul>
+<h1 id="Ingredients-of-image-formation"><a href="#Ingredients-of-image-formation" class="headerlink" title="Ingredients of image formation"></a>Ingredients of image formation</h1><p>The image that is formed is affected by two sets of parameters</p>
+<p><strong>Radiometric parameters</strong><br>Determine the intensity/colour of a given location in the image</p>
+<ul>
+<li>illumination(type, number, location, intensity, colour-spectrum)</li>
+<li>surface reflectance properties(material, orientation)</li>
+<li>sensor properties(sensitivity to different electromagnetic frequencies)</li>
+</ul>
+<p><strong>Geometric parameters</strong><br>Determine where on the image a scene point appears</p>
+<ul>
+<li>camera position and orientation in space</li>
+<li>camera optics(e.g. focal length)</li>
+<li>projection geometry(mapping from 3D to 2D)</li>
+</ul>
+<h1 id="Light-and-Colour"><a href="#Light-and-Colour" class="headerlink" title="Light and Colour"></a>Light and Colour</h1><h2 id="visible-spectrum"><a href="#visible-spectrum" class="headerlink" title="visible spectrum"></a>visible spectrum</h2><p>At the earth’s surface the intensity of the electromagnetic radiation emanating from the sun has a peak within the 400-700nm range.</p>
+<ul>
+<li>The human eye has evolved a specific sensitivity to this part of the electromagnetic spectrum.</li>
+<li>Hence, visible light is that part of the electromagnetic spectrum with a wavelength (λ) between 400 and 700nm.</li>
+<li>Cameras and Computer Vision systems also concentrate on this part of the spectrum (but not exclusively, e.g. infra-red cameras for detecting body heat, X-rays for imaging inside the body).</li>
+</ul>
+<h2 id="Colour-Perception"><a href="#Colour-Perception" class="headerlink" title="Colour Perception"></a>Colour Perception</h2><ul>
+<li>The radiation that drives the human construct of colour, is fundamentally colour less.</li>
+<li>The sensation of colour is determined by the human visual system, based on the product of light and reflectance.</li>
+<li>However, it is a convenient short-hand to refer to electormagnetic radiation as having colour, e.g. to say “red-light” or “blue-light”.</li>
+</ul>
+<h2 id="Luminance"><a href="#Luminance" class="headerlink" title="Luminance"></a>Luminance</h2><p>Light is differentially reflected at each wavelength, which gives objects their natural colours.</p>
+<p><strong>albedo</strong> = fraction of light reflected at a particular wavelength<br>An object looks green because is absorbes red and blue light leaving<br>more green in the reflected light.</p>
+<h2 id="Illuminance"><a href="#Illuminance" class="headerlink" title="Illuminance"></a>Illuminance</h2><p>Light is produced in different amounts at different wavelengths by each light source.</p>
+<h2 id="Colour-mixing"><a href="#Colour-mixing" class="headerlink" title="Colour mixing"></a>Colour mixing</h2><p>Mixing light: additive<br>e.g. a green light plus a blue light plus a red light gives light containing a broad spectrum of light, i.e. white.<br>The illumination from different light sources adds.<br>Mixing pigments: subtractive<br>e.g. a green pigment plus a blue pigment plus a red pigment gives a pigment that absorbs light over a broad spectrum, leaving black.<br>The reflection from different surfaces subtracts.</p>
+<h1 id="Measuring-surface-properties"><a href="#Measuring-surface-properties" class="headerlink" title="Measuring surface properties"></a>Measuring surface properties</h1><p>The biological vision system percetives the colour of surfaces in the world, not the coulour of the light entering the eyes.<br>This is an ill-posed problem: we record L but need to recover R and don’t know E<br>$$ L(x,y,\lambda)=fn(E(x,y,\lambda),R(x,y,\lambda)) $$</p>
+<ul>
+<li><strong>L</strong>uminance(L) amount of light striking the sensor, depends on</li>
+<li>Illuminance(E) amount of light striking the surface as well as</li>
+<li><strong>R</strong>eflectance(R) which depends on material properties</li>
+</ul>
+<h1 id="Color-Constancy"><a href="#Color-Constancy" class="headerlink" title="Color Constancy"></a>Color Constancy</h1><h2 id="Artificial"><a href="#Artificial" class="headerlink" title="Artificial"></a>Artificial</h2><p>To recover the surface colour of a particular location,$R(x,y,\lambda))$,we need to know the colour of the illuminationn at that point, $E(x,y,\lambda))$</p>
+<p>many ways of approximating E have been suggested:</p>
+<ul>
+<li>Average reflectance across scene is known(often fails)</li>
+<li>Fixing brightest image patch to be white</li>
+<li>Gamut(collection of all colours) falls within known arrange</li>
+<li>Known reference colour (colour chart, skin colour)</li>
+<li>Specular reflections have the colour of the illumination</li>
+</ul>
+<p>None of these are work particularly well</p>
+<h2 id="Biological"><a href="#Biological" class="headerlink" title="Biological"></a>Biological</h2><p>However, the human visual system does seem able to recover surface colour, since despite large changes in illumination (and consequently the intensity spectrum that enters our eyes), we usually experience the colour of an object as being constant.</p>
+<p>We are not normally aware of this variation because colour constancy mechanisms discount the effects of illumination, and infer the colour of the objects.</p>
+<h2 id="Focusing-Light"><a href="#Focusing-Light" class="headerlink" title="Focusing Light"></a>Focusing Light</h2><p>Light spreads out from a point.<br>Without some kind of optics each location on the sensor will register light coming from many different points in the world.<br>No image will be formed.</p>
+<h1 id="Optics"><a href="#Optics" class="headerlink" title="Optics"></a>Optics</h1><h2 id="Pinhole-Camera"><a href="#Pinhole-Camera" class="headerlink" title="Pinhole Camera"></a>Pinhole Camera</h2><p>Restricts the flow of light (using a small hole) so that only one ray from each point in the world reaches the sensor.</p>
+<p>“Focus” means that all rays coming from a scene point converge into a single image point.<br>“Exposure” is the time needed to allow enough light through to form an image (the smaller the <strong>aperture</strong>, the longer the <strong>exposure time</strong>). The longer the <strong>exposure</strong> the more <strong>blurred</strong> an image is likely to be.</p>
+<ul>
+<li>mall pinhole: sharp focus but dim image (long exposure time) </li>
+<li>Large pinhole: brighter image (shorter exposure) but blurred</li>
+</ul>
+<p>To produce an image that is both bright and in focus requires a <strong>lens</strong></p>
+<h2 id="Lensed-Camera"><a href="#Lensed-Camera" class="headerlink" title="Lensed Camera"></a>Lensed Camera</h2><ul>
+<li><p>With a large pinhole, light rays from the same point project to different locations on the image. The image is blurred.</p>
+</li>
+<li><p>By focusing rays from the same point onto a single image location, a lens can keep the image sharp while gathering more light.</p>
+</li>
+</ul>
+<p><strong>Cost</strong>: image focused for only a <strong>restricted range</strong> of object <strong>positions</strong></p>
+<h2 id="Thin-Lenses"><a href="#Thin-Lenses" class="headerlink" title="Thin Lenses"></a>Thin Lenses</h2><h2 id="Depth-of-focus"><a href="#Depth-of-focus" class="headerlink" title="Depth of focus"></a>Depth of focus</h2><h2 id="Focal-Range"><a href="#Focal-Range" class="headerlink" title="Focal Range"></a>Focal Range</h2>]]></content>
+      <categories>
+        <category>Computer Vision</category>
+      </categories>
+      <tags>
+        <tag>Computer Vision</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode</title>
+    <url>/2022/09/27/Leetcode/</url>
+    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
+<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
+<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
+<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Introduction to Operations Management</title>
+    <url>/2020/09/28/OPM1/</url>
+    <content><![CDATA[<h1 id="Introduction-to-Operations-Management"><a href="#Introduction-to-Operations-Management" class="headerlink" title="Introduction to Operations Management"></a>Introduction to Operations Management</h1><h2 id="Components-of-an-effective-operations-manufacturing-system"><a href="#Components-of-an-effective-operations-manufacturing-system" class="headerlink" title="Components of an effective operations/manufacturing system"></a>Components of an effective operations/manufacturing system</h2><ol>
+<li>educated/knowledgable(int the task at hand, of cource) and flexible workforce</li>
+<li>consistent, continuous focus on quality</li>
+<li>effective assets/resource management</li>
+</ol>
+<a id="more"></a>
+<h2 id="Reasons-For-Global-Operations"><a href="#Reasons-For-Global-Operations" class="headerlink" title="Reasons For Global Operations"></a>Reasons For Global Operations</h2><ul>
+<li>low labour costs, and labour law</li>
+<li>access to expertise</li>
+<li>access to capacity</li>
+<li>specialist/subcntractors-achieve exonoies of scale</li>
+<li>Access to raw material</li>
+<li>tax regime</li>
+<li>accessing local markets</li>
+<li>quality</li>
+<li>technology and assets, assets is financial(money) techinial, expert people etc.</li>
+</ul>
+<h2 id="Reason-Against-Global-Operations"><a href="#Reason-Against-Global-Operations" class="headerlink" title="Reason Against Global Operations"></a>Reason Against Global Operations</h2><ul>
+<li>labour law</li>
+<li>risks(of supply, delays, environment, tax regimes changing…)</li>
+<li>loss of control of product quality</li>
+<li>changes in cost structures</li>
+<li>supply chain complexity</li>
+<li>trade tariffs</li>
+<li>loss of local expertise</li>
+</ul>
+<h2 id="Operations-Management-Decisions"><a href="#Operations-Management-Decisions" class="headerlink" title="Operations Management Decisions"></a>Operations Management Decisions</h2><ul>
+<li>Design of products and service: what do we offer? how can we design these?</li>
+<li>Quality how do we define it(i.e. policies and standards); responsibolty allocation</li>
+<li>Process desingn, determining capacity requirements: our products- what do they require? what equipment and tech we will need and how much of it?</li>
+<li>Location strategy/supply chain design: where we should locate new facilities(manufacturing and also distribution - e.g supermarket/warehouses etc); what are the criteria for our choices?</li>
+<li>Layouts of facilities: how we could arrange the facility/its layout i.e. to maximise throughput or/and use of space: size of the facility(capacity)</li>
+<li>Human reasource and job design/allocation: how to design the work environment. how much outputs whorls we expect from a given work allocation scheme?</li>
+<li>Supply chain management : make or buy decision? supplier selection and order/demand allocation to suppliers(model risks)?</li>
+<li>Inventory Management: how much inventory of each SKU(Stock keeping unit) we should have? when we reorder?</li>
+<li>Scheduling: which jobs to perform next? Do we need overtime or how much of flexible workforce we require?</li>
+<li>Maintenance: how do we embed realiablity into our processess? who is responsible?</li>
+</ul>
+<h2 id="Parabola-Line"><a href="#Parabola-Line" class="headerlink" title="Parabola Line"></a>Parabola Line</h2><p><strong>Example</strong><br>we have a function to descript a process of throwing a ball like this:</p>
+<p>$$ h=-4.9t^2+10t+2 $$</p>
+<p><strong>Questions</strong></p>
+<ol>
+<li>When it kicks the ground?</li>
+<li>How high it goes?</li>
+</ol>
+<p><strong>Solutions</strong><br>Q1: </p>
+<ul>
+<li>h=0<blockquote>
+<p>$$ -4.9t^2+10t+2=0 $$<br>$$t = \frac{-10 \pm \sqrt{10^2-4(-4.9)2}}{2(-4.9)}.$$</p>
+</blockquote>
+</li>
+</ul>
+<p>Q2:</p>
+<ul>
+<li>Derivation<blockquote>
+<p>$$ \frac{dh}{dt} $$<br>$$ h’=-9.8t+10 $$<br>$$ h’=0, then\ t = \frac{10}{9.8} $$</p>
+</blockquote>
+</li>
+</ul>
+<p>Q1:</p>
+<ul>
+<li>Newton Raphson Method<blockquote>
+<p>$$ x_0=init\ guess $$<br>then we try:<br>Point:$$(x,h(x_0))$$<br>A straight line: $$ y-h(x_0)=h’(x_0)(x-x_0) $$<br>then we got: $$y=0,x=x_1$$<br>$$ -h(x_0)=h’(x_0)(x_1-x_0) $$<br>$$ x_1=x_0-\frac{h(x_0)}{h’(x_0)} $$<br>$$ x_2=x_1-\frac{h(x_1)}{h’(x_1)} $$<br>$$ ……. $$</p>
+</blockquote>
+</li>
+</ul>
+<p>Q2:</p>
+<ul>
+<li>Gradient Descent<blockquote>
+<p>$$ h’(t)=-9.8t+10 $$<br>$$ h^{‘’}(t)=-9.8 $$<br>$$ t_0=2 $$<br>$$ t_1=2- \frac{-9.8(2)+10}{-9.8}=1.02$$<br>$$ h=-4.9(1.02)^2+10(1.02)+2=7.1 $$<br>$$ …… $$</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Newton-Raphson-Method-amp-amp-Gradient-Descent"><a href="#Newton-Raphson-Method-amp-amp-Gradient-Descent" class="headerlink" title="Newton Raphson Method &amp;&amp; Gradient Descent"></a>Newton Raphson Method &amp;&amp; Gradient Descent</h2><ul>
+<li>may not </li>
+<li>if this guess is not good, then may never convince</li>
+</ul>
+<h2 id="Local-vs-Global-Optimal"><a href="#Local-vs-Global-Optimal" class="headerlink" title="Local vs Global Optimal"></a>Local vs Global Optimal</h2><ul>
+<li>global maxium &amp; global minum</li>
+<li>local maxium &amp; local minum</li>
+</ul>
+]]></content>
+      <categories>
+        <category>OPM</category>
+      </categories>
+      <tags>
+        <tag>OPM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>biweekly contest 36</title>
+    <url>/2020/10/03/biweekly%20contest%2036/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>一共四题，1题easy，2题medium，1题hard<br>第一道，简单的系统设计题，要清楚object function；<br>第二道，同样应用题，但是通过率不高；<br>第三道，给出制定行和&amp;列和的矩阵；<br>第四道，</p>
+<ul>
+<li>Design Parking System</li>
+<li>Alert Using Same Key-Card Three or More Times in a One Hour Period</li>
+<li>Find Valid Matrix Given Row and Column Sums</li>
+<li>Find Servers That Handled Most Number of Requests<a id="more"></a>
+<h1 id="Design-Parking-System"><a href="#Design-Parking-System" class="headerlink" title="Design Parking System"></a>Design Parking System</h1><a href="https://leetcode.com/contest/biweekly-contest-36/problems/design-parking-system/">原题链接</a></li>
+</ul>
+<p>解法：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParkingSystem</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ps;</span><br><span class="line">    ParkingSystem(<span class="keyword">int</span> big, <span class="keyword">int</span> medium, <span class="keyword">int</span> small) &#123;</span><br><span class="line">        ps.push_back(big);</span><br><span class="line">        ps.push_back(medium);</span><br><span class="line">        ps.push_back(small);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">addCar</span><span class="params">(<span class="keyword">int</span> carType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ps[carType<span class="number">-1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            ps[carType<span class="number">-1</span>]--;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period"><a href="#Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period" class="headerlink" title="Alert Using Same Key-Card Three or More Times in a One Hour Period"></a>Alert Using Same Key-Card Three or More Times in a One Hour Period</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/">原题链接</a><br>解法：</p>
+<h1 id="Find-Valid-Matrix-Given-Row-and-Column-Sums"><a href="#Find-Valid-Matrix-Given-Row-and-Column-Sums" class="headerlink" title="Find Valid Matrix Given Row and Column Sums"></a>Find Valid Matrix Given Row and Column Sums</h1><p><a href="https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/">原题链接</a><br>解法：Greedy</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">restoreMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; col)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = row.size(), n = col.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">A</span><span class="params">(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; n; ++j) &#123;</span><br><span class="line">                A[i][j] = min(row[i], col[j]);</span><br><span class="line">                row[i] -= A[i][j];</span><br><span class="line">                col[j] -= A[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Time: O(mn)<br>Space: O(mn)</p>
+<h1 id="Find-Servers-That-Handled-Most-Number-of-Requests"><a href="#Find-Servers-That-Handled-Most-Number-of-Requests" class="headerlink" title="Find Servers That Handled Most Number of Requests"></a>Find Servers That Handled Most Number of Requests</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/find-servers-that-handled-most-number-of-requests/">原题链接</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -478,6 +505,47 @@
       </tags>
   </entry>
   <entry>
+    <title>Union Find</title>
+    <url>/2020/09/27/algorithm1/</url>
+    <content><![CDATA[<ul>
+<li>Algorithm: method for solving a problem</li>
+<li>Data structure: method to store information</li>
+</ul>
+<h1 id="Union-Find"><a href="#Union-Find" class="headerlink" title="Union Find"></a>Union Find</h1><ul>
+<li>model the problem</li>
+<li>find an algorithm to solve it</li>
+<li>fast enough? fits in memory</li>
+<li>if not figure out why</li>
+<li>find a way to address the problem</li>
+<li>iterate until satisfied</li>
+</ul>
+<a id="more"></a>
+<h2 id="Dynamic-Connectivity"><a href="#Dynamic-Connectivity" class="headerlink" title="Dynamic Connectivity"></a>Dynamic Connectivity</h2><p><strong>modeling the objects</strong><br>When programming, convenient to name objects 0 to N-1</p>
+<ul>
+<li>use integers as array index</li>
+<li>suppress details not relevant to union-find.</li>
+</ul>
+<p><strong>modeling the connections</strong><br>We assume “is connected to” is an equivalence relation:</p>
+<ul>
+<li>Reflexive:p is connected to p</li>
+<li>Symmetric: if p is connected to q, then q is connected to p</li>
+<li>Transitive: if p is connected to q and q is connected to r, then p is connected to r</li>
+</ul>
+<p>Connected components<br>maximal set of objects that are mutually connected</p>
+<p><strong>Implementing the operations</strong><br>Find query</p>
+<ul>
+<li>check if two objects are in the same component<br>Union command</li>
+<li>Replace components containing two objects with their union</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Round A 2020 kick start Q1</title>
     <url>/2020/09/29/Round%20A%202020%20Q1/</url>
     <content><![CDATA[<h1 id="Round-A-2020-kick-start"><a href="#Round-A-2020-kick-start" class="headerlink" title="Round A 2020 kick start"></a>Round A 2020 kick start</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><blockquote>
@@ -525,47 +593,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Union Find</title>
-    <url>/2020/09/27/algorithm1/</url>
-    <content><![CDATA[<ul>
-<li>Algorithm: method for solving a problem</li>
-<li>Data structure: method to store information</li>
-</ul>
-<h1 id="Union-Find"><a href="#Union-Find" class="headerlink" title="Union Find"></a>Union Find</h1><ul>
-<li>model the problem</li>
-<li>find an algorithm to solve it</li>
-<li>fast enough? fits in memory</li>
-<li>if not figure out why</li>
-<li>find a way to address the problem</li>
-<li>iterate until satisfied</li>
-</ul>
-<a id="more"></a>
-<h2 id="Dynamic-Connectivity"><a href="#Dynamic-Connectivity" class="headerlink" title="Dynamic Connectivity"></a>Dynamic Connectivity</h2><p><strong>modeling the objects</strong><br>When programming, convenient to name objects 0 to N-1</p>
-<ul>
-<li>use integers as array index</li>
-<li>suppress details not relevant to union-find.</li>
-</ul>
-<p><strong>modeling the connections</strong><br>We assume “is connected to” is an equivalence relation:</p>
-<ul>
-<li>Reflexive:p is connected to p</li>
-<li>Symmetric: if p is connected to q, then q is connected to p</li>
-<li>Transitive: if p is connected to q and q is connected to r, then p is connected to r</li>
-</ul>
-<p>Connected components<br>maximal set of objects that are mutually connected</p>
-<p><strong>Implementing the operations</strong><br>Find query</p>
-<ul>
-<li>check if two objects are in the same component<br>Union command</li>
-<li>Replace components containing two objects with their union</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Greedy</title>
     <url>/2020/10/04/greedy/</url>
     <content><![CDATA[<h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><p>在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，做出的是某种意义上的局部最优解。</p>
@@ -601,33 +628,6 @@
       </categories>
       <tags>
         <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>biweekly contest 36</title>
-    <url>/2020/10/03/biweekly%20contest%2036/</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>一共四题，1题easy，2题medium，1题hard<br>第一道，简单的系统设计题，要清楚object function；<br>第二道，同样应用题，但是通过率不高；<br>第三道，给出制定行和&amp;列和的矩阵；<br>第四道，</p>
-<ul>
-<li>Design Parking System</li>
-<li>Alert Using Same Key-Card Three or More Times in a One Hour Period</li>
-<li>Find Valid Matrix Given Row and Column Sums</li>
-<li>Find Servers That Handled Most Number of Requests<a id="more"></a>
-<h1 id="Design-Parking-System"><a href="#Design-Parking-System" class="headerlink" title="Design Parking System"></a>Design Parking System</h1><a href="https://leetcode.com/contest/biweekly-contest-36/problems/design-parking-system/">原题链接</a></li>
-</ul>
-<p>解法：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParkingSystem</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ps;</span><br><span class="line">    ParkingSystem(<span class="keyword">int</span> big, <span class="keyword">int</span> medium, <span class="keyword">int</span> small) &#123;</span><br><span class="line">        ps.push_back(big);</span><br><span class="line">        ps.push_back(medium);</span><br><span class="line">        ps.push_back(small);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">addCar</span><span class="params">(<span class="keyword">int</span> carType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ps[carType<span class="number">-1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            ps[carType<span class="number">-1</span>]--;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period"><a href="#Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period" class="headerlink" title="Alert Using Same Key-Card Three or More Times in a One Hour Period"></a>Alert Using Same Key-Card Three or More Times in a One Hour Period</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/">原题链接</a><br>解法：</p>
-<h1 id="Find-Valid-Matrix-Given-Row-and-Column-Sums"><a href="#Find-Valid-Matrix-Given-Row-and-Column-Sums" class="headerlink" title="Find Valid Matrix Given Row and Column Sums"></a>Find Valid Matrix Given Row and Column Sums</h1><p><a href="https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/">原题链接</a><br>解法：Greedy</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">restoreMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; col)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = row.size(), n = col.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">A</span><span class="params">(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; n; ++j) &#123;</span><br><span class="line">                A[i][j] = min(row[i], col[j]);</span><br><span class="line">                row[i] -= A[i][j];</span><br><span class="line">                col[j] -= A[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Time: O(mn)<br>Space: O(mn)</p>
-<h1 id="Find-Servers-That-Handled-Most-Number-of-Requests"><a href="#Find-Servers-That-Handled-Most-Number-of-Requests" class="headerlink" title="Find Servers That Handled Most Number of Requests"></a>Find Servers That Handled Most Number of Requests</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/find-servers-that-handled-most-number-of-requests/">原题链接</a></p>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -684,40 +684,6 @@
       </categories>
   </entry>
   <entry>
-    <title>weekly contest 208</title>
-    <url>/2020/09/27/weekly%20contest%20208/</url>
-    <content><![CDATA[<h1 id="写作前面"><a href="#写作前面" class="headerlink" title="写作前面"></a>写作前面</h1><p>主要四道题目，1道easy，1道medium，2道hard。<br>其中前两道题干略长，需要理解，但写出来并不复杂，难在理解题意；<br>后两道略偏数据结构和算法。<br>主要题目如下：</p>
-<ul>
-<li>Crawler log folder</li>
-<li>Maximum Profit of Operating a Centennial Wheel</li>
-<li>Throne Inheritance</li>
-<li>Maximum Number of Achievable Transfer Requests<a id="more"></a>
-
-</li>
-</ul>
-<h1 id="Crawler-log-folder"><a href="#Crawler-log-folder" class="headerlink" title="Crawler log folder"></a>Crawler log folder</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/crawler-log-folder/">原题链接</a></p>
-<p>Easy</p>
-<p>解答：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperations</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; logs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">string</span> s: logs)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s==<span class="string">&quot;../&quot;</span>)&#123;<span class="keyword">if</span>(res&gt;<span class="number">0</span>)res--;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s==<span class="string">&quot;./&quot;</span>)&#123;</span><br><span class="line">                res=res;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;res++;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res&gt;=<span class="number">0</span>? res:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="Maximum-Profit-of-Operating-a-Centennial-Wheel"><a href="#Maximum-Profit-of-Operating-a-Centennial-Wheel" class="headerlink" title="Maximum Profit of Operating a Centennial Wheel"></a>Maximum Profit of Operating a Centennial Wheel</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/maximum-profit-of-operating-a-centennial-wheel/">原题链接</a></p>
-<p>Medium</p>
-<p>解答：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperationsMaxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; customers, <span class="keyword">int</span> boardingCost, <span class="keyword">int</span> runningCost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = INT_MIN;</span><br><span class="line">        <span class="keyword">int</span> min=<span class="number">0</span>, i=<span class="number">0</span>, remaining= customers[i];</span><br><span class="line">        <span class="keyword">int</span> totalboarded=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> board = remaining&gt;<span class="number">3</span>? <span class="number">4</span>:remaining;</span><br><span class="line">            remaining-= board;</span><br><span class="line">            totalboarded+=board;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i+<span class="number">1</span>&lt;customers.size())&#123;</span><br><span class="line">                remaining +=customers[i+<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">int</span> currentProfit=(totalboarded*boardingCost)-(i*runningCost);</span><br><span class="line">            <span class="keyword">if</span>(currentProfit&gt;maxProfit)&#123;</span><br><span class="line">                min=i;</span><br><span class="line">            &#125;</span><br><span class="line">            maxProfit=max(maxProfit,(totalboarded*boardingCost)-(i*runningCost));</span><br><span class="line">            <span class="keyword">if</span>(remaining==<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit&lt;=<span class="number">0</span>? <span class="number">-1</span>:min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="Throne-Inheritance"><a href="#Throne-Inheritance" class="headerlink" title="Throne Inheritance"></a>Throne Inheritance</h1><p><a href="">原题链接</a></p>
-<h1 id="Maximum-Number-of-Achievable-Transfer-Requests"><a href="#Maximum-Number-of-Achievable-Transfer-Requests" class="headerlink" title="Maximum Number of Achievable Transfer Requests"></a>Maximum Number of Achievable Transfer Requests</h1><p><a href="">原题链接</a></p>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Leetcode</tag>
-        <tag>Algorithm</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SlideWindow</title>
     <url>/2020/10/04/slide%20window/</url>
     <content><![CDATA[<h1 id="滑动窗口算法"><a href="#滑动窗口算法" class="headerlink" title="滑动窗口算法"></a>滑动窗口算法</h1><p>该算法是通过使用特定大小的子列表，在遍历完整列表的同时进行特定的操作，以达到降低了循环的嵌套深度。。</p>
@@ -764,6 +730,185 @@
       </categories>
       <tags>
         <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>weekly contest 208</title>
+    <url>/2020/09/27/weekly%20contest%20208/</url>
+    <content><![CDATA[<h1 id="写作前面"><a href="#写作前面" class="headerlink" title="写作前面"></a>写作前面</h1><p>主要四道题目，1道easy，1道medium，2道hard。<br>其中前两道题干略长，需要理解，但写出来并不复杂，难在理解题意；<br>后两道略偏数据结构和算法。<br>主要题目如下：</p>
+<ul>
+<li>Crawler log folder</li>
+<li>Maximum Profit of Operating a Centennial Wheel</li>
+<li>Throne Inheritance</li>
+<li>Maximum Number of Achievable Transfer Requests<a id="more"></a>
+
+</li>
+</ul>
+<h1 id="Crawler-log-folder"><a href="#Crawler-log-folder" class="headerlink" title="Crawler log folder"></a>Crawler log folder</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/crawler-log-folder/">原题链接</a></p>
+<p>Easy</p>
+<p>解答：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperations</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; logs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">string</span> s: logs)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s==<span class="string">&quot;../&quot;</span>)&#123;<span class="keyword">if</span>(res&gt;<span class="number">0</span>)res--;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s==<span class="string">&quot;./&quot;</span>)&#123;</span><br><span class="line">                res=res;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;res++;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res&gt;=<span class="number">0</span>? res:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Maximum-Profit-of-Operating-a-Centennial-Wheel"><a href="#Maximum-Profit-of-Operating-a-Centennial-Wheel" class="headerlink" title="Maximum Profit of Operating a Centennial Wheel"></a>Maximum Profit of Operating a Centennial Wheel</h1><p><a href="https://leetcode.com/contest/weekly-contest-208/problems/maximum-profit-of-operating-a-centennial-wheel/">原题链接</a></p>
+<p>Medium</p>
+<p>解答：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperationsMaxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; customers, <span class="keyword">int</span> boardingCost, <span class="keyword">int</span> runningCost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = INT_MIN;</span><br><span class="line">        <span class="keyword">int</span> min=<span class="number">0</span>, i=<span class="number">0</span>, remaining= customers[i];</span><br><span class="line">        <span class="keyword">int</span> totalboarded=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> board = remaining&gt;<span class="number">3</span>? <span class="number">4</span>:remaining;</span><br><span class="line">            remaining-= board;</span><br><span class="line">            totalboarded+=board;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i+<span class="number">1</span>&lt;customers.size())&#123;</span><br><span class="line">                remaining +=customers[i+<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">int</span> currentProfit=(totalboarded*boardingCost)-(i*runningCost);</span><br><span class="line">            <span class="keyword">if</span>(currentProfit&gt;maxProfit)&#123;</span><br><span class="line">                min=i;</span><br><span class="line">            &#125;</span><br><span class="line">            maxProfit=max(maxProfit,(totalboarded*boardingCost)-(i*runningCost));</span><br><span class="line">            <span class="keyword">if</span>(remaining==<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxProfit&lt;=<span class="number">0</span>? <span class="number">-1</span>:min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Throne-Inheritance"><a href="#Throne-Inheritance" class="headerlink" title="Throne Inheritance"></a>Throne Inheritance</h1><p><a href>原题链接</a></p>
+<h1 id="Maximum-Number-of-Achievable-Transfer-Requests"><a href="#Maximum-Number-of-Achievable-Transfer-Requests" class="headerlink" title="Maximum Number of Achievable Transfer Requests"></a>Maximum Number of Achievable Transfer Requests</h1><p><a href>原题链接</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计学习</title>
+    <url>/2020/09/26/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="统计学习"><a href="#统计学习" class="headerlink" title="统计学习"></a>统计学习</h1><blockquote>
+<p>如果一个系统能够通过执行某个过程改进它的性能，这就是学习。——赫尔伯特·西蒙</p>
+</blockquote>
+<h2 id="统计学习的特点"><a href="#统计学习的特点" class="headerlink" title="统计学习的特点"></a>统计学习的特点</h2><h4 id="统计学习定义"><a href="#统计学习定义" class="headerlink" title="统计学习定义"></a>统计学习定义</h4><p>统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测和分析的一门学科。<br>统计学习也可以称为统计机器学习。</p>
+<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><ul>
+<li>统计学习以计算机及网络为平台，是建立在计算机及网络上的；</li>
+<li>统计学习以数据为研究对象，是数据驱动的学科；</li>
+<li>统计学习的目的是对数据进行预测与分析；</li>
+<li>统计学习以方法为中心，统计学习方法构建模型并应用模型进行预测与分析；</li>
+<li>统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等许多领域的交叉学科，并且在发展中逐步形成独自的理论体系与方法论。<a id="more"></a>
+<h2 id="统计学习的对象"><a href="#统计学习的对象" class="headerlink" title="统计学习的对象"></a>统计学习的对象</h2></li>
+</ul>
+<p>统计学习研究的对象是data。它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。注意这里的数据是多样的，可是是计算机及网络上的各种数字、文字、图像、视频、音频数据以及它们的组合。</p>
+<p>统计学习关于数据的基本假设是<strong>同类数据具有一定的统计规律性</strong>，这是统计学习的前提。</p>
+<h2 id="统计学习的目的"><a href="#统计学习的目的" class="headerlink" title="统计学习的目的"></a>统计学习的目的</h2><p>统计学习用于对数据的预测与分析，特别是对未知新数据的预测与分析。对数据的预测可以使计算机更加智能化，或者说使计算机的某些性能得到提高；对数据的分析可以让人们获取新的知识，给人们带来新的发现。</p>
+<p>对数据的预测与分析是通过构建概率统计模型实现的。统计学习总的目标就是考虑学习什么样的模型和如何学习模型，以使模型能对数据进行准确的预测与分析，同时也要考虑尽可能地提高学习效率。</p>
+<h2 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h2><p>统计学习的方法是基于数据构建概率统计模型从而对数据进行预测与分析。统计学习由监督学习、无监督学习和强化学习等组成。</p>
+<p>统计学习的方法可以概括如下：</p>
+<ul>
+<li>从给定的、有限的、用于学习的训练数据集合出发，假设数据是独立同分布产生的；</li>
+<li>并且假设要学习的模型属于某个函数的集合，称为假设空间；</li>
+<li>应用某个评价准则，从假设空间中选取一个最优模型，使它对已知的训练数据以及位置的测试数据在给定的评价准则下有最优的预测；</li>
+<li>最优模型的选择由算法实现。</li>
+</ul>
+<p>这样，统计学习方法包括模型的假设空间、模型选择的准则以及模型学习的算法。称为统计学习方法的三要素，简称为<strong>“模型”</strong>、<strong>“策略”</strong>和<strong>“算法”</strong>。</p>
+<p>实现统计学习方法的步骤如下：</p>
+<ol>
+<li>得到一个有限的训练数据集合；</li>
+<li>确定包含所有可能的模型的假设空间，即学习模型的集合；</li>
+<li>确定模型选择的准则，即学习的策略；</li>
+<li>实现求解最优模型的算法，即学习的算法；</li>
+<li>通过学习方法选择最优模型；</li>
+<li>利用学习的最优模型对新数据进行预测或分析。</li>
+</ol>
+<h2 id="统计学习的研究"><a href="#统计学习的研究" class="headerlink" title="统计学习的研究"></a>统计学习的研究</h2><p>统计学习的研究一般包括统计学习方法、统计学习理论以及统计学习应用三个方面。<br>统计学习<strong>方法</strong>的研究旨在开发<strong>新的学习方法</strong>；<br>统计学习<strong>理论</strong>的研究在于<strong>探求统计学习方法的有效性与效率，以及统计学习的基本理论问题</strong>；<br>统计学习<strong>应用</strong>的研究主要考虑<strong>将统计学习方法应用到实际问题中去，解决实际问题</strong>。</p>
+<h2 id="统计学习的重要性"><a href="#统计学习的重要性" class="headerlink" title="统计学习的重要性"></a>统计学习的重要性</h2><p>统计学习学科在科学技术中的重要性主要体现在以下几个方面：</p>
+<ul>
+<li>统计学习是处理海量数据的有效方法。</li>
+<li>统计学习是计算机智能化的有效手段。</li>
+<li>统计学习是计算机科学发展的一个重要组成部分。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计学习方法三要素</title>
+    <url>/2020/10/05/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E4%B8%89%E8%A6%81%E7%B4%A0/</url>
+    <content><![CDATA[<h1 id="统计学习方法三要素"><a href="#统计学习方法三要素" class="headerlink" title="统计学习方法三要素"></a>统计学习方法三要素</h1><blockquote>
+<p>统计学习方法都是由模型、策略和算法构成的，即统计学习方法由三要素构成，可以简单地表示为：<br>$$方法=模型+策略+算法$$</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><p>统计学习首要考虑的问题是学习什么样的模型。<br>在监督学习过程中，模型就是所要学习的条件概率分布或者决策函数。<br>模型的假设空间包含所有可能的条件概率分布或决策函数。<br>例如，假设决策函数是输入变量的线性函数，那么模型的假设空间就是这些线性函数构成的函数集合。<br>假设空间中的模型一般有无穷多个。<br>假设空间用F表示，假设空间可以定义为决策函数的集合：<br>$$F={f|Y=f(X)}$$<br>其中，X和Y是定义在输入空间X和输出空间Y上的变量，这时F通常是由一个参数向量决定的函数族：</p>
+<h1 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h1><h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>算法是指学习模型的具体计算方法。<br>统计学习基于训练数据集，根据学习策略，从假设空间中选择最优模型，最后需要考虑用什么样的计算方法求解最优模型。<br>这时，统计学习问题归结为最优化问题，统计学习的算法成为求解最优化问题的算法。<br>如果最优化问题有显式的解析式，这个最优化问题就比较简单。<br>但是通常解析解不存在，这就需要用数值计算的方法求解。<br>如何保证找到全局最优解，并使求解的过程非常高效，就成为一个重要问题。</p>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计学习的分类</title>
+    <url>/2020/09/27/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%88%86%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="基本分类"><a href="#基本分类" class="headerlink" title="基本分类"></a>基本分类</h1><h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><p><strong>supervised learning</strong><br>是指从标注数据中学习预测模型的机器学习问题。标注数据表示输入输出的对应关系，预测模型对给定的输入产生相应的输出。监督学习的本质是<strong>学习输入到输出的映射的统计规律</strong>。</p>
+<p><font size="4," color="#008000"><strong>输入空间、特征空间和输出空间</strong></font></p>
+<p>在监督学习中，将输入与输出所有可能取值的集合分别称为输入空间与输出空间。输入与输出空间可以是有限元素的集合，也可以是整个欧式空间。输入空间与输出空间可以是同一个空间，也可以是不同的空间；<strong>但是通常输出空间远远小于输入空间</strong>。</p>
+<a id="more"></a>
+
+<p>每个具体的输入是一个实例，通常由特征向量表示。这时，所有特征向量存在的空间称为特征空间。</p>
+<p>特征空间的每一维对应于一个特征。有时假设输入空间与特征空间为相同的空间，对于它们不予区分；有时假设输入空间与特征空间为不同的空间，将实例从输入空间映射到特征空间。<strong>模型实际上都是定义在特征空间上的</strong>。</p>
+<p>在监督学习中，将输入与输出看作是定义在输入（特征）空间与输出空间上的随机变量的取值。输入输出变量用大写字母表示，习惯上输入变量写作X，输出变量写作Y。输入输出变量的取值用小写字母表示，输入变量的取值写作x，输出变量的取值写作y。</p>
+<p>变量可以是标量或者向量，都用相同类型字母表示。除特别声明外，默认为列向量。输入实例x的特征向量记作：<br>$$ x=(x^{(1)},x^{(2)},…,x^{(i)},…,x^{(n)})^T $$<br>$x^{(i)}$表示x的第i个特征。注意$x^{(i)}$和$x_i$不同，本书通常用$x_i$表示多个输入变量中的第i个变量，即<br>$$ x_i=(x^{(1)},x^{(2)},…,x^{(n)})^T $$<br>监督学习从训练数据集合中学习模型，对测试数据进行预测。训练数据由输入（或特征向量）与输出对组成，训练集通常表示为<br>$$T={(x_1,y_1),(x_2,y_2),…,(x_N,y_N)}$$<br>测试数据也由输入与输出对组成。输入与输出对又称为样本或者样本点。<br>输入变量X和输出变量Y有不同的类型，可以使连续的，也可以使离散的。<br>人们根据输入输出变量的不同类型，对预测任务给予不同的名称：</p>
+<blockquote>
+<p>输入变量与输出变量均为连续变量的预测问题称为<strong>回归问题</strong>；<br>输出变量为有限个离散变量的预测问题称为<strong>分类问题</strong>；<br>输入变量与输出变量均为变量序列的预测问题称为<strong>标注问题</strong>。</p>
+</blockquote>
+<p><font size="4," color="#008000"><strong>联合概率分布</strong></font></p>
+<p>监督学习假设输入与输出的随机变量X和Y遵循联合概率分布$ P(X,Y) $。<br>$ P(X,Y) $表示分布函数，或者分布密度函数。注意在学习过程中，假定这一联合概率分布存在，但对学习系统来说，联合概率分布的具体定义是未知的。训练数据与测试数据被看作是依联合分布$ P(X,Y) $独立同分布产生的。统计学习假设数据存在一定的统计规律，X和Y具有联合概率分布就是监督学习关于数据的基本假设。</p>
+<p><font size="4," color="#008000"><strong>假设空间</strong></font><br>监督学习的目的在于学习一个由输入到输出的映射，这一映射由模型来表示。<br>模型属于由输入空间到输出空间的映射的集合，这个集合就是假设空间。假设空间的确定意味着学习的范围的确定。<br>监督学习的模型可以是概率模型或者非概率模型，由条件概率分布$ P(Y|X) $或决策函数$ Y=f(X) $表示，随具体的输入进行相应的输出预测时，写作$ P(y|x) $或$ y=f(x) $。</p>
+<p><font size="4," color="#008000"><strong>问题的形式化</strong></font></p>
+<h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><p><strong>unsupervised learning</strong><br>无监督学习是指从无标注数据中学习预测模型的机器学习问题。无标注数据是自然的到的数据，预测模型表示数据的类别、转换或概率。<br>无监督学习的本质是学习数据中的统计规律或潜在结构。</p>
+<h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2><p><strong>reinforcement learning</strong><br>强化学习是指智能系统在与环境的连续互动中学习最优行为策略的机器学习问题。<br>假设智能系统与环境的互动基于马尔可夫决策过程，智能系统能观测到的是环境互动的到的数据序列。<br>强化学习的本质是学习最优的序贯决策（sequential analysis）。</p>
+<h2 id="半监督学习与主动学习"><a href="#半监督学习与主动学习" class="headerlink" title="半监督学习与主动学习"></a>半监督学习与主动学习</h2><p><strong>semi-supervised learning</strong><br><strong>半监督学习</strong>是指利用标注数据和未标注数据学习预测模型的机器学习问题。<br>通常有少量标注数据、大量未标注数据，因为标注数据的构建往往需要人工，成本较高，未标注数据的收集不需太多成本。<br>半监督学习旨在利用未标注数据中的信息，辅助标注数据，进行监督学习，以较低的成本达到较好的学习效果。</p>
+<p><strong>主动学习</strong>是指机器不断主动给出实例让教师进行标注，然后利用标注数据学习预测模型的机器学习问题。<br>通常的监督学习使用给定的标注数据，往往是随机的到的，可以看作是“被动学习”，主动学习的目标是找出对学习最有帮助的实例让人标注，以较小的标注代价，达到较好的学习效果。</p>
+<p>半监督学习和主动学习更接近监督学习。</p>
+<h1 id="按模型分类"><a href="#按模型分类" class="headerlink" title="按模型分类"></a>按模型分类</h1><h2 id="概率模型与非概率模型"><a href="#概率模型与非概率模型" class="headerlink" title="概率模型与非概率模型"></a>概率模型与非概率模型</h2><h2 id="线性模型与非线性模型"><a href="#线性模型与非线性模型" class="headerlink" title="线性模型与非线性模型"></a>线性模型与非线性模型</h2><p><strong>linear model&amp;&amp;non-linear model</strong><br>统计学习模型，特别是非概率模型，可以分为线性模型和非线性模型。<br>如果函数$y=f(x)$或$z=g(x)$则称模型是线性模型，否则称模型是非线性模型。<br>线性模型：</p>
+<ul>
+<li>感知机</li>
+<li>线性支持向量机</li>
+<li>k近邻</li>
+<li>k均值</li>
+<li>潜在语义分析</li>
+</ul>
+<p>非线性模型：</p>
+<ul>
+<li>核函数支持向量机</li>
+<li>AdaBoost</li>
+<li>神经网络</li>
+</ul>
+<h2 id="参数化模型与非参数化模型"><a href="#参数化模型与非参数化模型" class="headerlink" title="参数化模型与非参数化模型"></a>参数化模型与非参数化模型</h2><p><strong>parametric model&amp;&amp;parametric model</strong><br>参数化模型假设模型参数的维度固定，模型可以由有限维参数完全刻画；<br>非参数化模型假设模型参数的维度不固定或者说无穷大，随着训练数据量的增加而不断增大。</p>
+<p>参数化模型：</p>
+<ul>
+<li>感知机</li>
+<li>朴素贝叶斯</li>
+<li>逻辑斯蒂回归</li>
+<li>k均值</li>
+<li>高斯混合模型</li>
+</ul>
+<p>非参数化模型：</p>
+<ul>
+<li>决策树</li>
+<li>支持向量机</li>
+<li>AdaBoost</li>
+<li>k近邻</li>
+<li>潜在语义分析</li>
+<li>概率潜在语义分析</li>
+<li>潜在狄利克雷分配</li>
+</ul>
+<h1 id="按算法分类"><a href="#按算法分类" class="headerlink" title="按算法分类"></a>按算法分类</h1><h2 id="在线学习"><a href="#在线学习" class="headerlink" title="在线学习"></a>在线学习</h2><p>在线学习是指每次接受一个样本，进行预测，之后学习模型，并不断重复该操作的机器学习。<br>在线学习可以是监督学习，也可以是无监督学习，强化学习本身就拥有在线学习的特点。</p>
+<h2 id="批量学习"><a href="#批量学习" class="headerlink" title="批量学习"></a>批量学习</h2><p>批量学习一次接受所有数据，学习模型，之后进行预测。<br>有些实际应用的场景要求学习必修是在线的。<br>比如：</p>
+<ul>
+<li>数据一次达到无法存储，系统需要及时作出处理；</li>
+<li>数据规模很大，不可能一次处理所有数据；</li>
+<li>数据的模式随时间动态变化，需要算法快速适应新的模式。</li>
+</ul>
+<p>在线学习通常比批量学习更难，很难学到预测准确率更高的模型，因为每次模型更新中，可利用的数据有限。</p>
+<h1 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h1><h2 id="贝叶斯学习"><a href="#贝叶斯学习" class="headerlink" title="贝叶斯学习"></a>贝叶斯学习</h2><p>贝叶斯学习，又称为贝叶斯推理，是统计学、机器学习中重要的方法。<br>其主要的想法是，在概率模型的学习和推理中，利用贝叶斯定理，计算在给定数据条件下模型的条件概率，即后验概率，并应用这个原理进行模型的估计，以及对数据的预测。<br>将模型、未观察要素及其参数用变量表示，使用模型的先验分布是贝叶斯学习的特点。</p>
+<h2 id="核方法"><a href="#核方法" class="headerlink" title="核方法"></a>核方法</h2><p>核方法是使用核函数表示核学习非线性模型的一种机器学习方法，可以用于监督学习和无监督学习。。<br>有一些线性模型的学习方法基于相似度计算，更具体地，向量内积计算。<br>核方法可以把它们扩展到非线性模型的学习，使其应用范围更广泛。<br>把线性模型扩展到非线性模型模型，直接的做法是显式地定义从输入空间（低维空间）到特征空间（高维空间）的映射，在特征空间中进行内积计算。比如，支持向量机，把输出空间的线性不可分问题转化为特征空间的线性可分问题。<br>核方法的技巧在于不显式地定义这个映射，而是直接定义核函数，即映射之后在特征空间的内积。。</p>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
       </tags>
   </entry>
   <entry>
@@ -853,145 +998,42 @@
       </tags>
   </entry>
   <entry>
-    <title>统计学习方法三要素</title>
-    <url>/2020/10/05/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E4%B8%89%E8%A6%81%E7%B4%A0/</url>
-    <content><![CDATA[<h1 id="统计学习方法三要素"><a href="#统计学习方法三要素" class="headerlink" title="统计学习方法三要素"></a>统计学习方法三要素</h1><blockquote>
-<p>统计学习方法都是由模型、策略和算法构成的，即统计学习方法由三要素构成，可以简单地表示为：<br>$$方法=模型+策略+算法$$</p>
+    <title>西瓜书——NFL&amp;History&amp;Appln</title>
+    <url>/2020/09/30/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h1><ul>
+<li>“没有免费的午餐”定理</li>
+<li>ML发展历程</li>
+<li>ML应用现状<a id="more"></a>
+<h1 id="NFL-Theorem"><a href="#NFL-Theorem" class="headerlink" title="NFL Theorem"></a>NFL Theorem</h1></li>
+</ul>
+<h1 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h1><blockquote>
+<p>机器学习是人工智能研究发展到一定阶段的必然产物</p>
 </blockquote>
-<a id="more"></a>
-
-<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><p>统计学习首要考虑的问题是学习什么样的模型。<br>在监督学习过程中，模型就是所要学习的条件概率分布或者决策函数。<br>模型的假设空间包含所有可能的条件概率分布或决策函数。<br>例如，假设决策函数是输入变量的线性函数，那么模型的假设空间就是这些线性函数构成的函数集合。<br>假设空间中的模型一般有无穷多个。<br>假设空间用F表示，假设空间可以定义为决策函数的集合：<br>$$F={f|Y=f(X)}$$<br>其中，X和Y是定义在输入空间X和输出空间Y上的变量，这时F通常是由一个参数向量决定的函数族：</p>
-<h1 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h1><h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>算法是指学习模型的具体计算方法。<br>统计学习基于训练数据集，根据学习策略，从假设空间中选择最优模型，最后需要考虑用什么样的计算方法求解最优模型。<br>这时，统计学习问题归结为最优化问题，统计学习的算法成为求解最优化问题的算法。<br>如果最优化问题有显式的解析式，这个最优化问题就比较简单。<br>但是通常解析解不存在，这就需要用数值计算的方法求解。<br>如何保证找到全局最优解，并使求解的过程非常高效，就成为一个重要问题。</p>
-]]></content>
+<ul>
+<li>20世纪50年代到70年代初<ul>
+<li>人工智能研究处于“推理期”</li>
+<li>人们基于符号知识表示，通过演绎推理技术取得了很大成就；</li>
+</ul>
+</li>
+<li>20世纪70年代中期开始<ul>
+<li>人工智能研究进入了“知识期”</li>
+<li>人们基于符号知识表示，通过获取和利用领域知识来建立专家系统取得了大量成果；</li>
+</ul>
+</li>
+<li>20世纪90年代中期<ul>
+<li>“统计学习”闪亮登场并迅速占领主流舞台</li>
+<li>SVM“支持向量机”，“核方法”</li>
+</ul>
+</li>
+<li>21世纪初<ul>
+<li>连接主义卷土重来</li>
+<li>“深度学习”，“神经网络”</li>
+</ul>
+</li>
+</ul>
+<h1 id="应用现状"><a href="#应用现状" class="headerlink" title="应用现状"></a>应用现状</h1><!-- more -->]]></content>
       <categories>
-        <category>统计学习方法</category>
-      </categories>
-      <tags>
-        <tag>Machine learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计学习</title>
-    <url>/2020/09/26/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="统计学习"><a href="#统计学习" class="headerlink" title="统计学习"></a>统计学习</h1><blockquote>
-<p>如果一个系统能够通过执行某个过程改进它的性能，这就是学习。——赫尔伯特·西蒙</p>
-</blockquote>
-<h2 id="统计学习的特点"><a href="#统计学习的特点" class="headerlink" title="统计学习的特点"></a>统计学习的特点</h2><h4 id="统计学习定义"><a href="#统计学习定义" class="headerlink" title="统计学习定义"></a>统计学习定义</h4><p>统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测和分析的一门学科。<br>统计学习也可以称为统计机器学习。</p>
-<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><ul>
-<li>统计学习以计算机及网络为平台，是建立在计算机及网络上的；</li>
-<li>统计学习以数据为研究对象，是数据驱动的学科；</li>
-<li>统计学习的目的是对数据进行预测与分析；</li>
-<li>统计学习以方法为中心，统计学习方法构建模型并应用模型进行预测与分析；</li>
-<li>统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等许多领域的交叉学科，并且在发展中逐步形成独自的理论体系与方法论。<a id="more"></a>
-<h2 id="统计学习的对象"><a href="#统计学习的对象" class="headerlink" title="统计学习的对象"></a>统计学习的对象</h2></li>
-</ul>
-<p>统计学习研究的对象是data。它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。注意这里的数据是多样的，可是是计算机及网络上的各种数字、文字、图像、视频、音频数据以及它们的组合。</p>
-<p>统计学习关于数据的基本假设是<strong>同类数据具有一定的统计规律性</strong>，这是统计学习的前提。</p>
-<h2 id="统计学习的目的"><a href="#统计学习的目的" class="headerlink" title="统计学习的目的"></a>统计学习的目的</h2><p>统计学习用于对数据的预测与分析，特别是对未知新数据的预测与分析。对数据的预测可以使计算机更加智能化，或者说使计算机的某些性能得到提高；对数据的分析可以让人们获取新的知识，给人们带来新的发现。</p>
-<p>对数据的预测与分析是通过构建概率统计模型实现的。统计学习总的目标就是考虑学习什么样的模型和如何学习模型，以使模型能对数据进行准确的预测与分析，同时也要考虑尽可能地提高学习效率。</p>
-<h2 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h2><p>统计学习的方法是基于数据构建概率统计模型从而对数据进行预测与分析。统计学习由监督学习、无监督学习和强化学习等组成。</p>
-<p>统计学习的方法可以概括如下：</p>
-<ul>
-<li>从给定的、有限的、用于学习的训练数据集合出发，假设数据是独立同分布产生的；</li>
-<li>并且假设要学习的模型属于某个函数的集合，称为假设空间；</li>
-<li>应用某个评价准则，从假设空间中选取一个最优模型，使它对已知的训练数据以及位置的测试数据在给定的评价准则下有最优的预测；</li>
-<li>最优模型的选择由算法实现。</li>
-</ul>
-<p>这样，统计学习方法包括模型的假设空间、模型选择的准则以及模型学习的算法。称为统计学习方法的三要素，简称为<strong>“模型”</strong>、<strong>“策略”</strong>和<strong>“算法”</strong>。</p>
-<p>实现统计学习方法的步骤如下：</p>
-<ol>
-<li>得到一个有限的训练数据集合；</li>
-<li>确定包含所有可能的模型的假设空间，即学习模型的集合；</li>
-<li>确定模型选择的准则，即学习的策略；</li>
-<li>实现求解最优模型的算法，即学习的算法；</li>
-<li>通过学习方法选择最优模型；</li>
-<li>利用学习的最优模型对新数据进行预测或分析。</li>
-</ol>
-<h2 id="统计学习的研究"><a href="#统计学习的研究" class="headerlink" title="统计学习的研究"></a>统计学习的研究</h2><p>统计学习的研究一般包括统计学习方法、统计学习理论以及统计学习应用三个方面。<br>统计学习<strong>方法</strong>的研究旨在开发<strong>新的学习方法</strong>；<br>统计学习<strong>理论</strong>的研究在于<strong>探求统计学习方法的有效性与效率，以及统计学习的基本理论问题</strong>；<br>统计学习<strong>应用</strong>的研究主要考虑<strong>将统计学习方法应用到实际问题中去，解决实际问题</strong>。</p>
-<h2 id="统计学习的重要性"><a href="#统计学习的重要性" class="headerlink" title="统计学习的重要性"></a>统计学习的重要性</h2><p>统计学习学科在科学技术中的重要性主要体现在以下几个方面：</p>
-<ul>
-<li>统计学习是处理海量数据的有效方法。</li>
-<li>统计学习是计算机智能化的有效手段。</li>
-<li>统计学习是计算机科学发展的一个重要组成部分。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>统计学习方法</category>
-      </categories>
-      <tags>
-        <tag>Machine learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计学习的分类</title>
-    <url>/2020/09/27/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%88%86%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="基本分类"><a href="#基本分类" class="headerlink" title="基本分类"></a>基本分类</h1><h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><p><strong>supervised learning</strong><br>是指从标注数据中学习预测模型的机器学习问题。标注数据表示输入输出的对应关系，预测模型对给定的输入产生相应的输出。监督学习的本质是<strong>学习输入到输出的映射的统计规律</strong>。</p>
-<p><font size=4, color=#008000><strong>输入空间、特征空间和输出空间</strong></font></p>
-<p>在监督学习中，将输入与输出所有可能取值的集合分别称为输入空间与输出空间。输入与输出空间可以是有限元素的集合，也可以是整个欧式空间。输入空间与输出空间可以是同一个空间，也可以是不同的空间；<strong>但是通常输出空间远远小于输入空间</strong>。</p>
-<a id="more"></a>
-
-<p>每个具体的输入是一个实例，通常由特征向量表示。这时，所有特征向量存在的空间称为特征空间。</p>
-<p>特征空间的每一维对应于一个特征。有时假设输入空间与特征空间为相同的空间，对于它们不予区分；有时假设输入空间与特征空间为不同的空间，将实例从输入空间映射到特征空间。<strong>模型实际上都是定义在特征空间上的</strong>。</p>
-<p>在监督学习中，将输入与输出看作是定义在输入（特征）空间与输出空间上的随机变量的取值。输入输出变量用大写字母表示，习惯上输入变量写作X，输出变量写作Y。输入输出变量的取值用小写字母表示，输入变量的取值写作x，输出变量的取值写作y。</p>
-<p>变量可以是标量或者向量，都用相同类型字母表示。除特别声明外，默认为列向量。输入实例x的特征向量记作：<br>$$ x=(x^{(1)},x^{(2)},…,x^{(i)},…,x^{(n)})^T $$<br>$x^{(i)}$表示x的第i个特征。注意$x^{(i)}$和$x_i$不同，本书通常用$x_i$表示多个输入变量中的第i个变量，即<br>$$ x_i=(x^{(1)},x^{(2)},…,x^{(n)})^T $$<br>监督学习从训练数据集合中学习模型，对测试数据进行预测。训练数据由输入（或特征向量）与输出对组成，训练集通常表示为<br>$$T={(x_1,y_1),(x_2,y_2),…,(x_N,y_N)}$$<br>测试数据也由输入与输出对组成。输入与输出对又称为样本或者样本点。<br>输入变量X和输出变量Y有不同的类型，可以使连续的，也可以使离散的。<br>人们根据输入输出变量的不同类型，对预测任务给予不同的名称：</p>
-<blockquote>
-<p>输入变量与输出变量均为连续变量的预测问题称为<strong>回归问题</strong>；<br>输出变量为有限个离散变量的预测问题称为<strong>分类问题</strong>；<br>输入变量与输出变量均为变量序列的预测问题称为<strong>标注问题</strong>。</p>
-</blockquote>
-<p><font size=4, color=#008000><strong>联合概率分布</strong></font></p>
-<p>监督学习假设输入与输出的随机变量X和Y遵循联合概率分布$ P(X,Y) $。<br>$ P(X,Y) $表示分布函数，或者分布密度函数。注意在学习过程中，假定这一联合概率分布存在，但对学习系统来说，联合概率分布的具体定义是未知的。训练数据与测试数据被看作是依联合分布$ P(X,Y) $独立同分布产生的。统计学习假设数据存在一定的统计规律，X和Y具有联合概率分布就是监督学习关于数据的基本假设。</p>
-<p><font size=4, color=#008000><strong>假设空间</strong></font><br>监督学习的目的在于学习一个由输入到输出的映射，这一映射由模型来表示。<br>模型属于由输入空间到输出空间的映射的集合，这个集合就是假设空间。假设空间的确定意味着学习的范围的确定。<br>监督学习的模型可以是概率模型或者非概率模型，由条件概率分布$ P(Y|X) $或决策函数$ Y=f(X) $表示，随具体的输入进行相应的输出预测时，写作$ P(y|x) $或$ y=f(x) $。</p>
-<p><font size=4, color=#008000><strong>问题的形式化</strong></font></p>
-<h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><p><strong>unsupervised learning</strong><br>无监督学习是指从无标注数据中学习预测模型的机器学习问题。无标注数据是自然的到的数据，预测模型表示数据的类别、转换或概率。<br>无监督学习的本质是学习数据中的统计规律或潜在结构。</p>
-<h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2><p><strong>reinforcement learning</strong><br>强化学习是指智能系统在与环境的连续互动中学习最优行为策略的机器学习问题。<br>假设智能系统与环境的互动基于马尔可夫决策过程，智能系统能观测到的是环境互动的到的数据序列。<br>强化学习的本质是学习最优的序贯决策（sequential analysis）。</p>
-<h2 id="半监督学习与主动学习"><a href="#半监督学习与主动学习" class="headerlink" title="半监督学习与主动学习"></a>半监督学习与主动学习</h2><p><strong>semi-supervised learning</strong><br><strong>半监督学习</strong>是指利用标注数据和未标注数据学习预测模型的机器学习问题。<br>通常有少量标注数据、大量未标注数据，因为标注数据的构建往往需要人工，成本较高，未标注数据的收集不需太多成本。<br>半监督学习旨在利用未标注数据中的信息，辅助标注数据，进行监督学习，以较低的成本达到较好的学习效果。</p>
-<p><strong>主动学习</strong>是指机器不断主动给出实例让教师进行标注，然后利用标注数据学习预测模型的机器学习问题。<br>通常的监督学习使用给定的标注数据，往往是随机的到的，可以看作是“被动学习”，主动学习的目标是找出对学习最有帮助的实例让人标注，以较小的标注代价，达到较好的学习效果。</p>
-<p>半监督学习和主动学习更接近监督学习。</p>
-<h1 id="按模型分类"><a href="#按模型分类" class="headerlink" title="按模型分类"></a>按模型分类</h1><h2 id="概率模型与非概率模型"><a href="#概率模型与非概率模型" class="headerlink" title="概率模型与非概率模型"></a>概率模型与非概率模型</h2><h2 id="线性模型与非线性模型"><a href="#线性模型与非线性模型" class="headerlink" title="线性模型与非线性模型"></a>线性模型与非线性模型</h2><p><strong>linear model&amp;&amp;non-linear model</strong><br>统计学习模型，特别是非概率模型，可以分为线性模型和非线性模型。<br>如果函数$y=f(x)$或$z=g(x)$则称模型是线性模型，否则称模型是非线性模型。<br>线性模型：</p>
-<ul>
-<li>感知机</li>
-<li>线性支持向量机</li>
-<li>k近邻</li>
-<li>k均值</li>
-<li>潜在语义分析</li>
-</ul>
-<p>非线性模型：</p>
-<ul>
-<li>核函数支持向量机</li>
-<li>AdaBoost</li>
-<li>神经网络</li>
-</ul>
-<h2 id="参数化模型与非参数化模型"><a href="#参数化模型与非参数化模型" class="headerlink" title="参数化模型与非参数化模型"></a>参数化模型与非参数化模型</h2><p><strong>parametric model&amp;&amp;parametric model</strong><br>参数化模型假设模型参数的维度固定，模型可以由有限维参数完全刻画；<br>非参数化模型假设模型参数的维度不固定或者说无穷大，随着训练数据量的增加而不断增大。</p>
-<p>参数化模型：</p>
-<ul>
-<li>感知机</li>
-<li>朴素贝叶斯</li>
-<li>逻辑斯蒂回归</li>
-<li>k均值</li>
-<li>高斯混合模型</li>
-</ul>
-<p>非参数化模型：</p>
-<ul>
-<li>决策树</li>
-<li>支持向量机</li>
-<li>AdaBoost</li>
-<li>k近邻</li>
-<li>潜在语义分析</li>
-<li>概率潜在语义分析</li>
-<li>潜在狄利克雷分配</li>
-</ul>
-<h1 id="按算法分类"><a href="#按算法分类" class="headerlink" title="按算法分类"></a>按算法分类</h1><h2 id="在线学习"><a href="#在线学习" class="headerlink" title="在线学习"></a>在线学习</h2><p>在线学习是指每次接受一个样本，进行预测，之后学习模型，并不断重复该操作的机器学习。<br>在线学习可以是监督学习，也可以是无监督学习，强化学习本身就拥有在线学习的特点。</p>
-<h2 id="批量学习"><a href="#批量学习" class="headerlink" title="批量学习"></a>批量学习</h2><p>批量学习一次接受所有数据，学习模型，之后进行预测。<br>有些实际应用的场景要求学习必修是在线的。<br>比如：</p>
-<ul>
-<li>数据一次达到无法存储，系统需要及时作出处理；</li>
-<li>数据规模很大，不可能一次处理所有数据；</li>
-<li>数据的模式随时间动态变化，需要算法快速适应新的模式。</li>
-</ul>
-<p>在线学习通常比批量学习更难，很难学到预测准确率更高的模型，因为每次模型更新中，可利用的数据有限。</p>
-<h1 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h1><h2 id="贝叶斯学习"><a href="#贝叶斯学习" class="headerlink" title="贝叶斯学习"></a>贝叶斯学习</h2><p>贝叶斯学习，又称为贝叶斯推理，是统计学、机器学习中重要的方法。<br>其主要的想法是，在概率模型的学习和推理中，利用贝叶斯定理，计算在给定数据条件下模型的条件概率，即后验概率，并应用这个原理进行模型的估计，以及对数据的预测。<br>将模型、未观察要素及其参数用变量表示，使用模型的先验分布是贝叶斯学习的特点。</p>
-<h2 id="核方法"><a href="#核方法" class="headerlink" title="核方法"></a>核方法</h2><p>核方法是使用核函数表示核学习非线性模型的一种机器学习方法，可以用于监督学习和无监督学习。。<br>有一些线性模型的学习方法基于相似度计算，更具体地，向量内积计算。<br>核方法可以把它们扩展到非线性模型的学习，使其应用范围更广泛。<br>把线性模型扩展到非线性模型模型，直接的做法是显式地定义从输入空间（低维空间）到特征空间（高维空间）的映射，在特征空间中进行内积计算。比如，支持向量机，把输出空间的线性不可分问题转化为特征空间的线性可分问题。<br>核方法的技巧在于不显式地定义这个映射，而是直接定义核函数，即映射之后在特征空间的内积。。</p>
-]]></content>
-      <categories>
-        <category>统计学习方法</category>
+        <category>西瓜书</category>
       </categories>
       <tags>
         <tag>Machine learning</tag>
@@ -1097,48 +1139,6 @@
 </li>
 </ul>
 ]]></content>
-      <categories>
-        <category>西瓜书</category>
-      </categories>
-      <tags>
-        <tag>Machine learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>西瓜书——NFL&amp;History&amp;Appln</title>
-    <url>/2020/09/30/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h1><ul>
-<li>“没有免费的午餐”定理</li>
-<li>ML发展历程</li>
-<li>ML应用现状<a id="more"></a>
-<h1 id="NFL-Theorem"><a href="#NFL-Theorem" class="headerlink" title="NFL Theorem"></a>NFL Theorem</h1></li>
-</ul>
-<h1 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h1><blockquote>
-<p>机器学习是人工智能研究发展到一定阶段的必然产物</p>
-</blockquote>
-<ul>
-<li>20世纪50年代到70年代初<ul>
-<li>人工智能研究处于“推理期”</li>
-<li>人们基于符号知识表示，通过演绎推理技术取得了很大成就；</li>
-</ul>
-</li>
-<li>20世纪70年代中期开始<ul>
-<li>人工智能研究进入了“知识期”</li>
-<li>人们基于符号知识表示，通过获取和利用领域知识来建立专家系统取得了大量成果；</li>
-</ul>
-</li>
-<li>20世纪90年代中期<ul>
-<li>“统计学习”闪亮登场并迅速占领主流舞台</li>
-<li>SVM“支持向量机”，“核方法”</li>
-</ul>
-</li>
-<li>21世纪初<ul>
-<li>连接主义卷土重来</li>
-<li>“深度学习”，“神经网络”</li>
-</ul>
-</li>
-</ul>
-<h1 id="应用现状"><a href="#应用现状" class="headerlink" title="应用现状"></a>应用现状</h1><!-- more -->]]></content>
       <categories>
         <category>西瓜书</category>
       </categories>
