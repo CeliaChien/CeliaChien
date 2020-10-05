@@ -23,15 +23,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Introdution to Linear ProgrammingDefinitions:  Objective function Variables Constraints Non-negativity constraints Resource constraints   Optimal solution  Questions on Anatomy of an LP Burger Bar  A">
+  <meta name="description" content="Introdution to Linear ProgrammingDefinitions Objective function: linear function,$z$, we want to optimise Variables: $x_j$ amounts we seek to assign values to, in order to optimise the objective funct">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Introdution to Linear Programming">
 <meta property="og:url" content="http://example.com/2020/10/05/OPM2/index.html">
 <meta property="og:site_name" content="CC">
-<meta property="og:description" content="Introdution to Linear ProgrammingDefinitions:  Objective function Variables Constraints Non-negativity constraints Resource constraints   Optimal solution  Questions on Anatomy of an LP Burger Bar  A">
+<meta property="og:description" content="Introdution to Linear ProgrammingDefinitions Objective function: linear function,$z$, we want to optimise Variables: $x_j$ amounts we seek to assign values to, in order to optimise the objective funct">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-05T13:46:25.000Z">
-<meta property="article:modified_time" content="2020-10-05T10:54:51.785Z">
+<meta property="article:modified_time" content="2020-10-05T17:59:55.711Z">
 <meta property="article:author" content="CeliaChien">
 <meta property="article:tag" content="OPM">
 <meta name="twitter:card" content="summary">
@@ -215,7 +215,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introdution-to-Linear-Programming"><span class="nav-number">1.</span> <span class="nav-text">Introdution to Linear Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions-on-Anatomy-of-an-LP"><span class="nav-number">1.1.</span> <span class="nav-text">Questions on Anatomy of an LP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions-on-live-examples"><span class="nav-number">1.2.</span> <span class="nav-text">Questions on live examples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Burger-Bar"><span class="nav-number">1.2.1.</span> <span class="nav-text">Burger Bar</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-on-Canonical-Form"><span class="nav-number">1.3.</span> <span class="nav-text">Question on Canonical Form</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mobile-phone-manufacture-Outline-the-steps-to-will-follow-to-solve-the-problem-here"><span class="nav-number">1.4.</span> <span class="nav-text">Mobile phone manufacture: Outline the steps to will follow to solve the problem here</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">-</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introdution-to-Linear-Programming"><span class="nav-number">1.</span> <span class="nav-text">Introdution to Linear Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Definitions"><span class="nav-number">1.1.</span> <span class="nav-text">Definitions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-programming"><span class="nav-number">1.2.</span> <span class="nav-text">Linear programming</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions-on-Anatomy-of-an-LP"><span class="nav-number">1.3.</span> <span class="nav-text">Questions on Anatomy of an LP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions-on-live-examples"><span class="nav-number">1.4.</span> <span class="nav-text">Questions on live examples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Burger-Bar"><span class="nav-number">1.4.1.</span> <span class="nav-text">Burger Bar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mobile-phone-manufacture"><span class="nav-number">1.4.2.</span> <span class="nav-text">Mobile phone manufacture</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Canonical-Form"><span class="nav-number">2.</span> <span class="nav-text">Canonical Form</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Four-Steps-of-transforming-LPs-to-a-canonical-form"><span class="nav-number">2.1.</span> <span class="nav-text">Four Steps of transforming LPs to a canonical form</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#step-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">step 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-2"><span class="nav-number">2.1.2.</span> <span class="nav-text">step 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-3"><span class="nav-number">2.1.3.</span> <span class="nav-text">step 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-4"><span class="nav-number">2.1.4.</span> <span class="nav-text">step 4</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">2.2.</span> <span class="nav-text">Example</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-further-definitions"><span class="nav-number">3.</span> <span class="nav-text">Some further definitions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Feasibility"><span class="nav-number">3.1.</span> <span class="nav-text">Feasibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-an-Optimal-Solution"><span class="nav-number">3.2.</span> <span class="nav-text">What is an Optimal Solution?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Possible-outcomes-of-a-LP"><span class="nav-number">3.3.</span> <span class="nav-text">Possible outcomes of a LP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-LP-solve"><span class="nav-number">4.</span> <span class="nav-text">Install LP-solve</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -229,7 +229,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -330,10 +330,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2020-10-05 21:46:25 / Modified: 18:54:51" itemprop="dateCreated datePublished" datetime="2020-10-05T21:46:25+08:00">2020-10-05</time>
+      <time title="Created: 2020-10-05 21:46:25" itemprop="dateCreated datePublished" datetime="2020-10-05T21:46:25+08:00">2020-10-05</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-10-06 01:59:55" itemprop="dateModified" datetime="2020-10-06T01:59:55+08:00">2020-10-06</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -352,14 +358,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>2.1k</span>
+      <span>8.2k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
+      <span>7 mins.</span>
     </span>
 </div>
 
@@ -370,23 +376,30 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Introdution-to-Linear-Programming"><a href="#Introdution-to-Linear-Programming" class="headerlink" title="Introdution to Linear Programming"></a>Introdution to Linear Programming</h1><p><strong>Definitions</strong>:</p>
-<ul>
-<li>Objective function</li>
-<li>Variables</li>
-<li>Constraints<ul>
-<li>Non-negativity constraints</li>
-<li>Resource constraints</li>
+        <h1 id="Introdution-to-Linear-Programming"><a href="#Introdution-to-Linear-Programming" class="headerlink" title="Introdution to Linear Programming"></a>Introdution to Linear Programming</h1><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><ul>
+<li><strong>Objective function</strong>: linear function,$z$, we want to optimise</li>
+<li><strong>Variables</strong>: $x_j$ amounts we seek to assign values to, in order to optimise the objective function.</li>
+<li><strong>Constraints</strong>: linear (in)equalities that must be satisfied by an assignment of variables<ul>
+<li><strong>Non-negativity constraints</strong>: constraints of the type $x_j≥0$</li>
+<li><strong>Resource constraints</strong>: the other constraints are often termed as resource constraints(or just constraints when it’s clear from the context).</li>
 </ul>
 </li>
-<li>Optimal solution</li>
+<li><strong>Optimal solution</strong>: feasible point(s) at which the objective value is the largest (in case of maximisation) or smallest(in case of minimisation) among all feasible points.</li>
+<li><strong>Feasible point</strong>: point $x$ is feasible for a linear program if it satisfies all its constraints.</li>
+<li><strong>Feasible region</strong>: set of all feasible points of the problem.<a id="more"></a>
+
+</li>
 </ul>
+<h2 id="Linear-programming"><a href="#Linear-programming" class="headerlink" title="Linear programming"></a>Linear programming</h2><p>Importantly, these problems are <strong>convex</strong>, and we use this property in Linear Programming</p>
+<ul>
+<li>That is, the space of feasible solutions is a convex polytope, and the optimal solution can be found by traversing the perimeter of the polytope in a systematic way.</li>
+</ul>
+<p>Generally, in an optimisation problem we’re trying to minimise or maximise some quantity, called the objective.<br>The objective depends on a finite number of variables.<br>The variables might be related to one another by one or several constraints.<br>In linear programming, the objective function and the constraints are of linear form.</p>
 <h2 id="Questions-on-Anatomy-of-an-LP"><a href="#Questions-on-Anatomy-of-an-LP" class="headerlink" title="Questions on Anatomy of an LP"></a>Questions on Anatomy of an LP</h2><ul>
 <li><p><strong>Burger Bar</strong></p>
 <blockquote>
 <p>A burger joint makes its burgers from a combination of some high quality meat and some cheaper meat with a higher fat content. The company keeps the precise meat sources secret but guarantees that its burgers have a fat content of less than 25%.<br>The high quality meat it uses contains 80% lean meat and 20% fat, and costs 80p per kilo. The cheaper meat contains 68% lean meat and 32% fat and costs 60p per kilo.<br>How much of each kind of meat should the burger joint use in each kilo of burger meat if it wants to <strong>minimise its cost and keep the fat content down to no more than 25%</strong>?</p>
 </blockquote>
-<a id="more"></a>
 </li>
 <li><p><strong>Model</strong><br>write problem in clear statement<br>convert or translate to mathmatical form</p>
 <ul>
@@ -408,6 +421,29 @@
 <blockquote>
 <p>A furniture factory produces 2 type of benches using steel and wood..<br>The benches are sold to furniture shops for 3k and 1k per dozen of units of each type, respectively.<br>wood is old used for benches of type 1 and steel is used in both, and it’s required it of steel to produce a dozen of benches of type 2, while the same amounnt of benches of type 1 requires 1t of steel and also it 1t of wood. In total, the factory has 3t of steel and 2t of wood available in the next month.<br>the question facing the factory is, given the limited availability of materials, what quantity(in dozens) of each product should the company produce in the next month, in order to achieve the maximum total profit?</p>
 </blockquote>
+<div class="note default"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Price(per doz)</th>
+<th>Steel(per doz)</th>
+<th>Wood(per doz)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>3k</td>
+<td>1t</td>
+<td>1t</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1k</td>
+<td>1t</td>
+<td>0</td>
+</tr>
+</tbody></table>
+</div>
 </li>
 <li><p><strong>Model</strong></p>
 <ul>
@@ -425,8 +461,86 @@
 <li><p><strong>Graphical Solution</strong></p>
 </li>
 </ul>
-<h2 id="Questions-on-live-examples"><a href="#Questions-on-live-examples" class="headerlink" title="Questions on live examples"></a>Questions on live examples</h2><h3 id="Burger-Bar"><a href="#Burger-Bar" class="headerlink" title="Burger Bar"></a>Burger Bar</h3><p>Can we take values for $x_1$ annd $x_2$ from the entire set of real number?[-infinity to +infinity ]<br>ans: no, this problem has non-negetive constraints</p>
-<h2 id="Question-on-Canonical-Form"><a href="#Question-on-Canonical-Form" class="headerlink" title="Question on Canonical Form"></a>Question on Canonical Form</h2><h2 id="Mobile-phone-manufacture-Outline-the-steps-to-will-follow-to-solve-the-problem-here"><a href="#Mobile-phone-manufacture-Outline-the-steps-to-will-follow-to-solve-the-problem-here" class="headerlink" title="Mobile phone manufacture: Outline the steps to will follow to solve the problem here"></a>Mobile phone manufacture: Outline the steps to will follow to solve the problem here</h2><h2 id=""><a href="#" class="headerlink" title="-"></a>-</h2><p>-</p>
+<h2 id="Questions-on-live-examples"><a href="#Questions-on-live-examples" class="headerlink" title="Questions on live examples"></a>Questions on live examples</h2><h3 id="Burger-Bar"><a href="#Burger-Bar" class="headerlink" title="Burger Bar"></a>Burger Bar</h3><p>Can we take values for $x_1$ annd $x_2$ from the entire set of real number?[-infinity to +infinity ]<br>ans: no, this problem has non-negetive constraints<br><strong>Non-negativity constraints</strong><br>These are crucial constraints as they significantly restrict the solution space and help direct the solution method. Also ensure solutions selected are sensible.<br><strong>But why is that?</strong><br>Considering the production example above, not restricting the quantity $ 𝑥_j $ to be positive only is very problematic:<br>Can not produce negative amount of product</p>
+<ul>
+<li>If a product j is not profitable, $i.e. 𝑐_j &lt; 0$, then without the constraint the model could select a solution $𝑥_j &lt; 0$ leading to profit, $i.e. 𝑐_j𝑥_j &gt; 0$</li>
+<li>A negative amount of product$j,x_j$ would imply that it does not consume any material to be produced but it rather generates… is this possible?<br>Also that would imply infinite profit driving $𝑥_j 𝑡𝑜 − ∞$</li>
+</ul>
+<h3 id="Mobile-phone-manufacture"><a href="#Mobile-phone-manufacture" class="headerlink" title="Mobile phone manufacture"></a>Mobile phone manufacture</h3><p>You are a manufacturer able to produce two types of mobile phone, a budget model and a high-end model, to be released in a particular region where you know the demand for these phone models.</p>
+<p>For simplicity, reducing the problem scope to two dimensionns, aumme production requires just two resources to produce a phone:<br>the production lead time in minutes, and the material required.<br>Note that resources are subject to capacity constraints. Then assume 2500 minutes production lead time of in a month and 4800 units of input material.</p>
+<p>The required resources per phone, the demand per month and the sales price for a phone of each model are given below:</p>
+<div class="note default"><table>
+<thead>
+<tr>
+<th></th>
+<th>Prodution Lead Time</th>
+<th>Material Quantity</th>
+<th>Demand</th>
+<th>Unite Sale Price</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Budget model</td>
+<td>5</td>
+<td>5</td>
+<td>400</td>
+<td>200</td>
+</tr>
+<tr>
+<td>High-end model</td>
+<td>7</td>
+<td>17</td>
+<td>270</td>
+<td>400</td>
+</tr>
+</tbody></table>
+</div>
+
+<p>Model and solve as a linear program using the graphical method.</p>
+<p>Answer can be seen in Quiz 2</p>
+<h1 id="Canonical-Form"><a href="#Canonical-Form" class="headerlink" title="Canonical Form"></a>Canonical Form</h1><p>Whilst in the literature there are several variants, here we will use the form below:</p>
+<p>$$ max C^TX $$<br>$$ s.t. AX = b$$<br>$$ X≥0 $$</p>
+<p>Where A is an $m \times n$matrix, b is an m-dimensional vector and c, x are n-dimensional vectors.</p>
+<p>Considerations:</p>
+<ol>
+<li>Objective function must be maximised - i.e. express as maximisation problem</li>
+<li>All resource constraints must be converted to equations/equality constraints</li>
+<li>All variables must be non-negative</li>
+<li>All constants b must be non-negative</li>
+</ol>
+<h2 id="Four-Steps-of-transforming-LPs-to-a-canonical-form"><a href="#Four-Steps-of-transforming-LPs-to-a-canonical-form" class="headerlink" title="Four Steps of transforming LPs to a canonical form"></a>Four Steps of transforming LPs to a canonical form</h2><h3 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h3><p>Let $P$ be your original linear programming problem.<br>Let $P’$ be the same problem in canonical form<br>If the objective function of $P$ if:<br>$$minimise\ C^TX$$<br>then the objective function of $P’$ will be:<br>$$maxmise -C^TX$$<br>Otherwise, objective function in $P’$ will be same as in P</p>
+<h3 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h3><p>Given an inequality constraint in $P$ in the following form in $P’$:<br>$$\sum^n_{j=1}{a_{ij}x_j≤b_i}$$</p>
+<p>replace it with the following resource and non-negativity constraints:<br>$$\sum^n_{j=1}{a_{ij}x_j+s_i=b_i}$$<br>$$s_i≥0$$</p>
+<p>Similarly for ≥ constraints of the following form in $P$:<br>$$\sum^n_{j=1}{a_{ij}x_j≥b_i}$$</p>
+<p>replace with the following in $P’$<br>$$\sum^n_{j=1}{a_{ij}x_j-s_i=b_i}$$<br>$$s_i≥0$$</p>
+<p>Any other resource constraint that is already annequality is just transfered to $P’$ as-is.</p>
+<h3 id="step-3"><a href="#step-3" class="headerlink" title="step 3"></a>step 3</h3><p>All resource constraints in $P’$ are now convereted to equality constraints with the respective slach or surplus variables added.</p>
+<p>Next, we need to make sure that the right hand side (RHS)of all constrainnts is non-negative. To do this, any constraint where $b_i&lt;0$, mutiply by -1 on both sides and throughout to obtain:<br>$$-\sum^n_{j=1}{a_{ij}x_j+s_i=-b_i}$$</p>
+<h3 id="step-4"><a href="#step-4" class="headerlink" title="step 4"></a>step 4</h3><p>Finally, replace any unconstraint variable in sign $x_j$, with $x^+_j-x^-_j$, and we require that these are non-negative by adding the relevant constraints $x^+_j≥0$ and $x^-_j≥0$ to $P’$.<br>Afterwards we have to go back to $x_j=x^+_j-x^-_j$ to find the value of $x_j$!</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>LP:<br>$$min 3x_1+2x_2$$<br>$$ s.t. 2x_1≤3$$<br>$$ 5x_1+2x_2≥-27$$<br>$$ x_1≥0$$</p>
+<ul>
+<li>change minimisation to maximisation</li>
+<li>change ≥ and ≤ constraints to = and add surplus or slack variables.</li>
+</ul>
+<p>$$max -3x_1-2x_2$$<br>$$ s.t. 2x_1+s_1=3$$<br>$$ 5x_1+2x_2-s_2=-27$$<br>$$ x_1≥0$$<br>$$ s_1≥0$$<br>$$ s_2≥0$$</p>
+<ul>
+<li>make bounds positive</li>
+</ul>
+<p>$$max -3x_1-2x_2$$<br>$$ s.t. 2x_1+s_1=3$$<br>$$ -5x_1-2x_2+s_2=+27$$<br>$$ x_1≥0$$<br>$$ s_1≥0$$<br>$$ s_2≥0$$</p>
+<ul>
+<li>remove unrestricted variables</li>
+</ul>
+<p>$$max -3x_1-2x^+_2+2x^-_2$$<br>$$ s.t. 2x_1+s_1=3$$<br>$$ -5x_1-2x^+_2+2x^-_2+s_2=+27$$<br>$$ x_1≥0$$<br>$$ x^+_2≥0$$<br>$$ x^-_2≥0$$<br>$$ s_1≥0$$<br>$$ s_2≥0$$</p>
+<h1 id="Some-further-definitions"><a href="#Some-further-definitions" class="headerlink" title="Some further definitions"></a>Some further definitions</h1><h2 id="Feasibility"><a href="#Feasibility" class="headerlink" title="Feasibility"></a>Feasibility</h2><p>A point x is feasible for a given LP if it satisfies all its constraints<br>The feasible region for that LP is the set of all its feasible points.<br>An LP is infeasible if its feasibility set is empty; otherwise, it is feasible.<br>An LP is unbounded if it is feasible but its objective function can be made arbitrarily “good”.<br>• For example, if an LP is a minimisation problem and unbounded, then its objective value can be made arbitrarily small while<br>maintaining feasibility. In other words, we can drive the objective value to negative infinity within the feasibility set. Similarly for an unbounded maximisation problem where we can drive the objective value to positive infinity.<br>A linear program is unbounded only if its feasibility set is an unbounded set. However, an unbounded feasibility set does not necessarily imply that the linear program itself is unbounded (sufficient but not necessary condition).</p>
+<h2 id="What-is-an-Optimal-Solution"><a href="#What-is-an-Optimal-Solution" class="headerlink" title="What is an Optimal Solution?"></a>What is an Optimal Solution?</h2><p>An assignment of variables that satisfies all the constraints and optimises the objective function is called an optimal solution.<br>• Given a maximisation LP problem, an optimal solution for the LP is a feasible point<br>whose value is the largest possible among all feasible points.<br>• Given a minimisation LP problem, an optimal solution for the LP is a feasible point<br>whose value is the smallest possible among all feasible points.</p>
+<h2 id="Possible-outcomes-of-a-LP"><a href="#Possible-outcomes-of-a-LP" class="headerlink" title="Possible outcomes of a LP"></a>Possible outcomes of a LP</h2><p>For any given linear program there are three possibilities:</p>
+<ol>
+<li>The linear program is infeasible: the feasible region is empty (there is no feasible solution), and so there is no optimal solution.</li>
+<li>The linear program is feasible but the objective is unbounded: the feasible region is an unbounded set, but there is no optimal solution.</li>
+<li>The linear program is feasible and has an optimal solution x* (unique or multiple) within its feasible region: the feasibility set can be either unbounded or bounded.</li>
+</ol>
+<h1 id="Install-LP-solve"><a href="#Install-LP-solve" class="headerlink" title="Install LP-solve"></a>Install LP-solve</h1><p><a target="_blank" rel="noopener" href="http://sites.math.washington.edu/~conroy/m381-general/lpsolveHowToMac/lpsolveMacHow.html">Steps to install and run lpsolve on a Mac
+</a></p>
 
     </div>
 
@@ -460,8 +574,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/09/27/Leetcode/" rel="prev" title="Leetcode">
-                  <i class="fa fa-chevron-left"></i> Leetcode
+                <a href="/2020/10/06/CV2/" rel="prev" title="Computer Vision Week 2 Image Formation">
+                  <i class="fa fa-chevron-left"></i> Computer Vision Week 2 Image Formation
                 </a>
             </div>
             <div class="post-nav-item">
@@ -526,13 +640,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">25k</span>
+    <span title="Symbols count total">36k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">22 mins.</span>
+    <span title="Reading time total">32 mins.</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>

@@ -23,21 +23,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Content “没有免费的午餐”定理 ML发展历程 ML应用现状">
+  <meta name="description" content="Overview of image formation Light from a radiation source is reflected by surfaces in the world.. Refleted light passes through some optics and is recorded by a sensor Images are formed when a sensor">
 <meta property="og:type" content="article">
-<meta property="og:title" content="西瓜书——NFL&amp;History&amp;Appln">
-<meta property="og:url" content="http://example.com/2020/09/30/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%89%EF%BC%89/index.html">
+<meta property="og:title" content="Computer Vision Week 2 Image Formation">
+<meta property="og:url" content="http://example.com/2020/10/06/CV2/index.html">
 <meta property="og:site_name" content="CC">
-<meta property="og:description" content="Content “没有免费的午餐”定理 ML发展历程 ML应用现状">
+<meta property="og:description" content="Overview of image formation Light from a radiation source is reflected by surfaces in the world.. Refleted light passes through some optics and is recorded by a sensor Images are formed when a sensor">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-30T05:46:25.000Z">
-<meta property="article:modified_time" content="2020-09-29T07:45:56.623Z">
+<meta property="article:published_time" content="2020-10-05T19:46:25.000Z">
+<meta property="article:modified_time" content="2020-10-05T18:05:55.169Z">
 <meta property="article:author" content="CeliaChien">
-<meta property="article:tag" content="Machine learning">
+<meta property="article:tag" content="Computer Vision">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2020/09/30/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%89%EF%BC%89/">
+<link rel="canonical" href="http://example.com/2020/10/06/CV2/">
 
 
 <script data-pjax class="page-configurations">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>西瓜书——NFL&History&Appln | CC</title>
+  <title>Computer Vision Week 2 Image Formation | CC</title>
   
 
 
@@ -215,7 +215,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Content"><span class="nav-number">1.</span> <span class="nav-text">Content</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NFL-Theorem"><span class="nav-number">2.</span> <span class="nav-text">NFL Theorem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">发展历程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%8E%B0%E7%8A%B6"><span class="nav-number">4.</span> <span class="nav-text">应用现状</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview-of-image-formation"><span class="nav-number">1.</span> <span class="nav-text">Overview of image formation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Physics-of-image-formation"><span class="nav-number">2.</span> <span class="nav-text">Physics of image formation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ingredients-of-image-formation"><span class="nav-number">3.</span> <span class="nav-text">Ingredients of image formation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Light-and-Colour"><span class="nav-number">4.</span> <span class="nav-text">Light and Colour</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#visible-spectrum"><span class="nav-number">4.1.</span> <span class="nav-text">visible spectrum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Colour-Perception"><span class="nav-number">4.2.</span> <span class="nav-text">Colour Perception</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Luminance"><span class="nav-number">4.3.</span> <span class="nav-text">Luminance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Illuminance"><span class="nav-number">4.4.</span> <span class="nav-text">Illuminance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Colour-mixing"><span class="nav-number">4.5.</span> <span class="nav-text">Colour mixing</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Measuring-surface-properties"><span class="nav-number">5.</span> <span class="nav-text">Measuring surface properties</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Color-Constancy"><span class="nav-number">6.</span> <span class="nav-text">Color Constancy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Artificial"><span class="nav-number">6.1.</span> <span class="nav-text">Artificial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Biological"><span class="nav-number">6.2.</span> <span class="nav-text">Biological</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Focusing-Light"><span class="nav-number">6.3.</span> <span class="nav-text">Focusing Light</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Optics"><span class="nav-number">7.</span> <span class="nav-text">Optics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pinhole-Camera"><span class="nav-number">7.1.</span> <span class="nav-text">Pinhole Camera</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lensed-Camera"><span class="nav-number">7.2.</span> <span class="nav-text">Lensed Camera</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thin-Lenses"><span class="nav-number">7.3.</span> <span class="nav-text">Thin Lenses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Depth-of-focus"><span class="nav-number">7.4.</span> <span class="nav-text">Depth of focus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Focal-Range"><span class="nav-number">7.5.</span> <span class="nav-text">Focal Range</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -307,7 +307,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/30/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%89%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/06/CV2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -320,7 +320,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          西瓜书——NFL&History&Appln<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/_posts/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%89%EF%BC%89.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+          Computer Vision Week 2 Image Formation<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/_posts/CV2.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
 
         <div class="post-meta-container">
@@ -330,23 +330,17 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2020-09-30 13:46:25" itemprop="dateCreated datePublished" datetime="2020-09-30T13:46:25+08:00">2020-09-30</time>
+      <time title="Created: 2020-10-06 03:46:25 / Modified: 02:05:55" itemprop="dateCreated datePublished" datetime="2020-10-06T03:46:25+08:00">2020-10-06</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-29 15:45:56" itemprop="dateModified" datetime="2020-09-29T15:45:56+08:00">2020-09-29</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%A5%BF%E7%93%9C%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">西瓜书</span></a>
+          <a href="/categories/Computer-Vision/" itemprop="url" rel="index"><span itemprop="name">Computer Vision</span></a>
         </span>
     </span>
 
@@ -358,14 +352,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>259</span>
+      <span>4.4k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>4 mins.</span>
     </span>
 </div>
 
@@ -376,38 +370,80 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h1><ul>
-<li>“没有免费的午餐”定理</li>
-<li>ML发展历程</li>
-<li>ML应用现状<a id="more"></a>
-<h1 id="NFL-Theorem"><a href="#NFL-Theorem" class="headerlink" title="NFL Theorem"></a>NFL Theorem</h1></li>
+        <h1 id="Overview-of-image-formation"><a href="#Overview-of-image-formation" class="headerlink" title="Overview of image formation"></a>Overview of image formation</h1><ul>
+<li><strong>Light</strong> from a <strong>radiation source</strong> is <strong>reflected</strong> by <strong>surfaces</strong> in the world..</li>
+<li>Refleted light passes through some <strong>optics</strong> and is recorded by a <strong>sensor</strong></li>
+<li>Images are formed when a sensor registers <strong>radiation</strong> that has interacted with physical objects<a id="more"></a>
+
+</li>
 </ul>
-<h1 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h1><blockquote>
-<p>机器学习是人工智能研究发展到一定阶段的必然产物</p>
-</blockquote>
+<h1 id="Physics-of-image-formation"><a href="#Physics-of-image-formation" class="headerlink" title="Physics of image formation"></a>Physics of image formation</h1><ul>
+<li>ligth</li>
+<li>reflectance</li>
+<li>optics</li>
+</ul>
+<h1 id="Ingredients-of-image-formation"><a href="#Ingredients-of-image-formation" class="headerlink" title="Ingredients of image formation"></a>Ingredients of image formation</h1><p>The image that is formed is affected by two sets of parameters</p>
+<p><strong>Radiometric parameters</strong><br>Determine the intensity/colour of a given location in the image</p>
 <ul>
-<li>20世纪50年代到70年代初<ul>
-<li>人工智能研究处于“推理期”</li>
-<li>人们基于符号知识表示，通过演绎推理技术取得了很大成就；</li>
+<li>illumination(type, number, location, intensity, colour-spectrum)</li>
+<li>surface reflectance properties(material, orientation)</li>
+<li>sensor properties(sensitivity to different electromagnetic frequencies)</li>
 </ul>
+<p><strong>Geometric parameters</strong><br>Determine where on the image a scene point appears</p>
+<ul>
+<li>camera position and orientation in space</li>
+<li>camera optics(e.g. focal length)</li>
+<li>projection geometry(mapping from 3D to 2D)</li>
+</ul>
+<h1 id="Light-and-Colour"><a href="#Light-and-Colour" class="headerlink" title="Light and Colour"></a>Light and Colour</h1><h2 id="visible-spectrum"><a href="#visible-spectrum" class="headerlink" title="visible spectrum"></a>visible spectrum</h2><p>At the earth’s surface the intensity of the electromagnetic radiation emanating from the sun has a peak within the 400-700nm range.</p>
+<ul>
+<li>The human eye has evolved a specific sensitivity to this part of the electromagnetic spectrum.</li>
+<li>Hence, visible light is that part of the electromagnetic spectrum with a wavelength (λ) between 400 and 700nm.</li>
+<li>Cameras and Computer Vision systems also concentrate on this part of the spectrum (but not exclusively, e.g. infra-red cameras for detecting body heat, X-rays for imaging inside the body).</li>
+</ul>
+<h2 id="Colour-Perception"><a href="#Colour-Perception" class="headerlink" title="Colour Perception"></a>Colour Perception</h2><ul>
+<li>The radiation that drives the human construct of colour, is fundamentally colour less.</li>
+<li>The sensation of colour is determined by the human visual system, based on the product of light and reflectance.</li>
+<li>However, it is a convenient short-hand to refer to electormagnetic radiation as having colour, e.g. to say “red-light” or “blue-light”.</li>
+</ul>
+<h2 id="Luminance"><a href="#Luminance" class="headerlink" title="Luminance"></a>Luminance</h2><p>Light is differentially reflected at each wavelength, which gives objects their natural colours.</p>
+<p><strong>albedo</strong> = fraction of light reflected at a particular wavelength<br>An object looks green because is absorbes red and blue light leaving<br>more green in the reflected light.</p>
+<h2 id="Illuminance"><a href="#Illuminance" class="headerlink" title="Illuminance"></a>Illuminance</h2><p>Light is produced in different amounts at different wavelengths by each light source.</p>
+<h2 id="Colour-mixing"><a href="#Colour-mixing" class="headerlink" title="Colour mixing"></a>Colour mixing</h2><p>Mixing light: additive<br>e.g. a green light plus a blue light plus a red light gives light containing a broad spectrum of light, i.e. white.<br>The illumination from different light sources adds.<br>Mixing pigments: subtractive<br>e.g. a green pigment plus a blue pigment plus a red pigment gives a pigment that absorbs light over a broad spectrum, leaving black.<br>The reflection from different surfaces subtracts.</p>
+<h1 id="Measuring-surface-properties"><a href="#Measuring-surface-properties" class="headerlink" title="Measuring surface properties"></a>Measuring surface properties</h1><p>The biological vision system percetives the colour of surfaces in the world, not the coulour of the light entering the eyes.<br>This is an ill-posed problem: we record L but need to recover R and don’t know E<br>$$ L(x,y,\lambda)=fn(E(x,y,\lambda),R(x,y,\lambda)) $$</p>
+<ul>
+<li><strong>L</strong>uminance(L) amount of light striking the sensor, depends on</li>
+<li>Illuminance(E) amount of light striking the surface as well as</li>
+<li><strong>R</strong>eflectance(R) which depends on material properties</li>
+</ul>
+<h1 id="Color-Constancy"><a href="#Color-Constancy" class="headerlink" title="Color Constancy"></a>Color Constancy</h1><h2 id="Artificial"><a href="#Artificial" class="headerlink" title="Artificial"></a>Artificial</h2><p>To recover the surface colour of a particular location,$R(x,y,\lambda))$,we need to know the colour of the illuminationn at that point, $E(x,y,\lambda))$</p>
+<p>many ways of approximating E have been suggested:</p>
+<ul>
+<li>Average reflectance across scene is known(often fails)</li>
+<li>Fixing brightest image patch to be white</li>
+<li>Gamut(collection of all colours) falls within known arrange</li>
+<li>Known reference colour (colour chart, skin colour)</li>
+<li>Specular reflections have the colour of the illumination</li>
+</ul>
+<p>None of these are work particularly well</p>
+<h2 id="Biological"><a href="#Biological" class="headerlink" title="Biological"></a>Biological</h2><p>However, the human visual system does seem able to recover surface colour, since despite large changes in illumination (and consequently the intensity spectrum that enters our eyes), we usually experience the colour of an object as being constant.</p>
+<p>We are not normally aware of this variation because colour constancy mechanisms discount the effects of illumination, and infer the colour of the objects.</p>
+<h2 id="Focusing-Light"><a href="#Focusing-Light" class="headerlink" title="Focusing Light"></a>Focusing Light</h2><p>Light spreads out from a point.<br>Without some kind of optics each location on the sensor will register light coming from many different points in the world.<br>No image will be formed.</p>
+<h1 id="Optics"><a href="#Optics" class="headerlink" title="Optics"></a>Optics</h1><h2 id="Pinhole-Camera"><a href="#Pinhole-Camera" class="headerlink" title="Pinhole Camera"></a>Pinhole Camera</h2><p>Restricts the flow of light (using a small hole) so that only one ray from each point in the world reaches the sensor.</p>
+<p>“Focus” means that all rays coming from a scene point converge into a single image point.<br>“Exposure” is the time needed to allow enough light through to form an image (the smaller the <strong>aperture</strong>, the longer the <strong>exposure time</strong>). The longer the <strong>exposure</strong> the more <strong>blurred</strong> an image is likely to be.</p>
+<ul>
+<li>mall pinhole: sharp focus but dim image (long exposure time) </li>
+<li>Large pinhole: brighter image (shorter exposure) but blurred</li>
+</ul>
+<p>To produce an image that is both bright and in focus requires a <strong>lens</strong></p>
+<h2 id="Lensed-Camera"><a href="#Lensed-Camera" class="headerlink" title="Lensed Camera"></a>Lensed Camera</h2><ul>
+<li><p>With a large pinhole, light rays from the same point project to different locations on the image. The image is blurred.</p>
 </li>
-<li>20世纪70年代中期开始<ul>
-<li>人工智能研究进入了“知识期”</li>
-<li>人们基于符号知识表示，通过获取和利用领域知识来建立专家系统取得了大量成果；</li>
-</ul>
-</li>
-<li>20世纪90年代中期<ul>
-<li>“统计学习”闪亮登场并迅速占领主流舞台</li>
-<li>SVM“支持向量机”，“核方法”</li>
-</ul>
-</li>
-<li>21世纪初<ul>
-<li>连接主义卷土重来</li>
-<li>“深度学习”，“神经网络”</li>
-</ul>
+<li><p>By focusing rays from the same point onto a single image location, a lens can keep the image sharp while gathering more light.</p>
 </li>
 </ul>
-<h1 id="应用现状"><a href="#应用现状" class="headerlink" title="应用现状"></a>应用现状</h1><!-- more -->
+<p><strong>Cost</strong>: image focused for only a <strong>restricted range</strong> of object <strong>positions</strong></p>
+<h2 id="Thin-Lenses"><a href="#Thin-Lenses" class="headerlink" title="Thin Lenses"></a>Thin Lenses</h2><h2 id="Depth-of-focus"><a href="#Depth-of-focus" class="headerlink" title="Depth of focus"></a>Depth of focus</h2><h2 id="Focal-Range"><a href="#Focal-Range" class="headerlink" title="Focal Range"></a>Focal Range</h2>
     </div>
 
     
@@ -424,7 +460,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>Post link: </strong>
-      <a href="http://example.com/2020/09/30/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%89%EF%BC%89/" title="西瓜书——NFL&amp;History&amp;Appln">http://example.com/2020/09/30/西瓜书（三）/</a>
+      <a href="http://example.com/2020/10/06/CV2/" title="Computer Vision Week 2 Image Formation">http://example.com/2020/10/06/CV2/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -433,20 +469,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Machine-learning/" rel="tag"><i class="fa fa-tag"></i> Machine learning</a>
+              <a href="/tags/Computer-Vision/" rel="tag"><i class="fa fa-tag"></i> Computer Vision</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/09/30/math1/" rel="prev" title="Math Quiz 1">
-                  <i class="fa fa-chevron-left"></i> Math Quiz 1
+                <a href="/2022/09/27/Leetcode/" rel="prev" title="Leetcode">
+                  <i class="fa fa-chevron-left"></i> Leetcode
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/09/29/Round%20A%202020%20Q1/" rel="next" title="Round A 2020 kick start Q1">
-                  Round A 2020 kick start Q1 <i class="fa fa-chevron-right"></i>
+                <a href="/2020/10/05/OPM2/" rel="next" title="Introdution to Linear Programming">
+                  Introdution to Linear Programming <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

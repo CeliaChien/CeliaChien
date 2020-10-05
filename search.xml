@@ -1,20 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Leetcode</title>
-    <url>/2022/09/27/Leetcode/</url>
-    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
-<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
-<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
-<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
-]]></content>
+    <title>Computer Vision Week 2 Image Formation</title>
+    <url>/2020/10/06/CV2/</url>
+    <content><![CDATA[<h1 id="Overview-of-image-formation"><a href="#Overview-of-image-formation" class="headerlink" title="Overview of image formation"></a>Overview of image formation</h1><ul>
+<li><strong>Light</strong> from a <strong>radiation source</strong> is <strong>reflected</strong> by <strong>surfaces</strong> in the world..</li>
+<li>Refleted light passes through some <strong>optics</strong> and is recorded by a <strong>sensor</strong></li>
+<li>Images are formed when a sensor registers <strong>radiation</strong> that has interacted with physical objects<a id="more"></a>
+
+</li>
+</ul>
+<h1 id="Physics-of-image-formation"><a href="#Physics-of-image-formation" class="headerlink" title="Physics of image formation"></a>Physics of image formation</h1><ul>
+<li>ligth</li>
+<li>reflectance</li>
+<li>optics</li>
+</ul>
+<h1 id="Ingredients-of-image-formation"><a href="#Ingredients-of-image-formation" class="headerlink" title="Ingredients of image formation"></a>Ingredients of image formation</h1><p>The image that is formed is affected by two sets of parameters</p>
+<p><strong>Radiometric parameters</strong><br>Determine the intensity/colour of a given location in the image</p>
+<ul>
+<li>illumination(type, number, location, intensity, colour-spectrum)</li>
+<li>surface reflectance properties(material, orientation)</li>
+<li>sensor properties(sensitivity to different electromagnetic frequencies)</li>
+</ul>
+<p><strong>Geometric parameters</strong><br>Determine where on the image a scene point appears</p>
+<ul>
+<li>camera position and orientation in space</li>
+<li>camera optics(e.g. focal length)</li>
+<li>projection geometry(mapping from 3D to 2D)</li>
+</ul>
+<h1 id="Light-and-Colour"><a href="#Light-and-Colour" class="headerlink" title="Light and Colour"></a>Light and Colour</h1><h2 id="visible-spectrum"><a href="#visible-spectrum" class="headerlink" title="visible spectrum"></a>visible spectrum</h2><p>At the earth’s surface the intensity of the electromagnetic radiation emanating from the sun has a peak within the 400-700nm range.</p>
+<ul>
+<li>The human eye has evolved a specific sensitivity to this part of the electromagnetic spectrum.</li>
+<li>Hence, visible light is that part of the electromagnetic spectrum with a wavelength (λ) between 400 and 700nm.</li>
+<li>Cameras and Computer Vision systems also concentrate on this part of the spectrum (but not exclusively, e.g. infra-red cameras for detecting body heat, X-rays for imaging inside the body).</li>
+</ul>
+<h2 id="Colour-Perception"><a href="#Colour-Perception" class="headerlink" title="Colour Perception"></a>Colour Perception</h2><ul>
+<li>The radiation that drives the human construct of colour, is fundamentally colour less.</li>
+<li>The sensation of colour is determined by the human visual system, based on the product of light and reflectance.</li>
+<li>However, it is a convenient short-hand to refer to electormagnetic radiation as having colour, e.g. to say “red-light” or “blue-light”.</li>
+</ul>
+<h2 id="Luminance"><a href="#Luminance" class="headerlink" title="Luminance"></a>Luminance</h2><p>Light is differentially reflected at each wavelength, which gives objects their natural colours.</p>
+<p><strong>albedo</strong> = fraction of light reflected at a particular wavelength<br>An object looks green because is absorbes red and blue light leaving<br>more green in the reflected light.</p>
+<h2 id="Illuminance"><a href="#Illuminance" class="headerlink" title="Illuminance"></a>Illuminance</h2><p>Light is produced in different amounts at different wavelengths by each light source.</p>
+<h2 id="Colour-mixing"><a href="#Colour-mixing" class="headerlink" title="Colour mixing"></a>Colour mixing</h2><p>Mixing light: additive<br>e.g. a green light plus a blue light plus a red light gives light containing a broad spectrum of light, i.e. white.<br>The illumination from different light sources adds.<br>Mixing pigments: subtractive<br>e.g. a green pigment plus a blue pigment plus a red pigment gives a pigment that absorbs light over a broad spectrum, leaving black.<br>The reflection from different surfaces subtracts.</p>
+<h1 id="Measuring-surface-properties"><a href="#Measuring-surface-properties" class="headerlink" title="Measuring surface properties"></a>Measuring surface properties</h1><p>The biological vision system percetives the colour of surfaces in the world, not the coulour of the light entering the eyes.<br>This is an ill-posed problem: we record L but need to recover R and don’t know E<br>$$ L(x,y,\lambda)=fn(E(x,y,\lambda),R(x,y,\lambda)) $$</p>
+<ul>
+<li><strong>L</strong>uminance(L) amount of light striking the sensor, depends on</li>
+<li>Illuminance(E) amount of light striking the surface as well as</li>
+<li><strong>R</strong>eflectance(R) which depends on material properties</li>
+</ul>
+<h1 id="Color-Constancy"><a href="#Color-Constancy" class="headerlink" title="Color Constancy"></a>Color Constancy</h1><h2 id="Artificial"><a href="#Artificial" class="headerlink" title="Artificial"></a>Artificial</h2><p>To recover the surface colour of a particular location,$R(x,y,\lambda))$,we need to know the colour of the illuminationn at that point, $E(x,y,\lambda))$</p>
+<p>many ways of approximating E have been suggested:</p>
+<ul>
+<li>Average reflectance across scene is known(often fails)</li>
+<li>Fixing brightest image patch to be white</li>
+<li>Gamut(collection of all colours) falls within known arrange</li>
+<li>Known reference colour (colour chart, skin colour)</li>
+<li>Specular reflections have the colour of the illumination</li>
+</ul>
+<p>None of these are work particularly well</p>
+<h2 id="Biological"><a href="#Biological" class="headerlink" title="Biological"></a>Biological</h2><p>However, the human visual system does seem able to recover surface colour, since despite large changes in illumination (and consequently the intensity spectrum that enters our eyes), we usually experience the colour of an object as being constant.</p>
+<p>We are not normally aware of this variation because colour constancy mechanisms discount the effects of illumination, and infer the colour of the objects.</p>
+<h2 id="Focusing-Light"><a href="#Focusing-Light" class="headerlink" title="Focusing Light"></a>Focusing Light</h2><p>Light spreads out from a point.<br>Without some kind of optics each location on the sensor will register light coming from many different points in the world.<br>No image will be formed.</p>
+<h1 id="Optics"><a href="#Optics" class="headerlink" title="Optics"></a>Optics</h1><h2 id="Pinhole-Camera"><a href="#Pinhole-Camera" class="headerlink" title="Pinhole Camera"></a>Pinhole Camera</h2><p>Restricts the flow of light (using a small hole) so that only one ray from each point in the world reaches the sensor.</p>
+<p>“Focus” means that all rays coming from a scene point converge into a single image point.<br>“Exposure” is the time needed to allow enough light through to form an image (the smaller the <strong>aperture</strong>, the longer the <strong>exposure time</strong>). The longer the <strong>exposure</strong> the more <strong>blurred</strong> an image is likely to be.</p>
+<ul>
+<li>mall pinhole: sharp focus but dim image (long exposure time) </li>
+<li>Large pinhole: brighter image (shorter exposure) but blurred</li>
+</ul>
+<p>To produce an image that is both bright and in focus requires a <strong>lens</strong></p>
+<h2 id="Lensed-Camera"><a href="#Lensed-Camera" class="headerlink" title="Lensed Camera"></a>Lensed Camera</h2><ul>
+<li><p>With a large pinhole, light rays from the same point project to different locations on the image. The image is blurred.</p>
+</li>
+<li><p>By focusing rays from the same point onto a single image location, a lens can keep the image sharp while gathering more light.</p>
+</li>
+</ul>
+<p><strong>Cost</strong>: image focused for only a <strong>restricted range</strong> of object <strong>positions</strong></p>
+<h2 id="Thin-Lenses"><a href="#Thin-Lenses" class="headerlink" title="Thin Lenses"></a>Thin Lenses</h2><h2 id="Depth-of-focus"><a href="#Depth-of-focus" class="headerlink" title="Depth of focus"></a>Depth of focus</h2><h2 id="Focal-Range"><a href="#Focal-Range" class="headerlink" title="Focal Range"></a>Focal Range</h2>]]></content>
       <categories>
-        <category>Leetcode</category>
+        <category>Computer Vision</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
-        <tag>Algorithm</tag>
-        <tag>C++</tag>
+        <tag>Computer Vision</tag>
       </tags>
   </entry>
   <entry>
@@ -107,6 +174,23 @@
       </categories>
       <tags>
         <tag>OPM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode</title>
+    <url>/2022/09/27/Leetcode/</url>
+    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
+<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
+<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
+<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -218,6 +302,182 @@
       </tags>
   </entry>
   <entry>
+    <title>Introdution to Linear Programming</title>
+    <url>/2020/10/05/OPM2/</url>
+    <content><![CDATA[<h1 id="Introdution-to-Linear-Programming"><a href="#Introdution-to-Linear-Programming" class="headerlink" title="Introdution to Linear Programming"></a>Introdution to Linear Programming</h1><h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><ul>
+<li><strong>Objective function</strong>: linear function,$z$, we want to optimise</li>
+<li><strong>Variables</strong>: $x_j$ amounts we seek to assign values to, in order to optimise the objective function.</li>
+<li><strong>Constraints</strong>: linear (in)equalities that must be satisfied by an assignment of variables<ul>
+<li><strong>Non-negativity constraints</strong>: constraints of the type $x_j≥0$</li>
+<li><strong>Resource constraints</strong>: the other constraints are often termed as resource constraints(or just constraints when it’s clear from the context).</li>
+</ul>
+</li>
+<li><strong>Optimal solution</strong>: feasible point(s) at which the objective value is the largest (in case of maximisation) or smallest(in case of minimisation) among all feasible points.</li>
+<li><strong>Feasible point</strong>: point $x$ is feasible for a linear program if it satisfies all its constraints.</li>
+<li><strong>Feasible region</strong>: set of all feasible points of the problem.<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="Linear-programming"><a href="#Linear-programming" class="headerlink" title="Linear programming"></a>Linear programming</h2><p>Importantly, these problems are <strong>convex</strong>, and we use this property in Linear Programming</p>
+<ul>
+<li>That is, the space of feasible solutions is a convex polytope, and the optimal solution can be found by traversing the perimeter of the polytope in a systematic way.</li>
+</ul>
+<p>Generally, in an optimisation problem we’re trying to minimise or maximise some quantity, called the objective.<br>The objective depends on a finite number of variables.<br>The variables might be related to one another by one or several constraints.<br>In linear programming, the objective function and the constraints are of linear form.</p>
+<h2 id="Questions-on-Anatomy-of-an-LP"><a href="#Questions-on-Anatomy-of-an-LP" class="headerlink" title="Questions on Anatomy of an LP"></a>Questions on Anatomy of an LP</h2><ul>
+<li><p><strong>Burger Bar</strong></p>
+<blockquote>
+<p>A burger joint makes its burgers from a combination of some high quality meat and some cheaper meat with a higher fat content. The company keeps the precise meat sources secret but guarantees that its burgers have a fat content of less than 25%.<br>The high quality meat it uses contains 80% lean meat and 20% fat, and costs 80p per kilo. The cheaper meat contains 68% lean meat and 32% fat and costs 60p per kilo.<br>How much of each kind of meat should the burger joint use in each kilo of burger meat if it wants to <strong>minimise its cost and keep the fat content down to no more than 25%</strong>?</p>
+</blockquote>
+</li>
+<li><p><strong>Model</strong><br>write problem in clear statement<br>convert or translate to mathmatical form</p>
+<ul>
+<li>Two variables<blockquote>
+<p>$x_1$ :quanity (in kg) of high qulity meat to be used in 1 kilogram of burger meat<br>$x_2$ :quanity (in kg) of cheaper qulity meat to be used in 1 kilogram of burger meat</p>
+</blockquote>
+</li>
+<li>Minimise total cost(objective function)<blockquote>
+<p>min TC: $80x_1+60x_2$</p>
+</blockquote>
+</li>
+<li>Fat contain (constraints):<blockquote>
+<p>subject to:<br>$0.2x_1+0.32x_2 ≤ 0.25$<br>$x_1+x_2=1$<br>$x_1≥0$,$x_2≥0$ non-negetivity constraints/intergret constraints</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Furniture Production</strong></p>
+<blockquote>
+<p>A furniture factory produces 2 type of benches using steel and wood..<br>The benches are sold to furniture shops for 3k and 1k per dozen of units of each type, respectively.<br>wood is old used for benches of type 1 and steel is used in both, and it’s required it of steel to produce a dozen of benches of type 2, while the same amounnt of benches of type 1 requires 1t of steel and also it 1t of wood. In total, the factory has 3t of steel and 2t of wood available in the next month.<br>the question facing the factory is, given the limited availability of materials, what quantity(in dozens) of each product should the company produce in the next month, in order to achieve the maximum total profit?</p>
+</blockquote>
+<div class="note default"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Price(per doz)</th>
+<th>Steel(per doz)</th>
+<th>Wood(per doz)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>3k</td>
+<td>1t</td>
+<td>1t</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1k</td>
+<td>1t</td>
+<td>0</td>
+</tr>
+</tbody></table>
+</div>
+</li>
+<li><p><strong>Model</strong></p>
+<ul>
+<li>two variables<blockquote>
+<p>x_1= number of benches of type 1(in dozens)<br>x_2= number of benches of type 2(in dozens)</p>
+</blockquote>
+</li>
+<li>Max: $z=3x_1+x_2$</li>
+<li>constraints<blockquote>
+<p>subject to:<br>$x_1+x_2≤3$<br>$1x_1+0x_2≤2$<br>$x_1≥0$<br>$x_2≥0$</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Graphical Solution</strong></p>
+</li>
+</ul>
+<h2 id="Questions-on-live-examples"><a href="#Questions-on-live-examples" class="headerlink" title="Questions on live examples"></a>Questions on live examples</h2><h3 id="Burger-Bar"><a href="#Burger-Bar" class="headerlink" title="Burger Bar"></a>Burger Bar</h3><p>Can we take values for $x_1$ annd $x_2$ from the entire set of real number?[-infinity to +infinity ]<br>ans: no, this problem has non-negetive constraints<br><strong>Non-negativity constraints</strong><br>These are crucial constraints as they significantly restrict the solution space and help direct the solution method. Also ensure solutions selected are sensible.<br><strong>But why is that?</strong><br>Considering the production example above, not restricting the quantity $ 𝑥_j $ to be positive only is very problematic:<br>Can not produce negative amount of product</p>
+<ul>
+<li>If a product j is not profitable, $i.e. 𝑐_j &lt; 0$, then without the constraint the model could select a solution $𝑥_j &lt; 0$ leading to profit, $i.e. 𝑐_j𝑥_j &gt; 0$</li>
+<li>A negative amount of product$j,x_j$ would imply that it does not consume any material to be produced but it rather generates… is this possible?<br>Also that would imply infinite profit driving $𝑥_j 𝑡𝑜 − ∞$</li>
+</ul>
+<h3 id="Mobile-phone-manufacture"><a href="#Mobile-phone-manufacture" class="headerlink" title="Mobile phone manufacture"></a>Mobile phone manufacture</h3><p>You are a manufacturer able to produce two types of mobile phone, a budget model and a high-end model, to be released in a particular region where you know the demand for these phone models.</p>
+<p>For simplicity, reducing the problem scope to two dimensionns, aumme production requires just two resources to produce a phone:<br>the production lead time in minutes, and the material required.<br>Note that resources are subject to capacity constraints. Then assume 2500 minutes production lead time of in a month and 4800 units of input material.</p>
+<p>The required resources per phone, the demand per month and the sales price for a phone of each model are given below:</p>
+<div class="note default"><table>
+<thead>
+<tr>
+<th></th>
+<th>Prodution Lead Time</th>
+<th>Material Quantity</th>
+<th>Demand</th>
+<th>Unite Sale Price</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Budget model</td>
+<td>5</td>
+<td>5</td>
+<td>400</td>
+<td>200</td>
+</tr>
+<tr>
+<td>High-end model</td>
+<td>7</td>
+<td>17</td>
+<td>270</td>
+<td>400</td>
+</tr>
+</tbody></table>
+</div>
+
+<p>Model and solve as a linear program using the graphical method.</p>
+<p>Answer can be seen in Quiz 2</p>
+<h1 id="Canonical-Form"><a href="#Canonical-Form" class="headerlink" title="Canonical Form"></a>Canonical Form</h1><p>Whilst in the literature there are several variants, here we will use the form below:</p>
+<p>$$ max C^TX $$<br>$$ s.t. AX = b$$<br>$$ X≥0 $$</p>
+<p>Where A is an $m \times n$matrix, b is an m-dimensional vector and c, x are n-dimensional vectors.</p>
+<p>Considerations:</p>
+<ol>
+<li>Objective function must be maximised - i.e. express as maximisation problem</li>
+<li>All resource constraints must be converted to equations/equality constraints</li>
+<li>All variables must be non-negative</li>
+<li>All constants b must be non-negative</li>
+</ol>
+<h2 id="Four-Steps-of-transforming-LPs-to-a-canonical-form"><a href="#Four-Steps-of-transforming-LPs-to-a-canonical-form" class="headerlink" title="Four Steps of transforming LPs to a canonical form"></a>Four Steps of transforming LPs to a canonical form</h2><h3 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h3><p>Let $P$ be your original linear programming problem.<br>Let $P’$ be the same problem in canonical form<br>If the objective function of $P$ if:<br>$$minimise\ C^TX$$<br>then the objective function of $P’$ will be:<br>$$maxmise -C^TX$$<br>Otherwise, objective function in $P’$ will be same as in P</p>
+<h3 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h3><p>Given an inequality constraint in $P$ in the following form in $P’$:<br>$$\sum^n_{j=1}{a_{ij}x_j≤b_i}$$</p>
+<p>replace it with the following resource and non-negativity constraints:<br>$$\sum^n_{j=1}{a_{ij}x_j+s_i=b_i}$$<br>$$s_i≥0$$</p>
+<p>Similarly for ≥ constraints of the following form in $P$:<br>$$\sum^n_{j=1}{a_{ij}x_j≥b_i}$$</p>
+<p>replace with the following in $P’$<br>$$\sum^n_{j=1}{a_{ij}x_j-s_i=b_i}$$<br>$$s_i≥0$$</p>
+<p>Any other resource constraint that is already annequality is just transfered to $P’$ as-is.</p>
+<h3 id="step-3"><a href="#step-3" class="headerlink" title="step 3"></a>step 3</h3><p>All resource constraints in $P’$ are now convereted to equality constraints with the respective slach or surplus variables added.</p>
+<p>Next, we need to make sure that the right hand side (RHS)of all constrainnts is non-negative. To do this, any constraint where $b_i&lt;0$, mutiply by -1 on both sides and throughout to obtain:<br>$$-\sum^n_{j=1}{a_{ij}x_j+s_i=-b_i}$$</p>
+<h3 id="step-4"><a href="#step-4" class="headerlink" title="step 4"></a>step 4</h3><p>Finally, replace any unconstraint variable in sign $x_j$, with $x^+_j-x^-_j$, and we require that these are non-negative by adding the relevant constraints $x^+_j≥0$ and $x^-_j≥0$ to $P’$.<br>Afterwards we have to go back to $x_j=x^+_j-x^-_j$ to find the value of $x_j$!</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>LP:<br>$$min 3x_1+2x_2$$<br>$$ s.t. 2x_1≤3$$<br>$$ 5x_1+2x_2≥-27$$<br>$$ x_1≥0$$</p>
+<ul>
+<li>change minimisation to maximisation</li>
+<li>change ≥ and ≤ constraints to = and add surplus or slack variables.</li>
+</ul>
+<p>$$max -3x_1-2x_2$$<br>$$ s.t. 2x_1+s_1=3$$<br>$$ 5x_1+2x_2-s_2=-27$$<br>$$ x_1≥0$$<br>$$ s_1≥0$$<br>$$ s_2≥0$$</p>
+<ul>
+<li>make bounds positive</li>
+</ul>
+<p>$$max -3x_1-2x_2$$<br>$$ s.t. 2x_1+s_1=3$$<br>$$ -5x_1-2x_2+s_2=+27$$<br>$$ x_1≥0$$<br>$$ s_1≥0$$<br>$$ s_2≥0$$</p>
+<ul>
+<li>remove unrestricted variables</li>
+</ul>
+<p>$$max -3x_1-2x^+_2+2x^-_2$$<br>$$ s.t. 2x_1+s_1=3$$<br>$$ -5x_1-2x^+_2+2x^-_2+s_2=+27$$<br>$$ x_1≥0$$<br>$$ x^+_2≥0$$<br>$$ x^-_2≥0$$<br>$$ s_1≥0$$<br>$$ s_2≥0$$</p>
+<h1 id="Some-further-definitions"><a href="#Some-further-definitions" class="headerlink" title="Some further definitions"></a>Some further definitions</h1><h2 id="Feasibility"><a href="#Feasibility" class="headerlink" title="Feasibility"></a>Feasibility</h2><p>A point x is feasible for a given LP if it satisfies all its constraints<br>The feasible region for that LP is the set of all its feasible points.<br>An LP is infeasible if its feasibility set is empty; otherwise, it is feasible.<br>An LP is unbounded if it is feasible but its objective function can be made arbitrarily “good”.<br>• For example, if an LP is a minimisation problem and unbounded, then its objective value can be made arbitrarily small while<br>maintaining feasibility. In other words, we can drive the objective value to negative infinity within the feasibility set. Similarly for an unbounded maximisation problem where we can drive the objective value to positive infinity.<br>A linear program is unbounded only if its feasibility set is an unbounded set. However, an unbounded feasibility set does not necessarily imply that the linear program itself is unbounded (sufficient but not necessary condition).</p>
+<h2 id="What-is-an-Optimal-Solution"><a href="#What-is-an-Optimal-Solution" class="headerlink" title="What is an Optimal Solution?"></a>What is an Optimal Solution?</h2><p>An assignment of variables that satisfies all the constraints and optimises the objective function is called an optimal solution.<br>• Given a maximisation LP problem, an optimal solution for the LP is a feasible point<br>whose value is the largest possible among all feasible points.<br>• Given a minimisation LP problem, an optimal solution for the LP is a feasible point<br>whose value is the smallest possible among all feasible points.</p>
+<h2 id="Possible-outcomes-of-a-LP"><a href="#Possible-outcomes-of-a-LP" class="headerlink" title="Possible outcomes of a LP"></a>Possible outcomes of a LP</h2><p>For any given linear program there are three possibilities:</p>
+<ol>
+<li>The linear program is infeasible: the feasible region is empty (there is no feasible solution), and so there is no optimal solution.</li>
+<li>The linear program is feasible but the objective is unbounded: the feasible region is an unbounded set, but there is no optimal solution.</li>
+<li>The linear program is feasible and has an optimal solution x* (unique or multiple) within its feasible region: the feasibility set can be either unbounded or bounded.</li>
+</ol>
+<h1 id="Install-LP-solve"><a href="#Install-LP-solve" class="headerlink" title="Install LP-solve"></a>Install LP-solve</h1><p><a href="http://sites.math.washington.edu/~conroy/m381-general/lpsolveHowToMac/lpsolveMacHow.html">Steps to install and run lpsolve on a Mac
+</a></p>
+]]></content>
+      <categories>
+        <category>OPM</category>
+      </categories>
+      <tags>
+        <tag>OPM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Round A 2020 kick start Q1</title>
     <url>/2020/09/29/Round%20A%202020%20Q1/</url>
     <content><![CDATA[<h1 id="Round-A-2020-kick-start"><a href="#Round-A-2020-kick-start" class="headerlink" title="Round A 2020 kick start"></a>Round A 2020 kick start</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><blockquote>
@@ -263,100 +523,6 @@
         <tag>C++</tag>
         <tag>Kick start</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Introdution to Linear Programming</title>
-    <url>/2020/10/05/OPM2/</url>
-    <content><![CDATA[<h1 id="Introdution-to-Linear-Programming"><a href="#Introdution-to-Linear-Programming" class="headerlink" title="Introdution to Linear Programming"></a>Introdution to Linear Programming</h1><p><strong>Definitions</strong>:</p>
-<ul>
-<li>Objective function</li>
-<li>Variables</li>
-<li>Constraints<ul>
-<li>Non-negativity constraints</li>
-<li>Resource constraints</li>
-</ul>
-</li>
-<li>Optimal solution</li>
-</ul>
-<h2 id="Questions-on-Anatomy-of-an-LP"><a href="#Questions-on-Anatomy-of-an-LP" class="headerlink" title="Questions on Anatomy of an LP"></a>Questions on Anatomy of an LP</h2><ul>
-<li><p><strong>Burger Bar</strong></p>
-<blockquote>
-<p>A burger joint makes its burgers from a combination of some high quality meat and some cheaper meat with a higher fat content. The company keeps the precise meat sources secret but guarantees that its burgers have a fat content of less than 25%.<br>The high quality meat it uses contains 80% lean meat and 20% fat, and costs 80p per kilo. The cheaper meat contains 68% lean meat and 32% fat and costs 60p per kilo.<br>How much of each kind of meat should the burger joint use in each kilo of burger meat if it wants to <strong>minimise its cost and keep the fat content down to no more than 25%</strong>?</p>
-</blockquote>
-<a id="more"></a>
-</li>
-<li><p><strong>Model</strong><br>write problem in clear statement<br>convert or translate to mathmatical form</p>
-<ul>
-<li>Two variables<blockquote>
-<p>$x_1$ :quanity (in kg) of high qulity meat to be used in 1 kilogram of burger meat<br>$x_2$ :quanity (in kg) of cheaper qulity meat to be used in 1 kilogram of burger meat</p>
-</blockquote>
-</li>
-<li>Minimise total cost(objective function)<blockquote>
-<p>min TC: $80x_1+60x_2$</p>
-</blockquote>
-</li>
-<li>Fat contain (constraints):<blockquote>
-<p>subject to:<br>$0.2x_1+0.32x_2 ≤ 0.25$<br>$x_1+x_2=1$<br>$x_1≥0$,$x_2≥0$ non-negetivity constraints/intergret constraints</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p><strong>Furniture Production</strong></p>
-<blockquote>
-<p>A furniture factory produces 2 type of benches using steel and wood..<br>The benches are sold to furniture shops for 3k and 1k per dozen of units of each type, respectively.<br>wood is old used for benches of type 1 and steel is used in both, and it’s required it of steel to produce a dozen of benches of type 2, while the same amounnt of benches of type 1 requires 1t of steel and also it 1t of wood. In total, the factory has 3t of steel and 2t of wood available in the next month.<br>the question facing the factory is, given the limited availability of materials, what quantity(in dozens) of each product should the company produce in the next month, in order to achieve the maximum total profit?</p>
-</blockquote>
-</li>
-<li><p><strong>Model</strong></p>
-<ul>
-<li>two variables<blockquote>
-<p>x_1= number of benches of type 1(in dozens)<br>x_2= number of benches of type 2(in dozens)</p>
-</blockquote>
-</li>
-<li>Max: $z=3x_1+x_2$</li>
-<li>constraints<blockquote>
-<p>subject to:<br>$x_1+x_2≤3$<br>$1x_1+0x_2≤2$<br>$x_1≥0$<br>$x_2≥0$</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p><strong>Graphical Solution</strong></p>
-</li>
-</ul>
-<h2 id="Questions-on-live-examples"><a href="#Questions-on-live-examples" class="headerlink" title="Questions on live examples"></a>Questions on live examples</h2><h3 id="Burger-Bar"><a href="#Burger-Bar" class="headerlink" title="Burger Bar"></a>Burger Bar</h3><p>Can we take values for $x_1$ annd $x_2$ from the entire set of real number?[-infinity to +infinity ]<br>ans: no, this problem has non-negetive constraints</p>
-<h2 id="Question-on-Canonical-Form"><a href="#Question-on-Canonical-Form" class="headerlink" title="Question on Canonical Form"></a>Question on Canonical Form</h2><h2 id="Mobile-phone-manufacture-Outline-the-steps-to-will-follow-to-solve-the-problem-here"><a href="#Mobile-phone-manufacture-Outline-the-steps-to-will-follow-to-solve-the-problem-here" class="headerlink" title="Mobile phone manufacture: Outline the steps to will follow to solve the problem here"></a>Mobile phone manufacture: Outline the steps to will follow to solve the problem here</h2><h2 id=""><a href="#" class="headerlink" title="-"></a>-</h2><p>-</p>
-]]></content>
-      <categories>
-        <category>OPM</category>
-      </categories>
-      <tags>
-        <tag>OPM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/09/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="other-problem"><a href="#other-problem" class="headerlink" title="other problem"></a>other problem</h3><p>when server is not running</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsof -i :4000</span><br><span class="line">$ <span class="built_in">kill</span> -9 PID</span><br></pre></td></tr></table></figure>
-
-<h2 id="How-to-insert-a-mathjax-code"><a href="#How-to-insert-a-mathjax-code" class="headerlink" title="How to insert a mathjax code"></a>How to insert a mathjax code</h2><p>More info: <a href="https://www.jianshu.com/p/a0aa94ef8ab2">mathjax code</a></p>
-<h2 id="How-to-insert-a-img-pdf-video"><a href="#How-to-insert-a-img-pdf-video" class="headerlink" title="How to insert a img/pdf/video"></a>How to insert a img/pdf/video</h2><p>More info: <a href="https://hexo.io/docs/tag-plugins#Include-Assets">insert media</a></p>
-<h2 id="About-more-button"><a href="#About-more-button" class="headerlink" title="About more button"></a>About more button</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
   </entry>
   <entry>
     <title>Union Find</title>
@@ -492,6 +658,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2020/09/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="other-problem"><a href="#other-problem" class="headerlink" title="other problem"></a>other problem</h3><p>when server is not running</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsof -i :4000</span><br><span class="line">$ <span class="built_in">kill</span> -9 PID</span><br></pre></td></tr></table></figure>
+
+<h2 id="How-to-insert-a-mathjax-code"><a href="#How-to-insert-a-mathjax-code" class="headerlink" title="How to insert a mathjax code"></a>How to insert a mathjax code</h2><p>More info: <a href="https://www.jianshu.com/p/a0aa94ef8ab2">mathjax code</a></p>
+<h2 id="How-to-insert-a-img-pdf-video"><a href="#How-to-insert-a-img-pdf-video" class="headerlink" title="How to insert a img/pdf/video"></a>How to insert a img/pdf/video</h2><p>More info: <a href="https://hexo.io/docs/tag-plugins#Include-Assets">insert media</a></p>
+<h2 id="About-more-button"><a href="#About-more-button" class="headerlink" title="About more button"></a>About more button</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
     <title>weekly contest 208</title>
     <url>/2020/09/27/weekly%20contest%20208/</url>
     <content><![CDATA[<h1 id="写作前面"><a href="#写作前面" class="headerlink" title="写作前面"></a>写作前面</h1><p>主要四道题目，1道easy，1道medium，2道hard。<br>其中前两道题干略长，需要理解，但写出来并不复杂，难在理解题意；<br>后两道略偏数据结构和算法。<br>主要题目如下：</p>
@@ -531,7 +723,8 @@
     <content><![CDATA[<h1 id="滑动窗口算法"><a href="#滑动窗口算法" class="headerlink" title="滑动窗口算法"></a>滑动窗口算法</h1><p>该算法是通过使用特定大小的子列表，在遍历完整列表的同时进行特定的操作，以达到降低了循环的嵌套深度。。</p>
 <a id="more"></a>
 
-<h2 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h2><img src="/2020/10/04/slidewindow/1.jpg" width="450" height="400">
+<h2 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h2>
+<img src="/2020/10/04/slidewindow/1.jpg" width="450" height="400">
 
 <h2 id="经典使用"><a href="#经典使用" class="headerlink" title="经典使用"></a>经典使用</h2><ul>
 <li><p>连续元素最大和</p>
@@ -572,6 +765,110 @@
       </categories>
       <tags>
         <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>karnaugh map</title>
+    <url>/2020/10/02/%E5%8D%A1%E8%AF%BA%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="卡诺图-karnaugh-map"><a href="#卡诺图-karnaugh-map" class="headerlink" title="卡诺图 karnaugh map"></a>卡诺图 karnaugh map</h1><p>卡诺图是由美国工程师karnaugh首先提出的一种用来描述逻辑函数的特殊方格图。<br>在这个方格图中，每个方格代表逻辑函数的一个最小项，而且几何相邻（在几何位置上，上下或左右相邻）的小方格具有逻辑相邻性，即两相邻小方格代表的最小项只有一个变量取值不同。</p>
+<p>对于有n个变量的逻辑函数，其最小项有$2^n$个。<br>因此该逻辑函数的卡诺图又$2^n$个小方格构成，每个小方格都满足逻辑相邻项的要求。<br>可以运用于逻辑函数的化简。</p>
+<a id="more"></a>
+
+
+<ul>
+<li>例子</li>
+<li>画出逻辑函数的卡诺图</li>
+<li>$F(A,B,C,D)= \sum {m(0,1,2,5,7,8,10,11,14,15)}$</li>
+</ul>
+<img src="/2020/10/02/卡诺图/1.jpg" title="karnaugh map" width="250" height="200">
+
+<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="二灯游戏"><a href="#二灯游戏" class="headerlink" title="二灯游戏"></a>二灯游戏</h2><p>一个游戏机有两个灯，一黄一绿，它们忽闪忽灭，你必须在出现以下情况的时候迅速按下游戏机：</p>
+<ul>
+<li>绿灯灭，黄灯亮</li>
+<li>绿灯、黄灯都灭</li>
+<li>绿灯、黄灯都亮</li>
+</ul>
+<p>解题思路：</p>
+<ol>
+<li>首先定义两个基本的命题</li>
+</ol>
+<ul>
+<li>命题A：绿灯亮</li>
+<li>命题B：黄灯亮</li>
+</ul>
+<ol start="2">
+<li>画出卡诺图</li>
+</ol>
+<img src="/2020/10/02/卡诺图/2.jpg" width="250" height="200">
+
+<ul>
+<li>A为绿灯，0和1分别表示该灯的状态；</li>
+<li>B为黄灯，同理。</li>
+</ul>
+<blockquote>
+<p>根据游戏规则的3种情况，分别对应卡诺图种的：00、01、11<br>根据卡诺图每格具备相邻性的特点，使用1<em>1、1</em>2、2<em>2、4</em>4的网格圈出（仅能使用2^n个格子去圈）</p>
+</blockquote>
+<img src="/2020/10/02/卡诺图/3.jpg" width="250" height="200">
+
+<ol start="3">
+<li>卡诺图化简</li>
+</ol>
+<blockquote>
+<p>根据上图得出式子：(~A~B+ ~AB) + （~AB+AB）= ~A + B  （~A表示A反）<br>由此得出只要满足 ~AV(V表示或)B ，即绿灯灭 或者 黄灯亮即可按下按钮。</p>
+</blockquote>
+<h3 id="三灯游戏"><a href="#三灯游戏" class="headerlink" title="三灯游戏"></a>三灯游戏</h3><p>将上述游戏进行升级，存在3种灯（绿灯、黄灯、红灯）的情况下，符合如下规则即可按下按钮：</p>
+<ul>
+<li>3灯都灭</li>
+<li>黄灯灭、红灯亮</li>
+<li>绿灯灭、黄灯亮</li>
+<li>3灯都亮</li>
+</ul>
+<p>解题思路：</p>
+<ol>
+<li>定义命题<br>命题A：绿灯亮<br>命题B：黄灯亮<br>命题C：红灯亮</li>
+<li>画出卡诺图，并将上述情况在卡诺图中用1来代替原先的二进制</li>
+</ol>
+<img src="/2020/10/02/卡诺图/4.jpg" width="450" height="300">
+
+<blockquote>
+<p>上图将4个规则在卡诺图中对应出来。</p>
+</blockquote>
+<ol start="3">
+<li>卡诺图化简</li>
+</ol>
+<blockquote>
+<p>根据卡诺图每格具备相邻性的特点，进行如下的画圈：</p>
+</blockquote>
+<img src="/2020/10/02/卡诺图/5.jpg" width="250" height="200">
+
+<blockquote>
+<p>因此可得式子：(~A~B~C+A~B~C+A~BC+A~B~C) + (~A~BC+~ABC+A~BC+ABC)<br>= (~A~B+A~B) + (~AC+AC)<br>= ~A+C<br>化简后获得 ~A+C</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>ACM&amp;C++</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计学习方法三要素</title>
+    <url>/2020/10/05/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E4%B8%89%E8%A6%81%E7%B4%A0/</url>
+    <content><![CDATA[<h1 id="统计学习方法三要素"><a href="#统计学习方法三要素" class="headerlink" title="统计学习方法三要素"></a>统计学习方法三要素</h1><blockquote>
+<p>统计学习方法都是由模型、策略和算法构成的，即统计学习方法由三要素构成，可以简单地表示为：<br>$$方法=模型+策略+算法$$</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><p>统计学习首要考虑的问题是学习什么样的模型。<br>在监督学习过程中，模型就是所要学习的条件概率分布或者决策函数。<br>模型的假设空间包含所有可能的条件概率分布或决策函数。<br>例如，假设决策函数是输入变量的线性函数，那么模型的假设空间就是这些线性函数构成的函数集合。<br>假设空间中的模型一般有无穷多个。<br>假设空间用F表示，假设空间可以定义为决策函数的集合：<br>$$F={f|Y=f(X)}$$<br>其中，X和Y是定义在输入空间X和输出空间Y上的变量，这时F通常是由一个参数向量决定的函数族：</p>
+<h1 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h1><h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>算法是指学习模型的具体计算方法。<br>统计学习基于训练数据集，根据学习策略，从假设空间中选择最优模型，最后需要考虑用什么样的计算方法求解最优模型。<br>这时，统计学习问题归结为最优化问题，统计学习的算法成为求解最优化问题的算法。<br>如果最优化问题有显式的解析式，这个最优化问题就比较简单。<br>但是通常解析解不存在，这就需要用数值计算的方法求解。<br>如何保证找到全局最优解，并使求解的过程非常高效，就成为一个重要问题。</p>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
       </tags>
   </entry>
   <entry>
@@ -627,68 +924,72 @@
       </tags>
   </entry>
   <entry>
-    <title>karnaugh map</title>
-    <url>/2020/10/02/%E5%8D%A1%E8%AF%BA%E5%9B%BE/</url>
-    <content><![CDATA[<h1 id="卡诺图-karnaugh-map"><a href="#卡诺图-karnaugh-map" class="headerlink" title="卡诺图 karnaugh map"></a>卡诺图 karnaugh map</h1><p>卡诺图是由美国工程师karnaugh首先提出的一种用来描述逻辑函数的特殊方格图。<br>在这个方格图中，每个方格代表逻辑函数的一个最小项，而且几何相邻（在几何位置上，上下或左右相邻）的小方格具有逻辑相邻性，即两相邻小方格代表的最小项只有一个变量取值不同。</p>
-<p>对于有n个变量的逻辑函数，其最小项有$2^n$个。<br>因此该逻辑函数的卡诺图又$2^n$个小方格构成，每个小方格都满足逻辑相邻项的要求。<br>可以运用于逻辑函数的化简。</p>
+    <title>统计学习的分类</title>
+    <url>/2020/09/27/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%88%86%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="基本分类"><a href="#基本分类" class="headerlink" title="基本分类"></a>基本分类</h1><h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><p><strong>supervised learning</strong><br>是指从标注数据中学习预测模型的机器学习问题。标注数据表示输入输出的对应关系，预测模型对给定的输入产生相应的输出。监督学习的本质是<strong>学习输入到输出的映射的统计规律</strong>。</p>
+<p><font size=4, color=#008000><strong>输入空间、特征空间和输出空间</strong></font></p>
+<p>在监督学习中，将输入与输出所有可能取值的集合分别称为输入空间与输出空间。输入与输出空间可以是有限元素的集合，也可以是整个欧式空间。输入空间与输出空间可以是同一个空间，也可以是不同的空间；<strong>但是通常输出空间远远小于输入空间</strong>。</p>
 <a id="more"></a>
 
-
-<ul>
-<li>例子</li>
-<li>画出逻辑函数的卡诺图</li>
-<li>$F(A,B,C,D)= \sum {m(0,1,2,5,7,8,10,11,14,15)}$</li>
-</ul>
-<img src="/2020/10/02/卡诺图/karnaughmap.jpg" title="karnaugh map" width="250" height="200">
-
-<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="二灯游戏"><a href="#二灯游戏" class="headerlink" title="二灯游戏"></a>二灯游戏</h2><p>一个游戏机有两个灯，一黄一绿，它们忽闪忽灭，你必须在出现以下情况的时候迅速按下游戏机：</p>
-<ul>
-<li>绿灯灭，黄灯亮</li>
-<li>绿灯、黄灯都灭</li>
-<li>绿灯、黄灯都亮</li>
-</ul>
-<p>解题思路：</p>
-<ol>
-<li>首先定义两个基本的命题</li>
-</ol>
-<ul>
-<li>命题A：绿灯亮</li>
-<li>命题B：黄灯亮</li>
-</ul>
-<ol start="2">
-<li>画出卡诺图</li>
-</ol>
-<img src="/2020/10/02/卡诺图/1.jpg" width="250" height="200">
-
-<ul>
-<li>A为绿灯，0和1分别表示该灯的状态；</li>
-<li>B为黄灯，同理。<br>根据游戏规则的3种情况，分别对应卡诺图种的：00、01、11</li>
-</ul>
-<p>根据卡诺图每格具备相邻性的特点，使用1<em>1、1</em>2、2<em>2、4</em>4的网格圈出（仅能使用2^n个格子去圈）</p>
-<img src="/2020/10/02/卡诺图/2.jpg" width="250" height="200">
-
-<ol start="3">
-<li>卡诺图化简</li>
-</ol>
-<p>根据上图得出式子：(~A~B+ ~AB) + （~AB+AB）= ~A + B  （~A表示A反）</p>
-<p>由此得出只要满足 ~AV(V表示或)B ，即绿灯灭 或者 黄灯亮即可按下按钮</p>
-]]></content>
-      <categories>
-        <category>ACM&amp;C++</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-        <tag>math</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计学习方法三要素</title>
-    <url>/2020/10/05/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E4%B8%89%E8%A6%81%E7%B4%A0/</url>
-    <content><![CDATA[<h1 id="统计学习方法三要素"><a href="#统计学习方法三要素" class="headerlink" title="统计学习方法三要素"></a>统计学习方法三要素</h1><blockquote>
-<p>统计学习方法都是由模型、策略和算法构成的，即统计学习方法有</p>
+<p>每个具体的输入是一个实例，通常由特征向量表示。这时，所有特征向量存在的空间称为特征空间。</p>
+<p>特征空间的每一维对应于一个特征。有时假设输入空间与特征空间为相同的空间，对于它们不予区分；有时假设输入空间与特征空间为不同的空间，将实例从输入空间映射到特征空间。<strong>模型实际上都是定义在特征空间上的</strong>。</p>
+<p>在监督学习中，将输入与输出看作是定义在输入（特征）空间与输出空间上的随机变量的取值。输入输出变量用大写字母表示，习惯上输入变量写作X，输出变量写作Y。输入输出变量的取值用小写字母表示，输入变量的取值写作x，输出变量的取值写作y。</p>
+<p>变量可以是标量或者向量，都用相同类型字母表示。除特别声明外，默认为列向量。输入实例x的特征向量记作：<br>$$ x=(x^{(1)},x^{(2)},…,x^{(i)},…,x^{(n)})^T $$<br>$x^{(i)}$表示x的第i个特征。注意$x^{(i)}$和$x_i$不同，本书通常用$x_i$表示多个输入变量中的第i个变量，即<br>$$ x_i=(x^{(1)},x^{(2)},…,x^{(n)})^T $$<br>监督学习从训练数据集合中学习模型，对测试数据进行预测。训练数据由输入（或特征向量）与输出对组成，训练集通常表示为<br>$$T={(x_1,y_1),(x_2,y_2),…,(x_N,y_N)}$$<br>测试数据也由输入与输出对组成。输入与输出对又称为样本或者样本点。<br>输入变量X和输出变量Y有不同的类型，可以使连续的，也可以使离散的。<br>人们根据输入输出变量的不同类型，对预测任务给予不同的名称：</p>
+<blockquote>
+<p>输入变量与输出变量均为连续变量的预测问题称为<strong>回归问题</strong>；<br>输出变量为有限个离散变量的预测问题称为<strong>分类问题</strong>；<br>输入变量与输出变量均为变量序列的预测问题称为<strong>标注问题</strong>。</p>
 </blockquote>
-<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><p>统计学习首要考虑的问题是学习什么样的模型。<br>在监督学习过程中，模型就是所要学习的条件概率分布或者决策函数。<br>模型的假设空间包含所有可能的条件概率分布或决策函数。<br>例如，假设决策函数是输入变量的线性函数，那么模型的假设空间就是这些线性函数构成的函数集合。<br>假设空间中的模型一般有无穷多个。<br>假设空间用F表示，假设空间可以定义为决策函数的集合：<br>$$F={f|Y=f(X)}$$<br>其中，X和Y是定义在输入空间X和输出空间Y上的变量，这时F通常是由一个参数向量决定的函数族：</p>
-<h1 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h1><h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>算法是指学习模型的具体计算方法。<br>统计学习基于训练数据集，根据学习策略，从假设空间中选择最优模型，最后需要考虑用什么样的计算方法求解最优模型。<br>这时，统计学习问题归结为最优化问题，统计学习的算法成为求解最优化问题的算法。<br>如果最优化问题有显式的解析式，这个最优化问题就比较简单。<br>但是通常解析解不存在，这就需要用数值计算的方法求解。<br>如何保证找到全局最优解，并使求解的过程非常高效，就成为一个重要问题。</p>
+<p><font size=4, color=#008000><strong>联合概率分布</strong></font></p>
+<p>监督学习假设输入与输出的随机变量X和Y遵循联合概率分布$ P(X,Y) $。<br>$ P(X,Y) $表示分布函数，或者分布密度函数。注意在学习过程中，假定这一联合概率分布存在，但对学习系统来说，联合概率分布的具体定义是未知的。训练数据与测试数据被看作是依联合分布$ P(X,Y) $独立同分布产生的。统计学习假设数据存在一定的统计规律，X和Y具有联合概率分布就是监督学习关于数据的基本假设。</p>
+<p><font size=4, color=#008000><strong>假设空间</strong></font><br>监督学习的目的在于学习一个由输入到输出的映射，这一映射由模型来表示。<br>模型属于由输入空间到输出空间的映射的集合，这个集合就是假设空间。假设空间的确定意味着学习的范围的确定。<br>监督学习的模型可以是概率模型或者非概率模型，由条件概率分布$ P(Y|X) $或决策函数$ Y=f(X) $表示，随具体的输入进行相应的输出预测时，写作$ P(y|x) $或$ y=f(x) $。</p>
+<p><font size=4, color=#008000><strong>问题的形式化</strong></font></p>
+<h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><p><strong>unsupervised learning</strong><br>无监督学习是指从无标注数据中学习预测模型的机器学习问题。无标注数据是自然的到的数据，预测模型表示数据的类别、转换或概率。<br>无监督学习的本质是学习数据中的统计规律或潜在结构。</p>
+<h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2><p><strong>reinforcement learning</strong><br>强化学习是指智能系统在与环境的连续互动中学习最优行为策略的机器学习问题。<br>假设智能系统与环境的互动基于马尔可夫决策过程，智能系统能观测到的是环境互动的到的数据序列。<br>强化学习的本质是学习最优的序贯决策（sequential analysis）。</p>
+<h2 id="半监督学习与主动学习"><a href="#半监督学习与主动学习" class="headerlink" title="半监督学习与主动学习"></a>半监督学习与主动学习</h2><p><strong>semi-supervised learning</strong><br><strong>半监督学习</strong>是指利用标注数据和未标注数据学习预测模型的机器学习问题。<br>通常有少量标注数据、大量未标注数据，因为标注数据的构建往往需要人工，成本较高，未标注数据的收集不需太多成本。<br>半监督学习旨在利用未标注数据中的信息，辅助标注数据，进行监督学习，以较低的成本达到较好的学习效果。</p>
+<p><strong>主动学习</strong>是指机器不断主动给出实例让教师进行标注，然后利用标注数据学习预测模型的机器学习问题。<br>通常的监督学习使用给定的标注数据，往往是随机的到的，可以看作是“被动学习”，主动学习的目标是找出对学习最有帮助的实例让人标注，以较小的标注代价，达到较好的学习效果。</p>
+<p>半监督学习和主动学习更接近监督学习。</p>
+<h1 id="按模型分类"><a href="#按模型分类" class="headerlink" title="按模型分类"></a>按模型分类</h1><h2 id="概率模型与非概率模型"><a href="#概率模型与非概率模型" class="headerlink" title="概率模型与非概率模型"></a>概率模型与非概率模型</h2><h2 id="线性模型与非线性模型"><a href="#线性模型与非线性模型" class="headerlink" title="线性模型与非线性模型"></a>线性模型与非线性模型</h2><p><strong>linear model&amp;&amp;non-linear model</strong><br>统计学习模型，特别是非概率模型，可以分为线性模型和非线性模型。<br>如果函数$y=f(x)$或$z=g(x)$则称模型是线性模型，否则称模型是非线性模型。<br>线性模型：</p>
+<ul>
+<li>感知机</li>
+<li>线性支持向量机</li>
+<li>k近邻</li>
+<li>k均值</li>
+<li>潜在语义分析</li>
+</ul>
+<p>非线性模型：</p>
+<ul>
+<li>核函数支持向量机</li>
+<li>AdaBoost</li>
+<li>神经网络</li>
+</ul>
+<h2 id="参数化模型与非参数化模型"><a href="#参数化模型与非参数化模型" class="headerlink" title="参数化模型与非参数化模型"></a>参数化模型与非参数化模型</h2><p><strong>parametric model&amp;&amp;parametric model</strong><br>参数化模型假设模型参数的维度固定，模型可以由有限维参数完全刻画；<br>非参数化模型假设模型参数的维度不固定或者说无穷大，随着训练数据量的增加而不断增大。</p>
+<p>参数化模型：</p>
+<ul>
+<li>感知机</li>
+<li>朴素贝叶斯</li>
+<li>逻辑斯蒂回归</li>
+<li>k均值</li>
+<li>高斯混合模型</li>
+</ul>
+<p>非参数化模型：</p>
+<ul>
+<li>决策树</li>
+<li>支持向量机</li>
+<li>AdaBoost</li>
+<li>k近邻</li>
+<li>潜在语义分析</li>
+<li>概率潜在语义分析</li>
+<li>潜在狄利克雷分配</li>
+</ul>
+<h1 id="按算法分类"><a href="#按算法分类" class="headerlink" title="按算法分类"></a>按算法分类</h1><h2 id="在线学习"><a href="#在线学习" class="headerlink" title="在线学习"></a>在线学习</h2><p>在线学习是指每次接受一个样本，进行预测，之后学习模型，并不断重复该操作的机器学习。<br>在线学习可以是监督学习，也可以是无监督学习，强化学习本身就拥有在线学习的特点。</p>
+<h2 id="批量学习"><a href="#批量学习" class="headerlink" title="批量学习"></a>批量学习</h2><p>批量学习一次接受所有数据，学习模型，之后进行预测。<br>有些实际应用的场景要求学习必修是在线的。<br>比如：</p>
+<ul>
+<li>数据一次达到无法存储，系统需要及时作出处理；</li>
+<li>数据规模很大，不可能一次处理所有数据；</li>
+<li>数据的模式随时间动态变化，需要算法快速适应新的模式。</li>
+</ul>
+<p>在线学习通常比批量学习更难，很难学到预测准确率更高的模型，因为每次模型更新中，可利用的数据有限。</p>
+<h1 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h1><h2 id="贝叶斯学习"><a href="#贝叶斯学习" class="headerlink" title="贝叶斯学习"></a>贝叶斯学习</h2><p>贝叶斯学习，又称为贝叶斯推理，是统计学、机器学习中重要的方法。<br>其主要的想法是，在概率模型的学习和推理中，利用贝叶斯定理，计算在给定数据条件下模型的条件概率，即后验概率，并应用这个原理进行模型的估计，以及对数据的预测。<br>将模型、未观察要素及其参数用变量表示，使用模型的先验分布是贝叶斯学习的特点。</p>
+<h2 id="核方法"><a href="#核方法" class="headerlink" title="核方法"></a>核方法</h2><p>核方法是使用核函数表示核学习非线性模型的一种机器学习方法，可以用于监督学习和无监督学习。。<br>有一些线性模型的学习方法基于相似度计算，更具体地，向量内积计算。<br>核方法可以把它们扩展到非线性模型的学习，使其应用范围更广泛。<br>把线性模型扩展到非线性模型模型，直接的做法是显式地定义从输入空间（低维空间）到特征空间（高维空间）的映射，在特征空间中进行内积计算。比如，支持向量机，把输出空间的线性不可分问题转化为特征空间的线性可分问题。<br>核方法的技巧在于不显式地定义这个映射，而是直接定义核函数，即映射之后在特征空间的内积。。</p>
 ]]></content>
       <categories>
         <category>统计学习方法</category>
@@ -799,81 +1100,6 @@
 ]]></content>
       <categories>
         <category>西瓜书</category>
-      </categories>
-      <tags>
-        <tag>Machine learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计学习的分类</title>
-    <url>/2020/09/27/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%88%86%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="基本分类"><a href="#基本分类" class="headerlink" title="基本分类"></a>基本分类</h1><h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><p><strong>supervised learning</strong><br>是指从标注数据中学习预测模型的机器学习问题。标注数据表示输入输出的对应关系，预测模型对给定的输入产生相应的输出。监督学习的本质是<strong>学习输入到输出的映射的统计规律</strong>。</p>
-<p><font size=4, color=#008000><strong>输入空间、特征空间和输出空间</strong></font></p>
-<p>在监督学习中，将输入与输出所有可能取值的集合分别称为输入空间与输出空间。输入与输出空间可以是有限元素的集合，也可以是整个欧式空间。输入空间与输出空间可以是同一个空间，也可以是不同的空间；<strong>但是通常输出空间远远小于输入空间</strong>。</p>
-<a id="more"></a>
-
-<p>每个具体的输入是一个实例，通常由特征向量表示。这时，所有特征向量存在的空间称为特征空间。</p>
-<p>特征空间的每一维对应于一个特征。有时假设输入空间与特征空间为相同的空间，对于它们不予区分；有时假设输入空间与特征空间为不同的空间，将实例从输入空间映射到特征空间。<strong>模型实际上都是定义在特征空间上的</strong>。</p>
-<p>在监督学习中，将输入与输出看作是定义在输入（特征）空间与输出空间上的随机变量的取值。输入输出变量用大写字母表示，习惯上输入变量写作X，输出变量写作Y。输入输出变量的取值用小写字母表示，输入变量的取值写作x，输出变量的取值写作y。</p>
-<p>变量可以是标量或者向量，都用相同类型字母表示。除特别声明外，默认为列向量。输入实例x的特征向量记作：<br>$$ x=(x^{(1)},x^{(2)},…,x^{(i)},…,x^{(n)})^T $$<br>$x^{(i)}$表示x的第i个特征。注意$x^{(i)}$和$x_i$不同，本书通常用$x_i$表示多个输入变量中的第i个变量，即<br>$$ x_i=(x^{(1)},x^{(2)},…,x^{(n)})^T $$<br>监督学习从训练数据集合中学习模型，对测试数据进行预测。训练数据由输入（或特征向量）与输出对组成，训练集通常表示为<br>$$T={(x_1,y_1),(x_2,y_2),…,(x_N,y_N)}$$<br>测试数据也由输入与输出对组成。输入与输出对又称为样本或者样本点。<br>输入变量X和输出变量Y有不同的类型，可以使连续的，也可以使离散的。<br>人们根据输入输出变量的不同类型，对预测任务给予不同的名称：</p>
-<blockquote>
-<p>输入变量与输出变量均为连续变量的预测问题称为<strong>回归问题</strong>；<br>输出变量为有限个离散变量的预测问题称为<strong>分类问题</strong>；<br>输入变量与输出变量均为变量序列的预测问题称为<strong>标注问题</strong>。</p>
-</blockquote>
-<p><font size=4, color=#008000><strong>联合概率分布</strong></font></p>
-<p>监督学习假设输入与输出的随机变量X和Y遵循联合概率分布$ P(X,Y) $。<br>$ P(X,Y) $表示分布函数，或者分布密度函数。注意在学习过程中，假定这一联合概率分布存在，但对学习系统来说，联合概率分布的具体定义是未知的。训练数据与测试数据被看作是依联合分布$ P(X,Y) $独立同分布产生的。统计学习假设数据存在一定的统计规律，X和Y具有联合概率分布就是监督学习关于数据的基本假设。</p>
-<p><font size=4, color=#008000><strong>假设空间</strong></font><br>监督学习的目的在于学习一个由输入到输出的映射，这一映射由模型来表示。<br>模型属于由输入空间到输出空间的映射的集合，这个集合就是假设空间。假设空间的确定意味着学习的范围的确定。<br>监督学习的模型可以是概率模型或者非概率模型，由条件概率分布$ P(Y|X) $或决策函数$ Y=f(X) $表示，随具体的输入进行相应的输出预测时，写作$ P(y|x) $或$ y=f(x) $。</p>
-<p><font size=4, color=#008000><strong>问题的形式化</strong></font></p>
-<h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><p><strong>unsupervised learning</strong><br>无监督学习是指从无标注数据中学习预测模型的机器学习问题。无标注数据是自然的到的数据，预测模型表示数据的类别、转换或概率。<br>无监督学习的本质是学习数据中的统计规律或潜在结构。</p>
-<h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2><p><strong>reinforcement learning</strong><br>强化学习是指智能系统在与环境的连续互动中学习最优行为策略的机器学习问题。<br>假设智能系统与环境的互动基于马尔可夫决策过程，智能系统能观测到的是环境互动的到的数据序列。<br>强化学习的本质是学习最优的序贯决策（sequential analysis）。</p>
-<h2 id="半监督学习与主动学习"><a href="#半监督学习与主动学习" class="headerlink" title="半监督学习与主动学习"></a>半监督学习与主动学习</h2><p><strong>semi-supervised learning</strong><br><strong>半监督学习</strong>是指利用标注数据和未标注数据学习预测模型的机器学习问题。<br>通常有少量标注数据、大量未标注数据，因为标注数据的构建往往需要人工，成本较高，未标注数据的收集不需太多成本。<br>半监督学习旨在利用未标注数据中的信息，辅助标注数据，进行监督学习，以较低的成本达到较好的学习效果。</p>
-<p><strong>主动学习</strong>是指机器不断主动给出实例让教师进行标注，然后利用标注数据学习预测模型的机器学习问题。<br>通常的监督学习使用给定的标注数据，往往是随机的到的，可以看作是“被动学习”，主动学习的目标是找出对学习最有帮助的实例让人标注，以较小的标注代价，达到较好的学习效果。</p>
-<p>半监督学习和主动学习更接近监督学习。</p>
-<h1 id="按模型分类"><a href="#按模型分类" class="headerlink" title="按模型分类"></a>按模型分类</h1><h2 id="概率模型与非概率模型"><a href="#概率模型与非概率模型" class="headerlink" title="概率模型与非概率模型"></a>概率模型与非概率模型</h2><h2 id="线性模型与非线性模型"><a href="#线性模型与非线性模型" class="headerlink" title="线性模型与非线性模型"></a>线性模型与非线性模型</h2><p><strong>linear model&amp;&amp;non-linear model</strong><br>统计学习模型，特别是非概率模型，可以分为线性模型和非线性模型。<br>如果函数$y=f(x)$或$z=g(x)$则称模型是线性模型，否则称模型是非线性模型。<br>线性模型：</p>
-<ul>
-<li>感知机</li>
-<li>线性支持向量机</li>
-<li>k近邻</li>
-<li>k均值</li>
-<li>潜在语义分析</li>
-</ul>
-<p>非线性模型：</p>
-<ul>
-<li>核函数支持向量机</li>
-<li>AdaBoost</li>
-<li>神经网络</li>
-</ul>
-<h2 id="参数化模型与非参数化模型"><a href="#参数化模型与非参数化模型" class="headerlink" title="参数化模型与非参数化模型"></a>参数化模型与非参数化模型</h2><p><strong>parametric model&amp;&amp;parametric model</strong><br>参数化模型假设模型参数的维度固定，模型可以由有限维参数完全刻画；<br>非参数化模型假设模型参数的维度不固定或者说无穷大，随着训练数据量的增加而不断增大。</p>
-<p>参数化模型：</p>
-<ul>
-<li>感知机</li>
-<li>朴素贝叶斯</li>
-<li>逻辑斯蒂回归</li>
-<li>k均值</li>
-<li>高斯混合模型</li>
-</ul>
-<p>非参数化模型：</p>
-<ul>
-<li>决策树</li>
-<li>支持向量机</li>
-<li>AdaBoost</li>
-<li>k近邻</li>
-<li>潜在语义分析</li>
-<li>概率潜在语义分析</li>
-<li>潜在狄利克雷分配</li>
-</ul>
-<h1 id="按算法分类"><a href="#按算法分类" class="headerlink" title="按算法分类"></a>按算法分类</h1><h2 id="在线学习"><a href="#在线学习" class="headerlink" title="在线学习"></a>在线学习</h2><p>在线学习是指每次接受一个样本，进行预测，之后学习模型，并不断重复该操作的机器学习。<br>在线学习可以是监督学习，也可以是无监督学习，强化学习本身就拥有在线学习的特点。</p>
-<h2 id="批量学习"><a href="#批量学习" class="headerlink" title="批量学习"></a>批量学习</h2><p>批量学习一次接受所有数据，学习模型，之后进行预测。<br>有些实际应用的场景要求学习必修是在线的。<br>比如：</p>
-<ul>
-<li>数据一次达到无法存储，系统需要及时作出处理；</li>
-<li>数据规模很大，不可能一次处理所有数据；</li>
-<li>数据的模式随时间动态变化，需要算法快速适应新的模式。</li>
-</ul>
-<p>在线学习通常比批量学习更难，很难学到预测准确率更高的模型，因为每次模型更新中，可利用的数据有限。</p>
-<h1 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h1><h2 id="贝叶斯学习"><a href="#贝叶斯学习" class="headerlink" title="贝叶斯学习"></a>贝叶斯学习</h2><p>贝叶斯学习，又称为贝叶斯推理，是统计学、机器学习中重要的方法。<br>其主要的想法是，在概率模型的学习和推理中，利用贝叶斯定理，计算在给定数据条件下模型的条件概率，即后验概率，并应用这个原理进行模型的估计，以及对数据的预测。<br>将模型、未观察要素及其参数用变量表示，使用模型的先验分布是贝叶斯学习的特点。</p>
-<h2 id="核方法"><a href="#核方法" class="headerlink" title="核方法"></a>核方法</h2><p>核方法是使用核函数表示核学习非线性模型的一种机器学习方法，可以用于监督学习和无监督学习。。<br>有一些线性模型的学习方法基于相似度计算，更具体地，向量内积计算。<br>核方法可以把它们扩展到非线性模型的学习，使其应用范围更广泛。<br>把线性模型扩展到非线性模型模型，直接的做法是显式地定义从输入空间（低维空间）到特征空间（高维空间）的映射，在特征空间中进行内积计算。比如，支持向量机，把输出空间的线性不可分问题转化为特征空间的线性可分问题。<br>核方法的技巧在于不显式地定义这个映射，而是直接定义核函数，即映射之后在特征空间的内积。。</p>
-]]></content>
-      <categories>
-        <category>统计学习方法</category>
       </categories>
       <tags>
         <tag>Machine learning</tag>
