@@ -23,16 +23,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CC">
-<meta property="og:url" content="http://example.com/categories/Algorithm/index.html">
+  <meta name="description" content="Introdution to Linear ProgrammingDefinitions:  Objective function Variables Constraints Non-negativity constraints Resource constraints   Optimal solution  Questions on Anatomy of an LP Burger Bar  A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introdution to Linear Programming">
+<meta property="og:url" content="http://example.com/2020/10/05/OPM2/index.html">
 <meta property="og:site_name" content="CC">
+<meta property="og:description" content="Introdution to Linear ProgrammingDefinitions:  Objective function Variables Constraints Non-negativity constraints Resource constraints   Optimal solution  Questions on Anatomy of an LP Burger Bar  A">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-05T13:46:25.000Z">
+<meta property="article:modified_time" content="2020-10-05T10:54:51.785Z">
 <meta property="article:author" content="CeliaChien">
+<meta property="article:tag" content="OPM">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/categories/Algorithm/">
+<link rel="canonical" href="http://example.com/2020/10/05/OPM2/">
 
 
 <script data-pjax class="page-configurations">
@@ -40,12 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Category: Algorithm | CC</title>
+  <title>Introdution to Linear Programming | CC</title>
   
 
 
@@ -198,7 +203,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -210,6 +215,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introdution-to-Linear-Programming"><span class="nav-number">1.</span> <span class="nav-text">Introdution to Linear Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions-on-Anatomy-of-an-LP"><span class="nav-number">1.1.</span> <span class="nav-text">Questions on Anatomy of an LP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions-on-live-examples"><span class="nav-number">1.2.</span> <span class="nav-text">Questions on live examples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Burger-Bar"><span class="nav-number">1.2.1.</span> <span class="nav-text">Burger Bar</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-on-Canonical-Form"><span class="nav-number">1.3.</span> <span class="nav-text">Question on Canonical Form</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mobile-phone-manufacture-Outline-the-steps-to-will-follow-to-solve-the-problem-here"><span class="nav-number">1.4.</span> <span class="nav-text">Mobile phone manufacture: Outline the steps to will follow to solve the problem here</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">-</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -288,94 +294,188 @@
 </noscript>
 
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
       
 
       
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">Algorithm
-          <small>Category</small>
-        </h2>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/05/OPM2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="CeliaChien">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CC">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Introdution to Linear Programming<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/_posts/OPM2.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2020-10-05 21:46:25 / Modified: 18:54:51" itemprop="dateCreated datePublished" datetime="2020-10-05T21:46:25+08:00">2020-10-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/OPM/" itemprop="url" rel="index"><span itemprop="name">OPM</span></a>
+        </span>
+    </span>
+
+  
       </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>2.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Introdution-to-Linear-Programming"><a href="#Introdution-to-Linear-Programming" class="headerlink" title="Introdution to Linear Programming"></a>Introdution to Linear Programming</h1><p><strong>Definitions</strong>:</p>
+<ul>
+<li>Objective function</li>
+<li>Variables</li>
+<li>Constraints<ul>
+<li>Non-negativity constraints</li>
+<li>Resource constraints</li>
+</ul>
+</li>
+<li>Optimal solution</li>
+</ul>
+<h2 id="Questions-on-Anatomy-of-an-LP"><a href="#Questions-on-Anatomy-of-an-LP" class="headerlink" title="Questions on Anatomy of an LP"></a>Questions on Anatomy of an LP</h2><ul>
+<li><p><strong>Burger Bar</strong></p>
+<blockquote>
+<p>A burger joint makes its burgers from a combination of some high quality meat and some cheaper meat with a higher fat content. The company keeps the precise meat sources secret but guarantees that its burgers have a fat content of less than 25%.<br>The high quality meat it uses contains 80% lean meat and 20% fat, and costs 80p per kilo. The cheaper meat contains 68% lean meat and 32% fat and costs 60p per kilo.<br>How much of each kind of meat should the burger joint use in each kilo of burger meat if it wants to <strong>minimise its cost and keep the fat content down to no more than 25%</strong>?</p>
+</blockquote>
+<a id="more"></a>
+</li>
+<li><p><strong>Model</strong><br>write problem in clear statement<br>convert or translate to mathmatical form</p>
+<ul>
+<li>Two variables<blockquote>
+<p>$x_1$ :quanity (in kg) of high qulity meat to be used in 1 kilogram of burger meat<br>$x_2$ :quanity (in kg) of cheaper qulity meat to be used in 1 kilogram of burger meat</p>
+</blockquote>
+</li>
+<li>Minimise total cost(objective function)<blockquote>
+<p>min TC: $80x_1+60x_2$</p>
+</blockquote>
+</li>
+<li>Fat contain (constraints):<blockquote>
+<p>subject to:<br>$0.2x_1+0.32x_2 ≤ 0.25$<br>$x_1+x_2=1$<br>$x_1≥0$,$x_2≥0$ non-negetivity constraints/intergret constraints</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Furniture Production</strong></p>
+<blockquote>
+<p>A furniture factory produces 2 type of benches using steel and wood..<br>The benches are sold to furniture shops for 3k and 1k per dozen of units of each type, respectively.<br>wood is old used for benches of type 1 and steel is used in both, and it’s required it of steel to produce a dozen of benches of type 2, while the same amounnt of benches of type 1 requires 1t of steel and also it 1t of wood. In total, the factory has 3t of steel and 2t of wood available in the next month.<br>the question facing the factory is, given the limited availability of materials, what quantity(in dozens) of each product should the company produce in the next month, in order to achieve the maximum total profit?</p>
+</blockquote>
+</li>
+<li><p><strong>Model</strong></p>
+<ul>
+<li>two variables<blockquote>
+<p>x_1= number of benches of type 1(in dozens)<br>x_2= number of benches of type 2(in dozens)</p>
+</blockquote>
+</li>
+<li>Max: $z=3x_1+x_2$</li>
+<li>constraints<blockquote>
+<p>subject to:<br>$x_1+x_2≤3$<br>$1x_1+0x_2≤2$<br>$x_1≥0$<br>$x_2≥0$</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Graphical Solution</strong></p>
+</li>
+</ul>
+<h2 id="Questions-on-live-examples"><a href="#Questions-on-live-examples" class="headerlink" title="Questions on live examples"></a>Questions on live examples</h2><h3 id="Burger-Bar"><a href="#Burger-Bar" class="headerlink" title="Burger Bar"></a>Burger Bar</h3><p>Can we take values for $x_1$ annd $x_2$ from the entire set of real number?[-infinity to +infinity ]<br>ans: no, this problem has non-negetive constraints</p>
+<h2 id="Question-on-Canonical-Form"><a href="#Question-on-Canonical-Form" class="headerlink" title="Question on Canonical Form"></a>Question on Canonical Form</h2><h2 id="Mobile-phone-manufacture-Outline-the-steps-to-will-follow-to-solve-the-problem-here"><a href="#Mobile-phone-manufacture-Outline-the-steps-to-will-follow-to-solve-the-problem-here" class="headerlink" title="Mobile phone manufacture: Outline the steps to will follow to solve the problem here"></a>Mobile phone manufacture: Outline the steps to will follow to solve the problem here</h2><h2 id=""><a href="#" class="headerlink" title="-"></a>-</h2><p>-</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-10-04T10:46:25+08:00"
-              content="2020-10-04">
-          10-04
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/04/slide%20window/" itemprop="url">
-            <span itemprop="name">Slide Window</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          
 
-      
-    </header>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>CeliaChien
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://example.com/2020/10/05/OPM2/" title="Introdution to Linear Programming">http://example.com/2020/10/05/OPM2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/OPM/" rel="tag"><i class="fa fa-tag"></i> OPM</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/27/Leetcode/" rel="prev" title="Leetcode">
+                  <i class="fa fa-chevron-left"></i> Leetcode
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/10/05/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E4%B8%89%E8%A6%81%E7%B4%A0/" rel="next" title="统计学习方法三要素">
+                  统计学习方法三要素 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-10-04T00:46:25+08:00"
-              content="2020-10-04">
-          10-04
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/04/greedy/" itemprop="url">
-            <span itemprop="name">Greedy</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-09-27T21:46:25+08:00"
-              content="2020-09-27">
-          09-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/09/27/algorithm1/" itemprop="url">
-            <span itemprop="name">Union Find</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
-
-  
 
 
 
@@ -517,6 +617,50 @@ document.addEventListener('pjax:success', () => {
   
 
   
+      <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = '//cdn.jsdelivr.net/npm/mathjax@3.1.0/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
