@@ -718,13 +718,12 @@
       </tags>
   </entry>
   <entry>
-    <title>Slide Window</title>
+    <title>SlideWindow</title>
     <url>/2020/10/04/slide%20window/</url>
     <content><![CDATA[<h1 id="滑动窗口算法"><a href="#滑动窗口算法" class="headerlink" title="滑动窗口算法"></a>滑动窗口算法</h1><p>该算法是通过使用特定大小的子列表，在遍历完整列表的同时进行特定的操作，以达到降低了循环的嵌套深度。。</p>
 <a id="more"></a>
 
-<h2 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h2>
-<img src="/.com//10/04/slide window/1.jpg" width="450" height="400">
+<h2 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h2><img src="/.com//10/04/slidewindow/1.jpg" width="450" height="400">
 
 <h2 id="经典使用"><a href="#经典使用" class="headerlink" title="经典使用"></a>经典使用</h2><ul>
 <li><p>连续元素最大和</p>
