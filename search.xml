@@ -724,7 +724,7 @@
 <a id="more"></a>
 
 <h2 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h2>
-<img src="/2020/10/04/slidewindow/1.jpg" width="450" height="400">
+<img src="/.com//10/04/slide window/1.jpg" width="450" height="400">
 
 <h2 id="经典使用"><a href="#经典使用" class="headerlink" title="经典使用"></a>经典使用</h2><ul>
 <li><p>连续元素最大和</p>
@@ -780,7 +780,7 @@
 <li>画出逻辑函数的卡诺图</li>
 <li>$F(A,B,C,D)= \sum {m(0,1,2,5,7,8,10,11,14,15)}$</li>
 </ul>
-<img src="/2020/10/02/卡诺图/1.jpg" title="karnaugh map" width="250" height="200">
+<img src="/.com//10/02/卡诺图/1.jpg" title="karnaugh map" width="250" height="200">
 
 <h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="二灯游戏"><a href="#二灯游戏" class="headerlink" title="二灯游戏"></a>二灯游戏</h2><p>一个游戏机有两个灯，一黄一绿，它们忽闪忽灭，你必须在出现以下情况的时候迅速按下游戏机：</p>
 <ul>
@@ -799,7 +799,7 @@
 <ol start="2">
 <li>画出卡诺图</li>
 </ol>
-<img src="/2020/10/02/卡诺图/2.jpg" width="250" height="200">
+<img src="/.com//10/02/卡诺图/2.jpg" width="250" height="200">
 
 <ul>
 <li>A为绿灯，0和1分别表示该灯的状态；</li>
@@ -808,7 +808,7 @@
 <blockquote>
 <p>根据游戏规则的3种情况，分别对应卡诺图种的：00、01、11<br>根据卡诺图每格具备相邻性的特点，使用1<em>1、1</em>2、2<em>2、4</em>4的网格圈出（仅能使用2^n个格子去圈）</p>
 </blockquote>
-<img src="/2020/10/02/卡诺图/3.jpg" width="250" height="200">
+<img src="/.com//10/02/卡诺图/3.jpg" width="250" height="200">
 
 <ol start="3">
 <li>卡诺图化简</li>
@@ -816,7 +816,7 @@
 <blockquote>
 <p>根据上图得出式子：(~A~B+ ~AB) + （~AB+AB）= ~A + B  （~A表示A反）<br>由此得出只要满足 ~AV(V表示或)B ，即绿灯灭 或者 黄灯亮即可按下按钮。</p>
 </blockquote>
-<h3 id="三灯游戏"><a href="#三灯游戏" class="headerlink" title="三灯游戏"></a>三灯游戏</h3><p>将上述游戏进行升级，存在3种灯（绿灯、黄灯、红灯）的情况下，符合如下规则即可按下按钮：</p>
+<h2 id="三灯游戏"><a href="#三灯游戏" class="headerlink" title="三灯游戏"></a>三灯游戏</h2><p>将上述游戏进行升级，存在3种灯（绿灯、黄灯、红灯）的情况下，符合如下规则即可按下按钮：</p>
 <ul>
 <li>3灯都灭</li>
 <li>黄灯灭、红灯亮</li>
@@ -828,7 +828,7 @@
 <li>定义命题<br>命题A：绿灯亮<br>命题B：黄灯亮<br>命题C：红灯亮</li>
 <li>画出卡诺图，并将上述情况在卡诺图中用1来代替原先的二进制</li>
 </ol>
-<img src="/2020/10/02/卡诺图/4.jpg" width="450" height="300">
+<img src="/.com//10/02/卡诺图/4.jpg" width="450" height="300">
 
 <blockquote>
 <p>上图将4个规则在卡诺图中对应出来。</p>
@@ -839,7 +839,7 @@
 <blockquote>
 <p>根据卡诺图每格具备相邻性的特点，进行如下的画圈：</p>
 </blockquote>
-<img src="/2020/10/02/卡诺图/5.jpg" width="250" height="200">
+<img src="/.com//10/02/卡诺图/5.jpg" width="250" height="200">
 
 <blockquote>
 <p>因此可得式子：(~A~B~C+A~B~C+A~BC+A~B~C) + (~A~BC+~ABC+A~BC+ABC)<br>= (~A~B+A~B) + (~AC+AC)<br>= ~A+C<br>化简后获得 ~A+C</p>
