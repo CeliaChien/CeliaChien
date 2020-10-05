@@ -109,6 +109,23 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode</title>
+    <url>/2022/09/27/Leetcode/</url>
+    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
+<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
+<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
+<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Computer Vision Week 2 Image Formation</title>
     <url>/2020/10/06/CV2/</url>
     <content><![CDATA[<h1 id="Overview-of-image-formation"><a href="#Overview-of-image-formation" class="headerlink" title="Overview of image formation"></a>Overview of image formation</h1><ul>
@@ -190,23 +207,6 @@
       </categories>
       <tags>
         <tag>Computer Vision</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode</title>
-    <url>/2022/09/27/Leetcode/</url>
-    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
-<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
-<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
-<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Leetcode</tag>
-        <tag>Algorithm</tag>
-        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -302,30 +302,50 @@
       </tags>
   </entry>
   <entry>
-    <title>biweekly contest 36</title>
-    <url>/2020/10/03/biweekly%20contest%2036/</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>一共四题，1题easy，2题medium，1题hard<br>第一道，简单的系统设计题，要清楚object function；<br>第二道，同样应用题，但是通过率不高；<br>第三道，给出制定行和&amp;列和的矩阵；<br>第四道，</p>
-<ul>
-<li>Design Parking System</li>
-<li>Alert Using Same Key-Card Three or More Times in a One Hour Period</li>
-<li>Find Valid Matrix Given Row and Column Sums</li>
-<li>Find Servers That Handled Most Number of Requests<a id="more"></a>
-<h1 id="Design-Parking-System"><a href="#Design-Parking-System" class="headerlink" title="Design Parking System"></a>Design Parking System</h1><a href="https://leetcode.com/contest/biweekly-contest-36/problems/design-parking-system/">原题链接</a></li>
-</ul>
-<p>解法：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParkingSystem</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ps;</span><br><span class="line">    ParkingSystem(<span class="keyword">int</span> big, <span class="keyword">int</span> medium, <span class="keyword">int</span> small) &#123;</span><br><span class="line">        ps.push_back(big);</span><br><span class="line">        ps.push_back(medium);</span><br><span class="line">        ps.push_back(small);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">addCar</span><span class="params">(<span class="keyword">int</span> carType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ps[carType<span class="number">-1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            ps[carType<span class="number">-1</span>]--;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <title>Round A 2020 kick start Q1</title>
+    <url>/2020/09/29/Round%20A%202020%20Q1/</url>
+    <content><![CDATA[<h1 id="Round-A-2020-kick-start"><a href="#Round-A-2020-kick-start" class="headerlink" title="Round A 2020 kick start"></a>Round A 2020 kick start</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><blockquote>
+<p>There are N houses for sale. The i-th house costs Ai dollars to buy. You have a budget of B dollars to spend.</p>
+</blockquote>
+<blockquote>
+<p>What is the maximum number of houses you can buy?</p>
+</blockquote>
+<a id="more"></a>
 
-<h1 id="Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period"><a href="#Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period" class="headerlink" title="Alert Using Same Key-Card Three or More Times in a One Hour Period"></a>Alert Using Same Key-Card Three or More Times in a One Hour Period</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/">原题链接</a><br>解法：</p>
-<h1 id="Find-Valid-Matrix-Given-Row-and-Column-Sums"><a href="#Find-Valid-Matrix-Given-Row-and-Column-Sums" class="headerlink" title="Find Valid Matrix Given Row and Column Sums"></a>Find Valid Matrix Given Row and Column Sums</h1><p><a href="https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/">原题链接</a><br>解法：Greedy</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">restoreMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; col)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = row.size(), n = col.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">A</span><span class="params">(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; n; ++j) &#123;</span><br><span class="line">                A[i][j] = min(row[i], col[j]);</span><br><span class="line">                row[i] -= A[i][j];</span><br><span class="line">                col[j] -= A[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Time: O(mn)<br>Space: O(mn)</p>
-<h1 id="Find-Servers-That-Handled-Most-Number-of-Requests"><a href="#Find-Servers-That-Handled-Most-Number-of-Requests" class="headerlink" title="Find Servers That Handled Most Number of Requests"></a>Find Servers That Handled Most Number of Requests</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/find-servers-that-handled-most-number-of-requests/">原题链接</a></p>
-]]></content>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input gives the number of test cases, T. T test cases follow. Each test case begins with a single line containing the two integers N and B. The second line contains N integers. The i-th integer is Ai, the cost of the i-th house.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the maximum number of houses you can buy.</p>
+<h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
+<li><p>Time limit: 15 seconds per test set.</p>
+</li>
+<li><p>Memory limit: 1GB.<br>1 ≤ T ≤ 100.<br>1 ≤ B ≤ 105.<br>1 ≤ Ai ≤ 1000, for all i.</p>
+</li>
+<li><p><strong>Test set 1</strong><br>1 ≤ N ≤ 100.</p>
+</li>
+<li><p><strong>Test set 2</strong><br>1 ≤ N ≤ 105.</p>
+</li>
+</ul>
+<p>#Sample</p>
+<ul>
+<li><p><strong>Input</strong></p>
+<blockquote>
+<p>3<br>4 100<br>20 90 40 90<br>4 50<br>30 30 10 10<br>3 300<br>999 999 999</p>
+</blockquote>
+</li>
+<li><p><strong>Output</strong></p>
+<blockquote>
+<p>Case #1: 2<br>Case #2: 3<br>Case #3: 0</p>
+</blockquote>
+</li>
+</ul>
+<p>In Sample Case #1, you have a budget of 100 dollars. You can buy the 1st and 3rd houses for 20 + 40 = 60 dollars.<br>In Sample Case #2, you have a budget of 50 dollars. You can buy the 1st, 3rd and 4th houses for 30 + 10 + 10 = 50 dollars.<br>In Sample Case #3, you have a budget of 300 dollars. You cannot buy any houses (so the answer is 0).<br>Note: Unlike previous editions, in Kick Start 2020, all test sets are visible verdict test sets, meaning you receive instant feedback upon submission.</p>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ar array</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, b, a[<span class="number">100000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; b;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    sort(a, a+n);</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&gt;=a[i]) &#123;</span><br><span class="line">            b-=a[i];</span><br><span class="line">            ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t, i=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot;: &quot;</span>;</span><br><span class="line">        solve();</span><br><span class="line">        ++i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Leetcode</category>
+        <category>Kick start</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Kick start</tag>
       </tags>
   </entry>
   <entry>
@@ -505,6 +525,33 @@
       </tags>
   </entry>
   <entry>
+    <title>biweekly contest 36</title>
+    <url>/2020/10/03/biweekly%20contest%2036/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>一共四题，1题easy，2题medium，1题hard<br>第一道，简单的系统设计题，要清楚object function；<br>第二道，同样应用题，但是通过率不高；<br>第三道，给出制定行和&amp;列和的矩阵；<br>第四道，</p>
+<ul>
+<li>Design Parking System</li>
+<li>Alert Using Same Key-Card Three or More Times in a One Hour Period</li>
+<li>Find Valid Matrix Given Row and Column Sums</li>
+<li>Find Servers That Handled Most Number of Requests<a id="more"></a>
+<h1 id="Design-Parking-System"><a href="#Design-Parking-System" class="headerlink" title="Design Parking System"></a>Design Parking System</h1><a href="https://leetcode.com/contest/biweekly-contest-36/problems/design-parking-system/">原题链接</a></li>
+</ul>
+<p>解法：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParkingSystem</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ps;</span><br><span class="line">    ParkingSystem(<span class="keyword">int</span> big, <span class="keyword">int</span> medium, <span class="keyword">int</span> small) &#123;</span><br><span class="line">        ps.push_back(big);</span><br><span class="line">        ps.push_back(medium);</span><br><span class="line">        ps.push_back(small);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">addCar</span><span class="params">(<span class="keyword">int</span> carType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ps[carType<span class="number">-1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            ps[carType<span class="number">-1</span>]--;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period"><a href="#Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period" class="headerlink" title="Alert Using Same Key-Card Three or More Times in a One Hour Period"></a>Alert Using Same Key-Card Three or More Times in a One Hour Period</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/">原题链接</a><br>解法：</p>
+<h1 id="Find-Valid-Matrix-Given-Row-and-Column-Sums"><a href="#Find-Valid-Matrix-Given-Row-and-Column-Sums" class="headerlink" title="Find Valid Matrix Given Row and Column Sums"></a>Find Valid Matrix Given Row and Column Sums</h1><p><a href="https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/">原题链接</a><br>解法：Greedy</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">restoreMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; col)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = row.size(), n = col.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">A</span><span class="params">(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; n; ++j) &#123;</span><br><span class="line">                A[i][j] = min(row[i], col[j]);</span><br><span class="line">                row[i] -= A[i][j];</span><br><span class="line">                col[j] -= A[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Time: O(mn)<br>Space: O(mn)</p>
+<h1 id="Find-Servers-That-Handled-Most-Number-of-Requests"><a href="#Find-Servers-That-Handled-Most-Number-of-Requests" class="headerlink" title="Find Servers That Handled Most Number of Requests"></a>Find Servers That Handled Most Number of Requests</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/find-servers-that-handled-most-number-of-requests/">原题链接</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Union Find</title>
     <url>/2020/09/27/algorithm1/</url>
     <content><![CDATA[<ul>
@@ -543,53 +590,6 @@
       </categories>
       <tags>
         <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Round A 2020 kick start Q1</title>
-    <url>/2020/09/29/Round%20A%202020%20Q1/</url>
-    <content><![CDATA[<h1 id="Round-A-2020-kick-start"><a href="#Round-A-2020-kick-start" class="headerlink" title="Round A 2020 kick start"></a>Round A 2020 kick start</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><blockquote>
-<p>There are N houses for sale. The i-th house costs Ai dollars to buy. You have a budget of B dollars to spend.</p>
-</blockquote>
-<blockquote>
-<p>What is the maximum number of houses you can buy?</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input gives the number of test cases, T. T test cases follow. Each test case begins with a single line containing the two integers N and B. The second line contains N integers. The i-th integer is Ai, the cost of the i-th house.</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the maximum number of houses you can buy.</p>
-<h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
-<li><p>Time limit: 15 seconds per test set.</p>
-</li>
-<li><p>Memory limit: 1GB.<br>1 ≤ T ≤ 100.<br>1 ≤ B ≤ 105.<br>1 ≤ Ai ≤ 1000, for all i.</p>
-</li>
-<li><p><strong>Test set 1</strong><br>1 ≤ N ≤ 100.</p>
-</li>
-<li><p><strong>Test set 2</strong><br>1 ≤ N ≤ 105.</p>
-</li>
-</ul>
-<p>#Sample</p>
-<ul>
-<li><p><strong>Input</strong></p>
-<blockquote>
-<p>3<br>4 100<br>20 90 40 90<br>4 50<br>30 30 10 10<br>3 300<br>999 999 999</p>
-</blockquote>
-</li>
-<li><p><strong>Output</strong></p>
-<blockquote>
-<p>Case #1: 2<br>Case #2: 3<br>Case #3: 0</p>
-</blockquote>
-</li>
-</ul>
-<p>In Sample Case #1, you have a budget of 100 dollars. You can buy the 1st and 3rd houses for 20 + 40 = 60 dollars.<br>In Sample Case #2, you have a budget of 50 dollars. You can buy the 1st, 3rd and 4th houses for 30 + 10 + 10 = 50 dollars.<br>In Sample Case #3, you have a budget of 300 dollars. You cannot buy any houses (so the answer is 0).<br>Note: Unlike previous editions, in Kick Start 2020, all test sets are visible verdict test sets, meaning you receive instant feedback upon submission.</p>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ar array</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, b, a[<span class="number">100000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; b;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    sort(a, a+n);</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&gt;=a[i]) &#123;</span><br><span class="line">            b-=a[i];</span><br><span class="line">            ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t, i=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot;: &quot;</span>;</span><br><span class="line">        solve();</span><br><span class="line">        ++i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Kick start</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-        <tag>C++</tag>
-        <tag>Kick start</tag>
       </tags>
   </entry>
   <entry>
@@ -658,34 +658,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/09/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="other-problem"><a href="#other-problem" class="headerlink" title="other problem"></a>other problem</h3><p>when server is not running</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsof -i :4000</span><br><span class="line">$ <span class="built_in">kill</span> -9 PID</span><br></pre></td></tr></table></figure>
-
-<h2 id="How-to-insert-a-mathjax-code"><a href="#How-to-insert-a-mathjax-code" class="headerlink" title="How to insert a mathjax code"></a>How to insert a mathjax code</h2><p>More info: <a href="https://www.jianshu.com/p/a0aa94ef8ab2">mathjax code</a></p>
-<h2 id="How-to-insert-a-img-pdf-video"><a href="#How-to-insert-a-img-pdf-video" class="headerlink" title="How to insert a img/pdf/video"></a>How to insert a img/pdf/video</h2><p>More info: <a href="https://hexo.io/docs/tag-plugins#Include-Assets">insert media</a></p>
-<h2 id="About-more-button"><a href="#About-more-button" class="headerlink" title="About more button"></a>About more button</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>SlideWindow</title>
-    <url>/2020/10/04/slide%20window/</url>
+    <title>Slide Window</title>
+    <url>/2020/10/04/slidewindow/</url>
     <content><![CDATA[<h1 id="滑动窗口算法"><a href="#滑动窗口算法" class="headerlink" title="滑动窗口算法"></a>滑动窗口算法</h1><p>该算法是通过使用特定大小的子列表，在遍历完整列表的同时进行特定的操作，以达到降低了循环的嵌套深度。。</p>
 <a id="more"></a>
 
@@ -733,6 +707,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2020/09/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="other-problem"><a href="#other-problem" class="headerlink" title="other problem"></a>other problem</h3><p>when server is not running</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsof -i :4000</span><br><span class="line">$ <span class="built_in">kill</span> -9 PID</span><br></pre></td></tr></table></figure>
+
+<h2 id="How-to-insert-a-mathjax-code"><a href="#How-to-insert-a-mathjax-code" class="headerlink" title="How to insert a mathjax code"></a>How to insert a mathjax code</h2><p>More info: <a href="https://www.jianshu.com/p/a0aa94ef8ab2">mathjax code</a></p>
+<h2 id="How-to-insert-a-img-pdf-video"><a href="#How-to-insert-a-img-pdf-video" class="headerlink" title="How to insert a img/pdf/video"></a>How to insert a img/pdf/video</h2><p>More info: <a href="https://hexo.io/docs/tag-plugins#Include-Assets">insert media</a></p>
+<h2 id="About-more-button"><a href="#About-more-button" class="headerlink" title="About more button"></a>About more button</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
     <title>weekly contest 208</title>
     <url>/2020/09/27/weekly%20contest%20208/</url>
     <content><![CDATA[<h1 id="写作前面"><a href="#写作前面" class="headerlink" title="写作前面"></a>写作前面</h1><p>主要四道题目，1道easy，1道medium，2道hard。<br>其中前两道题干略长，需要理解，但写出来并不复杂，难在理解题意；<br>后两道略偏数据结构和算法。<br>主要题目如下：</p>
@@ -764,151 +764,6 @@
         <tag>Leetcode</tag>
         <tag>Algorithm</tag>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计学习</title>
-    <url>/2020/09/26/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="统计学习"><a href="#统计学习" class="headerlink" title="统计学习"></a>统计学习</h1><blockquote>
-<p>如果一个系统能够通过执行某个过程改进它的性能，这就是学习。——赫尔伯特·西蒙</p>
-</blockquote>
-<h2 id="统计学习的特点"><a href="#统计学习的特点" class="headerlink" title="统计学习的特点"></a>统计学习的特点</h2><h4 id="统计学习定义"><a href="#统计学习定义" class="headerlink" title="统计学习定义"></a>统计学习定义</h4><p>统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测和分析的一门学科。<br>统计学习也可以称为统计机器学习。</p>
-<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><ul>
-<li>统计学习以计算机及网络为平台，是建立在计算机及网络上的；</li>
-<li>统计学习以数据为研究对象，是数据驱动的学科；</li>
-<li>统计学习的目的是对数据进行预测与分析；</li>
-<li>统计学习以方法为中心，统计学习方法构建模型并应用模型进行预测与分析；</li>
-<li>统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等许多领域的交叉学科，并且在发展中逐步形成独自的理论体系与方法论。<a id="more"></a>
-<h2 id="统计学习的对象"><a href="#统计学习的对象" class="headerlink" title="统计学习的对象"></a>统计学习的对象</h2></li>
-</ul>
-<p>统计学习研究的对象是data。它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。注意这里的数据是多样的，可是是计算机及网络上的各种数字、文字、图像、视频、音频数据以及它们的组合。</p>
-<p>统计学习关于数据的基本假设是<strong>同类数据具有一定的统计规律性</strong>，这是统计学习的前提。</p>
-<h2 id="统计学习的目的"><a href="#统计学习的目的" class="headerlink" title="统计学习的目的"></a>统计学习的目的</h2><p>统计学习用于对数据的预测与分析，特别是对未知新数据的预测与分析。对数据的预测可以使计算机更加智能化，或者说使计算机的某些性能得到提高；对数据的分析可以让人们获取新的知识，给人们带来新的发现。</p>
-<p>对数据的预测与分析是通过构建概率统计模型实现的。统计学习总的目标就是考虑学习什么样的模型和如何学习模型，以使模型能对数据进行准确的预测与分析，同时也要考虑尽可能地提高学习效率。</p>
-<h2 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h2><p>统计学习的方法是基于数据构建概率统计模型从而对数据进行预测与分析。统计学习由监督学习、无监督学习和强化学习等组成。</p>
-<p>统计学习的方法可以概括如下：</p>
-<ul>
-<li>从给定的、有限的、用于学习的训练数据集合出发，假设数据是独立同分布产生的；</li>
-<li>并且假设要学习的模型属于某个函数的集合，称为假设空间；</li>
-<li>应用某个评价准则，从假设空间中选取一个最优模型，使它对已知的训练数据以及位置的测试数据在给定的评价准则下有最优的预测；</li>
-<li>最优模型的选择由算法实现。</li>
-</ul>
-<p>这样，统计学习方法包括模型的假设空间、模型选择的准则以及模型学习的算法。称为统计学习方法的三要素，简称为<strong>“模型”</strong>、<strong>“策略”</strong>和<strong>“算法”</strong>。</p>
-<p>实现统计学习方法的步骤如下：</p>
-<ol>
-<li>得到一个有限的训练数据集合；</li>
-<li>确定包含所有可能的模型的假设空间，即学习模型的集合；</li>
-<li>确定模型选择的准则，即学习的策略；</li>
-<li>实现求解最优模型的算法，即学习的算法；</li>
-<li>通过学习方法选择最优模型；</li>
-<li>利用学习的最优模型对新数据进行预测或分析。</li>
-</ol>
-<h2 id="统计学习的研究"><a href="#统计学习的研究" class="headerlink" title="统计学习的研究"></a>统计学习的研究</h2><p>统计学习的研究一般包括统计学习方法、统计学习理论以及统计学习应用三个方面。<br>统计学习<strong>方法</strong>的研究旨在开发<strong>新的学习方法</strong>；<br>统计学习<strong>理论</strong>的研究在于<strong>探求统计学习方法的有效性与效率，以及统计学习的基本理论问题</strong>；<br>统计学习<strong>应用</strong>的研究主要考虑<strong>将统计学习方法应用到实际问题中去，解决实际问题</strong>。</p>
-<h2 id="统计学习的重要性"><a href="#统计学习的重要性" class="headerlink" title="统计学习的重要性"></a>统计学习的重要性</h2><p>统计学习学科在科学技术中的重要性主要体现在以下几个方面：</p>
-<ul>
-<li>统计学习是处理海量数据的有效方法。</li>
-<li>统计学习是计算机智能化的有效手段。</li>
-<li>统计学习是计算机科学发展的一个重要组成部分。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>统计学习方法</category>
-      </categories>
-      <tags>
-        <tag>Machine learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计学习方法三要素</title>
-    <url>/2020/10/05/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E4%B8%89%E8%A6%81%E7%B4%A0/</url>
-    <content><![CDATA[<h1 id="统计学习方法三要素"><a href="#统计学习方法三要素" class="headerlink" title="统计学习方法三要素"></a>统计学习方法三要素</h1><blockquote>
-<p>统计学习方法都是由模型、策略和算法构成的，即统计学习方法由三要素构成，可以简单地表示为：<br>$$方法=模型+策略+算法$$</p>
-</blockquote>
-<a id="more"></a>
-
-<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><p>统计学习首要考虑的问题是学习什么样的模型。<br>在监督学习过程中，模型就是所要学习的条件概率分布或者决策函数。<br>模型的假设空间包含所有可能的条件概率分布或决策函数。<br>例如，假设决策函数是输入变量的线性函数，那么模型的假设空间就是这些线性函数构成的函数集合。<br>假设空间中的模型一般有无穷多个。<br>假设空间用F表示，假设空间可以定义为决策函数的集合：<br>$$F={f|Y=f(X)}$$<br>其中，X和Y是定义在输入空间X和输出空间Y上的变量，这时F通常是由一个参数向量决定的函数族：</p>
-<h1 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h1><h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>算法是指学习模型的具体计算方法。<br>统计学习基于训练数据集，根据学习策略，从假设空间中选择最优模型，最后需要考虑用什么样的计算方法求解最优模型。<br>这时，统计学习问题归结为最优化问题，统计学习的算法成为求解最优化问题的算法。<br>如果最优化问题有显式的解析式，这个最优化问题就比较简单。<br>但是通常解析解不存在，这就需要用数值计算的方法求解。<br>如何保证找到全局最优解，并使求解的过程非常高效，就成为一个重要问题。</p>
-]]></content>
-      <categories>
-        <category>统计学习方法</category>
-      </categories>
-      <tags>
-        <tag>Machine learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计学习的分类</title>
-    <url>/2020/09/27/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%88%86%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="基本分类"><a href="#基本分类" class="headerlink" title="基本分类"></a>基本分类</h1><h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><p><strong>supervised learning</strong><br>是指从标注数据中学习预测模型的机器学习问题。标注数据表示输入输出的对应关系，预测模型对给定的输入产生相应的输出。监督学习的本质是<strong>学习输入到输出的映射的统计规律</strong>。</p>
-<p><font size="4," color="#008000"><strong>输入空间、特征空间和输出空间</strong></font></p>
-<p>在监督学习中，将输入与输出所有可能取值的集合分别称为输入空间与输出空间。输入与输出空间可以是有限元素的集合，也可以是整个欧式空间。输入空间与输出空间可以是同一个空间，也可以是不同的空间；<strong>但是通常输出空间远远小于输入空间</strong>。</p>
-<a id="more"></a>
-
-<p>每个具体的输入是一个实例，通常由特征向量表示。这时，所有特征向量存在的空间称为特征空间。</p>
-<p>特征空间的每一维对应于一个特征。有时假设输入空间与特征空间为相同的空间，对于它们不予区分；有时假设输入空间与特征空间为不同的空间，将实例从输入空间映射到特征空间。<strong>模型实际上都是定义在特征空间上的</strong>。</p>
-<p>在监督学习中，将输入与输出看作是定义在输入（特征）空间与输出空间上的随机变量的取值。输入输出变量用大写字母表示，习惯上输入变量写作X，输出变量写作Y。输入输出变量的取值用小写字母表示，输入变量的取值写作x，输出变量的取值写作y。</p>
-<p>变量可以是标量或者向量，都用相同类型字母表示。除特别声明外，默认为列向量。输入实例x的特征向量记作：<br>$$ x=(x^{(1)},x^{(2)},…,x^{(i)},…,x^{(n)})^T $$<br>$x^{(i)}$表示x的第i个特征。注意$x^{(i)}$和$x_i$不同，本书通常用$x_i$表示多个输入变量中的第i个变量，即<br>$$ x_i=(x^{(1)},x^{(2)},…,x^{(n)})^T $$<br>监督学习从训练数据集合中学习模型，对测试数据进行预测。训练数据由输入（或特征向量）与输出对组成，训练集通常表示为<br>$$T={(x_1,y_1),(x_2,y_2),…,(x_N,y_N)}$$<br>测试数据也由输入与输出对组成。输入与输出对又称为样本或者样本点。<br>输入变量X和输出变量Y有不同的类型，可以使连续的，也可以使离散的。<br>人们根据输入输出变量的不同类型，对预测任务给予不同的名称：</p>
-<blockquote>
-<p>输入变量与输出变量均为连续变量的预测问题称为<strong>回归问题</strong>；<br>输出变量为有限个离散变量的预测问题称为<strong>分类问题</strong>；<br>输入变量与输出变量均为变量序列的预测问题称为<strong>标注问题</strong>。</p>
-</blockquote>
-<p><font size="4," color="#008000"><strong>联合概率分布</strong></font></p>
-<p>监督学习假设输入与输出的随机变量X和Y遵循联合概率分布$ P(X,Y) $。<br>$ P(X,Y) $表示分布函数，或者分布密度函数。注意在学习过程中，假定这一联合概率分布存在，但对学习系统来说，联合概率分布的具体定义是未知的。训练数据与测试数据被看作是依联合分布$ P(X,Y) $独立同分布产生的。统计学习假设数据存在一定的统计规律，X和Y具有联合概率分布就是监督学习关于数据的基本假设。</p>
-<p><font size="4," color="#008000"><strong>假设空间</strong></font><br>监督学习的目的在于学习一个由输入到输出的映射，这一映射由模型来表示。<br>模型属于由输入空间到输出空间的映射的集合，这个集合就是假设空间。假设空间的确定意味着学习的范围的确定。<br>监督学习的模型可以是概率模型或者非概率模型，由条件概率分布$ P(Y|X) $或决策函数$ Y=f(X) $表示，随具体的输入进行相应的输出预测时，写作$ P(y|x) $或$ y=f(x) $。</p>
-<p><font size="4," color="#008000"><strong>问题的形式化</strong></font></p>
-<h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><p><strong>unsupervised learning</strong><br>无监督学习是指从无标注数据中学习预测模型的机器学习问题。无标注数据是自然的到的数据，预测模型表示数据的类别、转换或概率。<br>无监督学习的本质是学习数据中的统计规律或潜在结构。</p>
-<h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2><p><strong>reinforcement learning</strong><br>强化学习是指智能系统在与环境的连续互动中学习最优行为策略的机器学习问题。<br>假设智能系统与环境的互动基于马尔可夫决策过程，智能系统能观测到的是环境互动的到的数据序列。<br>强化学习的本质是学习最优的序贯决策（sequential analysis）。</p>
-<h2 id="半监督学习与主动学习"><a href="#半监督学习与主动学习" class="headerlink" title="半监督学习与主动学习"></a>半监督学习与主动学习</h2><p><strong>semi-supervised learning</strong><br><strong>半监督学习</strong>是指利用标注数据和未标注数据学习预测模型的机器学习问题。<br>通常有少量标注数据、大量未标注数据，因为标注数据的构建往往需要人工，成本较高，未标注数据的收集不需太多成本。<br>半监督学习旨在利用未标注数据中的信息，辅助标注数据，进行监督学习，以较低的成本达到较好的学习效果。</p>
-<p><strong>主动学习</strong>是指机器不断主动给出实例让教师进行标注，然后利用标注数据学习预测模型的机器学习问题。<br>通常的监督学习使用给定的标注数据，往往是随机的到的，可以看作是“被动学习”，主动学习的目标是找出对学习最有帮助的实例让人标注，以较小的标注代价，达到较好的学习效果。</p>
-<p>半监督学习和主动学习更接近监督学习。</p>
-<h1 id="按模型分类"><a href="#按模型分类" class="headerlink" title="按模型分类"></a>按模型分类</h1><h2 id="概率模型与非概率模型"><a href="#概率模型与非概率模型" class="headerlink" title="概率模型与非概率模型"></a>概率模型与非概率模型</h2><h2 id="线性模型与非线性模型"><a href="#线性模型与非线性模型" class="headerlink" title="线性模型与非线性模型"></a>线性模型与非线性模型</h2><p><strong>linear model&amp;&amp;non-linear model</strong><br>统计学习模型，特别是非概率模型，可以分为线性模型和非线性模型。<br>如果函数$y=f(x)$或$z=g(x)$则称模型是线性模型，否则称模型是非线性模型。<br>线性模型：</p>
-<ul>
-<li>感知机</li>
-<li>线性支持向量机</li>
-<li>k近邻</li>
-<li>k均值</li>
-<li>潜在语义分析</li>
-</ul>
-<p>非线性模型：</p>
-<ul>
-<li>核函数支持向量机</li>
-<li>AdaBoost</li>
-<li>神经网络</li>
-</ul>
-<h2 id="参数化模型与非参数化模型"><a href="#参数化模型与非参数化模型" class="headerlink" title="参数化模型与非参数化模型"></a>参数化模型与非参数化模型</h2><p><strong>parametric model&amp;&amp;parametric model</strong><br>参数化模型假设模型参数的维度固定，模型可以由有限维参数完全刻画；<br>非参数化模型假设模型参数的维度不固定或者说无穷大，随着训练数据量的增加而不断增大。</p>
-<p>参数化模型：</p>
-<ul>
-<li>感知机</li>
-<li>朴素贝叶斯</li>
-<li>逻辑斯蒂回归</li>
-<li>k均值</li>
-<li>高斯混合模型</li>
-</ul>
-<p>非参数化模型：</p>
-<ul>
-<li>决策树</li>
-<li>支持向量机</li>
-<li>AdaBoost</li>
-<li>k近邻</li>
-<li>潜在语义分析</li>
-<li>概率潜在语义分析</li>
-<li>潜在狄利克雷分配</li>
-</ul>
-<h1 id="按算法分类"><a href="#按算法分类" class="headerlink" title="按算法分类"></a>按算法分类</h1><h2 id="在线学习"><a href="#在线学习" class="headerlink" title="在线学习"></a>在线学习</h2><p>在线学习是指每次接受一个样本，进行预测，之后学习模型，并不断重复该操作的机器学习。<br>在线学习可以是监督学习，也可以是无监督学习，强化学习本身就拥有在线学习的特点。</p>
-<h2 id="批量学习"><a href="#批量学习" class="headerlink" title="批量学习"></a>批量学习</h2><p>批量学习一次接受所有数据，学习模型，之后进行预测。<br>有些实际应用的场景要求学习必修是在线的。<br>比如：</p>
-<ul>
-<li>数据一次达到无法存储，系统需要及时作出处理；</li>
-<li>数据规模很大，不可能一次处理所有数据；</li>
-<li>数据的模式随时间动态变化，需要算法快速适应新的模式。</li>
-</ul>
-<p>在线学习通常比批量学习更难，很难学到预测准确率更高的模型，因为每次模型更新中，可利用的数据有限。</p>
-<h1 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h1><h2 id="贝叶斯学习"><a href="#贝叶斯学习" class="headerlink" title="贝叶斯学习"></a>贝叶斯学习</h2><p>贝叶斯学习，又称为贝叶斯推理，是统计学、机器学习中重要的方法。<br>其主要的想法是，在概率模型的学习和推理中，利用贝叶斯定理，计算在给定数据条件下模型的条件概率，即后验概率，并应用这个原理进行模型的估计，以及对数据的预测。<br>将模型、未观察要素及其参数用变量表示，使用模型的先验分布是贝叶斯学习的特点。</p>
-<h2 id="核方法"><a href="#核方法" class="headerlink" title="核方法"></a>核方法</h2><p>核方法是使用核函数表示核学习非线性模型的一种机器学习方法，可以用于监督学习和无监督学习。。<br>有一些线性模型的学习方法基于相似度计算，更具体地，向量内积计算。<br>核方法可以把它们扩展到非线性模型的学习，使其应用范围更广泛。<br>把线性模型扩展到非线性模型模型，直接的做法是显式地定义从输入空间（低维空间）到特征空间（高维空间）的映射，在特征空间中进行内积计算。比如，支持向量机，把输出空间的线性不可分问题转化为特征空间的线性可分问题。<br>核方法的技巧在于不显式地定义这个映射，而是直接定义核函数，即映射之后在特征空间的内积。。</p>
-]]></content>
-      <categories>
-        <category>统计学习方法</category>
-      </categories>
-      <tags>
-        <tag>Machine learning</tag>
       </tags>
   </entry>
   <entry>
@@ -998,42 +853,70 @@
       </tags>
   </entry>
   <entry>
-    <title>西瓜书——NFL&amp;History&amp;Appln</title>
-    <url>/2020/09/30/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h1><ul>
-<li>“没有免费的午餐”定理</li>
-<li>ML发展历程</li>
-<li>ML应用现状<a id="more"></a>
-<h1 id="NFL-Theorem"><a href="#NFL-Theorem" class="headerlink" title="NFL Theorem"></a>NFL Theorem</h1></li>
-</ul>
-<h1 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h1><blockquote>
-<p>机器学习是人工智能研究发展到一定阶段的必然产物</p>
+    <title>统计学习</title>
+    <url>/2020/09/26/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="统计学习"><a href="#统计学习" class="headerlink" title="统计学习"></a>统计学习</h1><blockquote>
+<p>如果一个系统能够通过执行某个过程改进它的性能，这就是学习。——赫尔伯特·西蒙</p>
 </blockquote>
+<h2 id="统计学习的特点"><a href="#统计学习的特点" class="headerlink" title="统计学习的特点"></a>统计学习的特点</h2><h4 id="统计学习定义"><a href="#统计学习定义" class="headerlink" title="统计学习定义"></a>统计学习定义</h4><p>统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测和分析的一门学科。<br>统计学习也可以称为统计机器学习。</p>
+<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><ul>
+<li>统计学习以计算机及网络为平台，是建立在计算机及网络上的；</li>
+<li>统计学习以数据为研究对象，是数据驱动的学科；</li>
+<li>统计学习的目的是对数据进行预测与分析；</li>
+<li>统计学习以方法为中心，统计学习方法构建模型并应用模型进行预测与分析；</li>
+<li>统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等许多领域的交叉学科，并且在发展中逐步形成独自的理论体系与方法论。<a id="more"></a>
+<h2 id="统计学习的对象"><a href="#统计学习的对象" class="headerlink" title="统计学习的对象"></a>统计学习的对象</h2></li>
+</ul>
+<p>统计学习研究的对象是data。它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。注意这里的数据是多样的，可是是计算机及网络上的各种数字、文字、图像、视频、音频数据以及它们的组合。</p>
+<p>统计学习关于数据的基本假设是<strong>同类数据具有一定的统计规律性</strong>，这是统计学习的前提。</p>
+<h2 id="统计学习的目的"><a href="#统计学习的目的" class="headerlink" title="统计学习的目的"></a>统计学习的目的</h2><p>统计学习用于对数据的预测与分析，特别是对未知新数据的预测与分析。对数据的预测可以使计算机更加智能化，或者说使计算机的某些性能得到提高；对数据的分析可以让人们获取新的知识，给人们带来新的发现。</p>
+<p>对数据的预测与分析是通过构建概率统计模型实现的。统计学习总的目标就是考虑学习什么样的模型和如何学习模型，以使模型能对数据进行准确的预测与分析，同时也要考虑尽可能地提高学习效率。</p>
+<h2 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h2><p>统计学习的方法是基于数据构建概率统计模型从而对数据进行预测与分析。统计学习由监督学习、无监督学习和强化学习等组成。</p>
+<p>统计学习的方法可以概括如下：</p>
 <ul>
-<li>20世纪50年代到70年代初<ul>
-<li>人工智能研究处于“推理期”</li>
-<li>人们基于符号知识表示，通过演绎推理技术取得了很大成就；</li>
+<li>从给定的、有限的、用于学习的训练数据集合出发，假设数据是独立同分布产生的；</li>
+<li>并且假设要学习的模型属于某个函数的集合，称为假设空间；</li>
+<li>应用某个评价准则，从假设空间中选取一个最优模型，使它对已知的训练数据以及位置的测试数据在给定的评价准则下有最优的预测；</li>
+<li>最优模型的选择由算法实现。</li>
 </ul>
-</li>
-<li>20世纪70年代中期开始<ul>
-<li>人工智能研究进入了“知识期”</li>
-<li>人们基于符号知识表示，通过获取和利用领域知识来建立专家系统取得了大量成果；</li>
+<p>这样，统计学习方法包括模型的假设空间、模型选择的准则以及模型学习的算法。称为统计学习方法的三要素，简称为<strong>“模型”</strong>、<strong>“策略”</strong>和<strong>“算法”</strong>。</p>
+<p>实现统计学习方法的步骤如下：</p>
+<ol>
+<li>得到一个有限的训练数据集合；</li>
+<li>确定包含所有可能的模型的假设空间，即学习模型的集合；</li>
+<li>确定模型选择的准则，即学习的策略；</li>
+<li>实现求解最优模型的算法，即学习的算法；</li>
+<li>通过学习方法选择最优模型；</li>
+<li>利用学习的最优模型对新数据进行预测或分析。</li>
+</ol>
+<h2 id="统计学习的研究"><a href="#统计学习的研究" class="headerlink" title="统计学习的研究"></a>统计学习的研究</h2><p>统计学习的研究一般包括统计学习方法、统计学习理论以及统计学习应用三个方面。<br>统计学习<strong>方法</strong>的研究旨在开发<strong>新的学习方法</strong>；<br>统计学习<strong>理论</strong>的研究在于<strong>探求统计学习方法的有效性与效率，以及统计学习的基本理论问题</strong>；<br>统计学习<strong>应用</strong>的研究主要考虑<strong>将统计学习方法应用到实际问题中去，解决实际问题</strong>。</p>
+<h2 id="统计学习的重要性"><a href="#统计学习的重要性" class="headerlink" title="统计学习的重要性"></a>统计学习的重要性</h2><p>统计学习学科在科学技术中的重要性主要体现在以下几个方面：</p>
+<ul>
+<li>统计学习是处理海量数据的有效方法。</li>
+<li>统计学习是计算机智能化的有效手段。</li>
+<li>统计学习是计算机科学发展的一个重要组成部分。</li>
 </ul>
-</li>
-<li>20世纪90年代中期<ul>
-<li>“统计学习”闪亮登场并迅速占领主流舞台</li>
-<li>SVM“支持向量机”，“核方法”</li>
-</ul>
-</li>
-<li>21世纪初<ul>
-<li>连接主义卷土重来</li>
-<li>“深度学习”，“神经网络”</li>
-</ul>
-</li>
-</ul>
-<h1 id="应用现状"><a href="#应用现状" class="headerlink" title="应用现状"></a>应用现状</h1><!-- more -->]]></content>
+]]></content>
       <categories>
-        <category>西瓜书</category>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计学习方法三要素</title>
+    <url>/2020/10/05/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E4%B8%89%E8%A6%81%E7%B4%A0/</url>
+    <content><![CDATA[<h1 id="统计学习方法三要素"><a href="#统计学习方法三要素" class="headerlink" title="统计学习方法三要素"></a>统计学习方法三要素</h1><blockquote>
+<p>统计学习方法都是由模型、策略和算法构成的，即统计学习方法由三要素构成，可以简单地表示为：<br>$$方法=模型+策略+算法$$</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><p>统计学习首要考虑的问题是学习什么样的模型。<br>在监督学习过程中，模型就是所要学习的条件概率分布或者决策函数。<br>模型的假设空间包含所有可能的条件概率分布或决策函数。<br>例如，假设决策函数是输入变量的线性函数，那么模型的假设空间就是这些线性函数构成的函数集合。<br>假设空间中的模型一般有无穷多个。<br>假设空间用F表示，假设空间可以定义为决策函数的集合：<br>$$F={f|Y=f(X)}$$<br>其中，X和Y是定义在输入空间X和输出空间Y上的变量，这时F通常是由一个参数向量决定的函数族：</p>
+<h1 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h1><h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>算法是指学习模型的具体计算方法。<br>统计学习基于训练数据集，根据学习策略，从假设空间中选择最优模型，最后需要考虑用什么样的计算方法求解最优模型。<br>这时，统计学习问题归结为最优化问题，统计学习的算法成为求解最优化问题的算法。<br>如果最优化问题有显式的解析式，这个最优化问题就比较简单。<br>但是通常解析解不存在，这就需要用数值计算的方法求解。<br>如何保证找到全局最优解，并使求解的过程非常高效，就成为一个重要问题。</p>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
       </categories>
       <tags>
         <tag>Machine learning</tag>
@@ -1139,6 +1022,123 @@
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>西瓜书</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计学习的分类</title>
+    <url>/2020/09/27/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%88%86%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="基本分类"><a href="#基本分类" class="headerlink" title="基本分类"></a>基本分类</h1><h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><p><strong>supervised learning</strong><br>是指从标注数据中学习预测模型的机器学习问题。标注数据表示输入输出的对应关系，预测模型对给定的输入产生相应的输出。监督学习的本质是<strong>学习输入到输出的映射的统计规律</strong>。</p>
+<p><font size="4," color="#008000"><strong>输入空间、特征空间和输出空间</strong></font></p>
+<p>在监督学习中，将输入与输出所有可能取值的集合分别称为输入空间与输出空间。输入与输出空间可以是有限元素的集合，也可以是整个欧式空间。输入空间与输出空间可以是同一个空间，也可以是不同的空间；<strong>但是通常输出空间远远小于输入空间</strong>。</p>
+<a id="more"></a>
+
+<p>每个具体的输入是一个实例，通常由特征向量表示。这时，所有特征向量存在的空间称为特征空间。</p>
+<p>特征空间的每一维对应于一个特征。有时假设输入空间与特征空间为相同的空间，对于它们不予区分；有时假设输入空间与特征空间为不同的空间，将实例从输入空间映射到特征空间。<strong>模型实际上都是定义在特征空间上的</strong>。</p>
+<p>在监督学习中，将输入与输出看作是定义在输入（特征）空间与输出空间上的随机变量的取值。输入输出变量用大写字母表示，习惯上输入变量写作X，输出变量写作Y。输入输出变量的取值用小写字母表示，输入变量的取值写作x，输出变量的取值写作y。</p>
+<p>变量可以是标量或者向量，都用相同类型字母表示。除特别声明外，默认为列向量。输入实例x的特征向量记作：<br>$$ x=(x^{(1)},x^{(2)},…,x^{(i)},…,x^{(n)})^T $$<br>$x^{(i)}$表示x的第i个特征。注意$x^{(i)}$和$x_i$不同，本书通常用$x_i$表示多个输入变量中的第i个变量，即<br>$$ x_i=(x^{(1)},x^{(2)},…,x^{(n)})^T $$<br>监督学习从训练数据集合中学习模型，对测试数据进行预测。训练数据由输入（或特征向量）与输出对组成，训练集通常表示为<br>$$T={(x_1,y_1),(x_2,y_2),…,(x_N,y_N)}$$<br>测试数据也由输入与输出对组成。输入与输出对又称为样本或者样本点。<br>输入变量X和输出变量Y有不同的类型，可以使连续的，也可以使离散的。<br>人们根据输入输出变量的不同类型，对预测任务给予不同的名称：</p>
+<blockquote>
+<p>输入变量与输出变量均为连续变量的预测问题称为<strong>回归问题</strong>；<br>输出变量为有限个离散变量的预测问题称为<strong>分类问题</strong>；<br>输入变量与输出变量均为变量序列的预测问题称为<strong>标注问题</strong>。</p>
+</blockquote>
+<p><font size="4," color="#008000"><strong>联合概率分布</strong></font></p>
+<p>监督学习假设输入与输出的随机变量X和Y遵循联合概率分布$ P(X,Y) $。<br>$ P(X,Y) $表示分布函数，或者分布密度函数。注意在学习过程中，假定这一联合概率分布存在，但对学习系统来说，联合概率分布的具体定义是未知的。训练数据与测试数据被看作是依联合分布$ P(X,Y) $独立同分布产生的。统计学习假设数据存在一定的统计规律，X和Y具有联合概率分布就是监督学习关于数据的基本假设。</p>
+<p><font size="4," color="#008000"><strong>假设空间</strong></font><br>监督学习的目的在于学习一个由输入到输出的映射，这一映射由模型来表示。<br>模型属于由输入空间到输出空间的映射的集合，这个集合就是假设空间。假设空间的确定意味着学习的范围的确定。<br>监督学习的模型可以是概率模型或者非概率模型，由条件概率分布$ P(Y|X) $或决策函数$ Y=f(X) $表示，随具体的输入进行相应的输出预测时，写作$ P(y|x) $或$ y=f(x) $。</p>
+<p><font size="4," color="#008000"><strong>问题的形式化</strong></font></p>
+<h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><p><strong>unsupervised learning</strong><br>无监督学习是指从无标注数据中学习预测模型的机器学习问题。无标注数据是自然的到的数据，预测模型表示数据的类别、转换或概率。<br>无监督学习的本质是学习数据中的统计规律或潜在结构。</p>
+<h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2><p><strong>reinforcement learning</strong><br>强化学习是指智能系统在与环境的连续互动中学习最优行为策略的机器学习问题。<br>假设智能系统与环境的互动基于马尔可夫决策过程，智能系统能观测到的是环境互动的到的数据序列。<br>强化学习的本质是学习最优的序贯决策（sequential analysis）。</p>
+<h2 id="半监督学习与主动学习"><a href="#半监督学习与主动学习" class="headerlink" title="半监督学习与主动学习"></a>半监督学习与主动学习</h2><p><strong>semi-supervised learning</strong><br><strong>半监督学习</strong>是指利用标注数据和未标注数据学习预测模型的机器学习问题。<br>通常有少量标注数据、大量未标注数据，因为标注数据的构建往往需要人工，成本较高，未标注数据的收集不需太多成本。<br>半监督学习旨在利用未标注数据中的信息，辅助标注数据，进行监督学习，以较低的成本达到较好的学习效果。</p>
+<p><strong>主动学习</strong>是指机器不断主动给出实例让教师进行标注，然后利用标注数据学习预测模型的机器学习问题。<br>通常的监督学习使用给定的标注数据，往往是随机的到的，可以看作是“被动学习”，主动学习的目标是找出对学习最有帮助的实例让人标注，以较小的标注代价，达到较好的学习效果。</p>
+<p>半监督学习和主动学习更接近监督学习。</p>
+<h1 id="按模型分类"><a href="#按模型分类" class="headerlink" title="按模型分类"></a>按模型分类</h1><h2 id="概率模型与非概率模型"><a href="#概率模型与非概率模型" class="headerlink" title="概率模型与非概率模型"></a>概率模型与非概率模型</h2><h2 id="线性模型与非线性模型"><a href="#线性模型与非线性模型" class="headerlink" title="线性模型与非线性模型"></a>线性模型与非线性模型</h2><p><strong>linear model&amp;&amp;non-linear model</strong><br>统计学习模型，特别是非概率模型，可以分为线性模型和非线性模型。<br>如果函数$y=f(x)$或$z=g(x)$则称模型是线性模型，否则称模型是非线性模型。<br>线性模型：</p>
+<ul>
+<li>感知机</li>
+<li>线性支持向量机</li>
+<li>k近邻</li>
+<li>k均值</li>
+<li>潜在语义分析</li>
+</ul>
+<p>非线性模型：</p>
+<ul>
+<li>核函数支持向量机</li>
+<li>AdaBoost</li>
+<li>神经网络</li>
+</ul>
+<h2 id="参数化模型与非参数化模型"><a href="#参数化模型与非参数化模型" class="headerlink" title="参数化模型与非参数化模型"></a>参数化模型与非参数化模型</h2><p><strong>parametric model&amp;&amp;parametric model</strong><br>参数化模型假设模型参数的维度固定，模型可以由有限维参数完全刻画；<br>非参数化模型假设模型参数的维度不固定或者说无穷大，随着训练数据量的增加而不断增大。</p>
+<p>参数化模型：</p>
+<ul>
+<li>感知机</li>
+<li>朴素贝叶斯</li>
+<li>逻辑斯蒂回归</li>
+<li>k均值</li>
+<li>高斯混合模型</li>
+</ul>
+<p>非参数化模型：</p>
+<ul>
+<li>决策树</li>
+<li>支持向量机</li>
+<li>AdaBoost</li>
+<li>k近邻</li>
+<li>潜在语义分析</li>
+<li>概率潜在语义分析</li>
+<li>潜在狄利克雷分配</li>
+</ul>
+<h1 id="按算法分类"><a href="#按算法分类" class="headerlink" title="按算法分类"></a>按算法分类</h1><h2 id="在线学习"><a href="#在线学习" class="headerlink" title="在线学习"></a>在线学习</h2><p>在线学习是指每次接受一个样本，进行预测，之后学习模型，并不断重复该操作的机器学习。<br>在线学习可以是监督学习，也可以是无监督学习，强化学习本身就拥有在线学习的特点。</p>
+<h2 id="批量学习"><a href="#批量学习" class="headerlink" title="批量学习"></a>批量学习</h2><p>批量学习一次接受所有数据，学习模型，之后进行预测。<br>有些实际应用的场景要求学习必修是在线的。<br>比如：</p>
+<ul>
+<li>数据一次达到无法存储，系统需要及时作出处理；</li>
+<li>数据规模很大，不可能一次处理所有数据；</li>
+<li>数据的模式随时间动态变化，需要算法快速适应新的模式。</li>
+</ul>
+<p>在线学习通常比批量学习更难，很难学到预测准确率更高的模型，因为每次模型更新中，可利用的数据有限。</p>
+<h1 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h1><h2 id="贝叶斯学习"><a href="#贝叶斯学习" class="headerlink" title="贝叶斯学习"></a>贝叶斯学习</h2><p>贝叶斯学习，又称为贝叶斯推理，是统计学、机器学习中重要的方法。<br>其主要的想法是，在概率模型的学习和推理中，利用贝叶斯定理，计算在给定数据条件下模型的条件概率，即后验概率，并应用这个原理进行模型的估计，以及对数据的预测。<br>将模型、未观察要素及其参数用变量表示，使用模型的先验分布是贝叶斯学习的特点。</p>
+<h2 id="核方法"><a href="#核方法" class="headerlink" title="核方法"></a>核方法</h2><p>核方法是使用核函数表示核学习非线性模型的一种机器学习方法，可以用于监督学习和无监督学习。。<br>有一些线性模型的学习方法基于相似度计算，更具体地，向量内积计算。<br>核方法可以把它们扩展到非线性模型的学习，使其应用范围更广泛。<br>把线性模型扩展到非线性模型模型，直接的做法是显式地定义从输入空间（低维空间）到特征空间（高维空间）的映射，在特征空间中进行内积计算。比如，支持向量机，把输出空间的线性不可分问题转化为特征空间的线性可分问题。<br>核方法的技巧在于不显式地定义这个映射，而是直接定义核函数，即映射之后在特征空间的内积。。</p>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>西瓜书——NFL&amp;History&amp;Appln</title>
+    <url>/2020/09/30/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h1><ul>
+<li>“没有免费的午餐”定理</li>
+<li>ML发展历程</li>
+<li>ML应用现状<a id="more"></a>
+<h1 id="NFL-Theorem"><a href="#NFL-Theorem" class="headerlink" title="NFL Theorem"></a>NFL Theorem</h1></li>
+</ul>
+<h1 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h1><blockquote>
+<p>机器学习是人工智能研究发展到一定阶段的必然产物</p>
+</blockquote>
+<ul>
+<li>20世纪50年代到70年代初<ul>
+<li>人工智能研究处于“推理期”</li>
+<li>人们基于符号知识表示，通过演绎推理技术取得了很大成就；</li>
+</ul>
+</li>
+<li>20世纪70年代中期开始<ul>
+<li>人工智能研究进入了“知识期”</li>
+<li>人们基于符号知识表示，通过获取和利用领域知识来建立专家系统取得了大量成果；</li>
+</ul>
+</li>
+<li>20世纪90年代中期<ul>
+<li>“统计学习”闪亮登场并迅速占领主流舞台</li>
+<li>SVM“支持向量机”，“核方法”</li>
+</ul>
+</li>
+<li>21世纪初<ul>
+<li>连接主义卷土重来</li>
+<li>“深度学习”，“神经网络”</li>
+</ul>
+</li>
+</ul>
+<h1 id="应用现状"><a href="#应用现状" class="headerlink" title="应用现状"></a>应用现状</h1><!-- more -->]]></content>
       <categories>
         <category>西瓜书</category>
       </categories>
