@@ -109,20 +109,44 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode</title>
-    <url>/2022/09/27/Leetcode/</url>
-    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
-<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
-<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
-<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
+    <title>Union Find</title>
+    <url>/2020/09/27/algorithm1/</url>
+    <content><![CDATA[<ul>
+<li>Algorithm: method for solving a problem</li>
+<li>Data structure: method to store information</li>
+</ul>
+<h1 id="Union-Find"><a href="#Union-Find" class="headerlink" title="Union Find"></a>Union Find</h1><ul>
+<li>model the problem</li>
+<li>find an algorithm to solve it</li>
+<li>fast enough? fits in memory</li>
+<li>if not figure out why</li>
+<li>find a way to address the problem</li>
+<li>iterate until satisfied</li>
+</ul>
+<a id="more"></a>
+<h2 id="Dynamic-Connectivity"><a href="#Dynamic-Connectivity" class="headerlink" title="Dynamic Connectivity"></a>Dynamic Connectivity</h2><p><strong>modeling the objects</strong><br>When programming, convenient to name objects 0 to N-1</p>
+<ul>
+<li>use integers as array index</li>
+<li>suppress details not relevant to union-find.</li>
+</ul>
+<p><strong>modeling the connections</strong><br>We assume “is connected to” is an equivalence relation:</p>
+<ul>
+<li>Reflexive:p is connected to p</li>
+<li>Symmetric: if p is connected to q, then q is connected to p</li>
+<li>Transitive: if p is connected to q and q is connected to r, then p is connected to r</li>
+</ul>
+<p>Connected components<br>maximal set of objects that are mutually connected</p>
+<p><strong>Implementing the operations</strong><br>Find query</p>
+<ul>
+<li>check if two objects are in the same component<br>Union command</li>
+<li>Replace components containing two objects with their union</li>
+</ul>
 ]]></content>
       <categories>
-        <category>Leetcode</category>
+        <category>Algorithm</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>Algorithm</tag>
-        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -218,6 +242,70 @@
       </tags>
   </entry>
   <entry>
+    <title>Greedy</title>
+    <url>/2020/10/04/greedy/</url>
+    <content><![CDATA[<h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><p>在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，做出的是某种意义上的局部最优解。</p>
+<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><ul>
+<li>建立数学模型来描述问题；</li>
+<li>把求解的问题分成若干个子问题；</li>
+<li>对每个子问题求解，得到子问题的局部最优解；</li>
+<li>把子问题的解局部最优解合成原来解问题的一个解。<a id="more"></a>
+
+</li>
+</ul>
+<h1 id="要素"><a href="#要素" class="headerlink" title="要素"></a>要素</h1><ul>
+<li>贪心的选择<ul>
+<li>仅仅依据当前已有的信息做出选择，并且以后都不会改变这次选择。（区别与动态规划）</li>
+</ul>
+</li>
+<li>最优子结构<ul>
+<li>当一个问题的最优解包括其子问题的最优解时，称此问题具有最优子结构性质。</li>
+<li>这个性质和动态规划的一样，最优子结构性质是可用动态规划算法或贪心算法求解的关键特征。</li>
+</ul>
+</li>
+</ul>
+<h1 id="典型应用"><a href="#典型应用" class="headerlink" title="典型应用"></a>典型应用</h1><ul>
+<li>背包问题</li>
+<li>Huffman编码</li>
+<li>单源最短路径</li>
+<li>prim算法</li>
+<li>kruskal算法</li>
+</ul>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2>]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/09/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="other-problem"><a href="#other-problem" class="headerlink" title="other problem"></a>other problem</h3><p>when server is not running</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsof -i :4000</span><br><span class="line">$ <span class="built_in">kill</span> -9 PID</span><br></pre></td></tr></table></figure>
+
+<h2 id="How-to-insert-a-mathjax-code"><a href="#How-to-insert-a-mathjax-code" class="headerlink" title="How to insert a mathjax code"></a>How to insert a mathjax code</h2><p>More info: <a href="https://www.jianshu.com/p/a0aa94ef8ab2">mathjax code</a></p>
+<h2 id="How-to-insert-a-img-pdf-video"><a href="#How-to-insert-a-img-pdf-video" class="headerlink" title="How to insert a img/pdf/video"></a>How to insert a img/pdf/video</h2><p>More info: <a href="https://hexo.io/docs/tag-plugins#Include-Assets">insert media</a></p>
+<h2 id="About-more-button"><a href="#About-more-button" class="headerlink" title="About more button"></a>About more button</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Round A 2020 kick start Q1</title>
     <url>/2020/09/29/Round%20A%202020%20Q1/</url>
     <content><![CDATA[<h1 id="Round-A-2020-kick-start"><a href="#Round-A-2020-kick-start" class="headerlink" title="Round A 2020 kick start"></a>Round A 2020 kick start</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><blockquote>
@@ -260,133 +348,50 @@
       </categories>
       <tags>
         <tag>Algorithm</tag>
-        <tag>C++</tag>
         <tag>Kick start</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
-    <title>Greedy</title>
-    <url>/2020/10/04/greedy/</url>
-    <content><![CDATA[<h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><p>在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，做出的是某种意义上的局部最优解。</p>
-<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><ul>
-<li>建立数学模型来描述问题；</li>
-<li>把求解的问题分成若干个子问题；</li>
-<li>对每个子问题求解，得到子问题的局部最优解；</li>
-<li>把子问题的解局部最优解合成原来解问题的一个解。<a id="more"></a>
-
-</li>
-</ul>
-<h1 id="要素"><a href="#要素" class="headerlink" title="要素"></a>要素</h1><ul>
-<li>贪心的选择<ul>
-<li>仅仅依据当前已有的信息做出选择，并且以后都不会改变这次选择。（区别与动态规划）</li>
-</ul>
-</li>
-<li>最优子结构<ul>
-<li>当一个问题的最优解包括其子问题的最优解时，称此问题具有最优子结构性质。</li>
-<li>这个性质和动态规划的一样，最优子结构性质是可用动态规划算法或贪心算法求解的关键特征。</li>
-</ul>
-</li>
-</ul>
-<h1 id="典型应用"><a href="#典型应用" class="headerlink" title="典型应用"></a>典型应用</h1><ul>
-<li>背包问题</li>
-<li>Huffman编码</li>
-<li>单源最短路径</li>
-<li>prim算法</li>
-<li>kruskal算法</li>
-</ul>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2>]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>biweekly contest 36</title>
-    <url>/2020/10/03/biweekly%20contest%2036/</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>一共四题，1题easy，2题medium，1题hard<br>第一道，简单的系统设计题，要清楚object function；<br>第二道，同样应用题，但是通过率不高；<br>第三道，给出制定行和&amp;列和的矩阵；<br>第四道，</p>
-<ul>
-<li>Design Parking System</li>
-<li>Alert Using Same Key-Card Three or More Times in a One Hour Period</li>
-<li>Find Valid Matrix Given Row and Column Sums</li>
-<li>Find Servers That Handled Most Number of Requests<a id="more"></a>
-<h1 id="Design-Parking-System"><a href="#Design-Parking-System" class="headerlink" title="Design Parking System"></a>Design Parking System</h1><a href="https://leetcode.com/contest/biweekly-contest-36/problems/design-parking-system/">原题链接</a></li>
-</ul>
-<p>解法：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParkingSystem</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ps;</span><br><span class="line">    ParkingSystem(<span class="keyword">int</span> big, <span class="keyword">int</span> medium, <span class="keyword">int</span> small) &#123;</span><br><span class="line">        ps.push_back(big);</span><br><span class="line">        ps.push_back(medium);</span><br><span class="line">        ps.push_back(small);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">addCar</span><span class="params">(<span class="keyword">int</span> carType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ps[carType<span class="number">-1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            ps[carType<span class="number">-1</span>]--;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period"><a href="#Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period" class="headerlink" title="Alert Using Same Key-Card Three or More Times in a One Hour Period"></a>Alert Using Same Key-Card Three or More Times in a One Hour Period</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/">原题链接</a><br>解法：</p>
-<h1 id="Find-Valid-Matrix-Given-Row-and-Column-Sums"><a href="#Find-Valid-Matrix-Given-Row-and-Column-Sums" class="headerlink" title="Find Valid Matrix Given Row and Column Sums"></a>Find Valid Matrix Given Row and Column Sums</h1><p><a href="https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/">原题链接</a><br>解法：Greedy</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">restoreMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; col)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = row.size(), n = col.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">A</span><span class="params">(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; n; ++j) &#123;</span><br><span class="line">                A[i][j] = min(row[i], col[j]);</span><br><span class="line">                row[i] -= A[i][j];</span><br><span class="line">                col[j] -= A[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Time: O(mn)<br>Space: O(mn)</p>
-<h1 id="Find-Servers-That-Handled-Most-Number-of-Requests"><a href="#Find-Servers-That-Handled-Most-Number-of-Requests" class="headerlink" title="Find Servers That Handled Most Number of Requests"></a>Find Servers That Handled Most Number of Requests</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/find-servers-that-handled-most-number-of-requests/">原题链接</a></p>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/09/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="other-problem"><a href="#other-problem" class="headerlink" title="other problem"></a>other problem</h3><p>when server is not running</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsof -i :4000</span><br><span class="line">$ <span class="built_in">kill</span> -9 PID</span><br></pre></td></tr></table></figure>
-
-<h2 id="How-to-insert-a-mathjax-code"><a href="#How-to-insert-a-mathjax-code" class="headerlink" title="How to insert a mathjax code"></a>How to insert a mathjax code</h2><p>More info: <a href="https://www.jianshu.com/p/a0aa94ef8ab2">mathjax code</a></p>
-<h2 id="How-to-insert-a-img-pdf-video"><a href="#How-to-insert-a-img-pdf-video" class="headerlink" title="How to insert a img/pdf/video"></a>How to insert a img/pdf/video</h2><p>More info: <a href="https://hexo.io/docs/tag-plugins#Include-Assets">insert media</a></p>
-<h2 id="About-more-button"><a href="#About-more-button" class="headerlink" title="About more button"></a>About more button</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Union Find</title>
-    <url>/2020/09/27/algorithm1/</url>
-    <content><![CDATA[<ul>
-<li>Algorithm: method for solving a problem</li>
-<li>Data structure: method to store information</li>
-</ul>
-<h1 id="Union-Find"><a href="#Union-Find" class="headerlink" title="Union Find"></a>Union Find</h1><ul>
-<li>model the problem</li>
-<li>find an algorithm to solve it</li>
-<li>fast enough? fits in memory</li>
-<li>if not figure out why</li>
-<li>find a way to address the problem</li>
-<li>iterate until satisfied</li>
-</ul>
+    <title>Slide Window</title>
+    <url>/2020/10/04/slide%20window/</url>
+    <content><![CDATA[<h1 id="滑动窗口算法"><a href="#滑动窗口算法" class="headerlink" title="滑动窗口算法"></a>滑动窗口算法</h1><p>该算法是通过使用特定大小的子列表，在遍历完整列表的同时进行特定的操作，以达到降低了循环的嵌套深度。。</p>
 <a id="more"></a>
-<h2 id="Dynamic-Connectivity"><a href="#Dynamic-Connectivity" class="headerlink" title="Dynamic Connectivity"></a>Dynamic Connectivity</h2><p><strong>modeling the objects</strong><br>When programming, convenient to name objects 0 to N-1</p>
-<ul>
-<li>use integers as array index</li>
-<li>suppress details not relevant to union-find.</li>
+
+<h2 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h2><img src="/2020/10/04/slidewindow/1.jpg" width="450" height="400">
+
+<h2 id="经典使用"><a href="#经典使用" class="headerlink" title="经典使用"></a>经典使用</h2><ul>
+<li><p>连续元素最大和</p>
+<blockquote>
+<p>给定数据，获取数据中n个连续元素，最大的和。<br>input ：[-3,3,1,-3,2,4,7] n=3<br>output : 13</p>
+</blockquote>
+</li>
+<li><p>Brute Force</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Slide Window</p>
+</li>
 </ul>
-<p><strong>modeling the connections</strong><br>We assume “is connected to” is an equivalence relation:</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxSum</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="comment">// Initialize result </span></span><br><span class="line">    <span class="keyword">int</span> max_sum = INT_MIN; </span><br><span class="line">  </span><br><span class="line">    <span class="comment">// Consider all blocks starting with i. </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - k + <span class="number">1</span>; i++) &#123; </span><br><span class="line">        <span class="keyword">int</span> current_sum = <span class="number">0</span>; </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; k; j++) </span><br><span class="line">            current_sum = current_sum + arr[i + j]; </span><br><span class="line">  </span><br><span class="line">        <span class="comment">// Update result if required. </span></span><br><span class="line">        max_sum = max(current_sum, max_sum); </span><br><span class="line">    &#125; </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> max_sum; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>Reflexive:p is connected to p</li>
-<li>Symmetric: if p is connected to q, then q is connected to p</li>
-<li>Transitive: if p is connected to q and q is connected to r, then p is connected to r</li>
+<li>最长无重复子字符串<blockquote>
+<p>给定字符串，计算最长子字符串的长度，该子字符串满足如下条件：</p>
+<ol>
+<li>是给定字符串的字符串</li>
+<li>子字符串中无重复字符<br>input：”abcabcbb”<br>output: 3</li>
+</ol>
+</blockquote>
+</li>
 </ul>
-<p>Connected components<br>maximal set of objects that are mutually connected</p>
-<p><strong>Implementing the operations</strong><br>Find query</p>
+<p><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">原题链接</a></p>
 <ul>
-<li>check if two objects are in the same component<br>Union command</li>
-<li>Replace components containing two objects with their union</li>
+<li><p>Brute Force</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.size();</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>; j&lt;=n; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(allUnique(s,i,j)) ans=max(ans,j-i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">allUnique</span><span class="params">(<span class="built_in">string</span> s,<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="keyword">char</span>&gt; seen;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=start; i&lt;end; i++)&#123;</span><br><span class="line">            <span class="keyword">char</span> ch=s[i];</span><br><span class="line">            <span class="keyword">if</span>(seen.count(ch))<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            seen.insert(ch);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>slide window</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">     <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">int</span> n = s.length(), ans = <span class="number">0</span>;</span><br><span class="line">         <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; index;</span><br><span class="line">         index.assign(<span class="number">128</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">// current index of character</span></span><br><span class="line">        <span class="comment">// try to extend the range [i, j]</span></span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, i = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            i = max(index[s[j]], i);</span><br><span class="line">            ans = max(ans, j - i + <span class="number">1</span>);</span><br><span class="line">            index[s[j]] = j + <span class="number">1</span>;</span><br><span class="line">         &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 ]]></content>
       <categories>
@@ -425,71 +430,9 @@
         <category>Leetcode</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>Algorithm</tag>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Math Quiz 1</title>
-    <url>/2020/09/30/math1/</url>
-    <content><![CDATA[<h1 id="问题一-集卡片"><a href="#问题一-集卡片" class="headerlink" title="问题一 集卡片"></a>问题一 集卡片</h1><p>有n张卡片，每次等概率随机获取1张，问期望多少张卡片可以将所有卡片集齐？<br><strong>Ans</strong><br>$$ \frac{n}{n}+\frac{n}{n-1}+\frac{n}{n-2}+.….+\frac{n}{1}= \sum^n_{i=1}{\frac{n}{i}}$$<br>注：离散随机变量的一切可能值与其对应的概率P的乘积之和称为数学期望</p>
-<a id="more"></a>
-<h1 id="问题二-随机数生成器"><a href="#问题二-随机数生成器" class="headerlink" title="问题二 随机数生成器"></a>问题二 随机数生成器</h1><p>你有一个不均匀的随机数生成器，0的概率为p，1的概率为1-p，p未知。<br>设计一个算法，用这个不均匀的随机数生成器生成一个均匀的随机数生成器，即生成0和1的概率均为$\frac{1}{2}$。<br><strong>Ans</strong><br>我们每次用不均匀的随机数生成器依次生成2个数，如果是00和11，我们忽略，然后继续生成2个数，直到生成01和10为止。<br>如果生成01，我们输出0；如果生成10，我们输出1。这两种情况概率均为p(1-p)</p>
-<h1 id="问题三-完全信息的结婚问题"><a href="#问题三-完全信息的结婚问题" class="headerlink" title="问题三 完全信息的结婚问题"></a>问题三 完全信息的结婚问题</h1><p>有n次找男友的机会，每个男友给你的满意度是1,2,…,m中等概率随机的一个数<br>你从1到n换男友，只有成为男友才能知道男友给你的满意度，换了男友后不能再找回来<br>那你可以再任意的时候选择和当前的男友结婚，该男友的满意度就是你最终的辛福指数。<br>假设你足够渣，求你期望能获得的辛福指数。<br>$$n,m≤10^7$$<br><strong>Ans</strong><br>令$f_i$表示你还有i次找女友的机会时的期望幸福指数<br>$f_1=\frac{1+m}{2}$<br>$f_i=\frac{\sum^m_{i=1}max({f_{i-1},i})}{m}$<br>选择i，继续碰运气，选择$f_{i-1}$，结婚; 时间复杂度O(n)。</p>
-<h1 id="问题四-不完全信息的结婚问题"><a href="#问题四-不完全信息的结婚问题" class="headerlink" title="问题四 不完全信息的结婚问题"></a>问题四 不完全信息的结婚问题</h1><p>有n次找男友的机会，每个男友给你的满意度未知（但是满足随机分布）<br>你从1到n换男友，只有成为男友才能知道男友给你的满意度，换了男友后不能再找回来<br>那你可以再任意的时候选择和当前的男友结婚，该男友的满意度就是你最终的辛福指数。<br>你需要采用一种策略，使得你找到最好的男友结婚的概率最大。<br><strong>Ans</strong><br>n=3时的最优策略？<br>第一个男友先pass，当第二个男友比第一个要好时，选择结婚；反之选择下一个。<br>一共有6种情况：</p>
-<blockquote>
-<p>123 没找到<br>132 找到<br>213 找到<br>231 找到<br>312 没找到<br>321 没找到</p>
-</blockquote>
-<p>概率为$\frac{1}{2}$<br>策略：先观察前k个男友，然后全部分手。对剩下的女友如果比前k个女友都好，就结婚。<br>$$ P(k)= \frac{1}{n}+\frac{1}{n}\times\frac{k}{k+1}+\frac{1}{n}\times\frac{k}{k+2}+…+\frac{1}{n}\times\frac{k}{n-1}=\frac{k}{n}\sum^{n-1}_{i=k}\frac{1}{i} $$</p>
-<p>令$k=\frac{k}{n}$,得$P(k)=\frac{k}{n}\sum^{n-1}_{i=k}\frac{1}{i}=x\int^1_x\frac{1}{x}dt=-xlnx$</p>
-<p>$P’(k)=-(1+lnx)=0$,有$x=\frac{1}{e}=37$%</p>
-<p>此时，$P(k)=-\frac{1}{e}ln\frac{1}{e}=\frac{1}{e}=37$%</p>
-<p>最佳策略：先观察37%的男友，然后全部分手，接下来，一旦遇到一个比前面男友都要好的，直接结婚。如果你找男友的时期时15-35岁，那么22之前就是观察期，不要结婚，接下来遇到更好的直接结婚。</p>
-<h1 id="问题五-最大间距"><a href="#问题五-最大间距" class="headerlink" title="问题五 最大间距"></a>问题五 最大间距</h1><p>有n个乱序数$\alpha_1,…,\alpha_n$，求排序之后，相邻元素之间的最大差值<br>$n≤10^7,1≤\alpha_1,…,\alpha_n≤10^{18}$<br>要求O(n)<br><strong>Ans</strong><br>把n个数放在n+1个桶里，其中最小值min放在第1个桶，最大值max放在第n+1个桶，每个桶都负责放$gap=\frac{max-min}{n+1}$范围的数字<br>根据鸽笼原理，必然有一个空桶。同一个桶内的差值必然小于gap，而间隔一个空桶的差值必然大于gap，故我们不用考虑一个桶内的差值，只需要考虑不同桶之间的差值。<br>记录每个桶中的最大值和最小值，遍历桶，依次用当前桶的最小值减去上一个非空桶的最大值判断即可。</p>
-]]></content>
-      <categories>
-        <category>ACM&amp;C++</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-        <tag>ACM</tag>
-        <tag>Math</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>slide window</title>
-    <url>/2020/10/04/slide%20window/</url>
-    <content><![CDATA[<h1 id="滑动窗口算法"><a href="#滑动窗口算法" class="headerlink" title="滑动窗口算法"></a>滑动窗口算法</h1><p>该算法是通过使用特定大小的子列表，在遍历完整列表的同时进行特定的操作，以达到降低了循环的嵌套深度。。</p>
-<h2 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h2><h2 id="经典使用"><a href="#经典使用" class="headerlink" title="经典使用"></a>经典使用</h2><ul>
-<li><p>连续元素最大和</p>
-<blockquote>
-<p>给定数据，获取数据中n个连续元素，最大的和。<br>input ：[-3,3,1,-3,2,4,7] n=3<br>output : 13</p>
-</blockquote>
-</li>
-<li><p>brute force</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>slide window</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>最长无重复子字符串</p>
-<blockquote>
-<p>给定字符串，计算最长子字符串的长度，该子字符串满足如下条件：</p>
-<ol>
-<li>是给定字符串的字符串</li>
-<li>子字符串中无重复字符<br>input：”abcabcbb”<br>output: 3</li>
-</ol>
-</blockquote>
-</li>
-</ul>
-<p><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">原题链接</a></p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
+        <tag>Leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -545,6 +488,58 @@
       <tags>
         <tag>leetcode</tag>
         <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计学习</title>
+    <url>/2020/09/26/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="统计学习"><a href="#统计学习" class="headerlink" title="统计学习"></a>统计学习</h1><blockquote>
+<p>如果一个系统能够通过执行某个过程改进它的性能，这就是学习。——赫尔伯特·西蒙</p>
+</blockquote>
+<h2 id="统计学习的特点"><a href="#统计学习的特点" class="headerlink" title="统计学习的特点"></a>统计学习的特点</h2><h4 id="统计学习定义"><a href="#统计学习定义" class="headerlink" title="统计学习定义"></a>统计学习定义</h4><p>统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测和分析的一门学科。<br>统计学习也可以称为统计机器学习。</p>
+<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><ul>
+<li>统计学习以计算机及网络为平台，是建立在计算机及网络上的；</li>
+<li>统计学习以数据为研究对象，是数据驱动的学科；</li>
+<li>统计学习的目的是对数据进行预测与分析；</li>
+<li>统计学习以方法为中心，统计学习方法构建模型并应用模型进行预测与分析；</li>
+<li>统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等许多领域的交叉学科，并且在发展中逐步形成独自的理论体系与方法论。<a id="more"></a>
+<h2 id="统计学习的对象"><a href="#统计学习的对象" class="headerlink" title="统计学习的对象"></a>统计学习的对象</h2></li>
+</ul>
+<p>统计学习研究的对象是data。它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。注意这里的数据是多样的，可是是计算机及网络上的各种数字、文字、图像、视频、音频数据以及它们的组合。</p>
+<p>统计学习关于数据的基本假设是<strong>同类数据具有一定的统计规律性</strong>，这是统计学习的前提。</p>
+<h2 id="统计学习的目的"><a href="#统计学习的目的" class="headerlink" title="统计学习的目的"></a>统计学习的目的</h2><p>统计学习用于对数据的预测与分析，特别是对未知新数据的预测与分析。对数据的预测可以使计算机更加智能化，或者说使计算机的某些性能得到提高；对数据的分析可以让人们获取新的知识，给人们带来新的发现。</p>
+<p>对数据的预测与分析是通过构建概率统计模型实现的。统计学习总的目标就是考虑学习什么样的模型和如何学习模型，以使模型能对数据进行准确的预测与分析，同时也要考虑尽可能地提高学习效率。</p>
+<h2 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h2><p>统计学习的方法是基于数据构建概率统计模型从而对数据进行预测与分析。统计学习由监督学习、无监督学习和强化学习等组成。</p>
+<p>统计学习的方法可以概括如下：</p>
+<ul>
+<li>从给定的、有限的、用于学习的训练数据集合出发，假设数据是独立同分布产生的；</li>
+<li>并且假设要学习的模型属于某个函数的集合，称为假设空间；</li>
+<li>应用某个评价准则，从假设空间中选取一个最优模型，使它对已知的训练数据以及位置的测试数据在给定的评价准则下有最优的预测；</li>
+<li>最优模型的选择由算法实现。</li>
+</ul>
+<p>这样，统计学习方法包括模型的假设空间、模型选择的准则以及模型学习的算法。称为统计学习方法的三要素，简称为<strong>“模型”</strong>、<strong>“策略”</strong>和<strong>“算法”</strong>。</p>
+<p>实现统计学习方法的步骤如下：</p>
+<ol>
+<li>得到一个有限的训练数据集合；</li>
+<li>确定包含所有可能的模型的假设空间，即学习模型的集合；</li>
+<li>确定模型选择的准则，即学习的策略；</li>
+<li>实现求解最优模型的算法，即学习的算法；</li>
+<li>通过学习方法选择最优模型；</li>
+<li>利用学习的最优模型对新数据进行预测或分析。</li>
+</ol>
+<h2 id="统计学习的研究"><a href="#统计学习的研究" class="headerlink" title="统计学习的研究"></a>统计学习的研究</h2><p>统计学习的研究一般包括统计学习方法、统计学习理论以及统计学习应用三个方面。<br>统计学习<strong>方法</strong>的研究旨在开发<strong>新的学习方法</strong>；<br>统计学习<strong>理论</strong>的研究在于<strong>探求统计学习方法的有效性与效率，以及统计学习的基本理论问题</strong>；<br>统计学习<strong>应用</strong>的研究主要考虑<strong>将统计学习方法应用到实际问题中去，解决实际问题</strong>。</p>
+<h2 id="统计学习的重要性"><a href="#统计学习的重要性" class="headerlink" title="统计学习的重要性"></a>统计学习的重要性</h2><p>统计学习学科在科学技术中的重要性主要体现在以下几个方面：</p>
+<ul>
+<li>统计学习是处理海量数据的有效方法。</li>
+<li>统计学习是计算机智能化的有效手段。</li>
+<li>统计学习是计算机科学发展的一个重要组成部分。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
       </tags>
   </entry>
   <entry>
@@ -617,114 +612,6 @@
 ]]></content>
       <categories>
         <category>统计学习方法</category>
-      </categories>
-      <tags>
-        <tag>Machine learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>西瓜书——假设空间与归纳偏好</title>
-    <url>/2020/09/29/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="归纳于演绎"><a href="#归纳于演绎" class="headerlink" title="归纳于演绎"></a>归纳于演绎</h1><p><strong>Induction&amp;&amp;Deduction</strong></p>
-<blockquote>
-<p><strong>归纳</strong>和<strong>演绎</strong>是科学推理的两大基本手段<br>前者是从特殊到一般的泛化过程：即从具体的事实归结出一般性的规律；<br>后者是从一般到特殊的特化过程：即从基础原理推理出具体情况。</p>
-</blockquote>
-<a id="more"></a>
-
-<ul>
-<li>归纳学习<ul>
-<li>“从样例中学习”显然是一个归纳过程，因此叫归纳学习；</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>归纳学习有狭义和广义之分:<br>广义的归纳学习大体相当于从样例中学习；<br>狭义的归纳学习则要求从训练数据中学得概念，因此也被称为“概念学习”或者“概念形成”。</p>
-</blockquote>
-<ul>
-<li>概念学习<ul>
-<li>布尔概念学习：即对“是”“不是”这样的可表示为0/1布尔值的目标概念的学习。</li>
-</ul>
-</li>
-</ul>
-<h1 id="假设空间"><a href="#假设空间" class="headerlink" title="假设空间"></a>假设空间</h1><p><strong>Hypothesis Space</strong><br>还是以分别西瓜的好坏为例子（这就是一个布尔概念学习）：<br>有一下的训练数据集：</p>
-<div class="note default"><table>
-<thead>
-<tr>
-<th>编号</th>
-<th>色泽</th>
-<th>根蒂</th>
-<th>敲声</th>
-<th>好瓜</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>青绿</td>
-<td>蜷缩</td>
-<td>浊响</td>
-<td>是</td>
-</tr>
-<tr>
-<td>2</td>
-<td>乌黑</td>
-<td>蜷缩</td>
-<td>浊响</td>
-<td>是</td>
-</tr>
-<tr>
-<td>3</td>
-<td>青绿</td>
-<td>硬挺</td>
-<td>清脆</td>
-<td>否</td>
-</tr>
-<tr>
-<td>4</td>
-<td>乌黑</td>
-<td>稍蜷</td>
-<td>沉闷</td>
-<td>否</td>
-</tr>
-</tbody></table>
-</div>
-
-<blockquote>
-<p>好瓜 &lt;-&gt; (色泽=?)^(根蒂=?)^(敲声=?)<br>这里的？表示尚未确定的取值，而我们的任务就是通过对上表的训练进行学习，把？确定下来</p>
-</blockquote>
-<p>我们可以把学习过程看作一个在所设假设组成的空间中进行搜索的过程，搜索目标是找到与训练集“匹配”的假设，即能够将训练集中的瓜判断正确的假设。</p>
-<blockquote>
-<p>比如这里的色泽有“青绿”“乌黑”“浅白”这三种可能取值；还需考虑到，也许“色泽”无论取什么值都合适，我们这里用通配符“*”来表示。<br>此外，还要考虑极端情况：有可能“好瓜”这个概念并不存在，世界上没有“好瓜”这种东西。<br>于是我们的假设空间规模大小：<br> $$ 4\times4\times4+1=65 $$</p>
-</blockquote>
-<p>可以有许多策略对这个假设空间进行搜索，例如自顶向下、从一般到特殊，或者自底向上、从特殊到一般，搜索过程中可以不断删除与正例不一致的假设，和（或）与反例一致的假设。最终将会得到与训练集一致（即<strong>对所有训练样本能够进行正确判断</strong>）的假设，这就是我们学到的结果。</p>
-<h2 id="版本空间"><a href="#版本空间" class="headerlink" title="版本空间"></a>版本空间</h2><p><strong>Version Space</strong></p>
-<blockquote>
-<p>现实问题中我们常面临很大的假设空间，但是学习过程是基于有限样本训练集进行的。因此，可能有多个假设与训练集一致，即存在着一个与训练集一致的“假设集合”，我们称之为“<strong>版本空间</strong>”</p>
-</blockquote>
-<p><strong>例子</strong></p>
-<ul>
-<li>表中对应的版本空间<blockquote>
-<p>(1) 色泽=* 根蒂=蜷缩 敲声=浊响<br>(2) 色泽=* 根蒂=蜷缩 敲声=*<br>(3) 色泽=* 根蒂=* 敲声=浊响</p>
-</blockquote>
-</li>
-<li>表中若只包含编号1和编号4的两个样例，试给出相应的版本空间<blockquote>
-<p>（1）色泽=青绿 根蒂=蜷缩 敲声=浊响<br>（2）色泽=青绿 根蒂=蜷缩 敲声=*<br>（3）色泽=青绿 根蒂=* 敲声=浊响<br>（4）色泽=* 根蒂=蜷缩 敲声=浊响<br>（5）色泽=青绿 根蒂=* 敲声=*<br>（6）色泽=* 根蒂=蜷缩 敲声=*<br>（7）色泽=* 根蒂=* 敲声=浊响</p>
-</blockquote>
-</li>
-</ul>
-<h1 id="归纳偏好"><a href="#归纳偏好" class="headerlink" title="归纳偏好"></a>归纳偏好</h1><p><strong>Inductive Bias</strong></p>
-<p>在之前给出的训练数据集中，我们得到的版本空间会给我们带来一个麻烦：<br>现在有三个与训练集一致的假设，但是与他们对应的模型在面临新样本的时候，却会产生不同的输出。</p>
-<blockquote>
-<p>例如：对（色泽=青绿；根蒂=蜷缩；敲声=沉闷）这个新收来的瓜，<br>如果我们采用：好瓜 &lt;-&gt;(色泽=*)^(根蒂=蜷缩)^(敲声=*)<br>那么将会把这个瓜判断为好瓜。<br>但是如果采用其余两个假设，则判断结果将不是好瓜。</p>
-</blockquote>
-<p><strong>那么，应该采用哪个模型（假设）呢？</strong><br>这时，学习算法本身的“偏好”就会起到关键的作用。</p>
-<blockquote>
-<p>例如：<br>若我们的算法喜欢“尽可能特殊”的模型，则它会选择“好瓜 &lt;-&gt;(色泽=*)^(根蒂=蜷缩)^(敲声=浊响)”；<br>但若我们的算法喜欢“尽可能一般”的模型，并且由于某种原因它更“相信”根蒂，则它会选择“好瓜 &lt;-&gt;(色泽=*)^(根蒂=蜷缩)^(敲声=*)”。</p>
-</blockquote>
-<p>机器学习在学习过程中对某种类型假设的偏好，称为“<strong>归纳偏好</strong>”。</p>
-<p>任何一个有效的机器学习算法必有其归纳偏好，否则它将被假设空间中看似在训练集上“等效”的假设所迷惑，而无法产生确定的学习结果，可以想象，如果没有偏好，我们的西瓜学习算法产生的模型每次在进行预测时随机抽选训练集上的等效假设，那么对这个新瓜（色泽=青绿；根蒂=蜷缩；敲声=沉闷），学得的模型时而告诉我们它是好的、时而告诉我们它是不好的，这样的学习结果显然是没有意义的。</p>
-]]></content>
-      <categories>
-        <category>西瓜书</category>
       </categories>
       <tags>
         <tag>Machine learning</tag>
@@ -880,55 +767,182 @@
       </tags>
   </entry>
   <entry>
-    <title>统计学习</title>
-    <url>/2020/09/26/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="统计学习"><a href="#统计学习" class="headerlink" title="统计学习"></a>统计学习</h1><blockquote>
-<p>如果一个系统能够通过执行某个过程改进它的性能，这就是学习。——赫尔伯特·西蒙</p>
+    <title>西瓜书——假设空间与归纳偏好</title>
+    <url>/2020/09/29/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="归纳于演绎"><a href="#归纳于演绎" class="headerlink" title="归纳于演绎"></a>归纳于演绎</h1><p><strong>Induction&amp;&amp;Deduction</strong></p>
+<blockquote>
+<p><strong>归纳</strong>和<strong>演绎</strong>是科学推理的两大基本手段<br>前者是从特殊到一般的泛化过程：即从具体的事实归结出一般性的规律；<br>后者是从一般到特殊的特化过程：即从基础原理推理出具体情况。</p>
 </blockquote>
-<h2 id="统计学习的特点"><a href="#统计学习的特点" class="headerlink" title="统计学习的特点"></a>统计学习的特点</h2><h4 id="统计学习定义"><a href="#统计学习定义" class="headerlink" title="统计学习定义"></a>统计学习定义</h4><p>统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行预测和分析的一门学科。<br>统计学习也可以称为统计机器学习。</p>
-<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><ul>
-<li>统计学习以计算机及网络为平台，是建立在计算机及网络上的；</li>
-<li>统计学习以数据为研究对象，是数据驱动的学科；</li>
-<li>统计学习的目的是对数据进行预测与分析；</li>
-<li>统计学习以方法为中心，统计学习方法构建模型并应用模型进行预测与分析；</li>
-<li>统计学习是概率论、统计学、信息论、计算理论、最优化理论及计算机科学等许多领域的交叉学科，并且在发展中逐步形成独自的理论体系与方法论。<a id="more"></a>
-<h2 id="统计学习的对象"><a href="#统计学习的对象" class="headerlink" title="统计学习的对象"></a>统计学习的对象</h2></li>
-</ul>
-<p>统计学习研究的对象是data。它从数据出发，提取数据的特征，抽象出数据的模型，发现数据中的知识，又回到对数据的分析与预测中去。注意这里的数据是多样的，可是是计算机及网络上的各种数字、文字、图像、视频、音频数据以及它们的组合。</p>
-<p>统计学习关于数据的基本假设是<strong>同类数据具有一定的统计规律性</strong>，这是统计学习的前提。</p>
-<h2 id="统计学习的目的"><a href="#统计学习的目的" class="headerlink" title="统计学习的目的"></a>统计学习的目的</h2><p>统计学习用于对数据的预测与分析，特别是对未知新数据的预测与分析。对数据的预测可以使计算机更加智能化，或者说使计算机的某些性能得到提高；对数据的分析可以让人们获取新的知识，给人们带来新的发现。</p>
-<p>对数据的预测与分析是通过构建概率统计模型实现的。统计学习总的目标就是考虑学习什么样的模型和如何学习模型，以使模型能对数据进行准确的预测与分析，同时也要考虑尽可能地提高学习效率。</p>
-<h2 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h2><p>统计学习的方法是基于数据构建概率统计模型从而对数据进行预测与分析。统计学习由监督学习、无监督学习和强化学习等组成。</p>
-<p>统计学习的方法可以概括如下：</p>
+<a id="more"></a>
+
 <ul>
-<li>从给定的、有限的、用于学习的训练数据集合出发，假设数据是独立同分布产生的；</li>
-<li>并且假设要学习的模型属于某个函数的集合，称为假设空间；</li>
-<li>应用某个评价准则，从假设空间中选取一个最优模型，使它对已知的训练数据以及位置的测试数据在给定的评价准则下有最优的预测；</li>
-<li>最优模型的选择由算法实现。</li>
+<li>归纳学习<ul>
+<li>“从样例中学习”显然是一个归纳过程，因此叫归纳学习；</li>
 </ul>
-<p>这样，统计学习方法包括模型的假设空间、模型选择的准则以及模型学习的算法。称为统计学习方法的三要素，简称为<strong>“模型”</strong>、<strong>“策略”</strong>和<strong>“算法”</strong>。</p>
-<p>实现统计学习方法的步骤如下：</p>
-<ol>
-<li>得到一个有限的训练数据集合；</li>
-<li>确定包含所有可能的模型的假设空间，即学习模型的集合；</li>
-<li>确定模型选择的准则，即学习的策略；</li>
-<li>实现求解最优模型的算法，即学习的算法；</li>
-<li>通过学习方法选择最优模型；</li>
-<li>利用学习的最优模型对新数据进行预测或分析。</li>
-</ol>
-<h2 id="统计学习的研究"><a href="#统计学习的研究" class="headerlink" title="统计学习的研究"></a>统计学习的研究</h2><p>统计学习的研究一般包括统计学习方法、统计学习理论以及统计学习应用三个方面。<br>统计学习<strong>方法</strong>的研究旨在开发<strong>新的学习方法</strong>；<br>统计学习<strong>理论</strong>的研究在于<strong>探求统计学习方法的有效性与效率，以及统计学习的基本理论问题</strong>；<br>统计学习<strong>应用</strong>的研究主要考虑<strong>将统计学习方法应用到实际问题中去，解决实际问题</strong>。</p>
-<h2 id="统计学习的重要性"><a href="#统计学习的重要性" class="headerlink" title="统计学习的重要性"></a>统计学习的重要性</h2><p>统计学习学科在科学技术中的重要性主要体现在以下几个方面：</p>
+</li>
+</ul>
+<blockquote>
+<p>归纳学习有狭义和广义之分:<br>广义的归纳学习大体相当于从样例中学习；<br>狭义的归纳学习则要求从训练数据中学得概念，因此也被称为“概念学习”或者“概念形成”。</p>
+</blockquote>
 <ul>
-<li>统计学习是处理海量数据的有效方法。</li>
-<li>统计学习是计算机智能化的有效手段。</li>
-<li>统计学习是计算机科学发展的一个重要组成部分。</li>
+<li>概念学习<ul>
+<li>布尔概念学习：即对“是”“不是”这样的可表示为0/1布尔值的目标概念的学习。</li>
 </ul>
+</li>
+</ul>
+<h1 id="假设空间"><a href="#假设空间" class="headerlink" title="假设空间"></a>假设空间</h1><p><strong>Hypothesis Space</strong><br>还是以分别西瓜的好坏为例子（这就是一个布尔概念学习）：<br>有一下的训练数据集：</p>
+<div class="note default"><table>
+<thead>
+<tr>
+<th>编号</th>
+<th>色泽</th>
+<th>根蒂</th>
+<th>敲声</th>
+<th>好瓜</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>青绿</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>是</td>
+</tr>
+<tr>
+<td>2</td>
+<td>乌黑</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>是</td>
+</tr>
+<tr>
+<td>3</td>
+<td>青绿</td>
+<td>硬挺</td>
+<td>清脆</td>
+<td>否</td>
+</tr>
+<tr>
+<td>4</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>沉闷</td>
+<td>否</td>
+</tr>
+</tbody></table>
+</div>
+
+<blockquote>
+<p>好瓜 &lt;-&gt; (色泽=?)^(根蒂=?)^(敲声=?)<br>这里的？表示尚未确定的取值，而我们的任务就是通过对上表的训练进行学习，把？确定下来</p>
+</blockquote>
+<p>我们可以把学习过程看作一个在所设假设组成的空间中进行搜索的过程，搜索目标是找到与训练集“匹配”的假设，即能够将训练集中的瓜判断正确的假设。</p>
+<blockquote>
+<p>比如这里的色泽有“青绿”“乌黑”“浅白”这三种可能取值；还需考虑到，也许“色泽”无论取什么值都合适，我们这里用通配符“*”来表示。<br>此外，还要考虑极端情况：有可能“好瓜”这个概念并不存在，世界上没有“好瓜”这种东西。<br>于是我们的假设空间规模大小：<br> $$ 4\times4\times4+1=65 $$</p>
+</blockquote>
+<p>可以有许多策略对这个假设空间进行搜索，例如自顶向下、从一般到特殊，或者自底向上、从特殊到一般，搜索过程中可以不断删除与正例不一致的假设，和（或）与反例一致的假设。最终将会得到与训练集一致（即<strong>对所有训练样本能够进行正确判断</strong>）的假设，这就是我们学到的结果。</p>
+<h2 id="版本空间"><a href="#版本空间" class="headerlink" title="版本空间"></a>版本空间</h2><p><strong>Version Space</strong></p>
+<blockquote>
+<p>现实问题中我们常面临很大的假设空间，但是学习过程是基于有限样本训练集进行的。因此，可能有多个假设与训练集一致，即存在着一个与训练集一致的“假设集合”，我们称之为“<strong>版本空间</strong>”</p>
+</blockquote>
+<p><strong>例子</strong></p>
+<ul>
+<li>表中对应的版本空间<blockquote>
+<p>(1) 色泽=* 根蒂=蜷缩 敲声=浊响<br>(2) 色泽=* 根蒂=蜷缩 敲声=*<br>(3) 色泽=* 根蒂=* 敲声=浊响</p>
+</blockquote>
+</li>
+<li>表中若只包含编号1和编号4的两个样例，试给出相应的版本空间<blockquote>
+<p>（1）色泽=青绿 根蒂=蜷缩 敲声=浊响<br>（2）色泽=青绿 根蒂=蜷缩 敲声=*<br>（3）色泽=青绿 根蒂=* 敲声=浊响<br>（4）色泽=* 根蒂=蜷缩 敲声=浊响<br>（5）色泽=青绿 根蒂=* 敲声=*<br>（6）色泽=* 根蒂=蜷缩 敲声=*<br>（7）色泽=* 根蒂=* 敲声=浊响</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="归纳偏好"><a href="#归纳偏好" class="headerlink" title="归纳偏好"></a>归纳偏好</h1><p><strong>Inductive Bias</strong></p>
+<p>在之前给出的训练数据集中，我们得到的版本空间会给我们带来一个麻烦：<br>现在有三个与训练集一致的假设，但是与他们对应的模型在面临新样本的时候，却会产生不同的输出。</p>
+<blockquote>
+<p>例如：对（色泽=青绿；根蒂=蜷缩；敲声=沉闷）这个新收来的瓜，<br>如果我们采用：好瓜 &lt;-&gt;(色泽=*)^(根蒂=蜷缩)^(敲声=*)<br>那么将会把这个瓜判断为好瓜。<br>但是如果采用其余两个假设，则判断结果将不是好瓜。</p>
+</blockquote>
+<p><strong>那么，应该采用哪个模型（假设）呢？</strong><br>这时，学习算法本身的“偏好”就会起到关键的作用。</p>
+<blockquote>
+<p>例如：<br>若我们的算法喜欢“尽可能特殊”的模型，则它会选择“好瓜 &lt;-&gt;(色泽=*)^(根蒂=蜷缩)^(敲声=浊响)”；<br>但若我们的算法喜欢“尽可能一般”的模型，并且由于某种原因它更“相信”根蒂，则它会选择“好瓜 &lt;-&gt;(色泽=*)^(根蒂=蜷缩)^(敲声=*)”。</p>
+</blockquote>
+<p>机器学习在学习过程中对某种类型假设的偏好，称为“<strong>归纳偏好</strong>”。</p>
+<p>任何一个有效的机器学习算法必有其归纳偏好，否则它将被假设空间中看似在训练集上“等效”的假设所迷惑，而无法产生确定的学习结果，可以想象，如果没有偏好，我们的西瓜学习算法产生的模型每次在进行预测时随机抽选训练集上的等效假设，那么对这个新瓜（色泽=青绿；根蒂=蜷缩；敲声=沉闷），学得的模型时而告诉我们它是好的、时而告诉我们它是不好的，这样的学习结果显然是没有意义的。</p>
 ]]></content>
       <categories>
-        <category>统计学习方法</category>
+        <category>西瓜书</category>
       </categories>
       <tags>
         <tag>Machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>biweekly contest 36</title>
+    <url>/2020/10/03/biweekly%20contest%2036/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>一共四题，1题easy，2题medium，1题hard<br>第一道，简单的系统设计题，要清楚object function；<br>第二道，同样应用题，但是通过率不高；<br>第三道，给出制定行和&amp;列和的矩阵；<br>第四道，</p>
+<ul>
+<li>Design Parking System</li>
+<li>Alert Using Same Key-Card Three or More Times in a One Hour Period</li>
+<li>Find Valid Matrix Given Row and Column Sums</li>
+<li>Find Servers That Handled Most Number of Requests<a id="more"></a>
+<h1 id="Design-Parking-System"><a href="#Design-Parking-System" class="headerlink" title="Design Parking System"></a>Design Parking System</h1><a href="https://leetcode.com/contest/biweekly-contest-36/problems/design-parking-system/">原题链接</a></li>
+</ul>
+<p>解法：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParkingSystem</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ps;</span><br><span class="line">    ParkingSystem(<span class="keyword">int</span> big, <span class="keyword">int</span> medium, <span class="keyword">int</span> small) &#123;</span><br><span class="line">        ps.push_back(big);</span><br><span class="line">        ps.push_back(medium);</span><br><span class="line">        ps.push_back(small);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">addCar</span><span class="params">(<span class="keyword">int</span> carType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ps[carType<span class="number">-1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            ps[carType<span class="number">-1</span>]--;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period"><a href="#Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period" class="headerlink" title="Alert Using Same Key-Card Three or More Times in a One Hour Period"></a>Alert Using Same Key-Card Three or More Times in a One Hour Period</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/">原题链接</a><br>解法：</p>
+<h1 id="Find-Valid-Matrix-Given-Row-and-Column-Sums"><a href="#Find-Valid-Matrix-Given-Row-and-Column-Sums" class="headerlink" title="Find Valid Matrix Given Row and Column Sums"></a>Find Valid Matrix Given Row and Column Sums</h1><p><a href="https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/">原题链接</a><br>解法：Greedy</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">restoreMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; col)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = row.size(), n = col.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">A</span><span class="params">(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; n; ++j) &#123;</span><br><span class="line">                A[i][j] = min(row[i], col[j]);</span><br><span class="line">                row[i] -= A[i][j];</span><br><span class="line">                col[j] -= A[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Time: O(mn)<br>Space: O(mn)</p>
+<h1 id="Find-Servers-That-Handled-Most-Number-of-Requests"><a href="#Find-Servers-That-Handled-Most-Number-of-Requests" class="headerlink" title="Find Servers That Handled Most Number of Requests"></a>Find Servers That Handled Most Number of Requests</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/find-servers-that-handled-most-number-of-requests/">原题链接</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode</title>
+    <url>/2022/09/27/Leetcode/</url>
+    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
+<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
+<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
+<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Math Quiz 1</title>
+    <url>/2020/09/30/math1/</url>
+    <content><![CDATA[<h1 id="问题一-集卡片"><a href="#问题一-集卡片" class="headerlink" title="问题一 集卡片"></a>问题一 集卡片</h1><p>有n张卡片，每次等概率随机获取1张，问期望多少张卡片可以将所有卡片集齐？<br><strong>Ans</strong><br>$$ \frac{n}{n}+\frac{n}{n-1}+\frac{n}{n-2}+.….+\frac{n}{1}= \sum^n_{i=1}{\frac{n}{i}}$$<br>注：离散随机变量的一切可能值与其对应的概率P的乘积之和称为数学期望</p>
+<a id="more"></a>
+<h1 id="问题二-随机数生成器"><a href="#问题二-随机数生成器" class="headerlink" title="问题二 随机数生成器"></a>问题二 随机数生成器</h1><p>你有一个不均匀的随机数生成器，0的概率为p，1的概率为1-p，p未知。<br>设计一个算法，用这个不均匀的随机数生成器生成一个均匀的随机数生成器，即生成0和1的概率均为$\frac{1}{2}$。<br><strong>Ans</strong><br>我们每次用不均匀的随机数生成器依次生成2个数，如果是00和11，我们忽略，然后继续生成2个数，直到生成01和10为止。<br>如果生成01，我们输出0；如果生成10，我们输出1。这两种情况概率均为p(1-p)</p>
+<h1 id="问题三-完全信息的结婚问题"><a href="#问题三-完全信息的结婚问题" class="headerlink" title="问题三 完全信息的结婚问题"></a>问题三 完全信息的结婚问题</h1><p>有n次找男友的机会，每个男友给你的满意度是1,2,…,m中等概率随机的一个数<br>你从1到n换男友，只有成为男友才能知道男友给你的满意度，换了男友后不能再找回来<br>那你可以再任意的时候选择和当前的男友结婚，该男友的满意度就是你最终的辛福指数。<br>假设你足够渣，求你期望能获得的辛福指数。<br>$$n,m≤10^7$$<br><strong>Ans</strong><br>令$f_i$表示你还有i次找女友的机会时的期望幸福指数<br>$f_1=\frac{1+m}{2}$<br>$f_i=\frac{\sum^m_{i=1}max({f_{i-1},i})}{m}$<br>选择i，继续碰运气，选择$f_{i-1}$，结婚; 时间复杂度O(n)。</p>
+<h1 id="问题四-不完全信息的结婚问题"><a href="#问题四-不完全信息的结婚问题" class="headerlink" title="问题四 不完全信息的结婚问题"></a>问题四 不完全信息的结婚问题</h1><p>有n次找男友的机会，每个男友给你的满意度未知（但是满足随机分布）<br>你从1到n换男友，只有成为男友才能知道男友给你的满意度，换了男友后不能再找回来<br>那你可以再任意的时候选择和当前的男友结婚，该男友的满意度就是你最终的辛福指数。<br>你需要采用一种策略，使得你找到最好的男友结婚的概率最大。<br><strong>Ans</strong><br>n=3时的最优策略？<br>第一个男友先pass，当第二个男友比第一个要好时，选择结婚；反之选择下一个。<br>一共有6种情况：</p>
+<blockquote>
+<p>123 没找到<br>132 找到<br>213 找到<br>231 找到<br>312 没找到<br>321 没找到</p>
+</blockquote>
+<p>概率为$\frac{1}{2}$<br>策略：先观察前k个男友，然后全部分手。对剩下的女友如果比前k个女友都好，就结婚。<br>$$ P(k)= \frac{1}{n}+\frac{1}{n}\times\frac{k}{k+1}+\frac{1}{n}\times\frac{k}{k+2}+…+\frac{1}{n}\times\frac{k}{n-1}=\frac{k}{n}\sum^{n-1}_{i=k}\frac{1}{i} $$</p>
+<p>令$k=\frac{k}{n}$,得$P(k)=\frac{k}{n}\sum^{n-1}_{i=k}\frac{1}{i}=x\int^1_x\frac{1}{x}dt=-xlnx$</p>
+<p>$P’(k)=-(1+lnx)=0$,有$x=\frac{1}{e}=37$%</p>
+<p>此时，$P(k)=-\frac{1}{e}ln\frac{1}{e}=\frac{1}{e}=37$%</p>
+<p>最佳策略：先观察37%的男友，然后全部分手，接下来，一旦遇到一个比前面男友都要好的，直接结婚。如果你找男友的时期时15-35岁，那么22之前就是观察期，不要结婚，接下来遇到更好的直接结婚。</p>
+<h1 id="问题五-最大间距"><a href="#问题五-最大间距" class="headerlink" title="问题五 最大间距"></a>问题五 最大间距</h1><p>有n个乱序数$\alpha_1,…,\alpha_n$，求排序之后，相邻元素之间的最大差值<br>$n≤10^7,1≤\alpha_1,…,\alpha_n≤10^{18}$<br>要求O(n)<br><strong>Ans</strong><br>把n个数放在n+1个桶里，其中最小值min放在第1个桶，最大值max放在第n+1个桶，每个桶都负责放$gap=\frac{max-min}{n+1}$范围的数字<br>根据鸽笼原理，必然有一个空桶。同一个桶内的差值必然小于gap，而间隔一个空桶的差值必然大于gap，故我们不用考虑一个桶内的差值，只需要考虑不同桶之间的差值。<br>记录每个桶中的最大值和最小值，遍历桶，依次用当前桶的最小值减去上一个非空桶的最大值判断即可。</p>
+]]></content>
+      <categories>
+        <category>ACM&amp;C++</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>ACM</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
 </search>
