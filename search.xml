@@ -672,15 +672,12 @@
 </blockquote>
 </li>
 <li><p>Brute Force</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Slide Window</p>
-</li>
-</ul>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxSum</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="comment">// Initialize result </span></span><br><span class="line">    <span class="keyword">int</span> max_sum = INT_MIN; </span><br><span class="line">  </span><br><span class="line">    <span class="comment">// Consider all blocks starting with i. </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - k + <span class="number">1</span>; i++) &#123; </span><br><span class="line">        <span class="keyword">int</span> current_sum = <span class="number">0</span>; </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; k; j++) </span><br><span class="line">            current_sum = current_sum + arr[i + j]; </span><br><span class="line">  </span><br><span class="line">        <span class="comment">// Update result if required. </span></span><br><span class="line">        max_sum = max(current_sum, max_sum); </span><br><span class="line">    &#125; </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> max_sum; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>最长无重复子字符串<blockquote>
+</li>
+<li><p>最长无重复子字符串</p>
+<blockquote>
 <p>给定字符串，计算最长子字符串的长度，该子字符串满足如下条件：</p>
 <ol>
 <li>是给定字符串的字符串</li>
@@ -1282,6 +1279,105 @@
         <tag>Leetcode</tag>
         <tag>Algorithm</tag>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dynamic Programming</title>
+    <url>/2020/10/09/DP/</url>
+    <content><![CDATA[<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>已知问题规模为n的前提A，求解一个未知解B。<br>此时，如果把问题规模降到0，即已知A0，可以得到A0-&gt;B。</p>
+<ul>
+<li>如果从A0添加一个元素，得到A1的变化过程，即A0-&gt;A1；进而有A1-&gt;2; A2-&gt;A3；……；Ai-&gt;Ai+1。这就是严格的归纳推理，也就是我们经常使用的<strong>数学归纳法</strong>；</li>
+<li>对于Ai+1，只需要它的上一个状态Ai即可完成整个推理过程（而不需要更前序的状态）。我们将这个模型称为<strong>马尔可夫模型</strong>，对应的推理过程叫做<strong>“贪心法”</strong>。</li>
+</ul>
+<p>然而，Ai与Ai+1往往不是互为充要条件，随着i的增加，有价值的前提信息越来越少，我们无法仅仅通过上一个状态得到下一个状态，因此可以采用如下的方案：</p>
+<ul>
+<li>{A1-&gt;A2}; {A1, A2-&gt;A3}; {A1,A2,A3-&gt;A4};……; {A1,A2,…,Ai}-&gt;Ai+1. 这种方式就是第二数学归纳法。</li>
+<li>对于Ai+1需要前面的所有前序状态才能完成推理过程。我们将这一模型称为高阶马尔科夫模型。对应的推理过程叫做“动态规划法”。</li>
+</ul>
+<a id="more"></a>
+
+<h1 id="能用动态规划解决的问题的特点"><a href="#能用动态规划解决的问题的特点" class="headerlink" title="能用动态规划解决的问题的特点"></a>能用动态规划解决的问题的特点</h1><p>能采用动态规划求解的问题的一般要具有3个性质：</p>
+<ul>
+<li>（1）最优化原理：如果问题的最优解所包含的子问题的解也是最优的，就称该问题具有最优结构，即满足最优化原理。</li>
+<li>（2）无后效性：即某阶段状态一旦确定，就不受这个状态以后的决策影响。也就是说，某状态以后的过程不会影响以前的状态，只与当前状态有关。。</li>
+<li>（3）有重叠子问题：即子问题之间是不独立的，一个子问题在下一阶段决策中可能被多次使用到。<br><font size="2," color="red"><strong>该性质并不是动态规划使用的必要条件，但是如果没有这条性质，动态规划算法同其他算法相比就不具备优势</strong></font></li>
+</ul>
+<h1 id="动态规划解题的一般思路"><a href="#动态规划解题的一般思路" class="headerlink" title="动态规划解题的一般思路"></a>动态规划解题的一般思路</h1><p>动态规划所处理的问题是一个多阶段决策的问题，一般由初始状态开始，通过对中间阶段决策的选择，达到结束状态。这些决策形成了一个决策序列，同时确定了完成整个过程的一条活动路线（通常是最优的活动路线）。<br>动态规划的设计都有着一定的模式，一般要经历以下几个步骤：</p>
+<center><font size="2," color="red">初始状态→│决策１│→│决策２│→…→│决策ｎ│→结束状态</font></center>
+
+<ul>
+<li><strong>划分阶段</strong>：按照问题的时间或者空间特征，把问题分为若干个阶段。在划分阶段时，注意划分后的阶段一定要是有序的或者可排序的，否则问题就无法求解。</li>
+<li><strong>确定状态和状态变量</strong>：将问题发展到各个阶段时所处于的各种客观情况用不同的状态表示出来。当然，状态的选择要满足无后效性。</li>
+<li><strong>确定决策并写出状态转移方程</strong>：因为决策和状态转移有着天然的联系，状态转移就是根据上一阶段的状态和决策来导出本阶段的状态。所以如果确定了决策，状态转移方程也就可写出。但事实上常常是反过来做，根据相邻两个阶段的状态之间的关系来确定决策方法和状态转移方程。</li>
+<li><strong>寻找边界条件</strong>：给出的状态转移方程是一个递推式，需要一个递推的终止条件或边界条件。</li>
+</ul>
+<h1 id="算法实现的步骤"><a href="#算法实现的步骤" class="headerlink" title="算法实现的步骤"></a>算法实现的步骤</h1><ol>
+<li>创建一个一维数组或者二维数组，保存每一个子问题的结果，具体创建一维数组还是二维数组看题目而定，基本上如果题目中给出的是一个一维数组进行操作，就可以只创建一个一维数组，如果题目中给出了两个一维数组进行操作或者两种不同类型的变量值，比如背包问题中的不同物体的体积与总体积，找零钱问题中的不同面值零钱与总钱数，这样就需要创建一个二维数组。</li>
+<li>设置数组边界值，一维数组就是设置第一个数字，二维数组就是设置第一行跟第一列的值，特别的滚动一维数组是要设置整个数组的值，然后根据后面不同的数据加进来变幻成不同的值。</li>
+<li>找出状态转换方程，也就是说找到每个状态跟他上一个状态的关系，根据状态转化方程写出代码。</li>
+<li>返回需要的值，一般是数组的最后一个或者二维数组的最右下角。</li>
+</ol>
+<p><strong>代码基本框架</strong>：</p>
+<h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><ul>
+<li><p>递归</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(n == <span class="number">0</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> solutionFibonacci(n<span class="number">-1</span>)+solutionFibonacci(n<span class="number">-2</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>动态规划</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solutionFibonacci</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">0</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">int</span> result[] = <span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>];</span><br><span class="line">			result[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">			result[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">				result[i] = result[i<span class="number">-1</span>] + result[i<span class="number">-2</span>];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> result[n];</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="数组最大不连续递增子序列"><a href="#数组最大不连续递增子序列" class="headerlink" title="数组最大不连续递增子序列"></a>数组最大不连续递增子序列</h2><p>arr[] = {3,1,4,1,5,9,2,6,5}的最长递增子序列长度为4。即为：1,4,5,9</p>
+<ul>
+<li>设置一个数组temp，长度为原数组长度，数组第i个位置上的数字代表0…i上最长递增子序列。。当增加一个数字时，最大递增子序列可能变成前面最大的递增子序列+1，也可能就是前面最大递增子序列。</li>
+<li>这需要让新增加进来的数组arr[i]跟前面所有数字比较大小，即<ul>
+<li>当 arr[i] &gt; arr[j]，temp[i] = max{temp[j]}+1，其中，j 的取值范围为：0,1…i-1</li>
+<li>当 arr[i] &lt; arr[j]，temp[i] = max{temp[j]}，j 的取值范围为：0,1…i-1</li>
+</ul>
+</li>
+<li>所以在状态转换方程为temp[i]=max{temp[i-1], temp[i-1]+1}<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MaxChildArrayOrder</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n = a.size();</span><br><span class="line">		<span class="keyword">int</span> temp[] = <span class="keyword">new</span> <span class="keyword">int</span>[n];<span class="comment">//temp[i]代表0...i上最长递增子序列</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">			temp[i] = <span class="number">1</span>;<span class="comment">//初始值都为1</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(a[i]&gt;a[j]&amp;&amp;temp[j]+<span class="number">1</span>&gt;temp[i])&#123;</span><br><span class="line">					<span class="comment">//如果有a[i]比它前面所有的数都大，则temp[i]为它前面的比它小的数的那一个temp+1取得的最大值</span></span><br><span class="line">					temp[i] = temp[j]+<span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> max = temp[<span class="number">0</span>];</span><br><span class="line">		<span class="comment">//从temp数组里取出最大的值</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(temp[i]&gt;max)&#123;</span><br><span class="line">				max = temp[i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> max;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="数字塔从上到下所有路径中和最大的路径"><a href="#数字塔从上到下所有路径中和最大的路径" class="headerlink" title="数字塔从上到下所有路径中和最大的路径"></a>数字塔从上到下所有路径中和最大的路径</h2><p>数字塔是第i行有i个数字组成，从上往下每个数字只能走到他正下方数字或者正右方数字，求数字塔从上到下所有路径中和最大的路径，如有下数字塔</p>
+<p>3</p>
+<p>1&emsp;5</p>
+<p>8&emsp;4&emsp;3</p>
+<p>2&emsp;6&emsp; 7&emsp;9</p>
+<p>6&emsp;2&emsp;3&emsp;5&emsp;1</p>
+<p>最大路径是3-5-3-9-5，和为25。我们可以分别从从上往下看跟从下往上看两种动态规划的方式去解这个题</p>
+<p><strong>从上往下看</strong>：当从上往下看时，每进来新的一行，新的一行每个元素只能选择他正上方或者左左方的元素，也就是说，第一个元素只能连他上方的元素，最后一个元素只能连他左上方的元素，其他元素可以有两种选择，所以需要选择加起来更大的那一个数字，并把这个位置上的数字改成相应的路径值，具体过程如下图所示</p>
+<p>所以最大值就是最底层的最大值也就是25。</p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>西瓜书--模型评估与选择（上）</title>
+    <url>/2020/10/07/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="经验误差与过拟合"><a href="#经验误差与过拟合" class="headerlink" title="经验误差与过拟合"></a>经验误差与过拟合</h1><p>##错误率<br><strong>错误率</strong>（error rate）：分类错误的样本数占样本总数的比例<br><strong>精度</strong>（accuracy）：精度=1-错误率</p>
+<blockquote>
+<p>如果在m个样本中有a个样本分类错误，<br>则错误率：<br>$$E=a/m$$<br>精度：<br>$$1-a/m$$</p>
+</blockquote>
+<p><strong>误差error</strong>：学习器的实际预测输出与样本的真实输出之间的差异；<br><strong>训练误差/经验误差</strong>：学习器在训练集上的误差；<br><strong>泛化误差</strong>：在新样本上的误差。</p>
+<p>我们希望得到泛化误差小的学习器，即在新样本上能表现得很好的学习器。。</p>
+<h2 id="过拟合和欠拟合"><a href="#过拟合和欠拟合" class="headerlink" title="过拟合和欠拟合"></a>过拟合和欠拟合</h2><a id="more"></a>
+<p><strong>overfitting&amp;underfitting</strong></p>
+<p><strong>过拟合</strong>：当学习器把训练样本学得“太好了”的时候，很可能已经把训练样本自身的一些特点当作了所有潜在样本都会具有的一般性质，从而导致泛化能力下降。<br><strong>欠拟合</strong>：指对训练样本的一般性质尚未学好。</p>
+<h2 id="造成过拟合和欠拟合的原因"><a href="#造成过拟合和欠拟合的原因" class="headerlink" title="造成过拟合和欠拟合的原因"></a>造成过拟合和欠拟合的原因</h2><blockquote>
+<p>很多原因可能造成过拟合，其中最常见的情况是由于学习能力过于强大，以至于把训练集样本所包含的不太一般的特性都学到了；而欠拟合则通常是由于学习能力低下而造成的。<br>欠拟合比较容易克服，例如在决策树学习中扩展分支、在神经网络学习中增加训练轮数等。<br>而过拟合则很麻烦，而且无法避免，我们所能做到的只是“缓解”，或者说减小风险。</p>
+</blockquote>
+<h1 id="评估方法"><a href="#评估方法" class="headerlink" title="评估方法"></a>评估方法</h1><h2 id="留出法-hold-out"><a href="#留出法-hold-out" class="headerlink" title="留出法 hold-out"></a>留出法 hold-out</h2><p>直接将数据集D划分为两个互斥的集合，其中一个集合作为训练集S，另一个作为测试集T，即<br>$$D=SUT, ST=$$</p>
+<h2 id="交叉验证法-cross-validation"><a href="#交叉验证法-cross-validation" class="headerlink" title="交叉验证法 cross validation"></a>交叉验证法 cross validation</h2><h2 id="自助法-bootstrapping"><a href="#自助法-bootstrapping" class="headerlink" title="自助法 bootstrapping"></a>自助法 bootstrapping</h2><h2 id="调参与最终模型"><a href="#调参与最终模型" class="headerlink" title="调参与最终模型"></a>调参与最终模型</h2>]]></content>
+      <categories>
+        <category>西瓜书</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
       </tags>
   </entry>
 </search>

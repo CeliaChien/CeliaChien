@@ -32,7 +32,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://celiachien.github.io/2020/10/04/slidewindow/1.jpg">
 <meta property="article:published_time" content="2020-10-04T02:46:25.000Z">
-<meta property="article:modified_time" content="2020-10-06T16:50:55.258Z">
+<meta property="article:modified_time" content="2020-10-08T10:00:18.999Z">
 <meta property="article:author" content="CeliaChien">
 <meta property="article:tag" content="Algorithm">
 <meta name="twitter:card" content="summary">
@@ -231,7 +231,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -340,7 +340,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-10-07 00:50:55" itemprop="dateModified" datetime="2020-10-07T00:50:55+08:00">2020-10-07</time>
+        <time title="Modified: 2020-10-08 18:00:18" itemprop="dateModified" datetime="2020-10-08T18:00:18+08:00">2020-10-08</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -390,15 +390,12 @@
 </blockquote>
 </li>
 <li><p>Brute Force</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Slide Window</p>
-</li>
-</ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxSum</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="comment">// Initialize result </span></span><br><span class="line">    <span class="keyword">int</span> max_sum = INT_MIN; </span><br><span class="line">  </span><br><span class="line">    <span class="comment">// Consider all blocks starting with i. </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - k + <span class="number">1</span>; i++) &#123; </span><br><span class="line">        <span class="keyword">int</span> current_sum = <span class="number">0</span>; </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; k; j++) </span><br><span class="line">            current_sum = current_sum + arr[i + j]; </span><br><span class="line">  </span><br><span class="line">        <span class="comment">// Update result if required. </span></span><br><span class="line">        max_sum = max(current_sum, max_sum); </span><br><span class="line">    &#125; </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> max_sum; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>最长无重复子字符串<blockquote>
+</li>
+<li><p>最长无重复子字符串</p>
+<blockquote>
 <p>给定字符串，计算最长子字符串的长度，该子字符串满足如下条件：</p>
 <ol>
 <li>是给定字符串的字符串</li>
@@ -515,13 +512,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">37k</span>
+    <span title="Symbols count total">40k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">33 mins.</span>
+    <span title="Reading time total">37 mins.</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
