@@ -223,7 +223,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -299,7 +299,7 @@
   <div class="post-block">
     <div class="post-content">
       <div class="collection-title">
-        <span class="collection-header">Um..! 25 posts in total. Keep on posting.</span>
+        <span class="collection-header">Um..! 26 posts in total. Keep on posting.</span>
       </div>
 
       
@@ -414,6 +414,26 @@
     <header class="post-header">
       <div class="post-meta-container">
         <time itemprop="dateCreated"
+              datetime="2020-10-06T20:46:25+08:00"
+              content="2020-10-06">
+          10-06
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2020/10/06/CVT1/" itemprop="url">
+            <span itemprop="name">CV Tutorial week 1</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
               datetime="2020-10-06T03:46:25+08:00"
               content="2020-10-06">
           10-06
@@ -483,26 +503,6 @@
       <div class="post-title">
           <a class="post-title-link" href="/2020/10/04/weekly%20contest%20209/" itemprop="url">
             <span itemprop="name">weekly contest 209</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-10-04T10:46:25+08:00"
-              content="2020-10-04">
-          10-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/04/slidewindow/" itemprop="url">
-            <span itemprop="name">Slide Window</span>
           </a>
       </div>
 
@@ -642,6 +642,26 @@ document.addEventListener('pjax:success', () => {
 
 
 
+<script data-pjax>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  const url = element.dataset.target;
+  const pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  const pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  const fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 

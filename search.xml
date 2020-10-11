@@ -1469,4 +1469,24 @@
         <tag>Leetcode</tag>
       </tags>
   </entry>
+  <entry>
+    <title>CV Tutorial week 1</title>
+    <url>/2020/10/06/CVT1/</url>
+    <content><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><ul>
+<li>Give a definition of “Computer Vision”.</li>
+<li>What type of information is extracted in each of the following applications.</li>
+<li>Vision is often described as an “ill-posed, inverse problem”. Briefly describe what is meant by the terms “ill-posed” and “inverse problem” and their opposites “well-posed” and “forward problems”.</li>
+<li>What is a “prior” and how does it help solve the ill-posed, inverse problem of vision? Give examples of priors.<a id="more"></a>
+
+
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Computer Vision</category>
+      </categories>
+      <tags>
+        <tag>Computer Vision</tag>
+      </tags>
+  </entry>
 </search>
