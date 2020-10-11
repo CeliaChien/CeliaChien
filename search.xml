@@ -110,23 +110,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode</title>
-    <url>/2022/09/27/Leetcode/</url>
-    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
-<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
-<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
-<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Leetcode</tag>
-        <tag>Algorithm</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Computer Vision Week 2 Image Formation</title>
     <url>/2020/10/06/CV2/</url>
     <content><![CDATA[<h1 id="Overview-of-image-formation"><a href="#Overview-of-image-formation" class="headerlink" title="Overview of image formation"></a>Overview of image formation</h1><ul>
@@ -208,6 +191,186 @@
       </categories>
       <tags>
         <tag>Computer Vision</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CV Tutorial week 1</title>
+    <url>/2020/10/06/CVT1/</url>
+    <content><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><ul>
+<li>Give a definition of “Computer Vision”.</li>
+<li>What type of information is extracted in each of the following applications.</li>
+<li>Vision is often described as an “ill-posed, inverse problem”. Briefly describe what is meant by the terms “ill-posed” and “inverse problem” and their opposites “well-posed” and “forward problems”.</li>
+<li>What is a “prior” and how does it help solve the ill-posed, inverse problem of vision? Give examples of priors.<a id="more"></a>
+
+</li>
+</ul>
+<div class="pdfobject-container" data-target="/2020/10/06/CVT1/1.pdf" data-height="600px"></div>
+
+]]></content>
+      <categories>
+        <category>Computer Vision</category>
+      </categories>
+      <tags>
+        <tag>Computer Vision</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dynamic Programming</title>
+    <url>/2020/10/09/DP/</url>
+    <content><![CDATA[<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>已知问题规模为n的前提A，求解一个未知解B。<br>此时，如果把问题规模降到0，即已知A0，可以得到A0-&gt;B。</p>
+<ul>
+<li>如果从A0添加一个元素，得到A1的变化过程，即A0-&gt;A1；进而有A1-&gt;2; A2-&gt;A3；……；Ai-&gt;Ai+1。这就是严格的归纳推理，也就是我们经常使用的<strong>数学归纳法</strong>；</li>
+<li>对于Ai+1，只需要它的上一个状态Ai即可完成整个推理过程（而不需要更前序的状态）。我们将这个模型称为<strong>马尔可夫模型</strong>，对应的推理过程叫做<strong>“贪心法”</strong>。</li>
+</ul>
+<p>然而，Ai与Ai+1往往不是互为充要条件，随着i的增加，有价值的前提信息越来越少，我们无法仅仅通过上一个状态得到下一个状态，因此可以采用如下的方案：</p>
+<ul>
+<li>{A1-&gt;A2}; {A1, A2-&gt;A3}; {A1,A2,A3-&gt;A4};……; {A1,A2,…,Ai}-&gt;Ai+1. 这种方式就是第二数学归纳法。</li>
+<li>对于Ai+1需要前面的所有前序状态才能完成推理过程。我们将这一模型称为高阶马尔科夫模型。对应的推理过程叫做“动态规划法”。</li>
+</ul>
+<a id="more"></a>
+
+<h1 id="能用动态规划解决的问题的特点"><a href="#能用动态规划解决的问题的特点" class="headerlink" title="能用动态规划解决的问题的特点"></a>能用动态规划解决的问题的特点</h1><p>能采用动态规划求解的问题的一般要具有3个性质：</p>
+<ul>
+<li>（1）最优化原理：如果问题的最优解所包含的子问题的解也是最优的，就称该问题具有最优结构，即满足最优化原理。</li>
+<li>（2）无后效性：即某阶段状态一旦确定，就不受这个状态以后的决策影响。也就是说，某状态以后的过程不会影响以前的状态，只与当前状态有关。。</li>
+<li>（3）有重叠子问题：即子问题之间是不独立的，一个子问题在下一阶段决策中可能被多次使用到。<br><font size="2," color="red"><strong>该性质并不是动态规划使用的必要条件，但是如果没有这条性质，动态规划算法同其他算法相比就不具备优势</strong></font></li>
+</ul>
+<h1 id="动态规划解题的一般思路"><a href="#动态规划解题的一般思路" class="headerlink" title="动态规划解题的一般思路"></a>动态规划解题的一般思路</h1><p>动态规划所处理的问题是一个多阶段决策的问题，一般由初始状态开始，通过对中间阶段决策的选择，达到结束状态。这些决策形成了一个决策序列，同时确定了完成整个过程的一条活动路线（通常是最优的活动路线）。<br>动态规划的设计都有着一定的模式，一般要经历以下几个步骤：</p>
+<center><font size="2," color="red">初始状态→│决策１│→│决策２│→…→│决策ｎ│→结束状态</font></center>
+
+<ul>
+<li><strong>划分阶段</strong>：按照问题的时间或者空间特征，把问题分为若干个阶段。在划分阶段时，注意划分后的阶段一定要是有序的或者可排序的，否则问题就无法求解。</li>
+<li><strong>确定状态和状态变量</strong>：将问题发展到各个阶段时所处于的各种客观情况用不同的状态表示出来。当然，状态的选择要满足无后效性。</li>
+<li><strong>确定决策并写出状态转移方程</strong>：因为决策和状态转移有着天然的联系，状态转移就是根据上一阶段的状态和决策来导出本阶段的状态。所以如果确定了决策，状态转移方程也就可写出。但事实上常常是反过来做，根据相邻两个阶段的状态之间的关系来确定决策方法和状态转移方程。</li>
+<li><strong>寻找边界条件</strong>：给出的状态转移方程是一个递推式，需要一个递推的终止条件或边界条件。</li>
+</ul>
+<h1 id="算法实现的步骤"><a href="#算法实现的步骤" class="headerlink" title="算法实现的步骤"></a>算法实现的步骤</h1><ol>
+<li>创建一个一维数组或者二维数组，保存每一个子问题的结果，具体创建一维数组还是二维数组看题目而定，基本上如果题目中给出的是一个一维数组进行操作，就可以只创建一个一维数组，如果题目中给出了两个一维数组进行操作或者两种不同类型的变量值，比如背包问题中的不同物体的体积与总体积，找零钱问题中的不同面值零钱与总钱数，这样就需要创建一个二维数组。</li>
+<li>设置数组边界值，一维数组就是设置第一个数字，二维数组就是设置第一行跟第一列的值，特别的滚动一维数组是要设置整个数组的值，然后根据后面不同的数据加进来变幻成不同的值。</li>
+<li>找出状态转换方程，也就是说找到每个状态跟他上一个状态的关系，根据状态转化方程写出代码。</li>
+<li>返回需要的值，一般是数组的最后一个或者二维数组的最右下角。</li>
+</ol>
+<p><strong>代码基本框架</strong>：</p>
+<h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><ul>
+<li><p>递归</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(n == <span class="number">0</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> solutionFibonacci(n<span class="number">-1</span>)+solutionFibonacci(n<span class="number">-2</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>动态规划</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solutionFibonacci</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">0</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">int</span> result[] = <span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>];</span><br><span class="line">			result[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">			result[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">				result[i] = result[i<span class="number">-1</span>] + result[i<span class="number">-2</span>];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> result[n];</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="数组最大不连续递增子序列"><a href="#数组最大不连续递增子序列" class="headerlink" title="数组最大不连续递增子序列"></a>数组最大不连续递增子序列</h2><p>arr[] = {3,1,4,1,5,9,2,6,5}的最长递增子序列长度为4。即为：1,4,5,9</p>
+<ul>
+<li>设置一个数组temp，长度为原数组长度，数组第i个位置上的数字代表0…i上最长递增子序列。。当增加一个数字时，最大递增子序列可能变成前面最大的递增子序列+1，也可能就是前面最大递增子序列。</li>
+<li>这需要让新增加进来的数组arr[i]跟前面所有数字比较大小，即<ul>
+<li>当 arr[i] &gt; arr[j]，temp[i] = max{temp[j]}+1，其中，j 的取值范围为：0,1…i-1</li>
+<li>当 arr[i] &lt; arr[j]，temp[i] = max{temp[j]}，j 的取值范围为：0,1…i-1</li>
+</ul>
+</li>
+<li>所以在状态转换方程为$temp[i]=max{temp[i-1], temp[i-1]+1}$</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MaxChildArrayOrder</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n = a.size();</span><br><span class="line">		<span class="keyword">int</span> temp[] = <span class="keyword">new</span> <span class="keyword">int</span>[n];<span class="comment">//temp[i]代表0...i上最长递增子序列</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">			temp[i] = <span class="number">1</span>;<span class="comment">//初始值都为1</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(a[i]&gt;a[j]&amp;&amp;temp[j]+<span class="number">1</span>&gt;temp[i])&#123;</span><br><span class="line">					<span class="comment">//如果有a[i]比它前面所有的数都大，则temp[i]为它前面的比它小的数的那一个temp+1取得的最大值</span></span><br><span class="line">					temp[i] = temp[j]+<span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> max = temp[<span class="number">0</span>];</span><br><span class="line">		<span class="comment">//从temp数组里取出最大的值</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(temp[i]&gt;max)&#123;</span><br><span class="line">				max = temp[i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> max;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数字塔从上到下所有路径中和最大的路径"><a href="#数字塔从上到下所有路径中和最大的路径" class="headerlink" title="数字塔从上到下所有路径中和最大的路径"></a>数字塔从上到下所有路径中和最大的路径</h2><p>数字塔是第i行有i个数字组成，从上往下每个数字只能走到他正下方数字或者正右方数字，求数字塔从上到下所有路径中和最大的路径，如有下数字塔</p>
+<p>3</p>
+<p>1&emsp;5</p>
+<p>8&emsp;4&emsp;3</p>
+<p>2&emsp;6&emsp; 7&emsp;9</p>
+<p>6&emsp;2&emsp;3&emsp;5&emsp;1</p>
+<p>最大路径是3-5-3-9-5，和为25。我们可以分别从从上往下看跟从下往上看两种动态规划的方式去解这个题</p>
+<p><strong>从上往下看</strong>：当从上往下看时，每进来新的一行，新的一行每个元素只能选择他正上方或者左左方的元素，也就是说，第一个元素只能连他上方的元素，最后一个元素只能连他左上方的元素，其他元素可以有两种选择，所以需要选择加起来更大的那一个数字，并把这个位置上的数字改成相应的路径值，具体过程如下图所示<br><img src="/2020/10/09/DP/1.jpg"></p>
+<p>所以最大值就是最底层的最大值也就是25。<br>具体运算过程：</p>
+<ol>
+<li>建立一个n*n的二维数组$dp[][]$，n是数字塔最后一行的数字个数，二维数组每一行数字跟数字塔每一行数字个数一样，保存的值是从上方到这一个位置最大路径的值；</li>
+<li>填入边界值$dp[0][0]=3$；</li>
+<li>每一行除了第一个值跟最后一个值，其他的值选择上方或者左上方更大的值与这个位置上的值相加得来的值，即$dp[i][j]=Math.max(dp[i-1][j-1], dp[i-1][j]) + n[i][j]$。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">minNumberInRotateArray</span><span class="params">(<span class="keyword">int</span> n[][])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> dp[][] = <span class="keyword">new</span> <span class="keyword">int</span>[n.length][n.length];</span><br><span class="line">		dp[<span class="number">0</span>][<span class="number">0</span>] = n[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n.length;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=i;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(j==<span class="number">0</span>)&#123;</span><br><span class="line">					<span class="comment">//如果是第一列，直接跟他上面数字相加</span></span><br><span class="line">					dp[i][j] = dp[i-<span class="number">1</span>][j] + n[i][j];</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					<span class="comment">//如果不是第一列，比较他上面跟上面左面数字谁大，谁大就跟谁相加，放到这个位置</span></span><br><span class="line">					dp[i][j] = Math.max(dp[i-<span class="number">1</span>][j-<span class="number">1</span>], dp[i-<span class="number">1</span>][j]) + n[i][j];</span><br><span class="line">				&#125;</span><br><span class="line">				max = Math.max(dp[i][j], max);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> max;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>从下往上看时</strong>：从下往上看时大体思路跟从上往下看一样，但是要简单一些，因为不用考虑边界数据，从下往上看时，每进来上面一行，上面一行每个数字有两条路径到达下面一行，所以选一条最大的就可以<br><img src="/2020/10/09/DP/2.jpg"></p>
+<p>具体方法也是建立一个二维数组，最下面一行数据添到二维数组最后一行，从下往上填数字，所以状态转化方程是$dp[i][j]=Math.max(dp[i+1][j+1], dp[i+1][j]) + n[i][j]$。</p>
+<p>从下往上看跟从上往下看相比，虽然逻辑较为简单，但是从下往上看时需要得到完整的数字塔之后才能开始计算，而从上往下看时可以随着数字塔的深入来计算，也可以返回任意一层的结果，是最好的方法。</p>
+<h2 id="其他题目"><a href="#其他题目" class="headerlink" title="其他题目"></a>其他题目</h2><p><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/dp/dp">others</a></p>
+<h1 id="动态规划和分治区别"><a href="#动态规划和分治区别" class="headerlink" title="动态规划和分治区别"></a>动态规划和分治区别</h1><p>动态规划算法：它通常用于求解具有某种<strong>最优性质</strong>的问题。在这类问题中，可能会有许多可行解。每一个解都对应于一个值，我们希望找到具有最优值的解。动态规划算法与分治法类似，其基本思想也是将待求解问题分解成若干个子问题，先求解子问题，然后从这些子问题的解得到原问题的解。<strong>与分治法不同的是，适合于用动态规划求解的问题，经分解得到子问题往往不是互相独立的</strong>。</p>
+<p>分治法：若用分治法来解这类问题，则分解得到的子问题数目太多，有些子问题被重复计算了很多次。如果我们能够保存已解决的子问题的答案，而在需要时再找出已求得的答案，这样就可以避免大量的重复计算，节省时间。我们可以用一个表来记录所有已解的子问题的答案。</p>
+<p>文章转载：<a href="https://blog.csdn.net/zw6161080123/article/details/80639932">六大算法之三：动态规划</a></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Kosaraju&#39;s algorithm</title>
+    <url>/2020/10/11/Kosaraju/</url>
+    <content><![CDATA[<h1 id="Kosaraju-算法"><a href="#Kosaraju-算法" class="headerlink" title="Kosaraju 算法"></a>Kosaraju 算法</h1><ul>
+<li>为了找到SCC分支，首先对图G运行DFS，计算出各顶点完成搜索的时间f；</li>
+<li>然后计算图的逆图GT，对逆图也进行DFS搜索，但是这里搜索时顶点的访问次序不是按照顶点标号的大小，而是按照各顶点f值由大到小的顺序；</li>
+<li>逆图DFS所得到的森林即对应连通区域。<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="SCC-强连通分量"><a href="#SCC-强连通分量" class="headerlink" title="SCC 强连通分量"></a>SCC 强连通分量</h2><p><strong>Strong Connected Component</strong></p>
+<ul>
+<li>A strongly connected component (SCC) of a directed graph is a maximal strongly connected subgraph.</li>
+</ul>
+<blockquote>
+<p>there are 3 SCCs in the following graph</p>
+</blockquote>
+<img src="/2020/10/11/Kosaraju/1.jpg">
+
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>We can find all strongly connected components in O(V+E) time using Kosaraju’s algorithm. Following is detailed <strong>Kosaraju’s algorithm</strong>.</p>
+<ol>
+<li>Create an empty stack ‘S’ and do DFS traversal of a graph. In DFS traversal, after calling recursive DFS for adjacent vertices of a vertex, push the vertex to stack. In the above graph, if we start DFS from vertex 0, we get vertices in stack as 1, 2, 4, 3, 0.</li>
+<li>Reverse directions of all arcs to obtain the transpose graph.</li>
+<li>One by one pop a vertex from S while S is not empty. Let the popped vertex be ‘v’. Take v as source and do DFS (call DFSUtil(v)). The DFS starting from v prints strongly connected component of v. In the above example, we process vertices in order 0, 3, 4, 2, 1 (One by one popped from stack).</li>
+</ol>
+<h2 id="How-does-this-work"><a href="#How-does-this-work" class="headerlink" title="How does this work?"></a>How does this work?</h2><p>DFS of a graph produces a single tree if all vertices are reachable from the DFS starting point. Otherwise DFS produces a forest. So DFS of a graph with only one SCC always produces a tree.</p>
+<p>The important point to note is DFS may produce a tree or a forest when there are more than one SCCs depending upon the chosen starting point.</p>
+<p>For example, in the above diagram, if we start DFS from vertices 0 or 1 or 2, we get a tree as output. And if we start from 3 or 4, we get a forest. To find and print all SCCs, we would want to start DFS from vertex 4 (which is a sink vertex), then move to 3 which is sink in the remaining set (set excluding 4) and finally any of the remaining vertices (0, 1, 2).</p>
+<p>So how do we find this sequence of picking vertices as starting points of DFS? Unfortunately, there is no direct way for getting this sequence. However, if we do a DFS of graph and store vertices <strong>according to their finish times</strong>, we make sure that the <strong>finish time of a vertex that connects to other SCCs</strong> (other that its own SCC), will always <strong>be greater than</strong> finish time of vertices in the other SCC (See <a href="https://www.personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/GraphAlgor/strongComponent.htm"><strong>this</strong></a> for proof).</p>
+<p>For example, in DFS of above example graph, finish time of 0 is always greater than 3 and 4 (irrespective of the sequence of vertices considered for DFS). And finish time of 3 is always greater than 4. DFS doesn’t guarantee about other vertices, for example finish times of 1 and 2 may be smaller or greater than 3 and 4 depending upon the sequence of vertices considered for DFS.</p>
+<p>So to use this property, we do DFS traversal of complete graph and push every finished vertex to a stack. In stack, 3 always appears after 4, and 0 appear after both 3 and 4.</p>
+<p>In the next step, we reverse the graph. Consider the graph of SCCs. In the reversed graph, the edges that connect two components are reversed. So the SCC {0, 1, 2} becomes sink and the SCC {4} becomes source. As discussed above, in stack, we always have 0 before 3 and 4.</p>
+<p>So if we do a DFS of the reversed graph using sequence of vertices in stack, we process vertices from sink to source (in reversed graph). That is what we wanted to achieve and that is all needed to print SCCs one by one.<br><img src="/2020/10/11/Kosaraju/2.jpg"></p>
+<h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><ol>
+<li>对原图G进行深度优先遍历，记录每个节点的离开时间；</li>
+<li>选择具有最晚离开时间的顶点，对反图GT进行遍历，删除能够遍历到的顶点，这些顶点构成一个强连通分量；</li>
+<li>如果还没有顶点删除，继续步骤2，否则结束算法。</li>
+</ol>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ul>
+<li>Oneway航班如何遍历所有的机场</li>
+<li>Face book好友推荐</li>
+</ul>
+<h2 id="其他视频讲解"><a href="#其他视频讲解" class="headerlink" title="其他视频讲解"></a>其他视频讲解</h2><p><a href="https://www.youtube.com/watch?v=qz9tKlF431k">Google 面试：机场问题</a><br>PS：评论区太搞笑了，哈哈哈哈哈哈</p>
+<p><a href="https://www.youtube.com/watch?v=RpgcYiky7uw">印度小哥推到过程</a></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode</title>
+    <url>/2022/09/27/Leetcode/</url>
+    <content><![CDATA[<h1 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h1><p>养成coding习惯和复习算法，所以从2020年5月开始刷题。<br>刷题为美服：<a href="https://leetcode.com/celiaqian">https://leetcode.com/celiaqian</a><br>主要语言： c++</p>
+<p><strong>配套刷题精选题</strong>：<br><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/">https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/</a></p>
+<p><strong>同步更新GitHub库</strong>：<br><a href="https://github.com/CeliaChien/leetcode">https://github.com/CeliaChien/leetcode</a></p>
+<p><strong>leetcode周赛精选</strong>：<br><a href="http://celiachien.github.io/tags/Leetcode/">http://celiachien.github.io/tags/Leetcode/</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>Leetcode</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -300,51 +463,6 @@
       </categories>
       <tags>
         <tag>OPM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Round A 2020 kick start Q1</title>
-    <url>/2020/09/29/Round%20A%202020%20Q1/</url>
-    <content><![CDATA[<h1 id="Round-A-2020-kick-start"><a href="#Round-A-2020-kick-start" class="headerlink" title="Round A 2020 kick start"></a>Round A 2020 kick start</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><blockquote>
-<p>There are N houses for sale. The i-th house costs Ai dollars to buy. You have a budget of B dollars to spend.</p>
-</blockquote>
-<blockquote>
-<p>What is the maximum number of houses you can buy?</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input gives the number of test cases, T. T test cases follow. Each test case begins with a single line containing the two integers N and B. The second line contains N integers. The i-th integer is Ai, the cost of the i-th house.</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the maximum number of houses you can buy.</p>
-<h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
-<li><p>Time limit: 15 seconds per test set.</p>
-</li>
-<li><p>Memory limit: 1GB.<br>1 ≤ T ≤ 100.<br>1 ≤ B ≤ 105.<br>1 ≤ Ai ≤ 1000, for all i.</p>
-</li>
-<li><p><strong>Test set 1</strong><br>1 ≤ N ≤ 100.</p>
-</li>
-<li><p><strong>Test set 2</strong><br>1 ≤ N ≤ 105.</p>
-</li>
-</ul>
-<p>#Sample</p>
-<ul>
-<li><p><strong>Input</strong></p>
-<blockquote>
-<p>3<br>4 100<br>20 90 40 90<br>4 50<br>30 30 10 10<br>3 300<br>999 999 999</p>
-</blockquote>
-</li>
-<li><p><strong>Output</strong></p>
-<blockquote>
-<p>Case #1: 2<br>Case #2: 3<br>Case #3: 0</p>
-</blockquote>
-</li>
-</ul>
-<p>In Sample Case #1, you have a budget of 100 dollars. You can buy the 1st and 3rd houses for 20 + 40 = 60 dollars.<br>In Sample Case #2, you have a budget of 50 dollars. You can buy the 1st, 3rd and 4th houses for 30 + 10 + 10 = 50 dollars.<br>In Sample Case #3, you have a budget of 300 dollars. You cannot buy any houses (so the answer is 0).<br>Note: Unlike previous editions, in Kick Start 2020, all test sets are visible verdict test sets, meaning you receive instant feedback upon submission.</p>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ar array</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, b, a[<span class="number">100000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; b;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    sort(a, a+n);</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&gt;=a[i]) &#123;</span><br><span class="line">            b-=a[i];</span><br><span class="line">            ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t, i=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot;: &quot;</span>;</span><br><span class="line">        solve();</span><br><span class="line">        ++i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Kick start</category>
-      </categories>
-      <tags>
-        <tag>Kick start</tag>
       </tags>
   </entry>
   <entry>
@@ -524,30 +642,48 @@
       </tags>
   </entry>
   <entry>
-    <title>biweekly contest 36</title>
-    <url>/2020/10/03/biweekly%20contest%2036/</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>一共四题，1题easy，2题medium，1题hard<br>第一道，简单的系统设计题，要清楚object function；<br>第二道，同样应用题，但是通过率不高；<br>第三道，给出制定行和&amp;列和的矩阵；<br>第四道，</p>
-<ul>
-<li>Design Parking System</li>
-<li>Alert Using Same Key-Card Three or More Times in a One Hour Period</li>
-<li>Find Valid Matrix Given Row and Column Sums</li>
-<li>Find Servers That Handled Most Number of Requests<a id="more"></a>
-<h1 id="Design-Parking-System"><a href="#Design-Parking-System" class="headerlink" title="Design Parking System"></a>Design Parking System</h1><a href="https://leetcode.com/contest/biweekly-contest-36/problems/design-parking-system/">原题链接</a></li>
-</ul>
-<p>解法：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParkingSystem</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ps;</span><br><span class="line">    ParkingSystem(<span class="keyword">int</span> big, <span class="keyword">int</span> medium, <span class="keyword">int</span> small) &#123;</span><br><span class="line">        ps.push_back(big);</span><br><span class="line">        ps.push_back(medium);</span><br><span class="line">        ps.push_back(small);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">addCar</span><span class="params">(<span class="keyword">int</span> carType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ps[carType<span class="number">-1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            ps[carType<span class="number">-1</span>]--;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <title>Round A 2020 kick start Q1</title>
+    <url>/2020/09/29/Round%20A%202020%20Q1/</url>
+    <content><![CDATA[<h1 id="Round-A-2020-kick-start"><a href="#Round-A-2020-kick-start" class="headerlink" title="Round A 2020 kick start"></a>Round A 2020 kick start</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><blockquote>
+<p>There are N houses for sale. The i-th house costs Ai dollars to buy. You have a budget of B dollars to spend.</p>
+</blockquote>
+<blockquote>
+<p>What is the maximum number of houses you can buy?</p>
+</blockquote>
+<a id="more"></a>
 
-<h1 id="Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period"><a href="#Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period" class="headerlink" title="Alert Using Same Key-Card Three or More Times in a One Hour Period"></a>Alert Using Same Key-Card Three or More Times in a One Hour Period</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/">原题链接</a><br>解法：</p>
-<h1 id="Find-Valid-Matrix-Given-Row-and-Column-Sums"><a href="#Find-Valid-Matrix-Given-Row-and-Column-Sums" class="headerlink" title="Find Valid Matrix Given Row and Column Sums"></a>Find Valid Matrix Given Row and Column Sums</h1><p><a href="https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/">原题链接</a><br>解法：Greedy</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">restoreMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; col)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = row.size(), n = col.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">A</span><span class="params">(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; n; ++j) &#123;</span><br><span class="line">                A[i][j] = min(row[i], col[j]);</span><br><span class="line">                row[i] -= A[i][j];</span><br><span class="line">                col[j] -= A[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Time: O(mn)<br>Space: O(mn)</p>
-<h1 id="Find-Servers-That-Handled-Most-Number-of-Requests"><a href="#Find-Servers-That-Handled-Most-Number-of-Requests" class="headerlink" title="Find Servers That Handled Most Number of Requests"></a>Find Servers That Handled Most Number of Requests</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/find-servers-that-handled-most-number-of-requests/">原题链接</a></p>
-]]></content>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input gives the number of test cases, T. T test cases follow. Each test case begins with a single line containing the two integers N and B. The second line contains N integers. The i-th integer is Ai, the cost of the i-th house.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the maximum number of houses you can buy.</p>
+<h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
+<li><p>Time limit: 15 seconds per test set.</p>
+</li>
+<li><p>Memory limit: 1GB.<br>1 ≤ T ≤ 100.<br>1 ≤ B ≤ 105.<br>1 ≤ Ai ≤ 1000, for all i.</p>
+</li>
+<li><p><strong>Test set 1</strong><br>1 ≤ N ≤ 100.</p>
+</li>
+<li><p><strong>Test set 2</strong><br>1 ≤ N ≤ 105.</p>
+</li>
+</ul>
+<p>#Sample</p>
+<ul>
+<li><p><strong>Input</strong></p>
+<blockquote>
+<p>3<br>4 100<br>20 90 40 90<br>4 50<br>30 30 10 10<br>3 300<br>999 999 999</p>
+</blockquote>
+</li>
+<li><p><strong>Output</strong></p>
+<blockquote>
+<p>Case #1: 2<br>Case #2: 3<br>Case #3: 0</p>
+</blockquote>
+</li>
+</ul>
+<p>In Sample Case #1, you have a budget of 100 dollars. You can buy the 1st and 3rd houses for 20 + 40 = 60 dollars.<br>In Sample Case #2, you have a budget of 50 dollars. You can buy the 1st, 3rd and 4th houses for 30 + 10 + 10 = 50 dollars.<br>In Sample Case #3, you have a budget of 300 dollars. You cannot buy any houses (so the answer is 0).<br>Note: Unlike previous editions, in Kick Start 2020, all test sets are visible verdict test sets, meaning you receive instant feedback upon submission.</p>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ar array</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, b, a[<span class="number">100000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; b;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    sort(a, a+n);</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&gt;=a[i]) &#123;</span><br><span class="line">            b-=a[i];</span><br><span class="line">            ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t, i=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot;: &quot;</span>;</span><br><span class="line">        solve();</span><br><span class="line">        ++i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Leetcode</category>
+        <category>Kick start</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
+        <tag>Kick start</tag>
       </tags>
   </entry>
   <entry>
@@ -592,6 +728,33 @@
       </tags>
   </entry>
   <entry>
+    <title>biweekly contest 36</title>
+    <url>/2020/10/03/biweekly%20contest%2036/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>一共四题，1题easy，2题medium，1题hard<br>第一道，简单的系统设计题，要清楚object function；<br>第二道，同样应用题，但是通过率不高；<br>第三道，给出制定行和&amp;列和的矩阵；<br>第四道，</p>
+<ul>
+<li>Design Parking System</li>
+<li>Alert Using Same Key-Card Three or More Times in a One Hour Period</li>
+<li>Find Valid Matrix Given Row and Column Sums</li>
+<li>Find Servers That Handled Most Number of Requests<a id="more"></a>
+<h1 id="Design-Parking-System"><a href="#Design-Parking-System" class="headerlink" title="Design Parking System"></a>Design Parking System</h1><a href="https://leetcode.com/contest/biweekly-contest-36/problems/design-parking-system/">原题链接</a></li>
+</ul>
+<p>解法：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParkingSystem</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ps;</span><br><span class="line">    ParkingSystem(<span class="keyword">int</span> big, <span class="keyword">int</span> medium, <span class="keyword">int</span> small) &#123;</span><br><span class="line">        ps.push_back(big);</span><br><span class="line">        ps.push_back(medium);</span><br><span class="line">        ps.push_back(small);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">addCar</span><span class="params">(<span class="keyword">int</span> carType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ps[carType<span class="number">-1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            ps[carType<span class="number">-1</span>]--;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period"><a href="#Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period" class="headerlink" title="Alert Using Same Key-Card Three or More Times in a One Hour Period"></a>Alert Using Same Key-Card Three or More Times in a One Hour Period</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/">原题链接</a><br>解法：</p>
+<h1 id="Find-Valid-Matrix-Given-Row-and-Column-Sums"><a href="#Find-Valid-Matrix-Given-Row-and-Column-Sums" class="headerlink" title="Find Valid Matrix Given Row and Column Sums"></a>Find Valid Matrix Given Row and Column Sums</h1><p><a href="https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/">原题链接</a><br>解法：Greedy</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">restoreMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; col)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = row.size(), n = col.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">A</span><span class="params">(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; n; ++j) &#123;</span><br><span class="line">                A[i][j] = min(row[i], col[j]);</span><br><span class="line">                row[i] -= A[i][j];</span><br><span class="line">                col[j] -= A[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Time: O(mn)<br>Space: O(mn)</p>
+<h1 id="Find-Servers-That-Handled-Most-Number-of-Requests"><a href="#Find-Servers-That-Handled-Most-Number-of-Requests" class="headerlink" title="Find Servers That Handled Most Number of Requests"></a>Find Servers That Handled Most Number of Requests</h1><p><a href="https://leetcode.com/contest/biweekly-contest-36/problems/find-servers-that-handled-most-number-of-requests/">原题链接</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Greedy</title>
     <url>/2020/10/04/greedy/</url>
     <content><![CDATA[<h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><p>在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，做出的是某种意义上的局部最优解。</p>
@@ -628,6 +791,32 @@
       <tags>
         <tag>Algorithm</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/09/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="other-problem"><a href="#other-problem" class="headerlink" title="other problem"></a>other problem</h3><p>when server is not running</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsof -i :4000</span><br><span class="line">$ <span class="built_in">kill</span> -9 PID</span><br></pre></td></tr></table></figure>
+
+<h2 id="How-to-insert-a-mathjax-code"><a href="#How-to-insert-a-mathjax-code" class="headerlink" title="How to insert a mathjax code"></a>How to insert a mathjax code</h2><p>More info: <a href="https://www.jianshu.com/p/a0aa94ef8ab2">mathjax code</a></p>
+<h2 id="How-to-insert-a-img-pdf-video"><a href="#How-to-insert-a-img-pdf-video" class="headerlink" title="How to insert a img/pdf/video"></a>How to insert a img/pdf/video</h2><p>More info: <a href="https://hexo.io/docs/tag-plugins#Include-Assets">insert media</a></p>
+<h2 id="About-more-button"><a href="#About-more-button" class="headerlink" title="About more button"></a>About more button</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
   </entry>
   <entry>
     <title>Math Quiz 1</title>
@@ -703,32 +892,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/09/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="other-problem"><a href="#other-problem" class="headerlink" title="other problem"></a>other problem</h3><p>when server is not running</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ lsof -i :4000</span><br><span class="line">$ <span class="built_in">kill</span> -9 PID</span><br></pre></td></tr></table></figure>
-
-<h2 id="How-to-insert-a-mathjax-code"><a href="#How-to-insert-a-mathjax-code" class="headerlink" title="How to insert a mathjax code"></a>How to insert a mathjax code</h2><p>More info: <a href="https://www.jianshu.com/p/a0aa94ef8ab2">mathjax code</a></p>
-<h2 id="How-to-insert-a-img-pdf-video"><a href="#How-to-insert-a-img-pdf-video" class="headerlink" title="How to insert a img/pdf/video"></a>How to insert a img/pdf/video</h2><p>More info: <a href="https://hexo.io/docs/tag-plugins#Include-Assets">insert media</a></p>
-<h2 id="About-more-button"><a href="#About-more-button" class="headerlink" title="About more button"></a>About more button</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-  </entry>
-  <entry>
     <title>weekly contest 208</title>
     <url>/2020/09/27/weekly%20contest%20208/</url>
     <content><![CDATA[<h1 id="写作前面"><a href="#写作前面" class="headerlink" title="写作前面"></a>写作前面</h1><p>主要四道题目，1道easy，1道medium，2道hard。<br>其中前两道题干略长，需要理解，但写出来并不复杂，难在理解题意；<br>后两道略偏数据结构和算法。<br>主要题目如下：</p>
@@ -752,6 +915,62 @@
 
 <h1 id="Throne-Inheritance"><a href="#Throne-Inheritance" class="headerlink" title="Throne Inheritance"></a>Throne Inheritance</h1><p><a href>原题链接</a></p>
 <h1 id="Maximum-Number-of-Achievable-Transfer-Requests"><a href="#Maximum-Number-of-Achievable-Transfer-Requests" class="headerlink" title="Maximum Number of Achievable Transfer Requests"></a>Maximum Number of Achievable Transfer Requests</h1><p><a href>原题链接</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>weekly contest 209</title>
+    <url>/2020/10/04/weekly%20contest%20209/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>主要四道题目，1道easy，2道medium，1道hard<br>主要题目如下：</p>
+<ul>
+<li>Special Array With X Elements Greater Than or Equal X</li>
+<li>Even Odd Tree</li>
+<li>Find Valid Matrix Given Row and Column Sums</li>
+<li>Minimum One Bit Operations to Make Integers Zero<a id="more"></a>
+
+</li>
+</ul>
+<h1 id="Special-Array-With-X-Elements-Greater-Than-or-Equal-X"><a href="#Special-Array-With-X-Elements-Greater-Than-or-Equal-X" class="headerlink" title="Special Array With X Elements Greater Than or Equal X"></a>Special Array With X Elements Greater Than or Equal X</h1><p><a href="https://leetcode.com/contest/weekly-contest-209/problems/special-array-with-x-elements-greater-than-or-equal-x/">原题链接</a></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">specialArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x=<span class="number">0</span>,count=<span class="number">0</span>;</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        <span class="keyword">while</span>(x&lt;=nums[nums.size()<span class="number">-1</span>])&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[i]&gt;=x)count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(x!=count)&#123;x++;count=<span class="number">0</span>;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x==count? x:<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="Even-Odd-Tree"><a href="#Even-Odd-Tree" class="headerlink" title="Even Odd Tree"></a>Even Odd Tree</h1><p><a href="https://leetcode.com/contest/weekly-contest-209/problems/even-odd-tree/">原题链接</a></p>
+<h1 id="Find-Valid-Matrix-Given-Row-and-Column-Sums"><a href="#Find-Valid-Matrix-Given-Row-and-Column-Sums" class="headerlink" title="Find Valid Matrix Given Row and Column Sums"></a>Find Valid Matrix Given Row and Column Sums</h1><p><a href="https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/">原题链接</a></p>
+<p>算法思想：greedy</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">restoreMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; col)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = row.size(), n = col.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">A</span><span class="params">(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; n; ++j) &#123;</span><br><span class="line">                A[i][j] = min(row[i], col[j]);</span><br><span class="line">                row[i] -= A[i][j];</span><br><span class="line">                col[j] -= A[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Minimum-One-Bit-Operations-to-Make-Integers-Zero"><a href="#Minimum-One-Bit-Operations-to-Make-Integers-Zero" class="headerlink" title="Minimum One Bit Operations to Make Integers Zero"></a>Minimum One Bit Operations to Make Integers Zero</h1><p><a href="https://leetcode.com/contest/weekly-contest-209/problems/minimum-one-bit-operations-to-make-integers-zero/">原题链接</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>weekly contest 210</title>
+    <url>/2020/10/11/weekly%20contest%20210/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
+<li>Maximum Nesting Depth of the Parentheses 字符串</li>
+<li>Maximal Network Rank 图 brute force</li>
+<li>Split Two Strings to Make Palindrome 回文字符 hash</li>
+<li>Count Subtrees With Max Distance Between Cities<a id="more"></a>
+
+</li>
+</ul>
+<h1 id="Maximum-Nesting-Depth-of-the-Parentheses"><a href="#Maximum-Nesting-Depth-of-the-Parentheses" class="headerlink" title="Maximum Nesting Depth of the Parentheses"></a>Maximum Nesting Depth of the Parentheses</h1><p><a href="https://leetcode.com/contest/weekly-contest-210/problems/maximum-nesting-depth-of-the-parentheses/">原题链接</a></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> depth = <span class="number">0</span>,res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> n : s)&#123;</span><br><span class="line">            <span class="keyword">if</span>(n == <span class="string">&#x27;(&#x27;</span>&amp;&amp;depth &gt;= <span class="number">0</span>)&#123;depth++; res=max(depth,res);&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="string">&#x27;)&#x27;</span>)depth--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="Maximal-Network-Rank"><a href="#Maximal-Network-Rank" class="headerlink" title="Maximal Network Rank"></a>Maximal Network Rank</h1><p><a href="https://leetcode.com/contest/weekly-contest-210/problems/maximal-network-rank/">原题链接</a></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">100</span> + <span class="number">50</span>;</span><br><span class="line"><span class="keyword">bool</span> lnk [MAX][MAX];<span class="comment">//ai和bi之间是否有边</span></span><br><span class="line"><span class="keyword">int</span> cnt[MAX];<span class="comment">//每个节点边的个数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maximalNetworkRank</span><span class="params">(<span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; roads)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = roads.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            cnt[i] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)lnk[i][j] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> a = roads[i][<span class="number">0</span>], b = roads[i][<span class="number">1</span>];</span><br><span class="line">            cnt[a] += <span class="number">1</span>; cnt[b] += <span class="number">1</span>;</span><br><span class="line">            lnk[a][b] = lnk[b][a] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;  i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; n; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> cur =cnt[i] + cnt[j] - (lnk[i][j] ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">                ans= max(ans, cur);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Split-Two-Strings-to-Make-Palindrome"><a href="#Split-Two-Strings-to-Make-Palindrome" class="headerlink" title="Split Two Strings to Make Palindrome"></a>Split Two Strings to Make Palindrome</h1><p><a href="https://leetcode.com/contest/weekly-contest-210/problems/split-two-strings-to-make-palindrome/">原题链接</a></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">            <span class="keyword">if</span>(s[l++]!=s[r--]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="built_in">string</span> &amp;a, <span class="built_in">string</span> &amp;b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = a.size() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j &amp;&amp; a[i] == b[j])</span><br><span class="line">        ++i, --j;</span><br><span class="line">    <span class="keyword">return</span> isPalindrome(a, i, j) || isPalindrome(b, i, j);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">checkPalindromeFormation</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> check(a, b) || check(b, a);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Count-Subtrees-With-Max-Distance-Between-Cities"><a href="#Count-Subtrees-With-Max-Distance-Between-Cities" class="headerlink" title="Count Subtrees With Max Distance Between Cities"></a>Count Subtrees With Max Distance Between Cities</h1><p><a href="https://leetcode.com/contest/weekly-contest-210/problems/count-subtrees-with-max-distance-between-cities/">原题链接</a></p>
 ]]></content>
       <categories>
         <category>Leetcode</category>
@@ -917,6 +1136,81 @@
       </tags>
   </entry>
   <entry>
+    <title>统计学习的分类</title>
+    <url>/2020/09/27/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%88%86%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="基本分类"><a href="#基本分类" class="headerlink" title="基本分类"></a>基本分类</h1><h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><p><strong>supervised learning</strong><br>是指从标注数据中学习预测模型的机器学习问题。标注数据表示输入输出的对应关系，预测模型对给定的输入产生相应的输出。监督学习的本质是<strong>学习输入到输出的映射的统计规律</strong>。</p>
+<p><font size="4," color="#008000"><strong>输入空间、特征空间和输出空间</strong></font></p>
+<p>在监督学习中，将输入与输出所有可能取值的集合分别称为输入空间与输出空间。输入与输出空间可以是有限元素的集合，也可以是整个欧式空间。输入空间与输出空间可以是同一个空间，也可以是不同的空间；<strong>但是通常输出空间远远小于输入空间</strong>。</p>
+<a id="more"></a>
+
+<p>每个具体的输入是一个实例，通常由特征向量表示。这时，所有特征向量存在的空间称为特征空间。</p>
+<p>特征空间的每一维对应于一个特征。有时假设输入空间与特征空间为相同的空间，对于它们不予区分；有时假设输入空间与特征空间为不同的空间，将实例从输入空间映射到特征空间。<strong>模型实际上都是定义在特征空间上的</strong>。</p>
+<p>在监督学习中，将输入与输出看作是定义在输入（特征）空间与输出空间上的随机变量的取值。输入输出变量用大写字母表示，习惯上输入变量写作X，输出变量写作Y。输入输出变量的取值用小写字母表示，输入变量的取值写作x，输出变量的取值写作y。</p>
+<p>变量可以是标量或者向量，都用相同类型字母表示。除特别声明外，默认为列向量。输入实例x的特征向量记作：<br>$$ x=(x^{(1)},x^{(2)},…,x^{(i)},…,x^{(n)})^T $$<br>$x^{(i)}$表示x的第i个特征。注意$x^{(i)}$和$x_i$不同，本书通常用$x_i$表示多个输入变量中的第i个变量，即<br>$$ x_i=(x^{(1)},x^{(2)},…,x^{(n)})^T $$<br>监督学习从训练数据集合中学习模型，对测试数据进行预测。训练数据由输入（或特征向量）与输出对组成，训练集通常表示为<br>$$T={(x_1,y_1),(x_2,y_2),…,(x_N,y_N)}$$<br>测试数据也由输入与输出对组成。输入与输出对又称为样本或者样本点。<br>输入变量X和输出变量Y有不同的类型，可以使连续的，也可以使离散的。<br>人们根据输入输出变量的不同类型，对预测任务给予不同的名称：</p>
+<blockquote>
+<p>输入变量与输出变量均为连续变量的预测问题称为<strong>回归问题</strong>；<br>输出变量为有限个离散变量的预测问题称为<strong>分类问题</strong>；<br>输入变量与输出变量均为变量序列的预测问题称为<strong>标注问题</strong>。</p>
+</blockquote>
+<p><font size="4," color="#008000"><strong>联合概率分布</strong></font></p>
+<p>监督学习假设输入与输出的随机变量X和Y遵循联合概率分布$ P(X,Y) $。<br>$ P(X,Y) $表示分布函数，或者分布密度函数。注意在学习过程中，假定这一联合概率分布存在，但对学习系统来说，联合概率分布的具体定义是未知的。训练数据与测试数据被看作是依联合分布$ P(X,Y) $独立同分布产生的。统计学习假设数据存在一定的统计规律，X和Y具有联合概率分布就是监督学习关于数据的基本假设。</p>
+<p><font size="4," color="#008000"><strong>假设空间</strong></font><br>监督学习的目的在于学习一个由输入到输出的映射，这一映射由模型来表示。<br>模型属于由输入空间到输出空间的映射的集合，这个集合就是假设空间。假设空间的确定意味着学习的范围的确定。<br>监督学习的模型可以是概率模型或者非概率模型，由条件概率分布$ P(Y|X) $或决策函数$ Y=f(X) $表示，随具体的输入进行相应的输出预测时，写作$ P(y|x) $或$ y=f(x) $。</p>
+<p><font size="4," color="#008000"><strong>问题的形式化</strong></font></p>
+<h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><p><strong>unsupervised learning</strong><br>无监督学习是指从无标注数据中学习预测模型的机器学习问题。无标注数据是自然的到的数据，预测模型表示数据的类别、转换或概率。<br>无监督学习的本质是学习数据中的统计规律或潜在结构。</p>
+<h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2><p><strong>reinforcement learning</strong><br>强化学习是指智能系统在与环境的连续互动中学习最优行为策略的机器学习问题。<br>假设智能系统与环境的互动基于马尔可夫决策过程，智能系统能观测到的是环境互动的到的数据序列。<br>强化学习的本质是学习最优的序贯决策（sequential analysis）。</p>
+<h2 id="半监督学习与主动学习"><a href="#半监督学习与主动学习" class="headerlink" title="半监督学习与主动学习"></a>半监督学习与主动学习</h2><p><strong>semi-supervised learning</strong><br><strong>半监督学习</strong>是指利用标注数据和未标注数据学习预测模型的机器学习问题。<br>通常有少量标注数据、大量未标注数据，因为标注数据的构建往往需要人工，成本较高，未标注数据的收集不需太多成本。<br>半监督学习旨在利用未标注数据中的信息，辅助标注数据，进行监督学习，以较低的成本达到较好的学习效果。</p>
+<p><strong>主动学习</strong>是指机器不断主动给出实例让教师进行标注，然后利用标注数据学习预测模型的机器学习问题。<br>通常的监督学习使用给定的标注数据，往往是随机的到的，可以看作是“被动学习”，主动学习的目标是找出对学习最有帮助的实例让人标注，以较小的标注代价，达到较好的学习效果。</p>
+<p>半监督学习和主动学习更接近监督学习。</p>
+<h1 id="按模型分类"><a href="#按模型分类" class="headerlink" title="按模型分类"></a>按模型分类</h1><h2 id="概率模型与非概率模型"><a href="#概率模型与非概率模型" class="headerlink" title="概率模型与非概率模型"></a>概率模型与非概率模型</h2><h2 id="线性模型与非线性模型"><a href="#线性模型与非线性模型" class="headerlink" title="线性模型与非线性模型"></a>线性模型与非线性模型</h2><p><strong>linear model&amp;&amp;non-linear model</strong><br>统计学习模型，特别是非概率模型，可以分为线性模型和非线性模型。<br>如果函数$y=f(x)$或$z=g(x)$则称模型是线性模型，否则称模型是非线性模型。<br>线性模型：</p>
+<ul>
+<li>感知机</li>
+<li>线性支持向量机</li>
+<li>k近邻</li>
+<li>k均值</li>
+<li>潜在语义分析</li>
+</ul>
+<p>非线性模型：</p>
+<ul>
+<li>核函数支持向量机</li>
+<li>AdaBoost</li>
+<li>神经网络</li>
+</ul>
+<h2 id="参数化模型与非参数化模型"><a href="#参数化模型与非参数化模型" class="headerlink" title="参数化模型与非参数化模型"></a>参数化模型与非参数化模型</h2><p><strong>parametric model&amp;&amp;parametric model</strong><br>参数化模型假设模型参数的维度固定，模型可以由有限维参数完全刻画；<br>非参数化模型假设模型参数的维度不固定或者说无穷大，随着训练数据量的增加而不断增大。</p>
+<p>参数化模型：</p>
+<ul>
+<li>感知机</li>
+<li>朴素贝叶斯</li>
+<li>逻辑斯蒂回归</li>
+<li>k均值</li>
+<li>高斯混合模型</li>
+</ul>
+<p>非参数化模型：</p>
+<ul>
+<li>决策树</li>
+<li>支持向量机</li>
+<li>AdaBoost</li>
+<li>k近邻</li>
+<li>潜在语义分析</li>
+<li>概率潜在语义分析</li>
+<li>潜在狄利克雷分配</li>
+</ul>
+<h1 id="按算法分类"><a href="#按算法分类" class="headerlink" title="按算法分类"></a>按算法分类</h1><h2 id="在线学习"><a href="#在线学习" class="headerlink" title="在线学习"></a>在线学习</h2><p>在线学习是指每次接受一个样本，进行预测，之后学习模型，并不断重复该操作的机器学习。<br>在线学习可以是监督学习，也可以是无监督学习，强化学习本身就拥有在线学习的特点。</p>
+<h2 id="批量学习"><a href="#批量学习" class="headerlink" title="批量学习"></a>批量学习</h2><p>批量学习一次接受所有数据，学习模型，之后进行预测。<br>有些实际应用的场景要求学习必修是在线的。<br>比如：</p>
+<ul>
+<li>数据一次达到无法存储，系统需要及时作出处理；</li>
+<li>数据规模很大，不可能一次处理所有数据；</li>
+<li>数据的模式随时间动态变化，需要算法快速适应新的模式。</li>
+</ul>
+<p>在线学习通常比批量学习更难，很难学到预测准确率更高的模型，因为每次模型更新中，可利用的数据有限。</p>
+<h1 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h1><h2 id="贝叶斯学习"><a href="#贝叶斯学习" class="headerlink" title="贝叶斯学习"></a>贝叶斯学习</h2><p>贝叶斯学习，又称为贝叶斯推理，是统计学、机器学习中重要的方法。<br>其主要的想法是，在概率模型的学习和推理中，利用贝叶斯定理，计算在给定数据条件下模型的条件概率，即后验概率，并应用这个原理进行模型的估计，以及对数据的预测。<br>将模型、未观察要素及其参数用变量表示，使用模型的先验分布是贝叶斯学习的特点。</p>
+<h2 id="核方法"><a href="#核方法" class="headerlink" title="核方法"></a>核方法</h2><p>核方法是使用核函数表示核学习非线性模型的一种机器学习方法，可以用于监督学习和无监督学习。。<br>有一些线性模型的学习方法基于相似度计算，更具体地，向量内积计算。<br>核方法可以把它们扩展到非线性模型的学习，使其应用范围更广泛。<br>把线性模型扩展到非线性模型模型，直接的做法是显式地定义从输入空间（低维空间）到特征空间（高维空间）的映射，在特征空间中进行内积计算。比如，支持向量机，把输出空间的线性不可分问题转化为特征空间的线性可分问题。<br>核方法的技巧在于不显式地定义这个映射，而是直接定义核函数，即映射之后在特征空间的内积。。</p>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>Machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>西瓜书——基本术语</title>
     <url>/2020/09/28/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h1><blockquote>
@@ -1018,81 +1312,6 @@
 ]]></content>
       <categories>
         <category>西瓜书</category>
-      </categories>
-      <tags>
-        <tag>Machine learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>统计学习的分类</title>
-    <url>/2020/09/27/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%88%86%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="基本分类"><a href="#基本分类" class="headerlink" title="基本分类"></a>基本分类</h1><h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><p><strong>supervised learning</strong><br>是指从标注数据中学习预测模型的机器学习问题。标注数据表示输入输出的对应关系，预测模型对给定的输入产生相应的输出。监督学习的本质是<strong>学习输入到输出的映射的统计规律</strong>。</p>
-<p><font size="4," color="#008000"><strong>输入空间、特征空间和输出空间</strong></font></p>
-<p>在监督学习中，将输入与输出所有可能取值的集合分别称为输入空间与输出空间。输入与输出空间可以是有限元素的集合，也可以是整个欧式空间。输入空间与输出空间可以是同一个空间，也可以是不同的空间；<strong>但是通常输出空间远远小于输入空间</strong>。</p>
-<a id="more"></a>
-
-<p>每个具体的输入是一个实例，通常由特征向量表示。这时，所有特征向量存在的空间称为特征空间。</p>
-<p>特征空间的每一维对应于一个特征。有时假设输入空间与特征空间为相同的空间，对于它们不予区分；有时假设输入空间与特征空间为不同的空间，将实例从输入空间映射到特征空间。<strong>模型实际上都是定义在特征空间上的</strong>。</p>
-<p>在监督学习中，将输入与输出看作是定义在输入（特征）空间与输出空间上的随机变量的取值。输入输出变量用大写字母表示，习惯上输入变量写作X，输出变量写作Y。输入输出变量的取值用小写字母表示，输入变量的取值写作x，输出变量的取值写作y。</p>
-<p>变量可以是标量或者向量，都用相同类型字母表示。除特别声明外，默认为列向量。输入实例x的特征向量记作：<br>$$ x=(x^{(1)},x^{(2)},…,x^{(i)},…,x^{(n)})^T $$<br>$x^{(i)}$表示x的第i个特征。注意$x^{(i)}$和$x_i$不同，本书通常用$x_i$表示多个输入变量中的第i个变量，即<br>$$ x_i=(x^{(1)},x^{(2)},…,x^{(n)})^T $$<br>监督学习从训练数据集合中学习模型，对测试数据进行预测。训练数据由输入（或特征向量）与输出对组成，训练集通常表示为<br>$$T={(x_1,y_1),(x_2,y_2),…,(x_N,y_N)}$$<br>测试数据也由输入与输出对组成。输入与输出对又称为样本或者样本点。<br>输入变量X和输出变量Y有不同的类型，可以使连续的，也可以使离散的。<br>人们根据输入输出变量的不同类型，对预测任务给予不同的名称：</p>
-<blockquote>
-<p>输入变量与输出变量均为连续变量的预测问题称为<strong>回归问题</strong>；<br>输出变量为有限个离散变量的预测问题称为<strong>分类问题</strong>；<br>输入变量与输出变量均为变量序列的预测问题称为<strong>标注问题</strong>。</p>
-</blockquote>
-<p><font size="4," color="#008000"><strong>联合概率分布</strong></font></p>
-<p>监督学习假设输入与输出的随机变量X和Y遵循联合概率分布$ P(X,Y) $。<br>$ P(X,Y) $表示分布函数，或者分布密度函数。注意在学习过程中，假定这一联合概率分布存在，但对学习系统来说，联合概率分布的具体定义是未知的。训练数据与测试数据被看作是依联合分布$ P(X,Y) $独立同分布产生的。统计学习假设数据存在一定的统计规律，X和Y具有联合概率分布就是监督学习关于数据的基本假设。</p>
-<p><font size="4," color="#008000"><strong>假设空间</strong></font><br>监督学习的目的在于学习一个由输入到输出的映射，这一映射由模型来表示。<br>模型属于由输入空间到输出空间的映射的集合，这个集合就是假设空间。假设空间的确定意味着学习的范围的确定。<br>监督学习的模型可以是概率模型或者非概率模型，由条件概率分布$ P(Y|X) $或决策函数$ Y=f(X) $表示，随具体的输入进行相应的输出预测时，写作$ P(y|x) $或$ y=f(x) $。</p>
-<p><font size="4," color="#008000"><strong>问题的形式化</strong></font></p>
-<h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><p><strong>unsupervised learning</strong><br>无监督学习是指从无标注数据中学习预测模型的机器学习问题。无标注数据是自然的到的数据，预测模型表示数据的类别、转换或概率。<br>无监督学习的本质是学习数据中的统计规律或潜在结构。</p>
-<h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2><p><strong>reinforcement learning</strong><br>强化学习是指智能系统在与环境的连续互动中学习最优行为策略的机器学习问题。<br>假设智能系统与环境的互动基于马尔可夫决策过程，智能系统能观测到的是环境互动的到的数据序列。<br>强化学习的本质是学习最优的序贯决策（sequential analysis）。</p>
-<h2 id="半监督学习与主动学习"><a href="#半监督学习与主动学习" class="headerlink" title="半监督学习与主动学习"></a>半监督学习与主动学习</h2><p><strong>semi-supervised learning</strong><br><strong>半监督学习</strong>是指利用标注数据和未标注数据学习预测模型的机器学习问题。<br>通常有少量标注数据、大量未标注数据，因为标注数据的构建往往需要人工，成本较高，未标注数据的收集不需太多成本。<br>半监督学习旨在利用未标注数据中的信息，辅助标注数据，进行监督学习，以较低的成本达到较好的学习效果。</p>
-<p><strong>主动学习</strong>是指机器不断主动给出实例让教师进行标注，然后利用标注数据学习预测模型的机器学习问题。<br>通常的监督学习使用给定的标注数据，往往是随机的到的，可以看作是“被动学习”，主动学习的目标是找出对学习最有帮助的实例让人标注，以较小的标注代价，达到较好的学习效果。</p>
-<p>半监督学习和主动学习更接近监督学习。</p>
-<h1 id="按模型分类"><a href="#按模型分类" class="headerlink" title="按模型分类"></a>按模型分类</h1><h2 id="概率模型与非概率模型"><a href="#概率模型与非概率模型" class="headerlink" title="概率模型与非概率模型"></a>概率模型与非概率模型</h2><h2 id="线性模型与非线性模型"><a href="#线性模型与非线性模型" class="headerlink" title="线性模型与非线性模型"></a>线性模型与非线性模型</h2><p><strong>linear model&amp;&amp;non-linear model</strong><br>统计学习模型，特别是非概率模型，可以分为线性模型和非线性模型。<br>如果函数$y=f(x)$或$z=g(x)$则称模型是线性模型，否则称模型是非线性模型。<br>线性模型：</p>
-<ul>
-<li>感知机</li>
-<li>线性支持向量机</li>
-<li>k近邻</li>
-<li>k均值</li>
-<li>潜在语义分析</li>
-</ul>
-<p>非线性模型：</p>
-<ul>
-<li>核函数支持向量机</li>
-<li>AdaBoost</li>
-<li>神经网络</li>
-</ul>
-<h2 id="参数化模型与非参数化模型"><a href="#参数化模型与非参数化模型" class="headerlink" title="参数化模型与非参数化模型"></a>参数化模型与非参数化模型</h2><p><strong>parametric model&amp;&amp;parametric model</strong><br>参数化模型假设模型参数的维度固定，模型可以由有限维参数完全刻画；<br>非参数化模型假设模型参数的维度不固定或者说无穷大，随着训练数据量的增加而不断增大。</p>
-<p>参数化模型：</p>
-<ul>
-<li>感知机</li>
-<li>朴素贝叶斯</li>
-<li>逻辑斯蒂回归</li>
-<li>k均值</li>
-<li>高斯混合模型</li>
-</ul>
-<p>非参数化模型：</p>
-<ul>
-<li>决策树</li>
-<li>支持向量机</li>
-<li>AdaBoost</li>
-<li>k近邻</li>
-<li>潜在语义分析</li>
-<li>概率潜在语义分析</li>
-<li>潜在狄利克雷分配</li>
-</ul>
-<h1 id="按算法分类"><a href="#按算法分类" class="headerlink" title="按算法分类"></a>按算法分类</h1><h2 id="在线学习"><a href="#在线学习" class="headerlink" title="在线学习"></a>在线学习</h2><p>在线学习是指每次接受一个样本，进行预测，之后学习模型，并不断重复该操作的机器学习。<br>在线学习可以是监督学习，也可以是无监督学习，强化学习本身就拥有在线学习的特点。</p>
-<h2 id="批量学习"><a href="#批量学习" class="headerlink" title="批量学习"></a>批量学习</h2><p>批量学习一次接受所有数据，学习模型，之后进行预测。<br>有些实际应用的场景要求学习必修是在线的。<br>比如：</p>
-<ul>
-<li>数据一次达到无法存储，系统需要及时作出处理；</li>
-<li>数据规模很大，不可能一次处理所有数据；</li>
-<li>数据的模式随时间动态变化，需要算法快速适应新的模式。</li>
-</ul>
-<p>在线学习通常比批量学习更难，很难学到预测准确率更高的模型，因为每次模型更新中，可利用的数据有限。</p>
-<h1 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h1><h2 id="贝叶斯学习"><a href="#贝叶斯学习" class="headerlink" title="贝叶斯学习"></a>贝叶斯学习</h2><p>贝叶斯学习，又称为贝叶斯推理，是统计学、机器学习中重要的方法。<br>其主要的想法是，在概率模型的学习和推理中，利用贝叶斯定理，计算在给定数据条件下模型的条件概率，即后验概率，并应用这个原理进行模型的估计，以及对数据的预测。<br>将模型、未观察要素及其参数用变量表示，使用模型的先验分布是贝叶斯学习的特点。</p>
-<h2 id="核方法"><a href="#核方法" class="headerlink" title="核方法"></a>核方法</h2><p>核方法是使用核函数表示核学习非线性模型的一种机器学习方法，可以用于监督学习和无监督学习。。<br>有一些线性模型的学习方法基于相似度计算，更具体地，向量内积计算。<br>核方法可以把它们扩展到非线性模型的学习，使其应用范围更广泛。<br>把线性模型扩展到非线性模型模型，直接的做法是显式地定义从输入空间（低维空间）到特征空间（高维空间）的映射，在特征空间中进行内积计算。比如，支持向量机，把输出空间的线性不可分问题转化为特征空间的线性可分问题。<br>核方法的技巧在于不显式地定义这个映射，而是直接定义核函数，即映射之后在特征空间的内积。。</p>
-]]></content>
-      <categories>
-        <category>统计学习方法</category>
       </categories>
       <tags>
         <tag>Machine learning</tag>
@@ -1249,124 +1468,6 @@
       </tags>
   </entry>
   <entry>
-    <title>weekly contest 209</title>
-    <url>/2020/10/04/weekly%20contest%20209/</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>主要四道题目，1道easy，2道medium，1道hard<br>主要题目如下：</p>
-<ul>
-<li>Special Array With X Elements Greater Than or Equal X</li>
-<li>Even Odd Tree</li>
-<li>Find Valid Matrix Given Row and Column Sums</li>
-<li>Minimum One Bit Operations to Make Integers Zero<a id="more"></a>
-
-</li>
-</ul>
-<h1 id="Special-Array-With-X-Elements-Greater-Than-or-Equal-X"><a href="#Special-Array-With-X-Elements-Greater-Than-or-Equal-X" class="headerlink" title="Special Array With X Elements Greater Than or Equal X"></a>Special Array With X Elements Greater Than or Equal X</h1><p><a href="https://leetcode.com/contest/weekly-contest-209/problems/special-array-with-x-elements-greater-than-or-equal-x/">原题链接</a></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">specialArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x=<span class="number">0</span>,count=<span class="number">0</span>;</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        <span class="keyword">while</span>(x&lt;=nums[nums.size()<span class="number">-1</span>])&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[i]&gt;=x)count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(x!=count)&#123;x++;count=<span class="number">0</span>;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x==count? x:<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="Even-Odd-Tree"><a href="#Even-Odd-Tree" class="headerlink" title="Even Odd Tree"></a>Even Odd Tree</h1><p><a href="https://leetcode.com/contest/weekly-contest-209/problems/even-odd-tree/">原题链接</a></p>
-<h1 id="Find-Valid-Matrix-Given-Row-and-Column-Sums"><a href="#Find-Valid-Matrix-Given-Row-and-Column-Sums" class="headerlink" title="Find Valid Matrix Given Row and Column Sums"></a>Find Valid Matrix Given Row and Column Sums</h1><p><a href="https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/">原题链接</a></p>
-<p>算法思想：greedy</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">restoreMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; col)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = row.size(), n = col.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">A</span><span class="params">(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; n; ++j) &#123;</span><br><span class="line">                A[i][j] = min(row[i], col[j]);</span><br><span class="line">                row[i] -= A[i][j];</span><br><span class="line">                col[j] -= A[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="Minimum-One-Bit-Operations-to-Make-Integers-Zero"><a href="#Minimum-One-Bit-Operations-to-Make-Integers-Zero" class="headerlink" title="Minimum One Bit Operations to Make Integers Zero"></a>Minimum One Bit Operations to Make Integers Zero</h1><p><a href="https://leetcode.com/contest/weekly-contest-209/problems/minimum-one-bit-operations-to-make-integers-zero/">原题链接</a></p>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Dynamic Programming</title>
-    <url>/2020/10/09/DP/</url>
-    <content><![CDATA[<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>已知问题规模为n的前提A，求解一个未知解B。<br>此时，如果把问题规模降到0，即已知A0，可以得到A0-&gt;B。</p>
-<ul>
-<li>如果从A0添加一个元素，得到A1的变化过程，即A0-&gt;A1；进而有A1-&gt;2; A2-&gt;A3；……；Ai-&gt;Ai+1。这就是严格的归纳推理，也就是我们经常使用的<strong>数学归纳法</strong>；</li>
-<li>对于Ai+1，只需要它的上一个状态Ai即可完成整个推理过程（而不需要更前序的状态）。我们将这个模型称为<strong>马尔可夫模型</strong>，对应的推理过程叫做<strong>“贪心法”</strong>。</li>
-</ul>
-<p>然而，Ai与Ai+1往往不是互为充要条件，随着i的增加，有价值的前提信息越来越少，我们无法仅仅通过上一个状态得到下一个状态，因此可以采用如下的方案：</p>
-<ul>
-<li>{A1-&gt;A2}; {A1, A2-&gt;A3}; {A1,A2,A3-&gt;A4};……; {A1,A2,…,Ai}-&gt;Ai+1. 这种方式就是第二数学归纳法。</li>
-<li>对于Ai+1需要前面的所有前序状态才能完成推理过程。我们将这一模型称为高阶马尔科夫模型。对应的推理过程叫做“动态规划法”。</li>
-</ul>
-<a id="more"></a>
-
-<h1 id="能用动态规划解决的问题的特点"><a href="#能用动态规划解决的问题的特点" class="headerlink" title="能用动态规划解决的问题的特点"></a>能用动态规划解决的问题的特点</h1><p>能采用动态规划求解的问题的一般要具有3个性质：</p>
-<ul>
-<li>（1）最优化原理：如果问题的最优解所包含的子问题的解也是最优的，就称该问题具有最优结构，即满足最优化原理。</li>
-<li>（2）无后效性：即某阶段状态一旦确定，就不受这个状态以后的决策影响。也就是说，某状态以后的过程不会影响以前的状态，只与当前状态有关。。</li>
-<li>（3）有重叠子问题：即子问题之间是不独立的，一个子问题在下一阶段决策中可能被多次使用到。<br><font size="2," color="red"><strong>该性质并不是动态规划使用的必要条件，但是如果没有这条性质，动态规划算法同其他算法相比就不具备优势</strong></font></li>
-</ul>
-<h1 id="动态规划解题的一般思路"><a href="#动态规划解题的一般思路" class="headerlink" title="动态规划解题的一般思路"></a>动态规划解题的一般思路</h1><p>动态规划所处理的问题是一个多阶段决策的问题，一般由初始状态开始，通过对中间阶段决策的选择，达到结束状态。这些决策形成了一个决策序列，同时确定了完成整个过程的一条活动路线（通常是最优的活动路线）。<br>动态规划的设计都有着一定的模式，一般要经历以下几个步骤：</p>
-<center><font size="2," color="red">初始状态→│决策１│→│决策２│→…→│决策ｎ│→结束状态</font></center>
-
-<ul>
-<li><strong>划分阶段</strong>：按照问题的时间或者空间特征，把问题分为若干个阶段。在划分阶段时，注意划分后的阶段一定要是有序的或者可排序的，否则问题就无法求解。</li>
-<li><strong>确定状态和状态变量</strong>：将问题发展到各个阶段时所处于的各种客观情况用不同的状态表示出来。当然，状态的选择要满足无后效性。</li>
-<li><strong>确定决策并写出状态转移方程</strong>：因为决策和状态转移有着天然的联系，状态转移就是根据上一阶段的状态和决策来导出本阶段的状态。所以如果确定了决策，状态转移方程也就可写出。但事实上常常是反过来做，根据相邻两个阶段的状态之间的关系来确定决策方法和状态转移方程。</li>
-<li><strong>寻找边界条件</strong>：给出的状态转移方程是一个递推式，需要一个递推的终止条件或边界条件。</li>
-</ul>
-<h1 id="算法实现的步骤"><a href="#算法实现的步骤" class="headerlink" title="算法实现的步骤"></a>算法实现的步骤</h1><ol>
-<li>创建一个一维数组或者二维数组，保存每一个子问题的结果，具体创建一维数组还是二维数组看题目而定，基本上如果题目中给出的是一个一维数组进行操作，就可以只创建一个一维数组，如果题目中给出了两个一维数组进行操作或者两种不同类型的变量值，比如背包问题中的不同物体的体积与总体积，找零钱问题中的不同面值零钱与总钱数，这样就需要创建一个二维数组。</li>
-<li>设置数组边界值，一维数组就是设置第一个数字，二维数组就是设置第一行跟第一列的值，特别的滚动一维数组是要设置整个数组的值，然后根据后面不同的数据加进来变幻成不同的值。</li>
-<li>找出状态转换方程，也就是说找到每个状态跟他上一个状态的关系，根据状态转化方程写出代码。</li>
-<li>返回需要的值，一般是数组的最后一个或者二维数组的最右下角。</li>
-</ol>
-<p><strong>代码基本框架</strong>：</p>
-<h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><ul>
-<li><p>递归</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(n == <span class="number">0</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> solutionFibonacci(n<span class="number">-1</span>)+solutionFibonacci(n<span class="number">-2</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>动态规划</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solutionFibonacci</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">0</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">int</span> result[] = <span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>];</span><br><span class="line">			result[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">			result[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">				result[i] = result[i<span class="number">-1</span>] + result[i<span class="number">-2</span>];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> result[n];</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="数组最大不连续递增子序列"><a href="#数组最大不连续递增子序列" class="headerlink" title="数组最大不连续递增子序列"></a>数组最大不连续递增子序列</h2><p>arr[] = {3,1,4,1,5,9,2,6,5}的最长递增子序列长度为4。即为：1,4,5,9</p>
-<ul>
-<li>设置一个数组temp，长度为原数组长度，数组第i个位置上的数字代表0…i上最长递增子序列。。当增加一个数字时，最大递增子序列可能变成前面最大的递增子序列+1，也可能就是前面最大递增子序列。</li>
-<li>这需要让新增加进来的数组arr[i]跟前面所有数字比较大小，即<ul>
-<li>当 arr[i] &gt; arr[j]，temp[i] = max{temp[j]}+1，其中，j 的取值范围为：0,1…i-1</li>
-<li>当 arr[i] &lt; arr[j]，temp[i] = max{temp[j]}，j 的取值范围为：0,1…i-1</li>
-</ul>
-</li>
-<li>所以在状态转换方程为$temp[i]=max{temp[i-1], temp[i-1]+1}$</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MaxChildArrayOrder</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n = a.size();</span><br><span class="line">		<span class="keyword">int</span> temp[] = <span class="keyword">new</span> <span class="keyword">int</span>[n];<span class="comment">//temp[i]代表0...i上最长递增子序列</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">			temp[i] = <span class="number">1</span>;<span class="comment">//初始值都为1</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(a[i]&gt;a[j]&amp;&amp;temp[j]+<span class="number">1</span>&gt;temp[i])&#123;</span><br><span class="line">					<span class="comment">//如果有a[i]比它前面所有的数都大，则temp[i]为它前面的比它小的数的那一个temp+1取得的最大值</span></span><br><span class="line">					temp[i] = temp[j]+<span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> max = temp[<span class="number">0</span>];</span><br><span class="line">		<span class="comment">//从temp数组里取出最大的值</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(temp[i]&gt;max)&#123;</span><br><span class="line">				max = temp[i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> max;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="数字塔从上到下所有路径中和最大的路径"><a href="#数字塔从上到下所有路径中和最大的路径" class="headerlink" title="数字塔从上到下所有路径中和最大的路径"></a>数字塔从上到下所有路径中和最大的路径</h2><p>数字塔是第i行有i个数字组成，从上往下每个数字只能走到他正下方数字或者正右方数字，求数字塔从上到下所有路径中和最大的路径，如有下数字塔</p>
-<p>3</p>
-<p>1&emsp;5</p>
-<p>8&emsp;4&emsp;3</p>
-<p>2&emsp;6&emsp; 7&emsp;9</p>
-<p>6&emsp;2&emsp;3&emsp;5&emsp;1</p>
-<p>最大路径是3-5-3-9-5，和为25。我们可以分别从从上往下看跟从下往上看两种动态规划的方式去解这个题</p>
-<p><strong>从上往下看</strong>：当从上往下看时，每进来新的一行，新的一行每个元素只能选择他正上方或者左左方的元素，也就是说，第一个元素只能连他上方的元素，最后一个元素只能连他左上方的元素，其他元素可以有两种选择，所以需要选择加起来更大的那一个数字，并把这个位置上的数字改成相应的路径值，具体过程如下图所示<br><img src="/2020/10/09/DP/1.jpg"></p>
-<p>所以最大值就是最底层的最大值也就是25。<br>具体运算过程：</p>
-<ol>
-<li>建立一个n*n的二维数组$dp[][]$，n是数字塔最后一行的数字个数，二维数组每一行数字跟数字塔每一行数字个数一样，保存的值是从上方到这一个位置最大路径的值；</li>
-<li>填入边界值$dp[0][0]=3$；</li>
-<li>每一行除了第一个值跟最后一个值，其他的值选择上方或者左上方更大的值与这个位置上的值相加得来的值，即$dp[i][j]=Math.max(dp[i-1][j-1], dp[i-1][j]) + n[i][j]$。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">minNumberInRotateArray</span><span class="params">(<span class="keyword">int</span> n[][])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> dp[][] = <span class="keyword">new</span> <span class="keyword">int</span>[n.length][n.length];</span><br><span class="line">		dp[<span class="number">0</span>][<span class="number">0</span>] = n[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n.length;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=i;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(j==<span class="number">0</span>)&#123;</span><br><span class="line">					<span class="comment">//如果是第一列，直接跟他上面数字相加</span></span><br><span class="line">					dp[i][j] = dp[i-<span class="number">1</span>][j] + n[i][j];</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					<span class="comment">//如果不是第一列，比较他上面跟上面左面数字谁大，谁大就跟谁相加，放到这个位置</span></span><br><span class="line">					dp[i][j] = Math.max(dp[i-<span class="number">1</span>][j-<span class="number">1</span>], dp[i-<span class="number">1</span>][j]) + n[i][j];</span><br><span class="line">				&#125;</span><br><span class="line">				max = Math.max(dp[i][j], max);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> max;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>从下往上看时</strong>：从下往上看时大体思路跟从上往下看一样，但是要简单一些，因为不用考虑边界数据，从下往上看时，每进来上面一行，上面一行每个数字有两条路径到达下面一行，所以选一条最大的就可以<br><img src="/2020/10/09/DP/2.jpg"></p>
-<p>具体方法也是建立一个二维数组，最下面一行数据添到二维数组最后一行，从下往上填数字，所以状态转化方程是$dp[i][j]=Math.max(dp[i+1][j+1], dp[i+1][j]) + n[i][j]$。</p>
-<p>从下往上看跟从上往下看相比，虽然逻辑较为简单，但是从下往上看时需要得到完整的数字塔之后才能开始计算，而从上往下看时可以随着数字塔的深入来计算，也可以返回任意一层的结果，是最好的方法。</p>
-<h2 id="其他题目"><a href="#其他题目" class="headerlink" title="其他题目"></a>其他题目</h2><p><a href="https://celia-qian.gitbook.io/leetcode-notebook-2020-2021/dp/dp">others</a></p>
-<h1 id="动态规划和分治区别"><a href="#动态规划和分治区别" class="headerlink" title="动态规划和分治区别"></a>动态规划和分治区别</h1><p>动态规划算法：它通常用于求解具有某种<strong>最优性质</strong>的问题。在这类问题中，可能会有许多可行解。每一个解都对应于一个值，我们希望找到具有最优值的解。动态规划算法与分治法类似，其基本思想也是将待求解问题分解成若干个子问题，先求解子问题，然后从这些子问题的解得到原问题的解。<strong>与分治法不同的是，适合于用动态规划求解的问题，经分解得到子问题往往不是互相独立的</strong>。</p>
-<p>分治法：若用分治法来解这类问题，则分解得到的子问题数目太多，有些子问题被重复计算了很多次。如果我们能够保存已解决的子问题的答案，而在需要时再找出已求得的答案，这样就可以避免大量的重复计算，节省时间。我们可以用一个表来记录所有已解的子问题的答案。</p>
-<p>文章转载：<a href="https://blog.csdn.net/zw6161080123/article/details/80639932">六大算法之三：动态规划</a></p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>西瓜书--模型评估与选择（上）</title>
     <url>/2020/10/07/%E8%A5%BF%E7%93%9C%E4%B9%A6%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
     <content><![CDATA[<h1 id="经验误差与过拟合"><a href="#经验误差与过拟合" class="headerlink" title="经验误差与过拟合"></a>经验误差与过拟合</h1><p>##错误率<br><strong>错误率</strong>（error rate）：分类错误的样本数占样本总数的比例<br><strong>精度</strong>（accuracy）：精度=1-错误率</p>
@@ -1388,107 +1489,6 @@
       </categories>
       <tags>
         <tag>Machine learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Kosaraju&#39;s algorithm</title>
-    <url>/2020/10/11/Kosaraju/</url>
-    <content><![CDATA[<h1 id="Kosaraju-算法"><a href="#Kosaraju-算法" class="headerlink" title="Kosaraju 算法"></a>Kosaraju 算法</h1><ul>
-<li>为了找到SCC分支，首先对图G运行DFS，计算出各顶点完成搜索的时间f；</li>
-<li>然后计算图的逆图GT，对逆图也进行DFS搜索，但是这里搜索时顶点的访问次序不是按照顶点标号的大小，而是按照各顶点f值由大到小的顺序；</li>
-<li>逆图DFS所得到的森林即对应连通区域。<a id="more"></a>
-
-</li>
-</ul>
-<h2 id="SCC-强连通分量"><a href="#SCC-强连通分量" class="headerlink" title="SCC 强连通分量"></a>SCC 强连通分量</h2><p><strong>Strong Connected Component</strong></p>
-<ul>
-<li>A strongly connected component (SCC) of a directed graph is a maximal strongly connected subgraph.</li>
-</ul>
-<blockquote>
-<p>there are 3 SCCs in the following graph</p>
-</blockquote>
-<img src="/2020/10/11/Kosaraju/1.jpg">
-
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>We can find all strongly connected components in O(V+E) time using Kosaraju’s algorithm. Following is detailed <strong>Kosaraju’s algorithm</strong>.</p>
-<ol>
-<li>Create an empty stack ‘S’ and do DFS traversal of a graph. In DFS traversal, after calling recursive DFS for adjacent vertices of a vertex, push the vertex to stack. In the above graph, if we start DFS from vertex 0, we get vertices in stack as 1, 2, 4, 3, 0.</li>
-<li>Reverse directions of all arcs to obtain the transpose graph.</li>
-<li>One by one pop a vertex from S while S is not empty. Let the popped vertex be ‘v’. Take v as source and do DFS (call DFSUtil(v)). The DFS starting from v prints strongly connected component of v. In the above example, we process vertices in order 0, 3, 4, 2, 1 (One by one popped from stack).</li>
-</ol>
-<h2 id="How-does-this-work"><a href="#How-does-this-work" class="headerlink" title="How does this work?"></a>How does this work?</h2><p>DFS of a graph produces a single tree if all vertices are reachable from the DFS starting point. Otherwise DFS produces a forest. So DFS of a graph with only one SCC always produces a tree.</p>
-<p>The important point to note is DFS may produce a tree or a forest when there are more than one SCCs depending upon the chosen starting point.</p>
-<p>For example, in the above diagram, if we start DFS from vertices 0 or 1 or 2, we get a tree as output. And if we start from 3 or 4, we get a forest. To find and print all SCCs, we would want to start DFS from vertex 4 (which is a sink vertex), then move to 3 which is sink in the remaining set (set excluding 4) and finally any of the remaining vertices (0, 1, 2).</p>
-<p>So how do we find this sequence of picking vertices as starting points of DFS? Unfortunately, there is no direct way for getting this sequence. However, if we do a DFS of graph and store vertices <strong>according to their finish times</strong>, we make sure that the <strong>finish time of a vertex that connects to other SCCs</strong> (other that its own SCC), will always <strong>be greater than</strong> finish time of vertices in the other SCC (See <a href="https://www.personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/GraphAlgor/strongComponent.htm"><strong>this</strong></a> for proof).</p>
-<p>For example, in DFS of above example graph, finish time of 0 is always greater than 3 and 4 (irrespective of the sequence of vertices considered for DFS). And finish time of 3 is always greater than 4. DFS doesn’t guarantee about other vertices, for example finish times of 1 and 2 may be smaller or greater than 3 and 4 depending upon the sequence of vertices considered for DFS.</p>
-<p>So to use this property, we do DFS traversal of complete graph and push every finished vertex to a stack. In stack, 3 always appears after 4, and 0 appear after both 3 and 4.</p>
-<p>In the next step, we reverse the graph. Consider the graph of SCCs. In the reversed graph, the edges that connect two components are reversed. So the SCC {0, 1, 2} becomes sink and the SCC {4} becomes source. As discussed above, in stack, we always have 0 before 3 and 4.</p>
-<p>So if we do a DFS of the reversed graph using sequence of vertices in stack, we process vertices from sink to source (in reversed graph). That is what we wanted to achieve and that is all needed to print SCCs one by one.<br><img src="/2020/10/11/Kosaraju/2.jpg"></p>
-<h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><ol>
-<li>对原图G进行深度优先遍历，记录每个节点的离开时间；</li>
-<li>选择具有最晚离开时间的顶点，对反图GT进行遍历，删除能够遍历到的顶点，这些顶点构成一个强连通分量；</li>
-<li>如果还没有顶点删除，继续步骤2，否则结束算法。</li>
-</ol>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ul>
-<li>Oneway航班如何遍历所有的机场</li>
-<li>Face book好友推荐</li>
-</ul>
-<h2 id="其他视频讲解"><a href="#其他视频讲解" class="headerlink" title="其他视频讲解"></a>其他视频讲解</h2><p><a href="https://www.youtube.com/watch?v=qz9tKlF431k">Google 面试：机场问题</a><br>PS：评论区太搞笑了，哈哈哈哈哈哈</p>
-<p><a href="https://www.youtube.com/watch?v=RpgcYiky7uw">印度小哥推到过程</a></p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>weekly contest 210</title>
-    <url>/2020/10/11/weekly%20contest%20210/</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
-<li>Maximum Nesting Depth of the Parentheses 字符串</li>
-<li>Maximal Network Rank 图 brute force</li>
-<li>Split Two Strings to Make Palindrome 回文字符 hash</li>
-<li>Count Subtrees With Max Distance Between Cities<a id="more"></a>
-
-</li>
-</ul>
-<h1 id="Maximum-Nesting-Depth-of-the-Parentheses"><a href="#Maximum-Nesting-Depth-of-the-Parentheses" class="headerlink" title="Maximum Nesting Depth of the Parentheses"></a>Maximum Nesting Depth of the Parentheses</h1><p><a href="https://leetcode.com/contest/weekly-contest-210/problems/maximum-nesting-depth-of-the-parentheses/">原题链接</a></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> depth = <span class="number">0</span>,res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> n : s)&#123;</span><br><span class="line">            <span class="keyword">if</span>(n == <span class="string">&#x27;(&#x27;</span>&amp;&amp;depth &gt;= <span class="number">0</span>)&#123;depth++; res=max(depth,res);&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="string">&#x27;)&#x27;</span>)depth--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="Maximal-Network-Rank"><a href="#Maximal-Network-Rank" class="headerlink" title="Maximal Network Rank"></a>Maximal Network Rank</h1><p><a href="https://leetcode.com/contest/weekly-contest-210/problems/maximal-network-rank/">原题链接</a></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">100</span> + <span class="number">50</span>;</span><br><span class="line"><span class="keyword">bool</span> lnk [MAX][MAX];<span class="comment">//ai和bi之间是否有边</span></span><br><span class="line"><span class="keyword">int</span> cnt[MAX];<span class="comment">//每个节点边的个数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maximalNetworkRank</span><span class="params">(<span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; roads)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = roads.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            cnt[i] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)lnk[i][j] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> a = roads[i][<span class="number">0</span>], b = roads[i][<span class="number">1</span>];</span><br><span class="line">            cnt[a] += <span class="number">1</span>; cnt[b] += <span class="number">1</span>;</span><br><span class="line">            lnk[a][b] = lnk[b][a] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;  i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; n; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> cur =cnt[i] + cnt[j] - (lnk[i][j] ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">                ans= max(ans, cur);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="Split-Two-Strings-to-Make-Palindrome"><a href="#Split-Two-Strings-to-Make-Palindrome" class="headerlink" title="Split Two Strings to Make Palindrome"></a>Split Two Strings to Make Palindrome</h1><p><a href="https://leetcode.com/contest/weekly-contest-210/problems/split-two-strings-to-make-palindrome/">原题链接</a></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">            <span class="keyword">if</span>(s[l++]!=s[r--]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="built_in">string</span> &amp;a, <span class="built_in">string</span> &amp;b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = a.size() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j &amp;&amp; a[i] == b[j])</span><br><span class="line">        ++i, --j;</span><br><span class="line">    <span class="keyword">return</span> isPalindrome(a, i, j) || isPalindrome(b, i, j);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">checkPalindromeFormation</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> check(a, b) || check(b, a);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="Count-Subtrees-With-Max-Distance-Between-Cities"><a href="#Count-Subtrees-With-Max-Distance-Between-Cities" class="headerlink" title="Count Subtrees With Max Distance Between Cities"></a>Count Subtrees With Max Distance Between Cities</h1><p><a href="https://leetcode.com/contest/weekly-contest-210/problems/count-subtrees-with-max-distance-between-cities/">原题链接</a></p>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CV Tutorial week 1</title>
-    <url>/2020/10/06/CVT1/</url>
-    <content><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><ul>
-<li>Give a definition of “Computer Vision”.</li>
-<li>What type of information is extracted in each of the following applications.</li>
-<li>Vision is often described as an “ill-posed, inverse problem”. Briefly describe what is meant by the terms “ill-posed” and “inverse problem” and their opposites “well-posed” and “forward problems”.</li>
-<li>What is a “prior” and how does it help solve the ill-posed, inverse problem of vision? Give examples of priors.<a id="more"></a>
-
-</li>
-</ul>
-<div class="pdfobject-container" data-target="/2020/10/06/CVT1/1.pdf" data-height="500px"></div>
-
-]]></content>
-      <categories>
-        <category>Computer Vision</category>
-      </categories>
-      <tags>
-        <tag>Computer Vision</tag>
       </tags>
   </entry>
 </search>
