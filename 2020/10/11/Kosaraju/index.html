@@ -30,11 +30,14 @@
 <meta property="og:site_name" content="CC">
 <meta property="og:description" content="Kosaraju 算法 为了找到SCC分支，首先对图G运行DFS，计算出各顶点完成搜索的时间f； 然后计算图的逆图GT，对逆图也进行DFS搜索，但是这里搜索时顶点的访问次序不是按照顶点标号的大小，而是按照各顶点f值由大到小的顺序； 逆图DFS所得到的森林即对应连通区域。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://celiachien.github.io/2020/10/11/Kosaraju/1.jpg">
+<meta property="og:image" content="http://celiachien.github.io/2020/10/11/Kosaraju/2.jpg">
 <meta property="article:published_time" content="2020-10-11T06:46:25.000Z">
-<meta property="article:modified_time" content="2020-10-11T07:20:54.077Z">
+<meta property="article:modified_time" content="2020-10-11T07:30:18.924Z">
 <meta property="article:author" content="CeliaChien">
 <meta property="article:tag" content="Algorithm">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://celiachien.github.io/2020/10/11/Kosaraju/1.jpg">
 
 
 <link rel="canonical" href="http://celiachien.github.io/2020/10/11/Kosaraju/">
@@ -229,7 +232,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -332,7 +335,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2020-10-11 14:46:25 / Modified: 15:20:54" itemprop="dateCreated datePublished" datetime="2020-10-11T14:46:25+08:00">2020-10-11</time>
+      <time title="Created: 2020-10-11 14:46:25 / Modified: 15:30:18" itemprop="dateCreated datePublished" datetime="2020-10-11T14:46:25+08:00">2020-10-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -384,6 +387,8 @@
 <blockquote>
 <p>there are 3 SCCs in the following graph</p>
 </blockquote>
+<img src="/2020/10/11/Kosaraju/1.jpg">
+
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>We can find all strongly connected components in O(V+E) time using Kosaraju’s algorithm. Following is detailed <strong>Kosaraju’s algorithm</strong>.</p>
 <ol>
 <li>Create an empty stack ‘S’ and do DFS traversal of a graph. In DFS traversal, after calling recursive DFS for adjacent vertices of a vertex, push the vertex to stack. In the above graph, if we start DFS from vertex 0, we get vertices in stack as 1, 2, 4, 3, 0.</li>
@@ -393,11 +398,11 @@
 <h2 id="How-does-this-work"><a href="#How-does-this-work" class="headerlink" title="How does this work?"></a>How does this work?</h2><p>DFS of a graph produces a single tree if all vertices are reachable from the DFS starting point. Otherwise DFS produces a forest. So DFS of a graph with only one SCC always produces a tree.</p>
 <p>The important point to note is DFS may produce a tree or a forest when there are more than one SCCs depending upon the chosen starting point.</p>
 <p>For example, in the above diagram, if we start DFS from vertices 0 or 1 or 2, we get a tree as output. And if we start from 3 or 4, we get a forest. To find and print all SCCs, we would want to start DFS from vertex 4 (which is a sink vertex), then move to 3 which is sink in the remaining set (set excluding 4) and finally any of the remaining vertices (0, 1, 2).</p>
-<p>So how do we find this sequence of picking vertices as starting points of DFS? Unfortunately, there is no direct way for getting this sequence. However, if we do a DFS of graph and store vertices <strong>according to their finish times</strong>, we make sure that the <strong>finish time of a vertex that connects to other SCCs</strong> (other that its own SCC), will always <strong>be greater than</strong> finish time of vertices in the other SCC (See this for proof).</p>
+<p>So how do we find this sequence of picking vertices as starting points of DFS? Unfortunately, there is no direct way for getting this sequence. However, if we do a DFS of graph and store vertices <strong>according to their finish times</strong>, we make sure that the <strong>finish time of a vertex that connects to other SCCs</strong> (other that its own SCC), will always <strong>be greater than</strong> finish time of vertices in the other SCC (See <a target="_blank" rel="noopener" href="https://www.personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/GraphAlgor/strongComponent.htm"><strong>this</strong></a> for proof).</p>
 <p>For example, in DFS of above example graph, finish time of 0 is always greater than 3 and 4 (irrespective of the sequence of vertices considered for DFS). And finish time of 3 is always greater than 4. DFS doesn’t guarantee about other vertices, for example finish times of 1 and 2 may be smaller or greater than 3 and 4 depending upon the sequence of vertices considered for DFS.</p>
 <p>So to use this property, we do DFS traversal of complete graph and push every finished vertex to a stack. In stack, 3 always appears after 4, and 0 appear after both 3 and 4.</p>
 <p>In the next step, we reverse the graph. Consider the graph of SCCs. In the reversed graph, the edges that connect two components are reversed. So the SCC {0, 1, 2} becomes sink and the SCC {4} becomes source. As discussed above, in stack, we always have 0 before 3 and 4.</p>
-<p>So if we do a DFS of the reversed graph using sequence of vertices in stack, we process vertices from sink to source (in reversed graph). That is what we wanted to achieve and that is all needed to print SCCs one by one.</p>
+<p>So if we do a DFS of the reversed graph using sequence of vertices in stack, we process vertices from sink to source (in reversed graph). That is what we wanted to achieve and that is all needed to print SCCs one by one.<br><img src="/2020/10/11/Kosaraju/2.jpg"></p>
 <h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><ol>
 <li>对原图G进行深度优先遍历，记录每个节点的离开时间；</li>
 <li>选择具有最晚离开时间的顶点，对反图GT进行遍历，删除能够遍历到的顶点，这些顶点构成一个强连通分量；</li>
@@ -447,8 +452,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/10/09/DP/" rel="next" title="Dynamic Programming">
-                  Dynamic Programming <i class="fa fa-chevron-right"></i>
+                <a href="/2020/10/11/weekly%20contest%20210/" rel="next" title="weekly contest 210">
+                  weekly contest 210 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -508,13 +513,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">44k</span>
+    <span title="Symbols count total">46k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">40 mins.</span>
+    <span title="Reading time total">42 mins.</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>

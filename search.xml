@@ -343,8 +343,6 @@
         <category>Kick start</category>
       </categories>
       <tags>
-        <tag>Algorithm</tag>
-        <tag>C++</tag>
         <tag>Kick start</tag>
       </tags>
   </entry>
@@ -759,8 +757,6 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>Algorithm</tag>
-        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -1277,8 +1273,6 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>Algorithm</tag>
-        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -1412,6 +1406,8 @@
 <blockquote>
 <p>there are 3 SCCs in the following graph</p>
 </blockquote>
+<img src="/2020/10/11/Kosaraju/1.jpg">
+
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>We can find all strongly connected components in O(V+E) time using Kosaraju’s algorithm. Following is detailed <strong>Kosaraju’s algorithm</strong>.</p>
 <ol>
 <li>Create an empty stack ‘S’ and do DFS traversal of a graph. In DFS traversal, after calling recursive DFS for adjacent vertices of a vertex, push the vertex to stack. In the above graph, if we start DFS from vertex 0, we get vertices in stack as 1, 2, 4, 3, 0.</li>
@@ -1421,11 +1417,11 @@
 <h2 id="How-does-this-work"><a href="#How-does-this-work" class="headerlink" title="How does this work?"></a>How does this work?</h2><p>DFS of a graph produces a single tree if all vertices are reachable from the DFS starting point. Otherwise DFS produces a forest. So DFS of a graph with only one SCC always produces a tree.</p>
 <p>The important point to note is DFS may produce a tree or a forest when there are more than one SCCs depending upon the chosen starting point.</p>
 <p>For example, in the above diagram, if we start DFS from vertices 0 or 1 or 2, we get a tree as output. And if we start from 3 or 4, we get a forest. To find and print all SCCs, we would want to start DFS from vertex 4 (which is a sink vertex), then move to 3 which is sink in the remaining set (set excluding 4) and finally any of the remaining vertices (0, 1, 2).</p>
-<p>So how do we find this sequence of picking vertices as starting points of DFS? Unfortunately, there is no direct way for getting this sequence. However, if we do a DFS of graph and store vertices <strong>according to their finish times</strong>, we make sure that the <strong>finish time of a vertex that connects to other SCCs</strong> (other that its own SCC), will always <strong>be greater than</strong> finish time of vertices in the other SCC (See this for proof).</p>
+<p>So how do we find this sequence of picking vertices as starting points of DFS? Unfortunately, there is no direct way for getting this sequence. However, if we do a DFS of graph and store vertices <strong>according to their finish times</strong>, we make sure that the <strong>finish time of a vertex that connects to other SCCs</strong> (other that its own SCC), will always <strong>be greater than</strong> finish time of vertices in the other SCC (See <a href="https://www.personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/GraphAlgor/strongComponent.htm"><strong>this</strong></a> for proof).</p>
 <p>For example, in DFS of above example graph, finish time of 0 is always greater than 3 and 4 (irrespective of the sequence of vertices considered for DFS). And finish time of 3 is always greater than 4. DFS doesn’t guarantee about other vertices, for example finish times of 1 and 2 may be smaller or greater than 3 and 4 depending upon the sequence of vertices considered for DFS.</p>
 <p>So to use this property, we do DFS traversal of complete graph and push every finished vertex to a stack. In stack, 3 always appears after 4, and 0 appear after both 3 and 4.</p>
 <p>In the next step, we reverse the graph. Consider the graph of SCCs. In the reversed graph, the edges that connect two components are reversed. So the SCC {0, 1, 2} becomes sink and the SCC {4} becomes source. As discussed above, in stack, we always have 0 before 3 and 4.</p>
-<p>So if we do a DFS of the reversed graph using sequence of vertices in stack, we process vertices from sink to source (in reversed graph). That is what we wanted to achieve and that is all needed to print SCCs one by one.</p>
+<p>So if we do a DFS of the reversed graph using sequence of vertices in stack, we process vertices from sink to source (in reversed graph). That is what we wanted to achieve and that is all needed to print SCCs one by one.<br><img src="/2020/10/11/Kosaraju/2.jpg"></p>
 <h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><ol>
 <li>对原图G进行深度优先遍历，记录每个节点的离开时间；</li>
 <li>选择具有最晚离开时间的顶点，对反图GT进行遍历，删除能够遍历到的顶点，这些顶点构成一个强连通分量；</li>
@@ -1443,6 +1439,34 @@
       </categories>
       <tags>
         <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>weekly contest 210</title>
+    <url>/2020/10/11/weekly%20contest%20210/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
+<li>Maximum Nesting Depth of the Parentheses 字符串</li>
+<li>Maximal Network Rank 图 brute force</li>
+<li>Split Two Strings to Make Palindrome 回文字符 hash</li>
+<li>Count Subtrees With Max Distance Between Cities<a id="more"></a>
+
+</li>
+</ul>
+<h1 id="Maximum-Nesting-Depth-of-the-Parentheses"><a href="#Maximum-Nesting-Depth-of-the-Parentheses" class="headerlink" title="Maximum Nesting Depth of the Parentheses"></a>Maximum Nesting Depth of the Parentheses</h1><p><a href="https://leetcode.com/contest/weekly-contest-210/problems/maximum-nesting-depth-of-the-parentheses/">原题链接</a></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> depth = <span class="number">0</span>,res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> n : s)&#123;</span><br><span class="line">            <span class="keyword">if</span>(n == <span class="string">&#x27;(&#x27;</span>&amp;&amp;depth &gt;= <span class="number">0</span>)&#123;depth++; res=max(depth,res);&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="string">&#x27;)&#x27;</span>)depth--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="Maximal-Network-Rank"><a href="#Maximal-Network-Rank" class="headerlink" title="Maximal Network Rank"></a>Maximal Network Rank</h1><p><a href="https://leetcode.com/contest/weekly-contest-210/problems/maximal-network-rank/">原题链接</a></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">100</span> + <span class="number">50</span>;</span><br><span class="line"><span class="keyword">bool</span> lnk [MAX][MAX];<span class="comment">//ai和bi之间是否有边</span></span><br><span class="line"><span class="keyword">int</span> cnt[MAX];<span class="comment">//每个节点边的个数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maximalNetworkRank</span><span class="params">(<span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; roads)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = roads.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            cnt[i] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)lnk[i][j] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> a = roads[i][<span class="number">0</span>], b = roads[i][<span class="number">1</span>];</span><br><span class="line">            cnt[a] += <span class="number">1</span>; cnt[b] += <span class="number">1</span>;</span><br><span class="line">            lnk[a][b] = lnk[b][a] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;  i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; n; j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> cur =cnt[i] + cnt[j] - (lnk[i][j] ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">                ans= max(ans, cur);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Split-Two-Strings-to-Make-Palindrome"><a href="#Split-Two-Strings-to-Make-Palindrome" class="headerlink" title="Split Two Strings to Make Palindrome"></a>Split Two Strings to Make Palindrome</h1><p><a href="https://leetcode.com/contest/weekly-contest-210/problems/split-two-strings-to-make-palindrome/">原题链接</a></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">            <span class="keyword">if</span>(s[l++]!=s[r--]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="built_in">string</span> &amp;a, <span class="built_in">string</span> &amp;b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = a.size() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j &amp;&amp; a[i] == b[j])</span><br><span class="line">        ++i, --j;</span><br><span class="line">    <span class="keyword">return</span> isPalindrome(a, i, j) || isPalindrome(b, i, j);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">checkPalindromeFormation</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> check(a, b) || check(b, a);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Count-Subtrees-With-Max-Distance-Between-Cities"><a href="#Count-Subtrees-With-Max-Distance-Between-Cities" class="headerlink" title="Count Subtrees With Max Distance Between Cities"></a>Count Subtrees With Max Distance Between Cities</h1><p><a href="https://leetcode.com/contest/weekly-contest-210/problems/count-subtrees-with-max-distance-between-cities/">原题链接</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
       </tags>
   </entry>
 </search>
