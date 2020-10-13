@@ -1491,4 +1491,302 @@
         <tag>Machine learning</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Process Standards &amp; Capacity</title>
+    <url>/2020/10/12/OPM3/</url>
+    <content><![CDATA[<h1 id="What-would-I-do-with-the-expected-time-each-of-the-omelette-tasks-would-require"><a href="#What-would-I-do-with-the-expected-time-each-of-the-omelette-tasks-would-require" class="headerlink" title="What would I do with the expected time each of the omelette tasks would require?"></a>What would I do with the expected time each of the omelette tasks would require?</h1><ul>
+<li>To obtain reliable/robust data to allow us to drive proceed design and then operations decisions, e/g/ scheduling, Capacity, control/monitoring, inventory related decisions.</li>
+</ul>
+<a id="more"></a>
+<h1 id="Intro-to-Standards"><a href="#Intro-to-Standards" class="headerlink" title="Intro to Standards"></a>Intro to Standards</h1><h2 id="Strandard-time"><a href="#Strandard-time" class="headerlink" title="Strandard time"></a><strong>Strandard time</strong></h2><ul>
+<li>A ‘standard time’ is the expected time to do a task.<ul>
+<li>it assumes that the task is carried out correctly and consistently in a pre-determined way, and includes allowances for natural breaks, complexity, environmental factors, etc.</li>
+<li>it does not account for unexpected/unplanned events, that is for things that may go wrong - problems with the process, materials, data, interruptions or human errors.</li>
+<li>it is the average (expected) time that a trained operator could achieve when working on the task all day, and involves working at a rate of ‘100%’ – as determined by the International Labour Office, Geneva</li>
+</ul>
+</li>
+<li>Accurate standard times are essential:<ul>
+<li>in operations if capacity and costing calculations are to be meaningful, and if scheduling is to be effective</li>
+<li>used most often for activities that are regularly repeated</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Setting standard times is straightforward (but is hard work!)<ul>
+<li>Determine the job activities</li>
+<li>Time the activities</li>
+<li>Develop the standard time for the job</li>
+</ul>
+</li>
+</ul>
+<h2 id="Determine-the-job-activities"><a href="#Determine-the-job-activities" class="headerlink" title="Determine the job activities"></a>Determine the job activities</h2><ul>
+<li>Direct work measurements: Time studies<ul>
+<li>Stopwatch studies: obtain activity timings by direct observation under specified conditions </li>
+<li>Record a (large) number of instantaneous observations of a group of resources</li>
+</ul>
+</li>
+<li>Indirect work measurements: Synthetic Data<ul>
+<li>Production data applicable to a given context not obtained by some direct measurement technique Add up elemental times</li>
+<li>from previous time studies of other jobs (a.k.a. past experience) </li>
+<li>account for results of ergonomic laboratory studies of work and tasks</li>
+</ul>
+</li>
+</ul>
+<h1 id="Process-Plans"><a href="#Process-Plans" class="headerlink" title="Process Plans"></a>Process Plans</h1><h2 id="Process-Analysis"><a href="#Process-Analysis" class="headerlink" title="Process Analysis"></a>Process Analysis</h2><ul>
+<li>Process flowcharts</li>
+<li>Symbolic representation of processes</li>
+<li>Incorporate<ul>
+<li>nonproductive activities (inspection, transportation, delay, storage) </li>
+<li>productive activities (operations)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Line-balancing"><a href="#Line-balancing" class="headerlink" title="Line balancing"></a>Line balancing</h2><ul>
+<li><strong>Objective</strong><ul>
+<li>Balance the assembly line</li>
+</ul>
+</li>
+<li><strong>Line balancing</strong><ul>
+<li>tries to equalize the amount of work at each workstation</li>
+</ul>
+</li>
+<li><strong>Precedence requirements</strong><ul>
+<li>physical restrictions on the order in which operations are performed</li>
+</ul>
+</li>
+<li><strong>Cycle time</strong><ul>
+<li>maximum amount of time a product is allowed to spend at each workstation</li>
+</ul>
+</li>
+</ul>
+<h1 id="Process-Design"><a href="#Process-Design" class="headerlink" title="Process Design"></a>Process Design</h1><h2 id="Cycle-Time-Example"><a href="#Cycle-Time-Example" class="headerlink" title="Cycle Time Example"></a>Cycle Time Example</h2><p>$$C_d=\frac{production\ time\ available}{desired\ units\ of\ output}$$<br>$$C_d=\frac{(8 hours \times 60 minutes / hour)}{(120 units)}$$<br>$$C_d=\frac{480}{120}=4minutes$$</p>
+<ul>
+<li><strong>Flow Time vs Cycle Time</strong><ul>
+<li>Cycle time = max time spent at any station</li>
+<li>Flow time = time to complete all stations</li>
+</ul>
+</li>
+</ul>
+<h2 id="Efficiency-of-Line"><a href="#Efficiency-of-Line" class="headerlink" title="Efficiency of Line"></a>Efficiency of Line</h2><h2 id="Line-Balancing-Procedure"><a href="#Line-Balancing-Procedure" class="headerlink" title="Line Balancing Procedure"></a>Line Balancing Procedure</h2><ol>
+<li>Draw and label a precedence diagram</li>
+<li>Calculate desired cycle time required for the line</li>
+<li>Calculate theoretical minimum number of workstations</li>
+<li>Group elements into workstations, recognizing cycle time and precedence constraints</li>
+<li>Calculate efficiency of the line</li>
+<li>Determine if the theoretical minimum number of workstations or an acceptable efficiency level has been reached. If not, go back to step 4.</li>
+</ol>
+<h1 id="Basic-Line-Balancing-Example"><a href="#Basic-Line-Balancing-Example" class="headerlink" title="Basic Line Balancing Example"></a>Basic Line Balancing Example</h1><div class="note default"><table>
+<thead>
+<tr>
+<th>work station</th>
+<th>Next station</th>
+<th>Demand</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>-</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>B</td>
+<td>A</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>C</td>
+<td>A</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>D</td>
+<td>B/C</td>
+<td>0.4</td>
+</tr>
+</tbody></table>
+</div>
+
+<p>Demand for product<br><strong>d=6000 unit per week</strong><br>Production time available<br><strong>p=40 working hours per week</strong><br>PS: per week here is the time period</p>
+<p>$$C_d=\frac{40hours\times60mins/hour}{6000 unit}=0.4 mins$$<br>$$E=\frac{0.1+0.2+0.3+0.4}{4\times0.4}=1/1.6=0.625=62.5percent$$</p>
+<p><strong>Balance Line</strong><br>How many workstation i need to obtain a balanced line</p>
+<p>$$N=\frac{0.1+0.2+0.3+0.4}{0.4}=1/0.4=2.5$$ round up tp 3 workstation</p>
+<table>
+<thead>
+<tr>
+<th>work station</th>
+<th>Work Element</th>
+<th>Loading(in time)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>0.1</td>
+<td>0.4-0.1=0.3</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.2</td>
+<td>0.3-0.2=0.1</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0.3</td>
+<td>0.4-0.3=0.1</td>
+</tr>
+<tr>
+<td>D</td>
+<td>0.4</td>
+<td>0.4-0.4=0</td>
+</tr>
+</tbody></table>
+<p>my target: workstation-&gt;3, $C_d=0.4$</p>
+<p>we got:</p>
+<p>$$E=\frac{0.1+0.2+0.3+0.4}{3\times0.4}=0.833=83.3percent$$</p>
+<h1 id="Process-Seletion"><a href="#Process-Seletion" class="headerlink" title="Process Seletion"></a>Process Seletion</h1><h2 id="Process-Selection-with-Break-Even-Analysis"><a href="#Process-Selection-with-Break-Even-Analysis" class="headerlink" title="Process Selection with Break-Even Analysis"></a>Process Selection with Break-Even Analysis</h2><ul>
+<li>Cost<ul>
+<li>Fixed costs</li>
+<li>constant regardless of the number of units produced</li>
+<li>Variable costs</li>
+<li>vary with the volume of units produced</li>
+</ul>
+</li>
+<li>Revenue<ul>
+<li>price at which an item is sold</li>
+</ul>
+</li>
+<li>Total revenue<ul>
+<li>is price times volume sold</li>
+</ul>
+</li>
+<li>Profit<ul>
+<li>difference between total revenue and total cost</li>
+</ul>
+</li>
+</ul>
+<h2 id="Process-Selection-with-Break-Even-Analysis-1"><a href="#Process-Selection-with-Break-Even-Analysis-1" class="headerlink" title="Process Selection with Break-Even Analysis"></a>Process Selection with Break-Even Analysis</h2><p>Total cost = fixed cost + total variable cost<br>$$TC=c_f +vc_v$$<br>Total revenue = volume x price<br>$$TR = vp$$<br>Profit = total revenue - total cost<br>$$Z=TR–TC=vp-(c_f +vc_v)$$</p>
+<ul>
+<li>Solving for Break-Evan Volume<br>$$TR=TC$$<br>$$vp=c_f+vc_v$$<br>$$vp-vc_v=c_f$$<br>$$v(p-c_v)=c_f$$<br>$$v=\frac{c_f}{p-c_v}$$</li>
+</ul>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>Fixed cost = cf = £2,000<br>Variable cost = cv = £5 per part<br>Price = p = £10 per part</p>
+<p>Break-even point is:<br>$$v=\frac{c_f}{p-c_v}=\frac{2000}{10-5}=400parts$$</p>
+<h2 id="Quiz"><a href="#Quiz" class="headerlink" title="Quiz"></a>Quiz</h2><p>ans:$\frac{8000}{3}$</p>
+<blockquote>
+<p>Process A:<br>Fixed cost = cf = £2,000<br>Variable cost = cv = £5 per part<br>Price = p = £10 per part<br>Process B:<br>Fixed cost = cf = £10,000<br>Variable cost = cv = £2 per part<br>Price = p = £10 per part</p>
+</blockquote>
+<h1 id="Capacity-Management"><a href="#Capacity-Management" class="headerlink" title="Capacity Management"></a>Capacity Management</h1><p>##What is Capacity?<br>It is a limitation that determines the ability to yield some output (products or service) per unit time<br>Formally it is defined as:<br>The maximum rate of output per period that a resource can achieve under assumed operating<br>conditions<br>Resource can be:<br>human, individuals or groups of individuals<br>machine, e.g. work centre or groups of work centres<br>facility, e.g. storage space<br>It can be measured in:<br>terms of output, e.g. number, weight, volume etc.<br>hours of labour<br>hours of machinery/equipment</p>
+<h2 id="Types-of-Capacity"><a href="#Types-of-Capacity" class="headerlink" title="Types of Capacity"></a>Types of Capacity</h2><ul>
+<li>OPERATING CAPACITY<ul>
+<li>IMMEDIATE</li>
+<li>that, which can be made available within the current budget period</li>
+<li>EFFECTIVE</li>
+<li>that, which is used within the current budget period</li>
+</ul>
+</li>
+<li>POTENTIAL<ul>
+<li>That, which is subject to long term strategic planning</li>
+</ul>
+</li>
+</ul>
+<h2 id="What-limits-immediate-Capacity"><a href="#What-limits-immediate-Capacity" class="headerlink" title="What limits immediate Capacity?"></a>What limits immediate Capacity?</h2><p>The plant/equipment size<br>Availability of equipment<br>Availability of manpower<br>Availability of cash - financial policies<br>Availability of Material<br>The number of different tasks being undertaken – e.g. product mix<br>The technical demands of the tasks – production strategy and manufacturing system<br>configuration</p>
+<h2 id="What-influences-effective-Capacity"><a href="#What-influences-effective-Capacity" class="headerlink" title="What influences effective Capacity"></a>What influences effective Capacity</h2><p>Product design – design for manufacture<br>Planning policies<br>Purchasing policies<br>Sub-contracting policies<br>Maintenance policies and practices<br>Flexibility of workforce<br>Efficiency of workforce</p>
+<h1 id="Revisiting-LP-Modelling-Fundamentals"><a href="#Revisiting-LP-Modelling-Fundamentals" class="headerlink" title="Revisiting LP Modelling Fundamentals"></a>Revisiting LP Modelling Fundamentals</h1>]]></content>
+      <categories>
+        <category>OPM</category>
+      </categories>
+      <tags>
+        <tag>OPM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Computer Vision Week 3 Low level vision Artifical</title>
+    <url>/2020/10/14/CV3/</url>
+    <content><![CDATA[<h1 id="Task-of-this-week"><a href="#Task-of-this-week" class="headerlink" title="Task of this week"></a>Task of this week</h1><ul>
+<li>Edge and Feature detection</li>
+<li>Requires Filtering</li>
+<li>Requiers Convolution<a id="more"></a>
+
+</li>
+</ul>
+<h1 id="Convolution"><a href="#Convolution" class="headerlink" title="Convolution"></a>Convolution</h1><p>$$I’(i,j)=I*H=\sum_{k ,l}{I(i−k,j−l)H(k,l)}$$</p>
+<ul>
+<li>To calculate values at each location in the filtered image:</li>
+<li>You can imagine sliding the mask across the input image, filling in the values for the output (filtered) image as you go.</li>
+<li>Alternatively, you can imagine the mask replicated at every pixel location in the output image, and the results generated in parallel (like the DoG filters in the retina).</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Computer Vision</category>
+      </categories>
+      <tags>
+        <tag>Computer Vision</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LEMMA &amp; THEOREM</title>
+    <url>/2020/10/13/lemma&amp;theorem/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>可能之前在学高数的时候老师有讲过，但是最近学DSP的时候，哈佛毕业的老师又提到了，所以来记录一下。<br>起源是证明LTI系统的因果性（引理），LTI系统的稳定性（定理）。<br>顺便在整理几个常用的数学性质的英文说法。</p>
+<a id="more"></a>
+
+<h1 id="LEMMA"><a href="#LEMMA" class="headerlink" title="LEMMA"></a>LEMMA</h1><p><strong>引理</strong><br>A lemma (plural lemmas or lemmata) is a generally minor, proven proposition which is used as a stepping stone to a larger result.<br>——Wikipedia<br>引理（lemma）是数学中为了取得某个更好的结论而作为步骤被证明的命题，其意义并不在于自身被证明，而在于为达成最终目的作出贡献。<br>——百度百科</p>
+<h1 id="THEOREM"><a href="#THEOREM" class="headerlink" title="THEOREM"></a>THEOREM</h1><p><strong>定理</strong><br>A theorem is a non-self-evident statement that has been proven to be true, either on the basis of generally accepted statements such as axioms or on the basis of previously established statements such as other theorems.<br>——Wikipedia<br>定理（英语：Theorem）是经过受逻辑限制的证明为真的陈述。一般来说，在数学中，只有重要或有趣的陈述才叫定理。证明定理是数学的中心活动。<br>——百度百科</p>
+<h1 id="其他数学名词"><a href="#其他数学名词" class="headerlink" title="其他数学名词"></a>其他数学名词</h1><h2 id="dummy-variable"><a href="#dummy-variable" class="headerlink" title="dummy variable"></a>dummy variable</h2><p><strong>哑元变量</strong></p>
+<h2 id="additivity"><a href="#additivity" class="headerlink" title="additivity"></a>additivity</h2><p><strong>可加性</strong></p>
+<h2 id="homogeneity"><a href="#homogeneity" class="headerlink" title="homogeneity"></a>homogeneity</h2><p><strong>齐次性</strong></p>
+<h2 id="commutative-law"><a href="#commutative-law" class="headerlink" title="commutative law"></a>commutative law</h2><p><strong>交换律</strong></p>
+<h2 id="associative-law"><a href="#associative-law" class="headerlink" title="associative law"></a>associative law</h2><p><strong>结合律</strong></p>
+<h2 id="distributive-law"><a href="#distributive-law" class="headerlink" title="distributive law"></a>distributive law</h2><p><strong>分配律</strong></p>
+<h2 id="convolution"><a href="#convolution" class="headerlink" title="convolution"></a>convolution</h2><p><strong>卷积</strong></p>
+<h2 id="correlation"><a href="#correlation" class="headerlink" title="correlation"></a>correlation</h2><p><strong>关联</strong></p>
+<h2 id="coordinate"><a href="#coordinate" class="headerlink" title="coordinate"></a>coordinate</h2><p><strong>坐标</strong></p>
+<ul>
+<li>homogeneous coordinate <strong>齐次坐标</strong></li>
+<li>cartesian coordinate <strong>笛卡尔坐标</strong></li>
+</ul>
+<h2 id="complex"><a href="#complex" class="headerlink" title="complex"></a>complex</h2><ul>
+<li>real 实部</li>
+<li>image 虚部</li>
+</ul>
+<h1 id="系统名词"><a href="#系统名词" class="headerlink" title="系统名词"></a>系统名词</h1><h2 id="LTI"><a href="#LTI" class="headerlink" title="LTI"></a>LTI</h2><p><strong>linear time-invariable system</strong><br>线性时不变系统</p>
+<h2 id="parallel-connection"><a href="#parallel-connection" class="headerlink" title="parallel connection"></a>parallel connection</h2><p><strong>并联</strong></p>
+<h2 id="cascade-connection"><a href="#cascade-connection" class="headerlink" title="cascade connection"></a>cascade connection</h2><p><strong>级联</strong></p>
+<h2 id="properties-of-LTI"><a href="#properties-of-LTI" class="headerlink" title="properties of LTI"></a>properties of LTI</h2><ul>
+<li>causality 因果</li>
+<li>stability 稳定</li>
+<li>linear 线性</li>
+<li>time-invariable 时不变</li>
+</ul>
+<h2 id="linear-constant-coefficient-difference-equations"><a href="#linear-constant-coefficient-difference-equations" class="headerlink" title="linear constant coefficient difference equations"></a>linear constant coefficient difference equations</h2><p><strong>LCCD Equation</strong>——线性常系数差分方程</p>
+<h2 id="others"><a href="#others" class="headerlink" title="others"></a>others</h2><ul>
+<li>sampling 采样 - sampling interval/period</li>
+<li>quantisation 量化 - quantisation step</li>
+<li>response 响应</li>
+<li>oscillates 震荡</li>
+<li>forward 前向</li>
+<li>backward 后向</li>
+<li>Dirac sequences / unit sample sequences</li>
+<li>unit step sequences</li>
+<li>exponential sequences</li>
+<li>complex exponential sequences</li>
+<li>x[n]-x of n</li>
+<li>rounding 精确到（化整到）-指小数点的浮动</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Math</category>
+      </categories>
+      <tags>
+        <tag>Math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CV Tutorial week 2</title>
+    <url>/2020/10/14/CVT2/</url>
+    <content><![CDATA[<h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><a id="more"></a>]]></content>
+      <categories>
+        <category>Computer Vision</category>
+      </categories>
+      <tags>
+        <tag>Computer Vision</tag>
+      </tags>
+  </entry>
 </search>
