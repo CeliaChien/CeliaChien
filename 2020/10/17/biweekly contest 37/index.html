@@ -31,7 +31,7 @@
 <meta property="og:description" content="写在前面 Mean of Array After Removing Some Elements Coordinate With Maximum Network Quality Number of Sets of K Non-Overlapping Line Segments Fancy Sequenceeasy题主要考察浮点问题，审题可以很快做出。hard题没有很难，但是通过率不高，因为溢出问题。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-17T15:46:25.000Z">
-<meta property="article:modified_time" content="2020-10-17T16:26:07.403Z">
+<meta property="article:modified_time" content="2020-10-17T16:30:49.534Z">
 <meta property="article:author" content="CeliaChien">
 <meta property="article:tag" content="Leetcode">
 <meta name="twitter:card" content="summary">
@@ -338,7 +338,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-10-18 00:26:07" itemprop="dateModified" datetime="2020-10-18T00:26:07+08:00">2020-10-18</time>
+        <time title="Modified: 2020-10-18 00:30:49" itemprop="dateModified" datetime="2020-10-18T00:30:49+08:00">2020-10-18</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -358,14 +358,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.4k</span>
+      <span>2.3k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>2 mins.</span>
     </span>
 </div>
 
@@ -392,7 +392,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fancy</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">deque</span>&lt;LL&gt;arr;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> M = <span class="number">1000000007</span>;</span><br><span class="line"><span class="keyword">public</span>:    </span><br><span class="line">    Fancy() &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">append</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        arr.push_back(val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addAll</span><span class="params">(<span class="keyword">int</span> inc)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i: arr)&#123;</span><br><span class="line">            res=(i+inc)%M;</span><br><span class="line">            arr.push_back(res);</span><br><span class="line">            arr.pop_front();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">multAll</span><span class="params">(<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i: arr)&#123;</span><br><span class="line">            res=i*m;</span><br><span class="line">            arr.push_back(res);</span><br><span class="line">            arr.pop_front();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">(<span class="keyword">int</span> idx)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> n = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(idx&gt;=<span class="number">0</span>&amp;&amp;idx&lt;arr.size())<span class="keyword">return</span> (n*arr[idx])%M;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your Fancy object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * Fancy* obj = new Fancy();</span></span><br><span class="line"><span class="comment"> * obj-&gt;append(val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAll(inc);</span></span><br><span class="line"><span class="comment"> * obj-&gt;multAll(m);</span></span><br><span class="line"><span class="comment"> * int param_4 = obj-&gt;getIndex(idx);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 
 <p>结果：有溢出</p>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fancy</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;LL&gt; nums;</span><br><span class="line">    LL add, mul;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function">LL <span class="title">power</span><span class="params">(LL x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        LL tot = <span class="number">1</span>, p = x;</span><br><span class="line">        <span class="keyword">for</span> (; y; y &gt;&gt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (y &amp; <span class="number">1</span>)</span><br><span class="line">                tot = (tot * p) % mod;</span><br><span class="line">            p = (p * p) % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> tot;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Fancy() &#123;</span><br><span class="line">        add = <span class="number">0</span>;</span><br><span class="line">        mul = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">append</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        val = ((val - add) % mod + mod) % mod;</span><br><span class="line">        val = (val * power(mul, mod - <span class="number">2</span>)) % mod;</span><br><span class="line">        nums.push_back(val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addAll</span><span class="params">(<span class="keyword">int</span> inc)</span> </span>&#123;</span><br><span class="line">        add = (add + inc) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">multAll</span><span class="params">(<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">        add = add * m % mod;</span><br><span class="line">        mul = mul * m % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">(<span class="keyword">int</span> idx)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (idx &gt;= nums.size())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">return</span> (nums[idx] * mul + add) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your Fancy object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * Fancy* obj = new Fancy();</span></span><br><span class="line"><span class="comment"> * obj-&gt;append(val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAll(inc);</span></span><br><span class="line"><span class="comment"> * obj-&gt;multAll(m);</span></span><br><span class="line"><span class="comment"> * int param_4 = obj-&gt;getIndex(idx);</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -491,13 +491,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">55k</span>
+    <span title="Symbols count total">56k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">50 mins.</span>
+    <span title="Reading time total">51 mins.</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
@@ -602,6 +602,50 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
   
 
   
+      <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = '//cdn.jsdelivr.net/npm/mathjax@3.1.0/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
