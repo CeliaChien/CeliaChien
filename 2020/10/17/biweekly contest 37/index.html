@@ -23,21 +23,21 @@
     var CONFIG = {"hostname":"celiachien.github.io","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="写在前面一共四题，1题easy，2题medium，1题hard第一道，简单的系统设计题，要清楚object function；第二道，同样应用题，但是通过率不高；第三道，给出制定行和&amp;列和的矩阵；第四道，  Design Parking System Alert Using Same Key-Card Three or More Times in a One Hour Period Fin">
+  <meta name="description" content="写在前面 Mean of Array After Removing Some Elements Coordinate With Maximum Network Quality Number of Sets of K Non-Overlapping Line Segments Fancy Sequenceeasy题主要考察浮点问题，审题可以很快做出。hard题没有很难，但是通过率不高，因为溢出问题。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="biweekly contest 36">
-<meta property="og:url" content="http://celiachien.github.io/2020/10/03/biweekly%20contest%2036/index.html">
+<meta property="og:title" content="biweekly contest 37">
+<meta property="og:url" content="http://celiachien.github.io/2020/10/17/biweekly%20contest%2037/index.html">
 <meta property="og:site_name" content="CC">
-<meta property="og:description" content="写在前面一共四题，1题easy，2题medium，1题hard第一道，简单的系统设计题，要清楚object function；第二道，同样应用题，但是通过率不高；第三道，给出制定行和&amp;列和的矩阵；第四道，  Design Parking System Alert Using Same Key-Card Three or More Times in a One Hour Period Fin">
+<meta property="og:description" content="写在前面 Mean of Array After Removing Some Elements Coordinate With Maximum Network Quality Number of Sets of K Non-Overlapping Line Segments Fancy Sequenceeasy题主要考察浮点问题，审题可以很快做出。hard题没有很难，但是通过率不高，因为溢出问题。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-03T15:46:25.000Z">
-<meta property="article:modified_time" content="2020-10-03T16:24:45.940Z">
+<meta property="article:published_time" content="2020-10-17T15:46:25.000Z">
+<meta property="article:modified_time" content="2020-10-17T16:26:07.403Z">
 <meta property="article:author" content="CeliaChien">
 <meta property="article:tag" content="Leetcode">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://celiachien.github.io/2020/10/03/biweekly%20contest%2036/">
+<link rel="canonical" href="http://celiachien.github.io/2020/10/17/biweekly%20contest%2037/">
 
 
 <script data-pjax class="page-configurations">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>biweekly contest 36 | CC</title>
+  <title>biweekly contest 37 | CC</title>
   
 
 
@@ -215,7 +215,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Design-Parking-System"><span class="nav-number">2.</span> <span class="nav-text">Design Parking System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period"><span class="nav-number">3.</span> <span class="nav-text">Alert Using Same Key-Card Three or More Times in a One Hour Period</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Find-Valid-Matrix-Given-Row-and-Column-Sums"><span class="nav-number">4.</span> <span class="nav-text">Find Valid Matrix Given Row and Column Sums</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Find-Servers-That-Handled-Most-Number-of-Requests"><span class="nav-number">5.</span> <span class="nav-text">Find Servers That Handled Most Number of Requests</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mean-of-Array-After-Removing-Some-Elements"><span class="nav-number">2.</span> <span class="nav-text">Mean of Array After Removing Some Elements</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Coordinate-With-Maximum-Network-Quality"><span class="nav-number">3.</span> <span class="nav-text">Coordinate With Maximum Network Quality</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Number-of-Sets-of-K-Non-Overlapping-Line-Segments"><span class="nav-number">4.</span> <span class="nav-text">Number of Sets of K Non-Overlapping Line Segments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fancy-Sequence"><span class="nav-number">5.</span> <span class="nav-text">Fancy Sequence</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -307,7 +307,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://celiachien.github.io/2020/10/03/biweekly%20contest%2036/">
+    <link itemprop="mainEntityOfPage" href="http://celiachien.github.io/2020/10/17/biweekly%20contest%2037/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -320,7 +320,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          biweekly contest 36<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/_posts/biweekly%20contest%2036.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+          biweekly contest 37<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/_posts/biweekly%20contest%2037.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
 
         <div class="post-meta-container">
@@ -331,14 +331,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2020-10-03 23:46:25" itemprop="dateCreated datePublished" datetime="2020-10-03T23:46:25+08:00">2020-10-03</time>
+      <time title="Created: 2020-10-17 23:46:25" itemprop="dateCreated datePublished" datetime="2020-10-17T23:46:25+08:00">2020-10-17</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-10-04 00:24:45" itemprop="dateModified" datetime="2020-10-04T00:24:45+08:00">2020-10-04</time>
+        <time title="Modified: 2020-10-18 00:26:07" itemprop="dateModified" datetime="2020-10-18T00:26:07+08:00">2020-10-18</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -358,7 +358,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.2k</span>
+      <span>1.4k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -376,22 +376,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>一共四题，1题easy，2题medium，1题hard<br>第一道，简单的系统设计题，要清楚object function；<br>第二道，同样应用题，但是通过率不高；<br>第三道，给出制定行和&amp;列和的矩阵；<br>第四道，</p>
-<ul>
-<li>Design Parking System</li>
-<li>Alert Using Same Key-Card Three or More Times in a One Hour Period</li>
-<li>Find Valid Matrix Given Row and Column Sums</li>
-<li>Find Servers That Handled Most Number of Requests<a id="more"></a>
-<h1 id="Design-Parking-System"><a href="#Design-Parking-System" class="headerlink" title="Design Parking System"></a>Design Parking System</h1><a target="_blank" rel="noopener" href="https://leetcode.com/contest/biweekly-contest-36/problems/design-parking-system/">原题链接</a></li>
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
+<li><strong>Mean of Array After Removing Some Elements</strong></li>
+<li>Coordinate With Maximum Network Quality</li>
+<li><strong>Number of Sets of K Non-Overlapping Line Segments</strong></li>
+<li><strong>Fancy Sequence</strong><br>easy题主要考察浮点问题，审题可以很快做出。<br>hard题没有很难，但是通过率不高，因为溢出问题。<a id="more"></a>
+<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/modulo-1097-1000000007/">$modulo 10^9 + 7$</a></li>
 </ul>
-<p>解法：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParkingSystem</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ps;</span><br><span class="line">    ParkingSystem(<span class="keyword">int</span> big, <span class="keyword">int</span> medium, <span class="keyword">int</span> small) &#123;</span><br><span class="line">        ps.push_back(big);</span><br><span class="line">        ps.push_back(medium);</span><br><span class="line">        ps.push_back(small);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">addCar</span><span class="params">(<span class="keyword">int</span> carType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ps[carType<span class="number">-1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            ps[carType<span class="number">-1</span>]--;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="Mean-of-Array-After-Removing-Some-Elements"><a href="#Mean-of-Array-After-Removing-Some-Elements" class="headerlink" title="Mean of Array After Removing Some Elements"></a>Mean of Array After Removing Some Elements</h1><p><a target="_blank" rel="noopener" href="https://leetcode.com/contest/biweekly-contest-37/problems/mean-of-array-after-removing-some-elements/">原题链接</a><br>my code:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">trimMean</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> res;</span><br><span class="line">        sort(arr.begin(),arr.end());</span><br><span class="line">        <span class="keyword">double</span> n= arr.size();</span><br><span class="line">        n=<span class="number">0.1</span>*n;</span><br><span class="line">        <span class="keyword">int</span> len=arr.size()-n/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> total=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=n/<span class="number">2</span>; i&lt;len; i++)&#123;</span><br><span class="line">            total+=arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        res=(<span class="keyword">double</span>)total/(arr.size()-n);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h1 id="Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period"><a href="#Alert-Using-Same-Key-Card-Three-or-More-Times-in-a-One-Hour-Period" class="headerlink" title="Alert Using Same Key-Card Three or More Times in a One Hour Period"></a>Alert Using Same Key-Card Three or More Times in a One Hour Period</h1><p><a target="_blank" rel="noopener" href="https://leetcode.com/contest/biweekly-contest-36/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/">原题链接</a><br>解法：</p>
-<h1 id="Find-Valid-Matrix-Given-Row-and-Column-Sums"><a href="#Find-Valid-Matrix-Given-Row-and-Column-Sums" class="headerlink" title="Find Valid Matrix Given Row and Column Sums"></a>Find Valid Matrix Given Row and Column Sums</h1><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/">原题链接</a><br>解法：Greedy</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">restoreMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; col)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = row.size(), n = col.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">A</span><span class="params">(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; n; ++j) &#123;</span><br><span class="line">                A[i][j] = min(row[i], col[j]);</span><br><span class="line">                row[i] -= A[i][j];</span><br><span class="line">                col[j] -= A[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Time: O(mn)<br>Space: O(mn)</p>
-<h1 id="Find-Servers-That-Handled-Most-Number-of-Requests"><a href="#Find-Servers-That-Handled-Most-Number-of-Requests" class="headerlink" title="Find Servers That Handled Most Number of Requests"></a>Find Servers That Handled Most Number of Requests</h1><p><a target="_blank" rel="noopener" href="https://leetcode.com/contest/biweekly-contest-36/problems/find-servers-that-handled-most-number-of-requests/">原题链接</a></p>
+<h1 id="Coordinate-With-Maximum-Network-Quality"><a href="#Coordinate-With-Maximum-Network-Quality" class="headerlink" title="Coordinate With Maximum Network Quality"></a>Coordinate With Maximum Network Quality</h1><p><a target="_blank" rel="noopener" href="https://leetcode.com/contest/biweekly-contest-37/problems/coordinate-with-maximum-network-quality/">原题链接</a></p>
+<h1 id="Number-of-Sets-of-K-Non-Overlapping-Line-Segments"><a href="#Number-of-Sets-of-K-Non-Overlapping-Line-Segments" class="headerlink" title="Number of Sets of K Non-Overlapping Line Segments"></a>Number of Sets of K Non-Overlapping Line Segments</h1><p><a target="_blank" rel="noopener" href="https://leetcode.com/contest/biweekly-contest-37/problems/number-of-sets-of-k-non-overlapping-line-segments/">原题链接</a></p>
+<h1 id="Fancy-Sequence"><a href="#Fancy-Sequence" class="headerlink" title="Fancy Sequence"></a>Fancy Sequence</h1><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/fancy-sequence/">原题链接</a><br>my code:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fancy</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">deque</span>&lt;LL&gt;arr;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> M = <span class="number">1000000007</span>;</span><br><span class="line"><span class="keyword">public</span>:    </span><br><span class="line">    Fancy() &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">append</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        arr.push_back(val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addAll</span><span class="params">(<span class="keyword">int</span> inc)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i: arr)&#123;</span><br><span class="line">            res=(i+inc)%M;</span><br><span class="line">            arr.push_back(res);</span><br><span class="line">            arr.pop_front();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">multAll</span><span class="params">(<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i: arr)&#123;</span><br><span class="line">            res=i*m;</span><br><span class="line">            arr.push_back(res);</span><br><span class="line">            arr.pop_front();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">(<span class="keyword">int</span> idx)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> n = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(idx&gt;=<span class="number">0</span>&amp;&amp;idx&lt;arr.size())<span class="keyword">return</span> (n*arr[idx])%M;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your Fancy object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * Fancy* obj = new Fancy();</span></span><br><span class="line"><span class="comment"> * obj-&gt;append(val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAll(inc);</span></span><br><span class="line"><span class="comment"> * obj-&gt;multAll(m);</span></span><br><span class="line"><span class="comment"> * int param_4 = obj-&gt;getIndex(idx);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：有溢出</p>
 
     </div>
 
@@ -409,7 +409,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>Post link: </strong>
-      <a href="http://celiachien.github.io/2020/10/03/biweekly%20contest%2036/" title="biweekly contest 36">http://celiachien.github.io/2020/10/03/biweekly contest 36/</a>
+      <a href="http://celiachien.github.io/2020/10/17/biweekly%20contest%2037/" title="biweekly contest 37">http://celiachien.github.io/2020/10/17/biweekly contest 37/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -425,13 +425,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/10/04/greedy/" rel="prev" title="Greedy">
-                  <i class="fa fa-chevron-left"></i> Greedy
+                <a href="/2022/09/27/Leetcode/" rel="prev" title="Leetcode">
+                  <i class="fa fa-chevron-left"></i> Leetcode
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/10/02/%E5%8D%A1%E8%AF%BA%E5%9B%BE/" rel="next" title="karnaugh map">
-                  karnaugh map <i class="fa fa-chevron-right"></i>
+                <a href="/2020/10/14/CVT2/" rel="next" title="CV Tutorial week 2">
+                  CV Tutorial week 2 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

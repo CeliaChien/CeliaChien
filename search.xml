@@ -1713,6 +1713,28 @@
 <li>You can imagine sliding the mask across the input image, filling in the values for the output (filtered) image as you go.</li>
 <li>Alternatively, you can imagine the mask replicated at every pixel location in the output image, and the results generated in parallel (like the DoG filters in the retina).</li>
 </ul>
+<h1 id="Edge-detection"><a href="#Edge-detection" class="headerlink" title="Edge detection"></a>Edge detection</h1><ul>
+<li><p>Convolving with a differencing mask:</p>
+<ul>
+<li>enhances edges</li>
+<li>but also enhances noise</li>
+</ul>
+</li>
+<li><p>Convolving with a smoothing mask:</p>
+<ul>
+<li>removes noise</li>
+<li>but also blurs edges</li>
+</ul>
+</li>
+<li><p>There is a <strong>trade-off</strong> between edge detection and noise suppression</p>
+</li>
+<li><p>Edge detection requires:</p>
+<ul>
+<li>a spatial scale, established using a smoothing operator(a Gaussian mask)</li>
+<li>a differencing operator to find significant grey-level changes (at that spatial scale)</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Computer Vision</category>
@@ -1789,6 +1811,33 @@
       </categories>
       <tags>
         <tag>Computer Vision</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>biweekly contest 37</title>
+    <url>/2020/10/17/biweekly%20contest%2037/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
+<li><strong>Mean of Array After Removing Some Elements</strong></li>
+<li>Coordinate With Maximum Network Quality</li>
+<li><strong>Number of Sets of K Non-Overlapping Line Segments</strong></li>
+<li><strong>Fancy Sequence</strong><br>easy题主要考察浮点问题，审题可以很快做出。<br>hard题没有很难，但是通过率不高，因为溢出问题。<a id="more"></a>
+<a href="https://www.geeksforgeeks.org/modulo-1097-1000000007/">$modulo 10^9 + 7$</a></li>
+</ul>
+<h1 id="Mean-of-Array-After-Removing-Some-Elements"><a href="#Mean-of-Array-After-Removing-Some-Elements" class="headerlink" title="Mean of Array After Removing Some Elements"></a>Mean of Array After Removing Some Elements</h1><p><a href="https://leetcode.com/contest/biweekly-contest-37/problems/mean-of-array-after-removing-some-elements/">原题链接</a><br>my code:</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">trimMean</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> res;</span><br><span class="line">        sort(arr.begin(),arr.end());</span><br><span class="line">        <span class="keyword">double</span> n= arr.size();</span><br><span class="line">        n=<span class="number">0.1</span>*n;</span><br><span class="line">        <span class="keyword">int</span> len=arr.size()-n/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> total=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=n/<span class="number">2</span>; i&lt;len; i++)&#123;</span><br><span class="line">            total+=arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        res=(<span class="keyword">double</span>)total/(arr.size()-n);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Coordinate-With-Maximum-Network-Quality"><a href="#Coordinate-With-Maximum-Network-Quality" class="headerlink" title="Coordinate With Maximum Network Quality"></a>Coordinate With Maximum Network Quality</h1><p><a href="https://leetcode.com/contest/biweekly-contest-37/problems/coordinate-with-maximum-network-quality/">原题链接</a></p>
+<h1 id="Number-of-Sets-of-K-Non-Overlapping-Line-Segments"><a href="#Number-of-Sets-of-K-Non-Overlapping-Line-Segments" class="headerlink" title="Number of Sets of K Non-Overlapping Line Segments"></a>Number of Sets of K Non-Overlapping Line Segments</h1><p><a href="https://leetcode.com/contest/biweekly-contest-37/problems/number-of-sets-of-k-non-overlapping-line-segments/">原题链接</a></p>
+<h1 id="Fancy-Sequence"><a href="#Fancy-Sequence" class="headerlink" title="Fancy Sequence"></a>Fancy Sequence</h1><p><a href="https://leetcode.com/problems/fancy-sequence/">原题链接</a><br>my code:</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fancy</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">deque</span>&lt;LL&gt;arr;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> M = <span class="number">1000000007</span>;</span><br><span class="line"><span class="keyword">public</span>:    </span><br><span class="line">    Fancy() &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">append</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        arr.push_back(val);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addAll</span><span class="params">(<span class="keyword">int</span> inc)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i: arr)&#123;</span><br><span class="line">            res=(i+inc)%M;</span><br><span class="line">            arr.push_back(res);</span><br><span class="line">            arr.pop_front();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">multAll</span><span class="params">(<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i: arr)&#123;</span><br><span class="line">            res=i*m;</span><br><span class="line">            arr.push_back(res);</span><br><span class="line">            arr.pop_front();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">(<span class="keyword">int</span> idx)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> n = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(idx&gt;=<span class="number">0</span>&amp;&amp;idx&lt;arr.size())<span class="keyword">return</span> (n*arr[idx])%M;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your Fancy object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * Fancy* obj = new Fancy();</span></span><br><span class="line"><span class="comment"> * obj-&gt;append(val);</span></span><br><span class="line"><span class="comment"> * obj-&gt;addAll(inc);</span></span><br><span class="line"><span class="comment"> * obj-&gt;multAll(m);</span></span><br><span class="line"><span class="comment"> * int param_4 = obj-&gt;getIndex(idx);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：有溢出</p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
       </tags>
   </entry>
 </search>
