@@ -1840,4 +1840,72 @@
         <tag>Leetcode</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Django learning</title>
+    <url>/2020/10/27/Django1/</url>
+    <content><![CDATA[<h1 id="How-to-use-Django"><a href="#How-to-use-Django" class="headerlink" title="How to use Django"></a>How to use Django</h1><ul>
+<li><p><strong>install python</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew python</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>install pip</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip3 install pipenv</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Create Django</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pipenv install django&#x3D;&#x3D;2.1</span><br></pre></td></tr></table></figure>
+<p>This should create a virtual environment for you with Django install.</p>
+</li>
+</ul>
+<a id="more"></a>
+
+<p>Pay Attention:<br>**Virtual environment specifies which wersion of Django you want to use for different project.**For example, if you have two projects, you’ll be able to create two separate virtual environments one for each. You can say something like, I want to use Django 2.1 for project A and Django 2.2 for Project B.<br>Use <code>ls</code>to check there are pipfile and pipfile.lock</p>
+<ul>
+<li><strong>Create a Django Project</strong></li>
+</ul>
+<ol>
+<li>go to environment by texting <code>pipenv shell</code></li>
+<li>create prject by typing <code>django-admin startproject yourprojectname . </code></li>
+<li>start our django server by typing <code>python manage.py runserver</code></li>
+<li>copy “<a href="http://127.0.0.1:8000/&quot;">http://127.0.0.1:8000/&quot;</a> and go to Chrome to open it</li>
+</ol>
+<h1 id="Hello-world-for-Django"><a href="#Hello-world-for-Django" class="headerlink" title="Hello world for Django"></a>Hello world for Django</h1><ul>
+<li><strong>Create a new app within this project</strong></li>
+</ul>
+<p>PS: what is different between project and app in Django?<br>In Django:</p>
+<ul>
+<li>Project:<ul>
+<li>a single project powers a single website</li>
+<li>a project can contain multiple apps</li>
+</ul>
+</li>
+<li>App:<ul>
+<li>Each app focuses on a particular aspect</li>
+</ul>
+</li>
+<li>Example:<ul>
+<li>a shopping website:</li>
+<li>one app for handling user authentication</li>
+<li>another app for handling payments</li>
+<li>another app for listing items</li>
+</ul>
+</li>
+</ul>
+<p>Open a new window in terminal and go the folder of your project;<br>Type:<code>python manage.py startapp hello</code><br>Then use <code>ls</code> to see the file.</p>
+<p>However, <strong>the Django project doesn’t know about hello we created</strong>.<br>To do that you can open ‘youproject/setting.py’</p>
+<ul>
+<li><strong>Create a view for the target URL</strong><br>here the target URL is <code>127.0.0:800/sayHello/</code><br>A veiw = what’s shown to the user for a certain URL</li>
+</ul>
+<h1 id="Create-a-action-page"><a href="#Create-a-action-page" class="headerlink" title="Create a action page"></a>Create a action page</h1><ul>
+<li><p><strong>Create a templates</strong><br><code>mkdir templates</code> and create a html file</p>
+</li>
+<li><p><strong>Create a models</strong><br>models = a way to interact with your database</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
 </search>
